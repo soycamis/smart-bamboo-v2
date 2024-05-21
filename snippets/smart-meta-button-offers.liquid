@@ -1,0 +1,10 @@
+
+{% assign classSelected = className %}
+{% assign classNameSelected = classSelected | remove: "-" | remove: " " | append: "Selected" %}
+
+<button class="{{ classNameSelected }} tw-w-full tw-max-h-[45px] tw-flex tw-flex-row tw-items-center tw-justify-center tw-gap-x-2 tw-border-solid tw-border-[1.5px] tw-border-[#C9D5C5] hover:tw-border-[#9caa98] tw-px-4 tw-py-0.5 tw-rounded-[5px] tw-mx-3">
+    <img class="tw-max-w-[25px] tw-max-h-[30px]" src="{{ icon }}" alt="{{ buttonOffer }}">
+    <p class="tw-w-full tw-font-poppins tw-text-[13px] tw-font-normal tw-text-[#415934] hover:tw-text-[#2b3c21] tw-leading-none">
+         {{ buttonOffer }}
+    </p>
+</button>

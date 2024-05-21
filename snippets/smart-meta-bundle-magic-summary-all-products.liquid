@@ -1,0 +1,139 @@
+<li class="tw-w-full tw-flex tw-flex-col tw-py-3">
+    <div id="textSummaryBundleMagic" class="tw-hidden">
+      <p class="tw-pt-3 tw-mb-2 tw-font-poppins tw-text-[16px] lg:tw-text-[18px] tw-font-semibold tw-text-[#292929]">
+        Resumen de Carrito:
+      </p>
+  
+      {% comment %} Contenido para el checkout {% endcomment %}
+      <div id="tablaCarrito">
+        <div class="tw-grid tw-grid-cols-12 tw-border-solid tw-border-[1px] tw-border-gray-200 tw-rounded tw-p-4" id="itemslist">
+  
+          <!--div class="tw-col-span-12 lg:tw-col-span-7 tw-grid tw-grid-cols-6 lg:tw-grid-cols-2 lg:tw-grid-rows-2 tw-border tw-border-solid tw-border-2 tw-border-transparent lg:tw-border-b-gray-200 tw-pb-2 xl:tw-pb-0 tw-hidden producto1wrapper">
+            <div class="tw-col-span-4 lg:tw-col-span-1">
+              <div class="">
+                <p class="tw-font-poppins tw-text-xl lg:tw-text-lg tw-font-semibold cartnombre1">
+                  Nombre product
+                </p>
+              </div>
+              {% comment %} Variante en mobile {% endcomment %}
+              <div class="tw-block lg:tw-hidden">
+                <p class="tw-font-poppins tw-text-lg tw-font-normal tw-text-[#666666] carttamano1">
+                  Variantes en mobile, queen
+                </p>
+              </div>
+            </div>
+            <div class="tw-hidden lg:tw-block tw-self-center">
+              {% comment %} Precio sin descuento en desktop {% endcomment %}
+              <p class="tw-font-poppins tw-text-[13px] tw-font-light lg:tw-font-normal tw-text-[#666666] tw-text-right tw-line-through tw-mr-8 cartprecio1">
+                $1,509.00
+              </p>
+            </div>
+            <div class="tw-col-span-2 lg:tw-col-span-1">
+              {% comment %} <div class="tw-block lg:tw-hidden tw-text-end tw-font-bold">
+              ...
+              </div> {% endcomment %}
+              <div class="tw-block lg:tw-hidden">
+                <button class="tw-w-full tw-flex tw-justify-end tw-items-center">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/borrar.webp?v=1707410336"
+                    alt="eliminar"
+                    class="tw-h-4 cartdelete1"
+                    onclick="updateObjCart('cantidad1', 'delete')">
+                </button>
+              </div>
+  
+              {% comment %} Variante en escritorio {% endcomment %}
+              <div class="tw-hidden lg:tw-block">
+                <p class="tw-font-poppins tw-text-base tw-font-light lg:tw-font-normal tw-text-[#666666] tw-items-center carttamano1">
+                  Variant queen
+                </p>
+              </div>
+            </div>
+            <div class="tw-hidden lg:tw-block">
+              {% comment %} Precio con descuento en desktop {% endcomment %}
+              <p class="tw-font-poppins tw-text-lg tw-font-semibold tw-text-right tw-mr-8 cartpreciodescuento1">
+                $1,350.00
+              </p>
+            </div>
+          </div>
+          <div class="tw-col-span-12 lg:tw-col-span-5 tw-grid tw-grid-cols-12 lg:tw-grid-cols-4 tw-gap-x-2 tw-items-center tw-border tw-border-solid tw-border-2 tw-border-transparent tw-border-b-gray-200 tw-pb-2 lg:tw-pb-0 tw-hidden producto1wrapper">
+            {% comment %} Precios en mobile {% endcomment %}
+            <div class="tw-block lg:tw-hidden tw-col-span-6">
+              <div class="">
+                {% comment %} Precio sin descuento en mobile {% endcomment %}
+                <p class="tw-font-poppins tw-text-lg tw-font-normal tw-text-[#666666] tw-line-through tw-mt-1 cartprecio1">
+                  $1,509.00
+                </p>
+              </div>
+              <div class="">
+                {% comment %} Precio en mobile {% endcomment %}
+                <p class="tw-font-poppins tw-text-xl tw-font-bold cartpreciodescuento1">
+                  $1,350.00
+                </p>
+              </div>
+            </div>
+  
+            {% comment %} Botones {% endcomment %}
+            <div class="tw-col-span-2 lg:tw-col-span-1 tw-flex tw-justify-center">
+              <button class="tw-min-h-[35px] tw-min-w-[35px] tw-bg-[#949494] tw-text-white tw-text-4xl tw-font-normal tw-rounded cartremove1" onclick="updateObjCart('cantidad1', 'remove')">
+                -
+              </button>
+            </div>
+            <div class="tw-col-span-2 lg:tw-col-span-1 tw-flex tw-justify-center">
+              <p class="tw-text-lg tw-text-center cartcantidad1">
+                2
+              </p>
+            </div>
+            <div class="tw-col-span-2 lg:tw-col-span-1 tw-flex tw-justify-center">
+              <button class="tw-min-h-[35px] tw-min-w-[35px] tw-bg-[#949494] tw-text-white tw-text-4xl tw-font-normal tw-rounded caradd1" onclick="updateObjCart('cantidad1', 'add')">
+                +
+              </button>
+            </div>
+            <div class="tw-hidden lg:tw-block lg:tw-col-span-1">
+              <button class="tw-w-full tw-flex tw-justify-center tw-self-center">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/borrar.webp?v=1707410336"
+                  alt="eliminar"
+                  class="tw-h-4 pt-2 cartdelete1"
+                  onclick="updateObjCart('cantidad1', 'delete')">
+              </button>
+            </div>
+          </div>
+          Producto 1 -->
+        </div>
+  
+        <div class="tw-w-full tw-justify-end tw-mt-3 resumen">
+            <p class="tw-w-full tw-font-poppins tw-text-right tw-text-[14px] tw-font-semibold tw-flex tw-flex-row tw-justify-between tw-border-transparent tw-border-b-gray-300 tw-bg-[#f3f3f3] tw-rounded-lg tw-pl-3 tw-py-1"> <span>Total:</span>
+              <span class="tw-font-semibold tw-text-[16px] tw-pr-3 cartTotal">$28,000</span>
+            </p>
+            <div id="wrapper5OFF"></div>
+        </div>
+  
+        <div class="tw-flex-row resumencupon">
+          <div class="tw-flex tw-flex-row tw-justify-between">
+            <p class="tw-w-full tw-font-poppins tw-text-right tw-text-[14px] tw-font-normal tw-flex tw-border-transparent tw-border-b-gray-300 tw-pl-3 tw-py-1" id="descuento5OFF">Descuento Cupón<span class="tw-bg-[#C9D5C5] tw-text-[#605A5A] tw-rounded-lg tw-text-[12px] tw-px-2 tw-ml-2">SLEEP10</span>
+            </p>
+            <p class="tw-font-normal tw-text-[15px] tw-pr-3 cartCupon">$3,000</p>
+          </div>
+  
+          <div class="tw-flex tw-flex-row tw-justify-between tw-bg-[#f3f3f3] tw-rounded-lg">
+            <p class="tw-w-full tw-font-poppins tw-text-right tw-text-[14px] tw-font-semibold tw-flex tw-flex-row tw-justify-between tw-border-transparent tw-border-b-gray-300 tw-rounded-[3px] tw-py-1 tw-pl-3" id="totaldescuento5OFF">
+              <span>TOTAL A PAGAR</span>
+            </p>
+            <p class="tw-font-semibold tw-text-[16px] tw-pr-3 cartPagar">$25,000</p>
+          </div>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+    <div class="tw-w-full tw-flex tw-flex-row tw-justify-center tw-mt-3">
+      <button
+        onclick="buyProducts()"
+        id="buttonBuyProducts"
+        class="tw-w-full tw-bg-[#292929] tw-text-white tw-text-base tw-font-normal hover:tw-font-semibold focus:tw-font-normal tw-rounded tw-border-solid tw-border-[1px] tw-border-[#292929] tw-flex tw-justify-center tw-items-center tw-px-8 tw-py-3">
+          AGREGAR A CARRITO
+      </button>
+    </div>
+  </li>

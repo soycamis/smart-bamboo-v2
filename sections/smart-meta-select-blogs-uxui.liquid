@@ -1,0 +1,33 @@
+
+<section class="tw-w-full tw-flex tw-items-center tw-justify-center">
+    <div class="tw-w-full tw-max-w-[1000px]">
+
+        <h2 class="tw-w-full tw-font-lora tw-font-bold tw-text-[30px] tw-text-center tw-text-[#292929]">
+            Cuidar de tu descanso es cuidar de ti
+        </h2>
+
+        <div class="tw-relative tw-overflow-auto">
+            <div class="tw-overflow-x-auto tw-max-w-[350px] lg:tw-max-w-[1000px] tw-w-full tw-flex tw-flex-row lg:tw-grid lg:tw-grid-cols-3 tw-my-8 tw-gap-x-6 tw-px-8 lg:tw-px-0">
+                <article class="tw-w-full tw-snap-always tw-snap-center tw-flex-none tw-max-w-[259px] lg:tw-max-w-[320px]">
+                    {% assign articleOne = articles['descanso/caracteristicas-de-un-buen-colchon'] %}
+                    {% assign type = "Descanso" %}
+                    {% assign imageClassUno = "-uno" %}
+                    {% render 'smart-meta-card-by-blog', myArticle: articleOne, myType: type, imageClass: imageClassUno %}
+                </article>
+    
+                <article class="tw-w-full tw-snap-always tw-snap-center tw-flex-none tw-max-w-[259px] lg:tw-max-w-[320px]">
+                    {% assign articleTwo = articles['descanso/cuantas-horas-debemos-dormir'] %}
+                    {% assign imageClassDos = "-dos" %}
+                    {% render 'smart-meta-card-by-blog', myArticle: articleTwo, myType: type, imageClass: imageClassDos %}
+                </article>
+    
+                <article class="tw-w-full tw-snap-always tw-snap-center tw-flex-none tw-max-w-[259px] lg:tw-max-w-[320px]">
+                    {% assign articleThree = articles['descanso/invertir-en-un-buen-colchon'] %}
+                    {% assign imageClassTres = "-tres" %}
+                    {% render 'smart-meta-card-by-blog', myArticle: articleThree, myType: type, imageClass: imageClassTres %}
+                </article>   
+            </div>
+        </div>
+
+    </div>
+</section>

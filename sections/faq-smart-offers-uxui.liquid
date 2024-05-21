@@ -1,0 +1,36 @@
+
+{% render 'faqs-uxui', title: section.settings.faq_title, background: '#FFFFFF' %}
+
+{% schema %}
+  {
+    "name": "FAQ Mattress Colection",
+    "settings": [
+      {
+        "id": "faq_title",
+        "type": "text",
+        "label": "Heading",
+        "default": "Colchones Smart"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "faqSection",
+        "name": "Add Accordian",
+        "settings": [
+          {
+              "id": "accordianTitle",
+              "type": "text",
+              "label": "Accordian Title",
+              "default": "Accordian Title"
+          },
+          {
+              "type": "richtext",
+              "id": "accordianInfo",
+              "label": "Text",
+              "default": "<p>Default <em>richtext</em> <a href=\"https://example.com/\">content</a></p>"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

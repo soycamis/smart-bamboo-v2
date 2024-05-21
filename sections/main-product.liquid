@@ -56,10 +56,14 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+    {% comment %} Contenedor del media gallery {% endcomment %}
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       {% render 'product-media-gallery', variant_images: variant_images %}
     </div>
-    <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
+    {% comment %} Sellbox {% endcomment %}
+    {% render 'smart-meta-sellbox-bundle' %}
+    
+    {% comment %} <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
       <div
         id="ProductInfo-{{ section.id }}"
         class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
@@ -485,7 +489,7 @@
         {% comment %} Interactivo: Descripción | Medidas | Garantía | Envío {% endcomment %}
         {% render 'main-interactive-product-page' %}
       </div>
-    </div>
+    </div>  {% endcomment %}
     {%- if section.settings.media_position == 'right' -%}
       {% comment %} Duplicate gallery to display after product content on tablet/desktop breakpoint {% endcomment %}
       <div class="grid__item product__media-wrapper small-hide">

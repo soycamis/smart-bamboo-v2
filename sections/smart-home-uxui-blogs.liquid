@@ -1,0 +1,35 @@
+
+<section class="tw-w-full tw-flex tw-items-center tw-justify-center">
+    <div class="tw-w-full tw-max-w-[1200px]">
+
+        <h2 class="tw-font-lora tw-text-[#000000] tw-text-center tw-font-light tw-text-[30px] lg:tw-text-[35px] tw-leading-none tw-pt-6">
+            Aprende todo acerca <br class="tw-block md:tw-hidden">del buen dormir
+        </h2>
+
+        <div class="tw-w-full tw-flex tw-justify-center">
+            <div class="tw-relative tw-overflow-auto">
+                <div class="tw-overflow-x-auto lg:tw-max-w-[1200px] tw-w-full tw-flex tw-flex-row lg:tw-grid lg:tw-grid-cols-3 tw-my-8 tw-gap-x-6 tw-px-8 lg:tw-px-0">
+                    <article class="tw-w-full tw-snap-always tw-snap-center tw-flex-none tw-max-w-[259px] lg:tw-max-w-[320px]">
+                        {% assign articleOne = articles['descanso/cuantas-horas-debemos-dormir'] %}
+                        {% assign type = "Descanso" %}
+                        {% assign imageClassUno = "-uno" %}
+                        {% render 'smart-meta-card-by-blog', myArticle: articleOne, myType: type, imageClass: imageClassUno %}
+                    </article>
+        
+                    <article class="tw-w-full tw-snap-always tw-snap-center tw-flex-none tw-max-w-[259px] lg:tw-max-w-[320px]">
+                        {% assign articleTwo = articles['descanso/top-5-mejores-habitos-del-buen-dormir'] %}
+                        {% assign imageClassDos = "-dos" %}
+                        {% render 'smart-meta-card-by-blog', myArticle: articleTwo, myType: type, imageClass: imageClassDos %}
+                    </article>
+        
+                    <article class="tw-w-full tw-snap-always tw-snap-center tw-flex-none tw-max-w-[259px] lg:tw-max-w-[320px]">
+                        {% assign articleThree = articles['descanso/cuales-son-las-consecuencias-de-no-dormir-bien'] %}
+                        {% assign imageClassTres = "-tres" %}
+                        {% render 'smart-meta-card-by-blog', myArticle: articleThree, myType: type, imageClass: imageClassTres %}
+                    </article>   
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

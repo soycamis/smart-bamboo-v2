@@ -1,0 +1,44 @@
+{% assign product = SelectedProduct %}
+{% assign idProduct = product.title | remove: " " | remove: "&" | replace: 'á', 'a' | replace: 'é', 'e' | replace: 'í', 'i' | replace: 'ó', 'o' | replace: 'ú', 'u' | replace: 'ñ', 'n' | remove: "100%" %}
+
+<div id="{{ idProduct | append: 'CheckBox' }}" class="{% if product.type == "Adjustable Base" %} {% elsif product.type == "Waranty Adjustable Base"%}tw-hidden {% endif %} tw-border-solid tw-border-[1px] tw-border-[#f3f3f3] tw-rounded-lg hover:tw-shadow-lg tw-my-2 tw-flex tw-flex-col tw-grid tw-grid-cols-12 tw-items-start tw-justify-center tw-py-2 tw-px-4">
+  <div class="tw-col-span-1">
+    <input
+      type="checkbox"
+      style="-webkit-appearance:checkbox"
+      id="{{ idProduct | append: 'MyCheck' }}"
+      onclick="{{ idProduct | append: 'ShowVariantsMiniSellBox' }}()"
+      class="unselectedBasicosInputs tw-cursor-pointer tw-h-5 tw-w-5 tw-rounded-lg manualBinding reset{{ product.id }}"
+      data-av-value="true"
+      data-av-inputtype="check"
+      data-av-value2="false">
+  </div>
+  <div class="tw-col-span-2">
+    <p class="tw-px-1">
+      {{ product | image_url: width: 65 | image_tag }}</p>
+  </div>
+  <div class="tw-col-span-9">
+    <label for="checked-checkbox" class="tw-ml-2 tw-flex tw-flex-col tw-grid tw-grid-cols-12 tw-gap-x-1 tw-items-center tw-justify-center">
+      <div class="tw-col-span-12 tw-font-lora tw-text-[#434f5a] tw-text-[23px] lg:tw-text-[18px] tw-font-bold tw-tracking-tight">
+        {% if product.title == 'Garantía extendida Smart Base' %}
+          {{ product.title | remove: 'Smart Base' }}
+        {% else %}
+          {{ product.title }}
+        {% endif %}
+      </div>
+      {% comment %} PRECIO SMART BASE {% endcomment %}
+      {% comment %}<div class="tw-col-span-7 tw-flex tw-flex-row">
+      <div class="tw-font-poppins tw-text-base lg:tw-text-xl tw-font-semibold tw-pl-3">{{ product.price | money_with_currency | remove: "MXN" }}</div>
+      <div class="tw-text-sm tw-text-[#A5A5A5] tw-font-normal tw-ml-8">Desc: 10% OFF</div>
+      </div>{% endcomment %}
+
+      <div class="tw-col-span-12">
+        {% if product.type == "mattress accessories" or product.type == "Adjustable Base" or product.type == "Waranty Adjustable Base" %}
+          {% assign ProductName = product %}
+          {% render 'smart-meta-bundle-magic-input-sellbox', ProductName: ProductName -%}
+        {% endif %}
+      </div>
+
+    </label>
+  </div>
+</div>

@@ -1,0 +1,167 @@
+{
+    "sections": {
+      "hero": {
+        "type": "countdown-hot-sale",
+        "settings": {
+        }
+      },
+      "generator": {
+        "type": "smart-grid-generator-uxui",
+        "settings": {
+        }
+      },
+      "banner-mercado-pago": {
+        "type": "smart-meta-banner-mercado-pago",
+        "settings": {
+        }
+      },
+      "1716239157a1d5f318": {
+        "type": "apps",
+        "blocks": {
+          "tolstoy_shoppable_video_ugc_carousel_block_tkqQ9R": {
+            "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+            "settings": {
+              "publishId": "dkgb0ts32ol0t"
+            }
+          }
+        },
+        "block_order": [
+          "tolstoy_shoppable_video_ugc_carousel_block_tkqQ9R"
+        ],
+        "settings": {
+          "include_margins": true
+        }
+      },
+      "product-grid-sabanas": {
+        "type": "smart-product-grid-carrousel-colors-uxui",
+        "settings": {
+          "button_text": "",
+          "button_link": "",
+          "collection_title": "Sábanas"
+        }
+      },
+      "product-grid-colchas-edredones": {
+        "type": "smart-product-grid-carrousel-colors-uxui",
+        "settings": {
+          "button_text": "",
+          "button_link": "",
+          "collection_title": "Colchas & Edredones"
+        }
+      },
+      "product-grid-ropa-de-cama": {
+        "type": "smart-product-grid-carrousel-colors-uxui",
+        "settings": {
+          "button_text": "",
+          "button_link": "",
+          "collection_title": "Ropa de cama"
+        }
+      },
+      "paypal-banner": {
+        "type": "smart-meta-product-banner-uxui",
+        "settings": {
+          "img_desktop": "shopify:\/\/shop_images\/cintillo-paypal-desktop.webp",
+          "alt_desktop": "Pay Pal Smart Bamboo",
+          "img_mobile": "shopify:\/\/shop_images\/cintillo-paypal-mobile.webp",
+          "alt_mobile": "Pay Pal Smart Bamboo"
+        }
+      },
+      "atrato-banner": {
+        "type": "smart-meta-product-banner-uxui",
+        "settings": {
+          "img_desktop": "shopify:\/\/shop_images\/Atrato_-_desktop.webp",
+          "alt_desktop": "Pay Pal Hot Sale",
+          "img_mobile": "shopify:\/\/shop_images\/Atrato_-_mobile.webp",
+          "alt_mobile": "Pay Pal Hot Sale"
+        }
+      },
+      "product-grid-almohadas": {
+        "type": "smart-product-grid-carrousel-colors-uxui",
+        "settings": {
+          "button_text": "",
+          "button_link": "",
+          "collection_title": "Almohadas"
+        }
+      },
+      "product-grid-lo-nuevo": {
+        "type": "smart-product-grid-carrousel-colors-uxui",
+        "settings": {
+          "button_text": "",
+          "button_link": "",
+          "collection_title": "Lo nuevo"
+        }
+      },
+      "product-grid-colchones": {
+        "type": "smart-product-grid-offers-uxui",
+        "blocks": {
+          "product_fc94RD": {
+            "type": "product",
+            "settings": {
+              "collection_product": "colchon-smart-firm"
+            }
+          },
+          "product_rqctUB": {
+            "type": "product",
+            "settings": {
+              "collection_product": "colchon-smart-balance"
+            }
+          },
+          "product_B9Q6cP": {
+            "type": "product",
+            "settings": {
+              "collection_product": "colchon-smart-hybrid"
+            }
+          }
+        },
+        "block_order": [
+          "product_fc94RD",
+          "product_rqctUB",
+          "product_B9Q6cP"
+        ],
+        "settings": {
+          "button_text": "",
+          "button_link": "",
+          "collection_title": "Colchones Smart"
+        }
+      },
+      "blog-grid-hotsale": {
+        "type": "home-meta-smart-blog-hot-sale",
+        "settings": {
+        }
+      },
+      "blog-grid": {
+        "type": "smart-meta-select-blogs-uxui",
+        "disabled": true,
+        "settings": {
+        }
+      },
+      "help": {
+        "type": "smart-meta-product-page-help-uxui",
+        "settings": {
+        }
+      },
+      "faqs": {
+        "type": "faq-smart-offers-uxui",
+        "settings": {
+          "faq_title": "Preguntas Frecuentes"
+        }
+      }
+    },
+    "order": [
+      "hero",
+      "generator",
+      "banner-mercado-pago",
+      "1716239157a1d5f318",
+      "product-grid-sabanas",
+      "product-grid-colchas-edredones",
+      "product-grid-ropa-de-cama",
+      "paypal-banner",
+      "atrato-banner",
+      "product-grid-almohadas",
+      "product-grid-lo-nuevo",
+      "product-grid-colchones",
+      "blog-grid-hotsale",
+      "blog-grid",
+      "help",
+      "faqs"
+    ]
+  }

@@ -1,0 +1,129 @@
+{% assign collectionAll = collection %}
+{% assign tagName = tagType %}
+{% assign hiddenTag = hidden %}
+
+{% for product in collectionAll %}
+  {% assign searchTag = tagName %}
+  {% if product.tags contains searchTag %}
+    {% assign tagClassName = searchTag | remove: "-" | append: "Tag" %}
+    {% assign tagQuerySelector = tagClassName %}
+ 
+    <scroll-page class="tw-snap-always tw-snap-center tw-flex-none tw-px-0 tw-w-[280px] lg:tw-w-[300px] tw-mb-10 {{ tagQuerySelector }} {{ hiddenTag }}">
+      <div class=" ">
+        <a class="tw-w-full xl:tw-w-full tw-h-fit" href="{{ product.url }}">
+          <div class="tw-flex tw-flex-col tw-my-3 md:tw-my-8 tw-py-0 md:tw-py-0 tw-h-full md:tw-h-max tw-w-full tw-bg-white tw-rounded-xl">
+            <div class="tw-border-0 tw-block tw-relative tw-h-full tw-w-full">
+              <img
+              height="auto"
+                width="auto"
+                class="tw-block tw-w-full tw-h-full tw-mx-auto tw-rounded-t-lg hover:tw-shadow hover:tw-drop-shadow-xl hover:tw-shadow-slate-200"
+                src="{{ product.featured_image.src | image_url: width: '500' }}"
+                onmouseover="this.src='{{ product.images[1] | image_url: width: '500' }}'"
+                onmouseout="this.src='{{ product.featured_image.src | image_url: width: '500' }}'"
+                alt="{{ product.featured_image.alt }}"
+                title="{{ product.featured_image.alt }}">
+
+              {% comment %} BARRA CON DESCUENTOS {% endcomment %}
+              {% assign titleProduct = product.handle %}
+              <div class="tw-w-full tw-font-poppins tw-text-[10px] md:tw-text-base tw-font-semibold tw-text-white tw-text-center tw-tracking-tight tw-bg-[#C01D2B] tw-p-2">
+                {%- render 'buen-fin-smart-snippet-discount-card', nameProduct: titleProduct -%}
+              </div>
+
+              {% comment %} {% if product.compare_at_price > product.price %}
+                <div class="tw-absolute tw-top-[5px] tw-left-[0px] tw-w-[115px] md:tw-w-[160px]">{% comment %} Imagen pin de descuento {% endcomment %}
+                  {% comment %} <img class="tw-absolute" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/oferta-mamas-pleca.webp?v=1683057331"> {% endcomment %}
+                  {% comment %} <div class="tw-absolute tw-top-[1px] sm:tw-top-[4px] tw-right-[41px] md:tw-right-[65px] lg:tw-right-[54px]">
+                  <p class="tw-text-white tw-text-[20px] md:tw-text-[32px] tw-font-semibold tw-font-poppins tw-leading-none tw-bg-[#c01d2b] tw-rounded tw-px-1 tw-py-1">
+                  {% assign discount = product.price | times: 100.00 | divided_by: product.compare_at_price | round %}
+                  {{ 100 | minus: discount }}<span class="tw-text-white tw-text-[14px] md:tw-text-16px] xl:tw-text-[19px] tw-font-semibold tw-tw-leading-none">%OFF</span>
+                  </p>
+                  </div> {% endcomment %}
+                </div>
+              {% endif %} {% endcomment %}
+
+              {% comment %} Noches de prueba {% endcomment %}
+              <div class="tw-w-full tw-absolute tw-top-[4px] lg:tw-top-[7px] tw-right-[2px] lg:tw-right-[5px] tw-flex tw-items-end tw-justify-center tw-flex-cols tw-grid tw-grid-cols-12">
+                <div class="tw-col-span-8"></div>
+                {% if product.tags contains 'benefit-30' %}
+                  <img
+                    class="tw-col-span-4 tw-w-full"
+                    height="auto"
+                    width="auto"
+                    loading="lazy"
+                    src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Asset-180-noches-de-prueba.webp?v=1684955638">
+                {% elsif product.tags contains 'benefit-120' %}
+                  <img
+                    class="tw-col-span-4 tw-w-full"
+                    height="auto"
+                    width="auto"
+                    loading="lazy"
+                    src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Asset-365-noches-de-prueba.webp?v=1684955638">
+                {% else %}
+                  <div class="tw-col-span-4 tw-w-full"></div>
+                {% endif %}
+              </div>
+
+            </div>
+
+            <div class="tw-w-full tw-flex tw-flex-col tw-justify-start tw-items-start">
+              <h3 class="tw-text-[15px] tw-text-[#000000] tw-leading-tight tw-font-semibold tw-pt-4 tw-px-4 md:tw-px-6">
+                {{ product.title }}
+              </h3>
+
+              <div class="tw-px-5">
+                {% if product.price_min == product.price_max %}
+                  <p class="tw-mt-2">Desde: <span class="tw-line-through tw-text-[16px] tw-text-gray-500">{{ product.compare_at_price_max | money }}</span></p>
+                  <p class="tw-mt-0"><span class="tw-font-semibold">{{ product.price_min | money  }}*</span></p> 
+                {% else %}
+                  <p class="tw-mt-2">Desde: <span class="tw-line-through tw-text-[16px] tw-text-gray-500">{{ product.compare_at_price_max | money }}</span></p>
+                 <p class="tw-mt-0"><span class="tw-font-semibold">{{ product.price_min | money  }}</span> - <span class="tw-font-semibold">{{ product.price_max | money  }}*</span></p>
+                {% endif %}
+              </div>
+
+              {% comment %} Price {% endcomment %}
+              {% comment %} <div class="tw-w-full tw-flex tw-flex-row tw-justify-end tw-items-end tw-px-6 tw-pt-4">
+                {% if product.compare_at_price > product.price %}
+                  <p class="tw-font-poppins tw-font-normal tw-text-[12px] lg:tw-text-[14px] tw-text-[#5F6368]  tw-font-light tw-leading-none tw-pr-2">
+                    Desde
+                  </p>
+                  <p class="tw-font-semibold tw-leading-none">
+                    <s class="tw-font-poppins tw-font-normal tw-text-[15px] tw-text-[#5F6368] tw-pr-4 js-product-{{ forloop.index0 }}-compare">{{ product.compare_at_price | money }}</s>
+                  </p>
+                  <p class="tw-font-poppins tw-text-[18px] lg:tw-text-[20px] tw-font-semibold tw-leading-none tw-text-[#000000]">
+                    <span class="js-product-{{ forloop.index0 }}-price">{{ product.price | money }}</span>
+                  </p>
+                {% elsif product.price == 0.00 %}
+                  <p class="tw-w-full tw-text-[11px] md:tw-text-[11px] tw-text-left ">Configura tu set con Realidad Aumentada</p>
+                {% else %}
+                  <p class="tw-font-poppins">
+                    <span class="tw-font-semibold tw-text-[20px] tw-text-[#000000]] js-product-{{ forloop.index0 }}-price">{{ product.price | money }}</span>
+                  </p>
+                {% endif %}
+              </div> {% endcomment %}
+
+              <div class="tw-w-full tw-px-2 tw-mb-5 tw-mt-5">
+                <button class="tw-w-full tw-font-semibold tw-bg-[#c01d2b] hover:tw-bg-transparent tw-text-[15px] tw-text-white hover:tw-text-[#c01d2b] tw-border-solid tw-border-2 tw-border-[#c01d2b] hover:tw-border-[#c01d2b] tw-cursor-pointer tw-rounded-[8px] tw-py-1.5">
+                  {% if product.title == "Personaliza Tu Cama" %}
+                    Iniciar
+                  {% else %}
+                    Ver producto
+                  {% endif %}
+                </button>
+              </div>
+
+              {% comment %} Tags {% endcomment %}
+              <div class="tw-min-h-[70px] tw-flex tw-flex-wrap tw-gap-3 tw-px-2">
+                {% assign myProduct = product %}
+                {%- render 'smart-meta-filter-by-tag', ProductObject: myProduct -%}
+              </div>
+
+            </div>
+          </div>
+        </a>
+      </div>
+    </scroll-page>
+
+{% else %}
+  {% endif %}
+
+{% endfor %}

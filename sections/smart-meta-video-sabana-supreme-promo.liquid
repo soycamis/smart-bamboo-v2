@@ -1,0 +1,79 @@
+
+{% capture video_demo %}
+    <video 
+        loading="lazy"
+        width="auto" 
+        height="auto" 
+        poster="" 
+        class="lozad tw-block tw-w-[100%] lg:tw-w-[70%]" 
+        autoplay loop muted playsinline>
+    <source data-src="https://cdn.shopify.com/videos/c/o/v/45fc7c2e6f58463a8992599be061d296.mp4">
+    </video> 
+{% endcapture %}
+
+{% capture titulo %}
+    <h2 class="tw-font-poppins tw-text-center tw-text-[24px] md:tw-text-[32px] tw-text-[#000000] tw-font-semibold tw-leading-tight tw-px-8 lg:tw-px-0 lg:tw-pb-6"> 
+        {{ section.settings.section_title }}<br>{{ section.settings.section_subtitle }}
+    </h2>
+{% endcapture %}
+
+{% capture parrafo %}
+    <p class="tw-font-poppins tw-text-left tw-text-[16px] lg:tw-text-[18px] tw-text-[#000000] tw-font-normal"> 
+        {{ section.settings.section_parrafo }}
+    </p>
+{% endcapture %}
+
+    <section class="tw-w-full tw-bg-[#f8f8f8] tw-shadow-xl">
+        <div class="tw-flex tw-justify-center tw-items-center">
+            <div class="tw-w-full tw-max-w-[1200px] tw-flex tw-flex-col tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 lg:tw-py-[100px]">
+
+                <div class="tw-flex tw-flex-col-reverse lg:tw-flex-col tw-items-center tw-justify-center">
+                    <div class="tw-flex tw-items-center tw-justify-center tw-p-8 lg:tw-p-0">{{ video_demo }}</div>
+                    <div class="tw-block lg:tw-hidden tw-pt-10 tw-text-center">{{ titulo }}</div>
+                </div>
+                <div class="tw-flex tw-flex-col tw-items-center tw-justify-center tw-px-9 tw-pb-9 lg:tw-pb-0 lg:tw-pt-5">
+                    <div class="tw-flex tw-flex-row tw-items-center tw-justify-center tw-px-6 lg:tw-px-4 tw-py-3 tw-mb-6 tw-text-[29px] tw-text-left tw-font-bold tw-bg-[#292929] tw-text-white tw-rounded-xl">
+                        <span class="tw-hidden lg:tw-block tw-text-[16px] lg:tw-text-[20px] tw-font-medium tw-mr-3">OFERTA ESPECIAL:</span>  25% + 40% OFF
+                    </div> 
+                    <div class="tw-hidden lg:tw-block">{{ titulo }}</div>
+                    <div>{{ parrafo }}</div>
+                    <p class="tw-block lg:tw-hidden tw-pt-6 tw-text-black tw-text-[29px] tw-text-center tw-font-bold">
+                        <span class="tw-text-[16px] lg:tw-text-[20px] tw-font-medium">desde</span> $639.00 
+                    </p> 
+                    <div class="tw-flex tw-justify-center tw-itens-center">
+                        <a href="https://www.smartbamboo.mx/products/juego-de-sabanas-supreme">
+                            <button class="tw-block tw-font-poppins tw-text-[20px] tw-font-semibold tw-text-white hover:tw-text-[#292929] tw-my-3 md:tw-my-4 tw-bg-[#292929] hover:tw-bg-transparent tw-px-10 tw-py-2 md:tw-py-5 tw-rounded tw-w-full tw-border-2 tw-border-solid tw-border-[#292929] tw-max-w-[800px] lg:tw-mt-16">
+                                LO QUIERO
+                            </button>
+                        </a> 
+                    </div> 
+                </div> 
+                <p class="tw-hidden lg:tw-block tw-pt-6 tw-text-black tw-text-[24px] lg:tw-text-[26px] tw-text-center tw-font-bold">
+                    <span class="tw-text-[16px] lg:tw-text-[20px] tw-font-medium">desde</span> $639.00 
+                </p> 
+            </div>  
+        </div>   
+    </section>
+
+{% schema %}
+{
+  "name": "Product Meta Video",
+  "settings": [
+    {
+        "type": "text",
+        "id": "section_title",
+        "label": "Title"
+      },
+      {
+          "type": "text",
+          "id": "section_subtitle",
+          "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "section_parrafo",
+        "label": "Parrafo"
+    }
+  ]
+}
+{% endschema %}
