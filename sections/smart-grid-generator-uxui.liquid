@@ -441,12 +441,29 @@
 createSlide("losMasVendidosSlider", "tw-snap-center.tw-block", "auto", "yes") //scrolleableWrapperID = "sbscrolleable", childElementClass = "sbslide", thumbs = "auto", prevNext = "yes", width = 320, gap = "25
 createSlide("tagsslider", "tw-items-center", "no", "yes", 160)
 
+
+
 /* let tagslist = document.getElementById("tagsslider").getElementsByClassName("tw-items-center");
 if (tagslist && tagslist.length > 0) {
     for(h = 0; h < tagslist.length; h++){
         tagslist[h].addEventListener("click", function(){ createSlide("losMasVendidosSlider", "tw-snap-center.tw-block", "auto", "yes") })
     }
 }*/
+
+    // Get all elements with class 'thumbcontainer'
+    var thumbContainers = document.querySelectorAll('#losMasVendidosSlider_thumbContainer');
+    // Loop through each .thumbcontainer element
+    thumbContainers.forEach(function(container) {
+        var buttons = container.querySelectorAll('button');
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                buttons.forEach(function(btn) {
+                    btn.classList.remove('tw-bg-[#292929]');
+                });
+                this.classList.add('tw-bg-[#292929]');
+            });
+        });
+    });
 
 </script>
 

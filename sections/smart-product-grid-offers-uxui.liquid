@@ -174,7 +174,7 @@
         </div>
 
         <div class="tw-block">
-            <div class="tw-w-full tw-flex tw-justify-center tw-items-center tw-mb-16" id="{{ virtualID }}_thumbContainer">
+            <div class="tw-w-full tw-flex tw-justify-center tw-items-center tw-mb-16 thumbcontainer" id="{{ virtualID }}_thumbContainer">
             </div>
         </div>
     
@@ -319,6 +319,24 @@
   <link rel="stylesheet" href="{{ 'promociones-new-year.css' | asset_url }}" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="{{ 'promociones.css' | asset_url }}" media="print" onload="this.media='all'">
   <script src="{{ 'smart-collection-dist.js' | asset_url }}" defer></script>
+
   <script>
     createSlide("{{ virtualID }}", "tw-h-fit", "auto", "no")
+
+
+    // Get all elements with class 'thumbcontainer'
+    var thumbContainers = document.querySelectorAll('#{{ virtualID }}_thumbContainer');
+    // Loop through each .thumbcontainer element
+    thumbContainers.forEach(function(container) {
+        var buttons = container.querySelectorAll('button');
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                buttons.forEach(function(btn) {
+                    btn.classList.remove('tw-bg-[#292929]');
+                });
+                this.classList.add('tw-bg-[#292929]');
+            });
+        });
+    });
   </script>
+  

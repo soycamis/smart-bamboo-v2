@@ -22,7 +22,70 @@
     },
     "grid-most-seller": {
       "type": "smart-home-uxui-most-seller",
+      "blocks": {
+        "product_nQfqD6": {
+          "type": "product",
+          "settings": {
+            "collection_product": "colchon-smart-firm"
+          }
+        },
+        "product_qp4zzg": {
+          "type": "product",
+          "settings": {
+            "collection_product": "colcha-stripes-azul-y-blanco"
+          }
+        },
+        "product_cE9wfV": {
+          "type": "product",
+          "settings": {
+            "collection_product": "juego-de-sabanas-100-bamboo-coral"
+          }
+        },
+        "product_rYbMAh": {
+          "type": "product",
+          "settings": {
+            "collection_product": "colcha-bliss-gris-y-blanco"
+          }
+        },
+        "product_BHy6db": {
+          "type": "product",
+          "settings": {
+            "collection_product": "almohada-blend"
+          }
+        },
+        "product_yCBjXC": {
+          "type": "product",
+          "settings": {
+            "collection_product": "juego-de-cama-bamboo-azul-cielo"
+          }
+        },
+        "product_DPANDk": {
+          "type": "product",
+          "settings": {
+            "collection_product": "almohada-cervical-gel"
+          }
+        },
+        "product_x49cji": {
+          "type": "product",
+          "settings": {
+            "collection_product": "pijama-larga-negro"
+          }
+        }
+      },
+      "block_order": [
+        "product_nQfqD6",
+        "product_qp4zzg",
+        "product_cE9wfV",
+        "product_rYbMAh",
+        "product_BHy6db",
+        "product_yCBjXC",
+        "product_DPANDk",
+        "product_x49cji"
+      ],
       "settings": {
+        "button_text": "",
+        "button_link": "",
+        "collection_title": "Los más vendidos"
       }
     },
     "backlinks": {
@@ -62,6 +125,122 @@
     },
     "faqs": {
       "type": "meta-faq-about-schema",
+      "blocks": {
+        "faq_section_6CEPCB": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Qué es Smart Bamboo?",
+            "accordianInfo": "<p>Smart Bamboo tiene para ti los mejores productos del descanso en México naturales de bambú. ¡Para el mejor regalo esta temporada te damos hasta 40% de descuento! Entra ya. Envío gratis. Garantía de satisfacción. Repele ácaros y bacterias. Atención al cliente 24\/7.<\/p><p> <\/p><p>En Smart Bamboo encuentras todo lo que necesitas para el descanso: <a href=\"https:\/\/www.smartbamboo.mx\/collections\/bases-electricas\" title=\"https:\/\/www.smartbamboo.mx\/collections\/bases-electricas\">Bases para cama<\/a> & <a href=\"https:\/\/www.smartbamboo.mx\/collections\/colchones-smart\" title=\"https:\/\/www.smartbamboo.mx\/collections\/colchones-smart\">Colchones<\/a>, <a href=\"https:\/\/www.smartbamboo.mx\/collections\/almohadas\" title=\"https:\/\/www.smartbamboo.mx\/collections\/almohadas\">Almohadas<\/a>, Ropa de Cama, Toallas & Accesorios y <a href=\"https:\/\/www.smartbamboo.mx\/collections\/sillones-de-masajes\" title=\"https:\/\/www.smartbamboo.mx\/collections\/sillones-de-masajes\">Sillones para masajes<\/a>.<\/p><p> <\/p><p>¡Tenemos los mejores productos!<\/p>"
+          }
+        },
+        "faq_section_jaLVaV": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Por qué comprar en Smart Bamboo?",
+            "accordianInfo": "<p>Pierde el temor a comprar en línea, ¡Smart Bambo es confiable! Todas tus compras tienen garantía de Pago Seguro con PayPal.<\/p><p> <\/p><p>Selecciona tus productos favoritos y nosotros nos encargamos de enviarlo hasta las puertas de tu hogar.<\/p><p> <\/p><p>Todos los productos tienen envío gratis. Si eres de los que ama el descanso y las compras en línea, llegaste al sitio indicado porque contamos con uno de los catálogos más amplios del mercado: <a href=\"https:\/\/www.smartbamboo.mx\/products\/colchon-smart-firm\" title=\"https:\/\/www.smartbamboo.mx\/products\/colchon-smart-firm\">Colchón firme Smart Firm<\/a>, <a href=\"https:\/\/www.smartbamboo.mx\/products\/colchon-smart-balance\" title=\"https:\/\/www.smartbamboo.mx\/products\/colchon-smart-balance\">Colchón suave Smart Balance<\/a>, <a href=\"https:\/\/www.smartbamboo.mx\/collections\/bases-electricas\" title=\"https:\/\/www.smartbamboo.mx\/collections\/bases-electricas\">Bases para cama Smart Base<\/a>, Almohada Blend, Almohada Lavanda, Almohada Cervical Lavanda, Almohada Cervical Gel, <a href=\"https:\/\/www.smartbamboo.mx\/products\/almohada-body\" title=\"https:\/\/www.smartbamboo.mx\/products\/almohada-body\">Almohada ideal para embarazadas Body<\/a>, Almohada Cush, Juego de Sábanas 100% Bamboo, Juego de Sábanas Blend, Fundas de Seda Mulberry, <a href=\"https:\/\/www.smartbamboo.mx\/collections\/colchas\" title=\"https:\/\/www.smartbamboo.mx\/collections\/colchas\">Colchas<\/a>, Edredones Bamboo Blend, Edredón de Seda Mulberry, Manta Antiestres, Bed in a Bag, Duvet 100% Bamboo, Duvet Bamboo Blend, Set de Toallas Bamboo, Bata de Bamboo, Colchoneta Smart Bamboo, Protector de Colchón, Sillón Imperium Voyage, Sillón Imperium Core.<\/p>"
+          }
+        },
+        "faq_section_9miDcj": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "Pago hasta en 24 meses sin intereses con o sin Tarjeta de Crédito",
+            "accordianInfo": "<p>Con Pay Pal a partir de $3,000 puedes diferir tu compra a 3, 6, 12 ,18 y 24 meses sin intereses pagando con tarjeta de crédito.<\/p><p><strong> <\/strong><\/p><p>¡Compra hoy y paga a meses sin tarjeta de crédito con Bamboo Pay! Compra hoy y paga hasta en 24 mensualidades tus compras de hasta $200,000 pesos. Tú solo eliges el plan de pagos que más te convenga. Leer más: <a href=\"https:\/\/www.smartbamboo.mx\/pages\/bamboo-pay\" target=\"_blank\" title=\"https:\/\/www.smartbamboo.mx\/pages\/bamboo-pay\">https:\/\/www.smartbamboo.mx\/pages\/bamboo-pay<\/a><\/p>"
+          }
+        },
+        "faq_section_qYMmmF": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "Los Beneficios del Bambú",
+            "accordianInfo": "<p>· La pectina, una sustancia natural del bambú, es la que aporta su increíble suavidad.<\/p><p><strong> <\/strong><\/p><p>· El bambú posee un bio-agente antibacteriano y antifúngico llamado kun que protege a la planta de plagas y hongos, dándole nuestros productos propiedades que ayudan a eliminar bacterias que causan malos olores, alergias y microorganismos que irritan la piel.<\/p><p><strong> <\/strong><\/p><p>· La forma en la que se tejen las fibras genera un efecto aislante que ayuda a mantener tu cuerpo hasta dos grados más fresco en climas cálidos y notablemente más abrigado durante el invierno.<\/p><p><strong> <\/strong><\/p><p>· El bambú es hasta cuatro veces más absorbente que el algodón ya que el tejido crea pequeños espacios que le dan una mejor ventilación y repelen la humedad.<\/p><p><strong> <\/strong><\/p><p>· Las fibras de bambú son transpirables, por lo que se mantienen secas alejando a los ácaros, pues estos se sienten atraídos por los ambientes húmedos.<\/p><p><strong> <\/strong><\/p><p>· Los tejidos hechos con bambú son 100% biodegradables y reciclables, ya que no tienen químicos dañinos que contaminan el ambiente.<\/p><p><strong> <\/strong><\/p><p>· El bambú crece muy rápido lo cuál minimiza el impacto en el mundo.<\/p>"
+          }
+        },
+        "faq_section_PDbjqn": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cuáles son los mejores colchones en México?",
+            "accordianInfo": "<p>Cuando se trata de dormir bien siempre es importante buscar los <a href=\"https:\/\/www.smartbamboo.mx\/blogs\/descanso\/cuales-son-los-mejores-colchones-en-mexico\" title=\"https:\/\/www.smartbamboo.mx\/blogs\/descanso\/cuales-son-los-mejores-colchones-en-mexico\">mejores colchones del país<\/a>, ya que esto puede ser garantía de calidad, durabilidad y comodidad durante las horas de sueño, pero ¿cómo saber cuál es el mejor?<\/p><p><strong> <\/strong><\/p><p>En <a href=\"https:\/\/www.smartbamboo.mx\/\"><span style=\"text-decoration:underline\">Smart Bamboo<\/span><\/a> nos preocupamos porque todas las personas logren un adecuado descanso y acorde a sus necesidades, por eso preparamos una pequeña guía para que conozcas cuáles son los mejores colchones.<\/p><p><strong> <\/strong><\/p><p>Existen elementos que se encargan de determinar cuándo los colchones son de excelente calidad y tecnología, es fundamental conocerlos con la finalidad de elegir aquel que los cumpla y ofrezca un adecuado descanso. <\/p><p><strong> <\/strong><\/p><p>También influye en gran medida que los<a href=\"https:\/\/www.smartbamboo.mx\/collections\/colchones-smart\" title=\"https:\/\/www.smartbamboo.mx\/collections\/colchones-smart\"> colchones<\/a> cuenten con la capacidad de ajustarse a las necesidades personales que se tengan al dormir, así como el nivel de densidad de su estructura, su durabilidad, el tipo de materiales con los que esté fabricado e incluso sus dimensiones. <\/p><p><strong> <\/strong><\/p><p>Claramente, Smart Bamboo encabeza la lista, esto gracias a la variedad de beneficios que ofrece nuestra línea de colchones de calidad y lujo, ya que cuentan con un diseño ergonómico y están fabricados con los mejores materiales.  <\/p><p><strong> <\/strong><\/p><p>Sumado a que nuestros mejores colchones brindan un máximo descanso, confort y frescura, cumpliendo con las mejores cualidades y características para ser catalogados como los mejores.<\/p><p><strong> <\/strong><\/p><p>Además de ser los mejores colchones para el descanso, Smart Bamboo son los únicos que pasan por un tratamiento antimicrobiano de alta tecnología, evitando la proliferación de bacterias causantes de malos olores, al mismo tiempo que aporta frescura en su superficie.<\/p><p><strong> <\/strong><\/p><p>Leer más: <a href=\"https:\/\/www.smartbamboo.mx\/blogs\/descanso\/cuales-son-los-mejores-colchones-en-mexico\" title=\"https:\/\/www.smartbamboo.mx\/blogs\/descanso\/cuales-son-los-mejores-colchones-en-mexico\">https:\/\/www.smartbamboo.mx\/blogs\/descanso\/cuales-son-los-mejores-colchones-en-mexico<\/a><\/p>"
+          }
+        },
+        "faq_section_r7RyAh": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Qué es la espuma Memory Foam?",
+            "accordianInfo": "<p>Desde los 90 que la espuma memory foam comenzó a ser utilizada en la elaboración de productos de uso doméstico, principalmente enfocados para el descanso de las personas gracias a sus principales características.<\/p><p><strong> <\/strong><\/p><p>Este material es básicamente espuma, la cual también es conocida como viscoelástica, elaborada a base de poliuretano, aunque también le son agregados otros materiales para mejorar sus características, incrementar su densidad y su viscosidad.<\/p><p><strong> <\/strong><\/p><p>La viscoelasticidad es la reacción que tienen diferentes tipos de materiales, en el caso particular de la espuma memory foam, esta cuenta con un comportamiento que le permite adaptarse al cuerpo de las personas, pues cuando entra en contacto con el calor corporal, se vuelve viscosa y permite amoldarse a sus distintas curvaturas.<\/p><p><strong> <\/strong><\/p><p>Además, la viscoelasticidad también hace referencia a la elasticidad que posee la espuma memory foam, así como a su cualidad de deformarse y volver a su forma original cuando se enfría.<\/p><p><strong> <\/strong><\/p><p>Leer más: <a href=\"https:\/\/www.smartbamboo.mx\/blogs\/descanso\/espuma-memory-foam\"><span style=\"text-decoration:underline\">https:\/\/www.smartbamboo.mx\/blogs\/descanso\/espuma-memory-foam<\/span><\/a><\/p>"
+          }
+        },
+        "faq_section_yMQPYH": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "Tipos de almohadas y ¿Cómo elegir el mejor para tu descanso?",
+            "accordianInfo": "<p>Aunque no lo parezca, en el mercado existen diferentes tipos de almohadas, elaboradas con diversos materiales con la intención de cubrir las necesidades específicas de las personas al momento de dormir.<\/p><p><strong> <\/strong><\/p><p>Es fundamental contar con la almohada adecuada, pues al igual que el colchón, es parte crucial para conseguir un descanso de calidad y reparador; por esa razón, en Smart Bamboo te compartimos los diferentes tipos de almohadas que existen.<\/p><p><strong> <\/strong><\/p><p>Leer más: <a href=\"https:\/\/www.smartbamboo.mx\/blogs\/descanso\/tipos-de-almohadas\"><span style=\"text-decoration:underline\">https:\/\/www.smartbamboo.mx\/blogs\/descanso\/tipos-de-almohadas<\/span><\/a><\/p>"
+          }
+        },
+        "faq_section_hNab3t": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿A qué se refieren con las 365 noches de prueba de los colchones?",
+            "accordianInfo": "<p>Uno de los beneficios que obtendrás al adquirir un colchón Smart Bamboo es el periodo de prueba de 365 noches, que comienzan desde que llega a tu casa.<\/p><p><\/p><p>En Smart Bamboo respaldamos nuestros colchones al 100%. Además de las 365 noches de prueba, obtendrás una garantía de 12 años por defectos de fábrica.<\/p><p><\/p><p>Leer más:<a href=\"https:\/\/www.smartbamboo.mx\/pages\/noches-de-prueba\" target=\"_blank\">https:\/\/www.smartbamboo.mx\/pages\/noches-de-prueba<\/a><\/p>"
+          }
+        },
+        "faq_section_ijkYih": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cuáles son sus políticas de devolución e intercambio?",
+            "accordianInfo": "<p>El equipo Smart Bamboo está disponible para ayudarlo con intercambios, reembolsos y para ayudarlo a encontrar el producto que le brinde el ajuste perfecto para un descanso de completo rendimiento.<a href=\"https:\/\/www.smartbamboo.mx\/pages\/devoluciones\" target=\"_blank\">Ver políticas de devolución<\/a><\/p>"
+          }
+        },
+        "faq_section_rY3x9h": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Es seguro hacer una compra?",
+            "accordianInfo": "<p>Puedes hacer tu compra a través de nuestra tienda en línea, donde todos tus datos están protegidos. Contamos con diferentes métodos de pago, como PayPal, Bamboo Pay, MercadoPago y demás.<\/p><p><strong> <\/strong><\/p><p>Cuando realizas una compra, tu transacción queda avalada por la pasarela de pagos vigente en nuestro sitio y Smart Bamboo.Además contamos con nuestro sello de confianza, registrado ante la sociedad de internet.<\/p>"
+          }
+        },
+        "faq_section_ra8NUT": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Qué son las almohadas para el cuello?",
+            "accordianInfo": "<p>El dolor de espalda y de cervicales es un problema que afecta a muchas personas, una solución efectiva a estos malestares son las almohadas para cuello, ya que cuentan con un peculiar diseño que es totalmente diferente a los cojines convencionales.<\/p><p><strong> <\/strong><\/p><p>Las almohadas para cuello o cervicales tienen como objetivo otorgar el soporte adecuado a los músculos de la zona, los cuales suelen acumular gran tensión, al igual que contribuir a que la columna adopte una postura correcta.<\/p><p><strong> <\/strong><\/p><p>Leer más: <a href=\"https:\/\/www.smartbamboo.mx\/blogs\/descanso\/almohadas-para-cuello\"><span style=\"text-decoration:underline\">https:\/\/www.smartbamboo.mx\/blogs\/descanso\/almohadas-para-cuello<\/span><\/a><\/p>"
+          }
+        },
+        "faq_section_pap9WP": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cuáles son los colchones indicados para problemas de espalda y cervicales?",
+            "accordianInfo": "<p>Para determinar cuál es el mejor colchón para tu descanso y diversos malestares, es crucial decidir qué material se adapta mejor a la forma en que duermes y favorece a los problemas físicos que se padezcan.<\/p><p><strong> <\/strong><\/p><p>Aquí te dejamos algunas características a considerar al momento de seleccionar colchones para problemas de espalda y cervicales:<\/p><p><strong> <\/strong><\/p><p>Leer más: <a href=\"https:\/\/www.smartbamboo.mx\/blogs\/descanso\/colchones-para-problemas-de-espalda-y-cervicales\"><span style=\"text-decoration:underline\">https:\/\/www.smartbamboo.mx\/blogs\/descanso\/colchones-para-problemas-de-espalda-y-cervicales<\/span><\/a><\/p>"
+          }
+        },
+        "faq_section_DP9FtM": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "Nuestra MISIÓN es que duermas mejor",
+            "accordianInfo": "<p>Dormir es saludable. Dormir nos pone de buenas, nos relaja, nos hace estar más alerta.<\/p><p><strong> <\/strong><br\/>Dormir es terapéutico, sana el cuerpo y la mente.<\/p>"
+          }
+        },
+        "faq_section_NpjT9j": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "Nuestro corazón es VERDE",
+            "accordianInfo": "<p>Escogimos la fibra de bambú ya que es natural, tiene muchos beneficios tanto para la salud como el material, seguro y muy amigable con el ambiente ya que crece de forma muy rápida.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_section_6CEPCB",
+        "faq_section_jaLVaV",
+        "faq_section_9miDcj",
+        "faq_section_qYMmmF",
+        "faq_section_PDbjqn",
+        "faq_section_r7RyAh",
+        "faq_section_yMQPYH",
+        "faq_section_hNab3t",
+        "faq_section_ijkYih",
+        "faq_section_rY3x9h",
+        "faq_section_ra8NUT",
+        "faq_section_pap9WP",
+        "faq_section_DP9FtM",
+        "faq_section_NpjT9j"
+      ],
       "settings": {
         "faq_title": "FAQ"
       }
