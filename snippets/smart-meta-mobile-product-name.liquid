@@ -1,0 +1,17 @@
+<div class="tw-block lg:tw-hidden"> 
+    <h1 class="tw-font-lora tw-text-[#434f5a] tw-text-[23px] tw-font-bold tw-tracking-tight tw-mt-5" title>{{ product.title }}</h1> 
+        
+    <div class="component-descrip-stars__container">
+        <div class="yotpo bottomLine"
+            data-appkey="NdPY4Ev7Qr4BsFowXrmmV6GnmtOsFjqOBvypZdXI"
+            data-domain="{{ shop.permanent_domain | escape }}"
+            data-product-id="{{ product.id }}"
+            data-product-models="{{ product.id }}"
+            data-name="{{ product.title | escape }}"
+            data-url="{{ shop.url }}{{ product.url }}"
+            data-image-url="{{ product.featured_image | img_url: 'large' | replace: '?', '%3F' | replace: '&','%26' }}"
+            data-description={{ product.description | escape }}
+            data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"> 
+        </div>
+    </div>
+</div>    

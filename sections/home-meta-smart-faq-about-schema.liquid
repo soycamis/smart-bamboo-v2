@@ -1,0 +1,72 @@
+<section id="index-section-ten" class="tw-my-0 md:tw-my-5 tw-px-5 md:tw-px-10 tw-py-0 md:tw-py-4 lg:tw-py-8 tw-flex tw-justify-center tw-items-center">
+    <div class="tw-max-w-[1300px] tw-w-full tw-flex tw-flex-col tw-justify-center tw-items-center tw-py-10 md:tw-py-0">
+        <h3 class="tw-font-lora tw-w-full tw-text-center tw-text-2xl lg:tw-text-3xl tw-font-semibold tw-text-[#434f5a] tw-mb-5">
+            Conoce más acerca de Smart Bamboo
+        </h3>
+        <button onclick="aboutContainerHome()" style="display:block;" id="verMasAbout" class="tw-w-2/3 tw-max-w-[300px] tw-bg-transparent hover:tw-bg-black tw-rounded tw-border tw-border-[2px] tw-border-solid tw-border-[#434f5a] tw-font-poppins tw-text-base tw-font-medium tw-text-[#434f5a] hover:tw-text-white tw-w-full tw-text-center tw-py-1.5 tw-justify-center tw-items-center tw-mb-8 tw-mt-8">
+            Ver más
+        </button>
+        <div id="contentAbout" style="display:none;" class="tw-w-full">
+            <h3 class="tw-font-poppins tw-text-gris tw-text-base md:tw-text-base tw-font-normal tw-text-center tw-my-5 tw-w-full md:tw-w-2/3 tw-block tw-mx-auto">
+                Descubre el poder del buen descanso. <br> <b>¡Bienvenido a Smart Bamboo!</b> 
+            </h3>
+  
+            {% render 'home-faqs-about', title: section.settings.faq_title, background: '#FFFFFF' %}
+  
+            <div class="tw-flex tw-justify-center tw-items-center">
+                <button onclick="dismountAboutContainer()" style="display:none;"  id="verMenosAbout" class="tw-w-2/3 tw-max-w-[300px] tw-bg-transparent hover:tw-bg-black tw-rounded tw-border tw-border-[2px] tw-border-solid tw-border-[#434f5a] tw-font-poppins tw-text-base tw-font-medium tw-text-[#434f5a] hover:tw-text-white tw-w-full tw-text-center tw-py-1.5 tw-justify-center tw-items-center tw-mb-8 tw-mt-8">
+                    Ver menos
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+  
+  {% comment %} <script src="{{ 'smart-home.min.js' | asset_url }}" defer></script> {% endcomment %}
+  
+<script>
+    function aboutContainerHome() {
+        document.getElementById('contentAbout').style.display = 'block';
+        document.getElementById('verMenosAbout').style.display = 'block';
+        document.getElementById('verMasAbout').style.display = 'none'; 
+      }
+    
+      function dismountAboutContainer() {
+        document.getElementById('contentAbout').style.display = 'none';
+        document.getElementById('verMenosAbout').style.display = 'none';
+        document.getElementById('verMasAbout').style.display = 'block'; 
+      }
+</script>
+  
+  
+{% schema %}
+  {
+    "name": "FAQ Section",
+    "settings": [
+      {
+        "id": "faq_title",
+        "type": "text",
+        "label": "Heading",
+        "default": "FAQ"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "faqSection",
+        "name": "Question",
+        "settings": [
+          {
+            "id": "accordianTitle",
+            "type": "text",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "accordianInfo",
+            "label": "Answer"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

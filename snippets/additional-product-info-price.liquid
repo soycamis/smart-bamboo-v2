@@ -1,0 +1,45 @@
+<additional-product-info-price data-product="">
+    <p class="tw-px-1 tw-flex">
+      <strike
+        class="tw-font-light tw-text-base md:tw-text-normal tw-text-gray-500 tw-line-through tw-mr-1 lg:tw-mr-4"
+        compare
+      >
+        {{- product.selected_or_first_available_variant.compare_at_price | money -}}
+      </strike>
+      <span class="tw-font-semibold tw-text-base tw-text-black" price>
+        {{- product.selected_or_first_available_variant.price | money -}}
+      </span>
+    </p>
+  </additional-product-info-price>
+  
+  <script>
+    class AdditionalInfoPrice extends HTMLElement {
+      constructor() {
+        super();
+        this.compare = this.querySelector('[compare]');
+        this.price = this.querySelector('[price]');
+      }
+  
+      renderInfo = () => {
+        const data = JSON.parse(this.dataset.product);
+        const swatchColor = data.options[0];
+        if (data.available) {
+          this.price.textContent = Shopify.formatMoney(data.price * 1);
+          if (data.hasOwnProperty('compare_at_price')) {
+            if (data.compare_at_price !== data.price) {
+              this.compare.textContent = Shopify.formatMoney(data.compare_at_price * 1);
+              this.compare.style.display = 'block';
+            } else {
+              this.compare.style.display = 'none';
+            }
+          }
+        }
+      };
+  
+      update = () => {
+        this.renderInfo();
+      };
+    }
+  
+    customElements.define('additional-product-info-price', AdditionalInfoPrice);
+  </script>

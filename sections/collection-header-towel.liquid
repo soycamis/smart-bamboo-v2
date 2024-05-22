@@ -1,0 +1,127 @@
+
+{% assign img_desktop = section.settings.img_desktop | image_url %}
+{% assign alt = section.settings.banner_title %}
+
+<section class="tw-w-full tw-flex tw-align-center tw-justify-center tw-px-5 md:tw-px-14">
+    <div class="tw-w-full tw-max-w-[1000px] tw-flex tw-grid tw-grid-cols-1 xl:tw-grid-cols-1">
+        <div class="tw-flex tw-flex-col tw-justify-start tw-py-14">
+            <h2 class=" tw-font-poppins tw-text-[#434F5A] tw-tracking-tight tw-text-center tw-text-2xl md:tw-text-4xl tw-font-semibold tw-mx-auto">
+                {{ section.settings.section_title_one }}<br>{{ section.settings.section_title_two }}
+            </h2>
+            <p class=" tw-font-poppins tw-font-medium tw-text-lg lg:tw-text-xl tw-text-[#434f5a] tw-text-center tw-pt-8 xl:tw-pt-8 tw-px-8 xl:tw-px-0">
+                {{ section.settings.section_paragraph }}
+            </p>
+          </div>
+          {% comment %} <div class="tw-flex tw-justify-center tw-items-end tw-content-end">
+            <img 
+                loading="lazy"
+                class="lozad tw-w-full xl:tw-relative xl:tw-top-[50px]"
+                alt="{{ alt }}" 
+                src="{{ img_desktop }}"
+            >
+          </div> {% endcomment %}
+    </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Hero Content",
+  "settings": [
+    {
+        "type": "text",
+        "id": "section_title_one",
+        "label": "Escribir Título Banner (linea 1)"
+      },
+      {
+        "type": "text",
+        "id": "section_title_two",
+        "label": "Escribir Título Banner (linea 2)"
+      },
+      {
+        "type": "text",
+        "id": "section_paragraph",
+        "label": "Escribir Párrafo Banner"
+    },
+    {
+        "type": "image_picker",
+        "id": "img_desktop",
+        "label": "Seleccionar imagen flotante"
+      }
+  ]
+}
+{% endschema %}
+
+
+{% comment %} <div class="collection-header">
+  <div class="collection-header__container">
+
+    <div class="collection-header__hero collection-header__hero--towel">
+      <div class="collection-header__hero-background">
+        <div class="collection-header__hero-content">
+          <h1 class="collection-header__hero-title font-poppins body-text fw-semibold">DEJA QUE LA SUAVIDAD <br> ABRACE TU CUERPO</h1>
+
+          {%- comment -%}
+          <p class="collection-header__hero-subtitle font-poppins body-text fw-semibold fw-medium">Sea cual sea tu estilo de vida, mereces dormir bien.</p>
+          {%- endcomment -%}
+
+        </div>
+      </div>
+      <img
+        loading="lazy"
+        class="lozad absolute"
+        data-src="{{ 'collection-towel.png' | asset_url }}"
+        alt="{{ collection.title }}"
+        width="auto" height="600">
+
+        {% comment %} <picture class="lozad absolute d-block">
+          <source srcset="{{ 'collection-towel.png' | asset_img_url: '900x' }}" media="(min-width: 1030px)">
+          <source srcset="{{ 'collection-towel.png' | asset_img_url: '1200x' }}" media="(min-width: 992px)">
+          <source srcset="{{ 'collection-towel.png' | asset_img_url: '992x' }}" media="(min-width: 768px)">
+          <source srcset="{{ 'collection-towel.png' | asset_img_url: '768x' }}" media="(min-width: 576px)">
+          <source srcset="{{ 'collection-towel.png' | asset_img_url: '576x' }}" media="(min-width: 360px)">
+          <source srcset="{{ 'collection-towel.png' | asset_img_url: '360x' }}" media="(min-width: 320px)">
+        </picture> {% endcomment %}
+        
+    </div>
+
+    <div class="collection-header__description">
+      <div class="collection-header__description-container">
+        <div class="collection-header__description-subtitle font-poppins body-text fw-semibold fw-medium">Colección de Toallas & Accesorios Smart Bamboo</div>
+        {%- comment -%}
+        <h3 class="collection-header__description-title font-poppins body-text fw-semibold">Descubre nuestra línea de almohadas diseñadas con la más alta tecnología e inspiradas en el confort.</h3>
+        {%- endcomment -%}
+        <div class="collection-header__description-text font-poppins font-poppins-regular">La mejor manera de acabar con lo áspero es sucumbir a la suavidad de nuestros accesorios de baño con los mejores materiales.</div>
+      </div>
+    </div>
+
+  </div>
+</div> {% endcomment %}
+
+<link rel="stylesheet" href="{{ 'collection-header.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'smart-collection.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'collection-contact-new.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'collection-header.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'smart-collection.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'collection-contact-new.css' | asset_url | stylesheet_tag }}</noscript>
+<script src="{{ 'smart-collection-dist.js' | asset_url }}" defer></script>
+<script>
+  const initCollectionSheets = () => {
+    function onTidioChatApiReady3() {
+      window.tidioChatApi.hide();
+    }
+
+    if (window.tidioChatApi) {
+      window.tidioChatApi.on('ready', onTidioChatApiReady3);
+    }
+
+    document.querySelector('.js-chat').addEventListener('click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      window.tidioChatApi.show();
+      window.tidioChatApi.open();
+    });
+  }
+
+  document.addEventListener('load', initCollectionSheets);
+</script>

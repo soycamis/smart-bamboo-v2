@@ -1,0 +1,107 @@
+<product-warranty class="subcomponent-gift__container position-relative">
+    <div class="subcomponent-gift__tag c4-bk c8-c br-4 position-absolute">
+      <p class="fs-14-14 fw-semibold padding-right-1 padding-left-1 text text-center">Garantía extendida</p>
+    </div>
+  
+    <div class="subcomponent-gift__border br-4 position-absolute"></div>
+    <div class="subcomponent-gift__body position-relative">
+      <h3>Agregar un plan de protección:</h3>
+      <div class="subcomponent-product-warranty">
+        <div>
+          <p>
+            <input type="radio" id="plan-plus" name="plan" value="Nivel Plus">
+            <label for="plan-plus"><strong>Nivel Plus:</strong> 1 año de cobertura para <span class="js-price-warranty"></span></label>
+          </p>
+          <p>
+            <input type="radio" id="plan-silver" name="plan" value="Nivel Silver">
+            <label for="plan-silver"><strong>Nivel Silver:</strong> 2 años de cobertura para <span class="js-price-warranty"></span></label>
+          </p>
+          <p>
+            <input type="radio" id="plan-gold" name="plan" value="Nivel Gold">
+            <label for="plan-gold"><strong>Nivel Gold:</strong> 3 años de cobertura para <span class="js-price-warranty"></span></label>
+          </p>
+        </div>
+        <p class="more-warranty">
+          <a href="/pages/garantia-extendida-smart-bamboo" target="_blank">Ver más detalles</a>
+        </p>
+      </div>
+    </div>
+  
+    <style>
+      product-warranty {
+        margin: 1rem 0;
+      }
+  
+      .subcomponent-product-warranty .more-warranty {
+        text-decoration: underline;
+        text-align: right;
+        margin-top: 10px;
+      }
+  
+      .subcomponent-gift__body h3 {
+        position: relative;
+        margin-bottom: .75rem;
+        padding-left: 2rem;
+      }
+  
+      .subcomponent-product-warranty p {
+        position: relative;
+        margin-bottom: .75rem;
+        padding-left: 2rem;
+      }
+  
+      .subcomponent-product-warranty p span {
+        font-weight: 700;
+      }
+  
+      .subcomponent-product-warranty p:last-child {
+        margin-bottom: 0;
+      }
+  
+      .subcomponent-product-warranty p input,
+      .subcomponent-product-warranty p label {
+        cursor: pointer;
+      }
+  
+      .subcomponent-product-warranty p input[type="radio"]::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        width: 20px;
+        height: 20px;
+        border: 1px solid #f0ba42;
+        border-radius: 50px;
+      }
+  
+      .subcomponent-product-warranty p input[type="radio"]:checked::before {
+        border: 1px solid #000;
+        background-color: #f0ba42;
+      }
+    </style>
+  
+    <script type="application/json" product_handle_warranty="warranty">
+      {% assign product_handle = product.handle | prepend: 'garantia-extendida-' %}
+      {% assign product_warranty = all_products[product_handle] %}
+      {
+        "default_variant": {{ product.has_only_default_variant }},
+        "id": {{ product_warranty.id }},
+        "title": "{{ product_warranty.title }}",
+        "variants": [
+          {% for variant in product_warranty.variants %}
+            {
+              "id": "{{ variant.id }}",
+              "title": "{{ product_warranty.title }}",
+              "variant_title": "{{ variant.title }}",
+              "available": {{ variant.available }},
+              "price": {{ variant.price }}
+            }
+            {% if forloop.last == false %},{% endif %}
+          {% endfor %}
+        ]
+      }
+    </script>
+  </product-warranty>
+  
+  <script type="module" src="{{ 'smart-main-product-warranty-dist.js' | asset_url }}" defer="defer"></script>

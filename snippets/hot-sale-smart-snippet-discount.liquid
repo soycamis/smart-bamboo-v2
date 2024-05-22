@@ -1,0 +1,22 @@
+{% assign initialPrice = product.compare_at_price | money %}
+{% assign finalPrice = product.price | money %}
+{% assign resta = product.compare_at_price | minus: product.price | money %}
+
+
+{% if product.handle == 'colcha-reversible-pinsonic' %}    
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '25% OFF + 30% OFF' -%}
+{% elsif product.handle == 'colcha-bliss' %} 
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '25% OFF + 20% OFF ' -%} 
+{% elsif product.handle == 'colchoneta-smart-bamboo' %}     
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '10% OFF + 25% OFF' -%}
+{% elsif product.handle == 'juego-de-sabanas-supreme' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '20% OFF + 20% OFF' -%} 
+{% elsif product.handle == 'almohada-blend' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '15% OFF + 15% OFF' -%}
+{% elsif product.handle == 'almohada-cervical-lavanda' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '10% OFF + 15% OFF' -%}
+{% elsif product.handle == 'almohada-cervical-gel' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '10% OFF + 15% OFF' -%}       
+
+{% else %}
+{% endif%}

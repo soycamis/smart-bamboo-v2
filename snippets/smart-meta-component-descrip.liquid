@@ -1,0 +1,115 @@
+<link rel="stylesheet" href="{{ 'smart-component-descrip.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'smart-component-descrip.css' | asset_url | stylesheet_tag }}</noscript>
+{% assign percent = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round %}
+<div class="tw-flex tw-flex-col tw-justify-center lg:tw-justify-start tw-items-center lg:tw-items-start"> {% comment %} responsive-padding {% endcomment %}
+  <div class="component-descrip__container margin-top-2 tw-w-full md:tw-max-w-[536px] lg:tw-max-w-[479px]"> {% comment %} component-descrip__container {% endcomment %}
+  
+    <div class="tw-hidden lg:tw-block tw-pb-5">
+      <h1 class="tw-font-lora tw-text-[#434f5a] tw-text-4xl tw-font-bold tw-tracking-tight tw-my-5" title>{{ product.title }}</h1> 
+      <div class="component-descrip-stars__container">
+        <div class="yotpo bottomLine"
+          data-appkey="NdPY4Ev7Qr4BsFowXrmmV6GnmtOsFjqOBvypZdXI"
+          data-domain="{{ shop.permanent_domain | escape }}"
+          data-product-id="{{ product.id }}"
+          data-product-models="{{ product.id }}"
+          data-name="{{ product.title | escape }}"
+          data-url="{{ shop.url }}{{ product.url }}"
+          data-image-url="{{ product.featured_image | img_url: 'large' | replace: '?', '%3F' | replace: '&','%26' }}"
+          data-description={{ product.description | escape }}
+          data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"> 
+        </div>
+      </div>
+    </div>
+
+   
+    {%- render 'hot-sale-smart-snippet-discount' -%} 
+    
+    <info-price data-product='' style="display: none">{% comment %} infoprice {% endcomment %}
+
+    {% assign handle = product.handle %}
+    {% case handle %}
+      {% when 'almohada-blend', 'almohada-cervical-lavanda', 'almohada-cervical-gel', 'colchoneta-smart-bamboo', 'juego-de-sabanas-supreme', 'colcha-reversible-pinsonic', 'colcha-bliss' %}
+        <div style="display:none;" class="tw-w-full lg:tw-w-1/2 tw-mb-2 tw-px-5">
+          <p class="tw-w-full tw-bg-[#C9D6C5] tw-font-semibold tw-text-base tw-text-[#292929] tw-text-center tw-px-3 md:tw-px-5 tw-py-1 tw-mt-1" saved>Ahorra $0 <span class="tw-font-medium"> (0% de descuento)</span></p>
+        </div>
+      {% else %}
+      <div class="tw-w-full lg:tw-w-1/2 tw-mb-2 tw-px-5">
+        <p class="tw-w-full tw-bg-[#C9D6C5] tw-font-semibold tw-text-base tw-text-[#292929] tw-text-center tw-px-3 md:tw-px-5 tw-py-1 tw-mt-1" saved>Ahorra $0 <span class="tw-font-medium"> (0% de descuento)</span></p>
+      </div>
+    {% endcase %}
+
+      
+
+
+      <p class="tw-px-6">
+        <span class="tw-font-light tw-text-xl md:tw-text-normal tw-text-gray-500 tw-line-through tw-mr-1 lg:tw-mr-4" compare></span>
+        <span class="tw-font-semibold tw-text-2xl tw-text-black" price></span>
+        {% comment %} <span class="money" data-product-id="{{ product.id }}">{{ product.price | money }}</span> {% endcomment %}
+      </p>
+
+      <div class="tw-flex tw-justify-start tw-items-center tw-mt-1 tw-px-6">
+        <h2 class="tw-text-xs tw-font-normal tw-mr-[15px] tw-text-[#434e5a]">
+          Paga hasta 24 meses sin tarjeta de crédito con
+        </h2>
+        <img class="tw-max-w-[50px]" alt="BambooPay by Atrato" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/bamboo-pay-127.webp?v=1669430458">
+      </div>
+
+      <div class="d-flex justify-content-between flex-column flex-sm-row"> {% comment %} contenedor disponibilidad  {% endcomment %}
+        {% comment %} <p class="tw-w-[100px] tw-bg-[#F3F1F1] tw-font-semibold tw-text-base tw-text-[#47763A] tw-text-center tw-rounded-full tw-py-0.5 tw-mt-1" saved>Ahorra $0<span class="tw-font-medium"> (0% de descuento)</span></p> {% endcomment %}
+        
+        <div class="align-items-center tw-mt-3" available> {% comment %} available {% endcomment %}
+          {% comment %} <span class="status margin-right-05"></span>
+          <p class="tw-text-sm tw-text-gray-500">Disponible</p> {% endcomment %}
+        </div> {% comment %} available {% endcomment %}
+
+        <div class="align-items-center tw-mt-3" noavailable>{% comment %} noavailable {% endcomment %}
+          {% comment %} <span class="status no-active margin-right-05"></span>
+          <p class="tw-text-sm tw-text-gray-500">No disponible</p> {% endcomment %}
+        </div>{% comment %} noavailable {% endcomment %}
+
+      </div> {% comment %} contenedor disponibilidad {% endcomment %}
+
+      <div class="tw-flex-col" cuponpreventa> {% comment %} compraventa {% endcomment %}
+        
+      <div class="tw-flex tw-gap-x-2 align-items-center">{% comment %} disponible preventa {% endcomment %}
+        {% comment %} <span class="tw-w-[16px] tw-h-[16px] tw-rounded-[50%] tw-inline-block tw-border-2 tw-border-orange-600 tw-border-solid tw-bg-amber-600 margin-right-05"></span> {% endcomment %}
+        {% comment %} <p class="body-text fs-18-18 lh-normal c3-c fw-semibold text-uppercase tw-text-amber-600">Disponible en preventa</p><br> {% endcomment %}
+        {% comment %} <p class="body-text fs-18-18 lh-normal c3-c fw-semibold text-uppercase tw-text-amber-600">Disponible en preventa</p><br> {% endcomment %}
+      </div>{% comment %} disponible preventa {% endcomment %}
+   
+
+      
+      <div class="tw-bg-teal-100 tw-border-t-4 tw-border-teal-500 tw-rounded-b tw-text-teal-900 tw-px-4 tw-py-3 tw-shadow-md tw-mb-5 tw-mt-2" role="alert">{% comment %} alert {% endcomment %}
+            <div class="tw-flex">{% comment %} verde {% endcomment %}
+                <div class="tw-py-1"> {% comment %} svg {% endcomment %}
+                  <svg class="tw-fill-current tw-h-6 tw-w-6 tw-text-teal-500 tw-mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg>
+                </div>{% comment %} svg {% endcomment %}
+                <div>
+                  <p class="tw-font-semibold"><strong>Este producto esta sujeto a entrega con fecha estimada a 30 días hábiles*</strong></p>
+                </div>
+            </div>{% comment %} verde {% endcomment %}
+        </div>{% comment %} alert {% endcomment %}
+      
+    </div>{% comment %} compraventa {% endcomment %}
+
+</info-price>{% comment %} infoprice {% endcomment %}
+
+    {% if product.metafields.my_fields.descriptioncontentdetail != blank %}
+      <h3 class="tw-mt-3 tw-text-[13px] tw-font-normal tw-my-7 tw-px-6">
+        {{ product.metafields.my_fields.descriptioncontentdetail }}
+      </h3>
+      {% else %}
+    {% endif %}
+
+    {% if product.metafields.custom.coupon != blank %}
+      {%- render 'coupon-smart-snippet-discount' -%}
+      {% else %}
+    {% endif %}
+
+   
+    
+
+  </div> {% comment %} component-descrip__container {% endcomment %}
+</div> {% comment %} responsive-padding {% endcomment %}
+
+<script type="module" src="{{ 'smart-product-info-price.js' | asset_url }}" defer="defer"></script>

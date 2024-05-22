@@ -1,0 +1,58 @@
+<div class="frequent-questions padding-section-top padding-section-bottom" style="background: {{ background }};">
+    <div class="frequent-questions__container">
+      <h3 class="frequent-questions__title font-poppins body-text fw-semibold general-margin-section__bottom fs-24-32">{{ title }}</h3>
+      <div class="frequent-questions__wrapper">
+        {% for block in section.blocks %}
+          {% if forloop.index == 7 and section.blocks.size > 7 %}
+            <details id="faqs" class="general-collapse">
+              <summary style="display: none;"></summary>
+          {% endif %}
+          <h2 class="frequent-questions__question font-poppins body-text fw-semibold hide-blockquote fs-14-18">{{ block.settings.accordianTitle }}</h2>
+          <blockquote class="fs-14-18">
+            {{ block.settings.accordianInfo }}
+          </blockquote>
+          {% if forloop.last == true and section.blocks.size > 7 %}
+          </details>
+          {% endif %}
+        {% endfor %}
+        {% if section.blocks.size > 7 %}
+          <div class="contact-new__buttons-wrapper one-button">
+            <div href="#" onclick="openCollapse('#faqs', this)" text1="Ver todas las preguntas" text2="Ver menos" class="font-poppins body-text fw-semibold contact-new__button white">Ver todas las preguntas</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  <link rel="stylesheet" href="{{ 'collection-contact-new.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ 'frequent-questions.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript>{{ 'collection-contact-new.css' | asset_url | stylesheet_tag }}</noscript>
+  <noscript>{{ 'frequent-questions.css' | asset_url | stylesheet_tag }}</noscript>
+  <script>
+    function openCollapse(selector, button) {
+      let collapse = document.querySelector(selector);
+      collapse.toggleAttribute("open");
+        
+      if(collapse.getAttribute("open") == null) {
+        button.innerHTML = button.getAttribute("text1")
+      } else {
+        button.innerHTML = button.getAttribute("text2")
+      }
+    }
+  
+    document.addEventListener('DOMContentLoaded', () => {
+      let $blockquotes = document.querySelectorAll('.frequent-questions__question');
+  
+      $blockquotes.forEach(item => {
+        item.addEventListener('click', function(evt) {
+          if(evt.target.classList.contains('hide-blockquote')) {
+            evt.target.classList.remove('hide-blockquote');
+          } else {
+            evt.target.classList.add('hide-blockquote');
+          }
+        });
+      });
+    });
+  </script>
+    
+  

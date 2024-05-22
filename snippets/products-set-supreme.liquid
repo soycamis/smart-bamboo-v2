@@ -1,0 +1,343 @@
+<{{ handle }}
+  class="tw-rounded-xl tw-border-2 tw-border-solid tw-border-black tw-p-4 tw-flex tw-flex-col sm:tw-flex-row tw-justify-between tw-items-start tw-gap-6 tw-mb-8"
+  {{ handle | append: '-variant-available' }}="{{ all_products[handle].selected_or_first_available_variant.id }}"
+>
+  <input data-ids="pack" type="hidden" name="{{ handle | append: '-id' }}" value="">
+  <div class="tw-block tw-w-full">
+    <picture class="tw-block">
+      <img
+        class="tw-block tw-m-auto"
+        height="250"
+        width="200"
+        loading="lazy"
+        src="{{ all_products[handle].featured_image | image_url: height: 250 }}"
+        alt="{{ all_products[handle].title }}"
+      >
+    </picture>
+  </div>
+  <div class="tw-w-full">
+    <h6 class="c2-c body-text tw-font-semibold tw-text-lg lh-sm fw-semibold tw-mt-0">
+      {{ all_products[handle].title }}
+    </h6>
+    <p class="tw-flex tw-justify-start tw-items-center tw-gap-2 tw-mb-3">
+      <del id="js-compare-at-price">{{ all_products[handle].compare_at_price | money }}</del>
+      <strong id="js-price">{{ all_products[handle].price | money }}</strong>
+    </p>
+
+    {%- for option in all_products[handle].options_with_values -%}
+      {% if option.name == 'Color' %}
+        <div class="tw-mb-3">
+          <label class="tw-flex tw-justify-between tw-items-center margin-bottom-05 c3-c body-text fs-12-12 lh-normal" for="{{ option.name }}">
+            <span>{{- option.name -}}: <strong id="js-color-name">{{ all_products[handle].options_by_name['Color'].values[0] }}</strong></span>
+            <span id="stock" class="tw-font-bold"></span>
+          </label>
+          <main-swatch class="subcomponent-color__container d-flex flex-wrap">
+            {% assign k = -1 %}
+            {% assign isFirst = true %}
+
+            {% for media in all_products[handle].media %}
+              {% assign index_i = forloop.index0 %}
+              {% assign isCounted = false %}
+              {%- for variant in all_products[handle].variants -%}
+                {% if media == variant.image.src %}
+                  {% if isCounted == false %}
+                    {% if index_i != 0 %}
+                      {% capture aux %}{% increment k %}{% endcapture %}
+                      {% assign val = aux | plus: 0 %}
+                      {% assign indexImg = index_i | plus: -1 %}
+                      <input
+                        {{ handle | append: '-variant' }}
+                        name="{{ option.name }}"
+                        type="radio"
+                        value="{{ all_products[handle].options_by_name['Color'].values[val] }}"
+                        class="swatch transition-all-03 subcomponent-color__button rounded-circle c1-c lozad"
+                        data-background-image="{{ all_products[handle].media[indexImg] | image_url: width: 60 }}"
+                      >
+                      {% assign isFirst = false %}
+                    {% endif %}
+                    {% assign isCounted = true %}
+                  {% endif %}
+                {% endif %}
+              {%- endfor -%}
+            {% endfor %}
+            {% capture aux %}{% increment k %}{% endcapture %}
+            {% assign val = aux | plus: 0 %}
+            {% assign indexImg = all_products[handle].media.size | plus: -1 %}
+            <input
+              {{ handle | append: '-variant' }}
+              name="{{ option.name }}"
+              type="radio"
+              value="{{ all_products[handle].options_by_name['Color'].values[val] }}"
+              class="swatch transition-all-03 subcomponent-color__button rounded-circle c1-c"
+              style="background-image: url('{{ all_products[handle].media[indexImg] | image_url: width: 60 }}');"
+            >
+          </main-swatch>
+        </div>
+      {% else %}
+        <div>
+          <label class="d-block margin-bottom-05 c3-c body-text fs-12-12 lh-normal" for="{{ option.name }}">
+            {{- option.name | replace: 'Size', 'Tamaño' -}}
+          </label>
+          <div class="position-relative">
+            <select
+              {{ handle | append: '-variant' }}
+              name="{{ option.name }}"
+              class="general-input text-start border c14-b big c1-c body-text fs-14-14 lh-normal w-100 fw-semibold"
+            >
+              {%- for value in option.values -%}
+                {% if value == 'Default Title' %}
+                  <option value="{{ all_products[handle].title | escape }}">{{ all_products[handle].title }}</option>
+                {% else %}
+                  <option
+                    value="{{ value | escape }}"
+                  >{{ value | escape }}</option>
+                {% endif %}
+              {%- endfor -%}
+            </select>
+          </div>
+        </div>
+      {% endif %}
+    {%- endfor -%}
+  </div>
+
+  <script id="{{ handle }}-variants" type="application/json">
+    [
+      {% for variant in all_products[handle].variants %}
+        {
+          "id": {{ variant.id }},
+          "title": "{{ variant.title }}",
+          "available": {{ variant.available }},
+          "featured_image": "{{ variant.featured_image | image_url: height: 250 }}",
+          "price": {{ variant.price }},
+          "compare_at_price": {{ variant.compare_at_price }},
+          "inventory_policy": "{{ variant.inventory_policy }}",
+          "inventory_quantity": {{ variant.inventory_quantity }},
+          "options": {{ variant.options | json }}
+        }
+        {% if forloop.last == false %},{% endif %}
+      {% endfor %}
+    ]
+  </script>
+
+  <script>
+    class {{ handle | replace: '-', '' | upcase }}  extends HTMLElement {
+      constructor() {
+        super();
+        this.inputVariantElements = this.querySelectorAll('[{{ handle | append: '-variant' }}]');
+        this.variantsInfo = JSON.parse(this.querySelector(`#{{ handle }}-variants`).textContent);
+        this.inputID = this.querySelector('input[name="{{ handle | append: '-id' }}"]');
+        this.first_available = this.getAttribute('{{ handle | append: '-variant-available' }}');
+        this.variantSelected = null;      
+        this.formData = {
+          'items': []
+        }  
+      }
+
+      connectedCallback() {
+        window.addEventListener('load', () => {
+          this.initForm();
+          this.checkForm();
+          this.addListeners();
+
+          const buttonAddToCart = document.querySelector(`#ButtonAddToCart`);
+          buttonAddToCart.addEventListener('click', (evt) => {
+            evt.preventDefault();
+            const allIds = document.querySelectorAll('[data-ids="pack"]');
+            allIds.forEach(item => {
+              this.formData.items.push({
+                'id': item.value,
+                'quantity': 1
+              })
+            });
+
+            this.addToCart()
+          });
+        });
+      }
+
+      initForm = () => {
+        this.variantSelected = this.variantsInfo[0];
+        this.inputID.value = this.variantsInfo[0].id;
+      };
+
+      checkForm = () => {
+        this.variantsInfo.forEach((variant) => {
+          if (String(variant.id) === this.first_available) {
+            this.variantSelected = variant;
+            this.inputID.value = variant.id;
+            variant.options.forEach((option) => {
+              this.inputVariantElements.forEach((input) => {
+                if (String(input.tagName) === 'SELECT') {
+                  input.querySelectorAll('option').forEach((optionInput, index) => {
+                    if (optionInput.value === option) {
+                      input.selectedIndex = index;
+                    }
+                  });
+                }
+                if (String(input.tagName) === 'INPUT') {
+                  if (input.type === 'radio') {
+                    if (input.value === option) {
+                      input.classList.add('active');
+                      input.checked = true;
+                    }
+                  }
+                }
+              });
+            });
+          }
+        });
+      };
+
+      addListeners = () => {
+        this.inputVariantElements.forEach((input) => {
+          input.addEventListener('change', (e) => {
+            const options = [];
+            this.inputVariantElements.forEach((inputAux) => {
+              if (String(inputAux.tagName) === 'SELECT') {
+                options.push(inputAux.value);
+                this.changePrice(e, e.target.tagName)
+                this.haveStock()
+              }
+              if (String(inputAux.tagName) === 'INPUT' && inputAux.type === 'radio' && inputAux.checked) {
+                options.push(inputAux.value);
+              }
+            });
+            this.variantsInfo.forEach((variant) => {
+              const isEqual = this.areEqualArray(variant.options, options)
+              if (isEqual) {
+                const currentSelected = e.target;
+                this.variantSelected = variant;
+                this.inputID.value = variant.id;
+                this.inputActive(currentSelected);
+              }
+            });
+          });
+        });
+      };
+
+      showStock = (item) => {
+        const $stock = this.querySelector('#stock')
+
+        if(item[0].available) {
+          $stock.classList.add('c5-c')
+          $stock.textContent = 'DISPONIBLE'
+        } else {
+          $stock.classList.remove('c5-c')
+          $stock.textContent = 'NO DISPONIBLE'
+        }
+      }
+
+      haveStock = () => {
+        const color = this.querySelector('[name="Color"]:checked')
+        const size = this.querySelector('select')
+        const optionSelects = []
+        let selectedHaveStock = []
+
+        if(color && size) {
+          optionSelects[0] = color.value
+          optionSelects[1] = size.value
+
+          selectedHaveStock = this.variantsInfo.filter(item => {
+            if(item.options[0] === optionSelects[0] && item.options[1] === optionSelects[1]) {
+              return item;
+            }
+          });
+
+          this.showStock(selectedHaveStock)
+        }
+      }
+
+      changePrice = (target, origin) => {
+        const compareAtPrice = this.querySelector(`#js-compare-at-price`);
+        const price = this.querySelector(`#js-price`);
+        const featureImage = this.querySelector('img');
+        const colorName = this.querySelector('#js-color-name');
+        const valueSelect = target.target.value;
+
+        const inputSelected = this.variantsInfo.filter(item => {
+          if(item.title.includes(valueSelect)) {
+            return item;
+          }
+        });
+
+
+        price.textContent = Shopify.formatMoney(inputSelected[0].price);
+        compareAtPrice.textContent = Shopify.formatMoney(inputSelected[0].compare_at_price);
+
+        if(origin === 'INPUT') {
+          featureImage.src = inputSelected[0].featured_image;
+          colorName.textContent = inputSelected[0].options[0];
+        }
+      }
+
+      inputActive = (inputToActive) => {
+        const inputParent = inputToActive.parentElement;
+        if(inputParent.tagName !== 'DIV') {
+          const inputActive = inputParent.querySelector('input.active');
+          inputActive.classList.remove('active');
+          inputToActive.classList.add('active');
+        }
+      }
+
+      areEqualArray = (first, second) => {
+        if (first.length !== second.length) {
+          return false;
+        }
+        for (let i = 0; i < first.length; i++) {
+          if (!second.includes(first[i])) {
+            return false;
+          }
+        }
+        return true;
+      };
+
+      addToCart = () => {
+        fetch(window.Shopify.routes.root + 'cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(this.formData)
+        })
+        .then(response => {
+          return response.json();
+        })
+        .then(json => {
+          this.cart()
+          this.cartAnimation()
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      };
+
+      cart = () => {
+        fetch('/cart.js')
+          .then(res => res.json())
+          .then(json => {
+            this.updateCount(json.item_count)
+          })
+          .catch(err => { console.log(err) })
+      }
+
+      cartAnimation = () => {
+        const counterContainer = document.querySelector('#cart-icon-bubble--animation')
+        counterContainer.classList.remove('tw-hidden')
+    
+        setTimeout(() => {
+          counterContainer.classList.add('tw-hidden')
+        }, (1000 * 60))
+      };
+
+      updateCount = (count) => {
+        const $itemCount = document.querySelector('#js-items-count')
+        const $itemCountMobile = document.querySelector('.js-items-count')
+    
+        $itemCount.textContent = `(${count})`
+        $itemCountMobile.textContent = `${count}`
+      };
+    }
+
+    customElements.define('{{ handle }}', {{ handle | replace: '-', '' | upcase }});
+  </script>
+</{{ handle }}>

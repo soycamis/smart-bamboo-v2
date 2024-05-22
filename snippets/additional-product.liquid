@@ -1,0 +1,343 @@
+<link rel="stylesheet" href="{{ 'smart-subcomponent-form.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'smart-subcomponent-form.css' | asset_url | stylesheet_tag }}</noscript>
+
+
+<additional-product class="d-block tw-px-5 tw-max-w-[640px] tw-w-fit" product_available="{{ product.selected_or_first_available_variant.id }}">
+  
+  <h6 class="tw-text-sm tw-my-3">Añade accesorios adicionales a tu set</h6>
+  {%- form 'product', product, class: 'subcomponent-form__form' -%}
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+    <div class="tw-flex tw-gap-4 tw-items-center tw-bg-[#F7F7F7] tw-rounded-lg tw-p-3">
+      <div>
+        <input
+          type="checkbox"
+          name="additional-check"
+          id="additional-check"
+          style="width:20px;height:20px;-webkit-appearance:checkbox"
+        >
+      </div>
+      <div>
+        <img
+          id="additional-image"
+          loading="lazy"
+          width="100"
+          height="300"
+          src="{{ product.selected_or_first_available_variant.featured_media | image_url: width: 200 }}"
+          alt="{{ product.title }}"
+        >
+      </div>
+
+      {% if product.has_only_default_variant != true %}
+        <div>
+          <div>
+            <div>
+              <h6 class="tw-text-[#272727] tw-text-sm">{{ product.title }}</h6>
+              {% if product.metafields.my_fields.descriptioncontentdetail != blank %}
+                <p class="tw-text-[#272727] tw-font-normal tw-mb-1 tw-text-xs">
+                  {{ product.metafields.my_fields.descriptioncontentdetail }}
+                </p>
+                {% else %}
+              {% endif %}
+            </div>
+            <div>
+              {% render 'additional-product-info-price', product: product %}
+            </div>
+          </div>
+          {%- for option in product.options_with_values -%}
+            {% if option.name == 'Color' %}
+              <div>
+                <div class="tw-flex">
+                  <p class="tw-font-medium tw-text-sm tw-text-[#292929] tw-mr-2 tw-mt-1">Color:</p>
+                  <label
+                    class="tw-font-medium tw-text-sm tw-text-[#292929] tw-mt-1"
+                    id="additional-color"
+                    for="{{ option.name }}"
+                  >
+                    {{- option.name -}}
+                  </label>
+                </div>
+                <additional-product-swatch class="subcomponent-color__container d-flex flex-wrap">
+                  {% assign k = -1 %}
+                  {% assign isFirst = true %}
+                  {% for media in product.media %}
+                    {% assign index_i = forloop.index0 %}
+                    {% assign isCounted = false %}
+                    {%- for variant in product.variants -%}
+                      {% if media == variant.image.src %}
+                        {% if isCounted == false %}
+                          {% if index_i != 0 %}
+                            {% capture aux %}{% increment k %}{% endcapture %}
+                            {% assign val = aux | plus: 0 %}
+                            {% assign indexImg = index_i | plus: -2 %}
+                            <input
+                              variant
+                              name="{{ option.name }}"
+                              type="radio"
+                              value="{{ product.options_by_name['Color'].values[val] }}"
+                              class="additional-product-swatch transition-all-03 subcomponent-color__button rounded-circle c1-c"
+                              data-background-image="{{ product.media[indexImg] | image_url: width: 60 }}"
+                              data-additional-image="{{ product.media[indexImg] | image_url: width: 200 }}"
+                            >
+                            {% assign isFirst = false %}
+                          {% endif %}
+                          {% assign isCounted = true %}
+                        {% endif %}
+                      {% endif %}
+                    {%- endfor -%}
+                  {% endfor %}
+                  {% capture aux %}{% increment k %}{% endcapture %}
+                  {% assign val = aux | plus: 0 %}
+                  {% assign indexImg = product.media.size | plus: -2 %}
+                  <input
+                    variant
+                    name="{{ option.name }}"
+                    type="radio"
+                    value="{{ product.options_by_name['Color'].values[val] }}"
+                    class="additional-product-swatch transition-all-03 subcomponent-color__button rounded-circle c1-c"
+                    style="background-image: url('{{ product.media[indexImg] | image_url: width: 60 }}');"
+                    data-additional-image="{{ product.media[indexImg] | image_url: width: 200 }}"
+                  >
+                </additional-product-swatch>
+              </div>
+            {% else %}
+              <div>
+                <label class="tw-font-medium tw-text-sm tw-text-[#292929]" for="{{ option.name }}">
+                  {{- option.name | replace: 'Size', 'Tamaño' -}}
+                </label>
+                <div class="position-relative">
+                  <select
+                    variant
+                    name="{{ option.name }}"
+                    class="general-input text-start border c14-b c1-c body-text fs-14-14 lh-normal w-100 fw-semibold tw-py-2 tw-px-3"
+                  >
+                    {%- for value in option.values -%}
+                      {% if value == 'Default Title' %}
+                        <option value="{{ product.title | escape }}">{{ product.title }}</option>
+                      {% else %}
+                        <option value="{{ value | escape }}">{{ value | escape }}</option>
+                      {% endif %}
+                    {%- endfor -%}
+                  </select>
+                </div>
+              </div>
+            {% endif %}
+          {%- endfor -%}
+        </div>
+      {% endif %}
+    </div>
+
+    <script type="application/json" additional-product-variants>
+      [
+        {% for variant in product.variants %}
+          {
+            "id": {{ variant.id }},
+            "title": "{{ variant.title }}",
+            "available": {{ variant.available }},
+            "price": {{ variant.price }},
+            "compare_at_price": {{ variant.compare_at_price }},
+            "inventory_policy": "{{ variant.inventory_policy }}",
+            "inventory_quantity": {{ variant.inventory_quantity }},
+            "image": "{{ variant.featured_media | image_url }}",
+            "options": {{ variant.options | json }}
+          }
+          {% if forloop.last == false %},{% endif %}
+        {% endfor %}
+      ]
+    </script>
+  {%- endform -%}
+</additional-product>
+
+<script>
+  class AdditionalProduct extends window.HTMLElement {
+    constructor() {
+      super();
+      this.formElement = this.querySelector('form');
+      this.inputVariantElements = this.querySelectorAll('[variant]');
+      this.variantsInfo = JSON.parse(
+        this.querySelector('[type="application/json"][additional-product-variants]').textContent
+      );
+      this.infoPriceRef = this.querySelector('additional-product-info-price');
+      this.inputID = this.querySelector('input[name="id"]');
+      this.first_available = this.getAttribute('product_available');
+      this.variantSelected = null;
+    }
+
+    connectedCallback() {
+      window.addEventListener('load', () => {
+        this.addListeners();
+        this.initForm();
+        this.checkForm();
+      });
+    }
+
+    initForm = () => {
+      this.variantSelected = this.variantsInfo[0];
+      this.infoPriceRef.setAttribute('data-product', JSON.stringify(this.variantsInfo[0]));
+      this.infoPriceRef.update();
+    };
+
+    checkForm = () => {
+      this.variantsInfo.forEach((variant) => {
+        if (variant.available == false) {
+          const color = variant.options[0];
+          const size = variant.options[1];
+
+          const inputColor = this.querySelector(`[value=${color}]`);
+          if (inputColor) {
+            inputColor.disabled = false;
+          }
+        }
+
+        if (variant.id === parseInt(this.first_available)) {
+          // Check first variant available.
+          this.variantSelected = variant;
+          this.inputID.value = variant.id;
+
+          this.infoPriceRef.setAttribute('data-product', JSON.stringify(variant));
+          this.infoPriceRef.update();
+
+          variant.options.forEach((option) => {
+            this.inputVariantElements.forEach((input) => {
+              if (input.tagName === 'SELECT') {
+                input.querySelectorAll('option').forEach((optionInput, index) => {
+                  if (optionInput.value === option) {
+                    input.selectedIndex = index;
+                  }
+                });
+              }
+              if (input.tagName === 'INPUT') {
+                if (input.type === 'radio') {
+                  if (input.value === option) {
+                    input.classList.add('active');
+                    input.checked = true;
+                    setTimeout(() => {
+                      input.click();
+                    });
+                  }
+                }
+              }
+            });
+          });
+        }
+      });
+    };
+
+    addListeners = () => {
+      this.formElement.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const buttonType = e.submitter;
+
+        if (buttonType.classList.contains('button-cart')) {
+          this.buttonCart.setAttribute('disabled', 'true');
+          this.buttonCart.value = 'Agregado';
+          this.addToCart('cart');
+        } else if (buttonType.classList.contains('button-checkout')) {
+          this.buttonCheckout.setAttribute('disabled', 'true');
+          this.addToCart('checkout');
+        }
+      });
+
+      this.inputVariantElements.forEach((input) => {
+        input.addEventListener('change', (e) => {
+          const options = [];
+          this.inputVariantElements.forEach((inputAux) => {
+            if (inputAux.tagName === 'SELECT') {
+              options.push(inputAux.value);
+            }
+            if (inputAux.tagName === 'INPUT') {
+              if (inputAux.type === 'radio') {
+                if (inputAux.checked) {
+                  options.push(inputAux.value);
+                }
+              }
+            }
+          });
+          this.variantsInfo.forEach((variant) => {
+            if (this.areEqualArray(variant.options, options)) {
+              this.variantSelected = variant;
+              this.inputID.value = variant.id;
+              this.infoPriceRef.setAttribute('data-product', JSON.stringify(variant));
+              this.infoPriceRef.update();
+            }
+          });
+        });
+      });
+    };
+
+    areEqualArray = (first, second) => {
+      if (first.length !== second.length) {
+        return false;
+      }
+      for (let i = 0; i < first.length; i++) {
+        if (!second.includes(first[i])) {
+          return false;
+        }
+      }
+      return true;
+    };
+  }
+
+  window.customElements.define('additional-product', AdditionalProduct);
+</script>
+<script>
+  class AdditionalProductSwatch extends window.HTMLElement {
+    constructor() {
+      super();
+      this.swatchElements = this.querySelectorAll('.additional-product-swatch');
+      this.swatchLabel = document.querySelectorAll('#additional-color');
+      this.additionalImage = document.querySelector('#additional-image');
+      this.variantsInfo = JSON.parse(
+        document.querySelector('[type="application/json"][additional-product-variants]').textContent
+      );
+    }
+
+    connectedCallback() {
+      window.addEventListener('load', () => {
+        this.addListeners();
+      });
+    }
+
+    checkStock(colorSelected) {
+      let sizeOfColor = this.variantsInfo.filter((item) => item.options[0] === colorSelected);
+      const sizes = document.querySelectorAll('additional-product [name="Tamaño"] option');
+      sizeOfColor.forEach((item, index) => {
+        if (item.available === false) {
+          sizes[index].disabled = true;
+          sizes[index].textContent = 'Agotado';
+        } else {
+          sizes[index].disabled = false;
+          sizes[index].textContent = item.options[1];
+        }
+      });
+    }
+
+    addListeners = () => {
+      this.swatchElements.forEach((swatch) => {
+        swatch.addEventListener('click', (event) => {
+          const colorSwatchSelected = swatch.value;
+          this.checkStock(colorSwatchSelected);
+
+          this.swatchLabel.forEach((label) => {
+            label.textContent = swatch.value;
+          });
+          this.additionalImage.src = event.target.dataset.additionalImage;
+          this.buttonActiveController(event);
+        });
+      });
+      this.swatchLabel[0].textContent = this.swatchElements[0].value;
+    };
+
+    buttonActiveController = (event) => {
+      this.swatchElements.forEach((swatch) => {
+        if (swatch === event.target) {
+          swatch.classList.add('active');
+        } else {
+          swatch.classList.remove('active');
+        }
+      });
+    };
+  }
+
+  window.customElements.define('additional-product-swatch', AdditionalProductSwatch);
+</script>

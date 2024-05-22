@@ -1,0 +1,38 @@
+
+{% render 'faqs', title: section.settings.faq_title, background: '#FFFFFF' %}
+
+{% comment %}
+{% render 'faqs', title: section.settings.faq_title, background: '#F4EEE9' %}
+{% endcomment %}
+
+{% schema %}
+  {
+    "name": "FAQ Section",
+    "settings": [
+      {
+        "id": "faq_title",
+        "type": "text",
+        "label": "Heading",
+        "default": "FAQ"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "faqSection",
+        "name": "Question",
+        "settings": [
+          {
+            "id": "accordianTitle",
+            "type": "text",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "accordianInfo",
+            "label": "Answer"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

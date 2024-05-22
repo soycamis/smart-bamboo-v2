@@ -1,0 +1,15 @@
+<div class="tw-px-5 tw-w-full tw-max-w-[640px] md:tw-max-w-[530px] lg:tw-max-w-[479px]">
+    <div >
+      {% liquid
+        if product.tags contains 'color_form2'
+          render 'smart-subcomponent-form-color'
+        elsif product.tags contains 'pack_form'
+          render 'smart-subcomponent-form-pack'
+        elsif product.tags contains 'set-supreme'
+          render 'smart-subcomponent-form-supreme'
+        else
+          render 'smart-subcomponent-form'
+        endif
+      %}
+    </div>
+</div>

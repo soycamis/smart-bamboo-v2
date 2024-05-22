@@ -56,10 +56,12 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+    {% comment %} Contenedor del media gallery {% endcomment %}
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       {% render 'product-media-gallery', variant_images: variant_images %}
     </div>
-    <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
+    
+     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
       <div
         id="ProductInfo-{{ section.id }}"
         class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
@@ -79,12 +81,15 @@
               </p>
             {%- when 'title' -%}
               <div class="product__title" {{ block.shopify_attributes }}>
-                <h1>{{ product.title | escape }}</h1>
+                <h1 class="tw-font-lora tw-text-[#434f5a] tw-text-4xl tw-font-semibold tw-tracking-normal tw-my-5">
+                  {{ product.title | escape }}
+                </h1>
                 <a href="{{ product.url }}" class="product__title">
                   <h2 class="h1">
                     {{ product.title | escape }}
                   </h2>
                 </a>
+                <p>aqui van las estrellas de yotpo</p>
               </div>
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
@@ -105,6 +110,29 @@
                   {%- endif -%}
                 </div>
               {%- endif -%}
+
+              {% comment %} Mensage Metodo de Pago {% endcomment %}
+              {% render 'smart-payments-info' %}
+
+              {% if product.tags contains 'tolstoy' %}
+                <div class="tw-mt-3 tw-flex tw-flex-col tw-items-center lg:tw-items-start tw-justify-center lg:tw-justify-start lg:tw-ml-6 tw-px-4 md:tw-px-0">
+                  {%- render 'tolstoy' -%}
+                </div>
+              {% endif %}
+              
+              {% comment %} Detalle Producto Incluye {% endcomment %}
+              {% render 'smart-description-detail-content' %}
+
+              {% if product.tags contains 'bundle-form' %}
+                {% render 'smart-bundle-color-swatch' %}
+              {% endif %}
+
+              {% if product.title != 'Imperium Core' and product.title != 'Imperium Voyage' and product.title != 'Imperium Discovery' and product.title != 'Colchón Smart Balance' and product.title != 'Colchón Smart Firm' and product.title != 'Colchón Smart Hybrid' and product.title != 'Smart Base' and product.title != 'Colchoneta Smart Bamboo' %}
+                {% if product.available %}
+                  {%- render 'smart-pickup-message' -%}
+                {% endif %}
+              {% endif %}
+              
               <div {{ block.shopify_attributes }}>
                 {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
                 {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
@@ -112,6 +140,7 @@
                   {{ form | payment_terms }}
                 {%- endform -%}
               </div>
+
             {%- when 'inventory' -%}
               <p
                 class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -252,6 +281,7 @@
                 share_link: share_url
               %}
 
+              {% comment %} {% AQUI ESTA EL VARIANT PICKER %} {% endcomment %}
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', block: block, product: product %}
             {%- when 'buy_buttons' -%}
@@ -475,8 +505,11 @@
           {{ 'products.product.view_full_details' | t }}
           {% render 'icon-arrow' %}
         </a>
+       
+        {% comment %} Interactivo: Descripción | Medidas | Garantía | Envío {% endcomment %}
+        {% render 'main-interactive-product-page' %}
       </div>
-    </div>
+    </div> 
     {%- if section.settings.media_position == 'right' -%}
       {% comment %} Duplicate gallery to display after product content on tablet/desktop breakpoint {% endcomment %}
       <div class="grid__item product__media-wrapper small-hide">

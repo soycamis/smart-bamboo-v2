@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="{{ 'smart-component-help.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'smart-component-help.css' | asset_url | stylesheet_tag }}</noscript>
+<div class="responsive-padding">
+  <div class="component-help__container c8-bk c14-b border">
+    {% comment %}<div class="d-flex justify-content-center">
+      <div class="icon medium">
+        <img width="95" height="95" src="{{ 'smart-icon-call.svg' | asset_url }}" alt="Llámanos">
+      </div>
+    </div>{% endcomment %}
+    <div class="text-center padding-top-1">
+      <h3 class="c1-c body-text fs-24-24 lh-normal fw-semibold">¿Necesitas ayuda?</h3>
+      <p class="c3-c body-text fs-13-14 lh-normal">Nuestros especialistas del sueño están para ayudarte.</p>
+      <div class="component-help-buttons__container padding-top-1 padding-bottom-1 d-flex d-sm-grid justify-content-between">
+        <a href="#js-chatea" class="c1-bk c8-c general-button medium with-icon fs-14-16 body-text lh-normal fw-semibold text-decoration-none remove-box js-chatea">
+          <img width="18.946" height="16.659" src="{{ 'smart-icon-chat-small.svg' | asset_url }}" alt="Chat">
+          <span>Chat</span>
+        </a>
+        <a href="tel:+525531768819" class="c1-bk c8-c general-button medium with-icon fs-14-16 body-text lh-normal fw-semibold text-decoration-none remove-box">
+          <img width="14.834" height="16.591" src="{{ 'smart-icon-call-small.svg' | asset_url }}" alt="Llámanos">
+          <span>Llámanos</span>
+        </a>
+      </div>
+      <p class="c3-c body-text fs-13-14 lh-normal">Disponibles 7 días a la semana</p>
+    </div>
+  </div>
+</div>

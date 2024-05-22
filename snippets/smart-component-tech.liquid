@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="{{ 'smart-component-tech.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'smart-component-tech.css' | asset_url | stylesheet_tag }}</noscript>
+
+{% if product.metafields.header.technical.value.size > 0 %}
+  {% if product.metafields.header.technical.value.version == 1 %}
+    <div class="general-container__wrapper {% if mobile != true %}margin-top-2{% endif %}">
+      <div class="general-container__container">
+        <div class="text-center">
+          {% comment %} <h2 class="c2-c body-text fs-24-32 fw-semibold lh-normal {% if mobile != true %}responsive-padding{% endif %}">{{ product.metafields.header.technical.value.title.text }}</h2> {% endcomment %}
+        </div>
+      </div>
+    </div>
+    <div class="general-container__wrapper margin-top-2">
+      <div class="general-container__container">
+        {% for data in product.metafields.header.technical.value.data %}
+          {% comment %} <details {% if forloop.first %}open{% endif %}> {% endcomment %}
+          <details>
+            <summary class="cursor-pointer {% if mobile != true %}responsive-padding{% endif %} margin-bottom-1">
+              <div class="d-flex align-items-center">
+                <div class="more c5-c c1-b transition-transform-03 fw-bold fs-14-18"></div>
+                <p class="tw-font-poppins tw-text-sm md:tw-text-[14px] tw-pl-2 lg:tw-pl-4">{{ data.title.text }}</p>
+              </div>
+            </summary>
+            {% if data.table %}
+              <div class="margin-bottom-1 {% if mobile != true %}responsive-padding{% endif %}">
+                <div class="component-table__container">
+                  <table class="component-table__table text-start">
+                    <thead class="border-bottom c14-b">
+                      <tr>
+                        {% for head in data.table.head %}
+                          <th>
+                            <p class="tw-font-poppins tw-text-sm md:tw-text-[14px]">{{ head.text }}</p>
+                          </th>
+                        {% endfor %}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for body in data.table.body %}
+                        <tr>
+                          {% assign isFirst = forloop.index %}
+                          {% for subbody in body %}
+                            <td>
+                              {% for info in subbody %}
+                                <p class="c1-c body-text fs-14-16 lh-normal {% if isFirst %}fw-semibold{% assign isFirst = false %}{% endif %}">{{ info.text }}</p>
+                              {% endfor %}
+                            </td>
+                          {% endfor %}
+                        </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            {% endif %}
+            {% if data.image %}
+              <div class="margin-bottom-1">
+                <img width="auto" height="auto" class="tech-img" data-src="{{ data.image.name | file_img_url: 'master' }}">
+              </div>
+            {% endif %}
+            {% if data.body or data.notice %}
+              <div class="tech-body margin-bottom-1 {% if mobile != true %}responsive-padding{% endif %}">
+                {% for body in data.body %}
+                  <p class="c3-c body-text fs-14-16 lh-normal margin-bottom-05">{{ body.text }}</p>
+                {% endfor %}
+                {% for notice in data.notice %}
+                  <p class="c3-c body-text fs-10-10 lh-normal margin-bottom-05 {{ notice.class }}">{{ notice.text }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </details>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+{% endif %}

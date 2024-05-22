@@ -1,0 +1,166 @@
+{% if product.tags contains "balance-layers" %}
+    {% assign bg = "https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Colchones-capas-_BALANCE_-_desktop_69095c6e-92f6-49d0-abd1-3916cfe219d7.webp?v=1664920233" %}
+    {% assign MattressName = "Airflow Gel-Balance" %}
+    {% assign titleDescription = "El colchón suave Smart Balance ofrece una firmeza media que equilibra con una suavidad sin igual, además, reduce el dolor a la hora de dormir. Esto es posible gracias a sus diferentes capas que lo conforman ¡Conocelas!" %}
+    {% assign tipeMattres = "colchones suaves" %}
+    {% assign capa-uno-dos-cm = "5 cm" %} 
+    {% assign capa-tres-cm = "20 cm" %}
+    
+
+{% elsif product.tags contains "firm-layers" %}
+    {% assign bg = "https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Colchones-capas-firm_-_desktop.webp?v=1664404407" %}
+    {% assign MattressName = "Airflow Gel-Firm" %}
+    {% assign titleDescription = "" %}
+    {% assign tipeMattres = "colchones firmes" %}
+    {% assign capa-uno-dos-cm = "4 cm" %}
+    {% assign capa-tres-cm = "18 cm" %}
+{% else %}
+{% endif %}
+
+<style>
+    .capas-nuevas {
+        background-image: url("{{ bg }}");
+    }
+</style>
+
+<div class="tw-w-full tw-flex tw-flex-col tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-x-3 tw-my-10 tw-h-[500px]">
+    {% comment %} SELECTOR {% endcomment %}
+    <div class="tw-self-center">
+            <h2 class="tw-font-lora tw-font-semibold tw-text-3xl md:tw-text-4xl tw-mb-10 tw-self-center tw-text-center md:tw-text-left">
+                Conoce nuestros nuevos <br>niveles de confort
+            </h2>
+            <p class="tw-hidden md:tw-block tw-font-normal tw-text-base tw-self-center tw-text-center md:tw-text-left tw-mb-4">
+                {{ titleDescription }}
+            </p>
+            <div class="tw-hidden md:tw-block">
+                <button onclick="layerOne()" class="tw-font-semibold tw-text-2xl tw-flex hover:tw-bg-[#D3B897] hover:tw-rounded-xl hover:tw-pr-3">
+                    <div class="tw-bg-[#D3B897] tw-rounded-3xl tw-w-[25px] tw-h-[25px] tw-text-center tw-text-white tw-self-center">1</div>
+                    <div class="tw-pl-5 tw-underline tw-decoration-gray-400 tw-decoration-dotted"> {{ MattressName }} </div>
+                </button>
+                <button onclick="layerTwo()" class="tw-font-semibold tw-text-2xl tw-flex tw-mt-5 hover:tw-bg-[#D3B897] hover:tw-rounded-xl hover:tw-pr-3">
+                    <div class="tw-bg-[#D3B897] tw-rounded-3xl tw-w-[25px] tw-h-[25px] tw-text-center tw-text-white tw-self-center">2</div> 
+                    <div class="tw-pl-5 tw-underline tw-decoration-gray-400 tw-decoration-dotted">Smart-B Latex</div>
+                </button>
+                <button onclick="layerTree()" class="tw-font-semibold tw-text-2xl tw-flex tw-mt-5 hover:tw-bg-[#D3B897] hover:tw-rounded-xl hover:tw-pr-3">
+                    <div class="tw-bg-[#D3B897] tw-rounded-3xl tw-w-[25px] tw-h-[25px] tw-text-center tw-text-white tw-self-center">3</div> 
+                    <div class="tw-pl-5 tw-underline tw-decoration-gray-400 tw-decoration-dotted">Advanced Support</div>
+                </button>
+            </div>
+    </div>
+
+
+    {% comment %} CAPAS {% endcomment %}
+    <div class="capas-nuevas tw-bg-contain tw-bg-center tw-bg-no-repeat tw-h-full tw-flex">
+        <div class="tw-self-center tw-flex tw-flex-col tw-grid tw-grid-cols-1 tw-gap-y-[1px] tw-w-5/6 tw-mx-auto">
+            
+            <div class="tw-h-[94px] tw-w-1/2 md:tw-w-full tw-mx-auto">
+                <div id="mattress-one" style="display:none;"> 
+
+                    <div class="tw-flex tw-flex-col tw-grid tw-grid-cols-3 md:tw-grid-cols-12 tw-self-center tw-p-1">
+                        <div class="tw-col-span-1 tw-w-[25px] tw-h-[25px] tw-text-center tw-text-white tw-self-end md:tw-self-center tw-font-semibold tw-text-2xl tw-rounded-3xl tw-bg-[#D3B897]">
+                            1
+                        </div>
+                        <div class="tw-flex tw-flex-col tw-grid tw-col-span-2 md:tw-col-span-11 tw-self-center tw-bg-[#D3B897] tw-rounded tw-p-1 tw-shadow-2xl">
+                            <div class="tw-flex tw-flex-col tw-grid md:tw-grid-cols-9 tw-self-center">
+                                <img class="tw-col-span-2 tw-w-[80px] tw-h-[80px] tw-rounded tw-my-auto" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Capa_01_aeab1571-9682-480a-a497-df507c1ceb0e.webp?v=1664414556">
+                                <div class="tw-hidden md:tw-block tw-col-start-3 tw-col-span-7 tw-self-center tw-flex tw-flex-col">
+                                    <h2 class="tw-font-semibold tw-text-xl"> {{ MattressName }} </h2>
+                                    <p class="tw-text-sm">Capa de espuma viscoelástica de {{ capa-uno-dos-cm }} ayuda a mejorar la ergonomía y se adapta a través del calor corporal, encontrándose debajo del pillow top para hacerlo un colchón aún más cómodo, , comparado con aquellos que solo incorporan látex natural en su estructura.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tw-h-[94px] tw-w-1/2 md:tw-w-full tw-mx-auto">
+                <div id="mattress-two" style="display:none;"> 
+
+                    <div class="tw-flex tw-flex-col tw-grid tw-grid-cols-3 md:tw-grid-cols-12 tw-self-center tw-p-1">
+                        <div class="tw-col-span-1 tw-w-[25px] tw-h-[25px] tw-text-center tw-text-white tw-self-center tw-font-semibold tw-text-2xl tw-rounded-3xl tw-bg-[#D3B897]">
+                            2
+                        </div>
+                        <div class="tw-flex tw-flex-col tw-grid tw-col-span-2 md:tw-col-span-11 tw-self-center tw-bg-[#D3B897] tw-rounded tw-p-1 tw-shadow-2xl">
+                            <div class="tw-flex tw-flex-col tw-grid md:tw-grid-cols-9 tw-self-center">
+                                <img class="tw-col-span-2 tw-w-[80px] tw-h-[80px] tw-rounded tw-my-auto" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Capa_02_dfa15c9a-bacb-4ace-b3fb-acc91dcf0aac.webp?v=1664414556">
+                                <div class="tw-hidden md:tw-block tw-col-start-3 tw-col-span-7 tw-self-center tw-flex tw-flex-col">
+                                    <h2 class="tw-font-semibold tw-text-xl">Smart-B Latex</h2>
+                                    <p class="tw-text-sm">Capa de espuma de látex de {{ capa-uno-dos-cm }} de grosor con alta tecnología que ofrece máximo confort y evita la propagación de movimiento, como ocurre con las camas con muelles.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tw-h-[94px] tw-w-1/2 md:tw-w-full tw-mx-auto">
+                <div id="mattress-tree" style="display:none;"> 
+
+                    <div class="tw-flex tw-flex-col tw-grid tw-grid-cols-3 md:tw-grid-cols-12 tw-self-center tw-p-1">
+                        <div class="tw-col-span-1 tw-w-[25px] tw-h-[25px] tw-text-center tw-text-white tw-self-start md:tw-self-start tw-font-semibold tw-text-2xl tw-rounded-3xl tw-bg-[#D3B897]">
+                            3
+                        </div>
+                        <div class="tw-flex tw-flex-col tw-grid tw-col-span-2 md:tw-col-span-11 tw-self-center tw-bg-[#D3B897] tw-rounded tw-p-1 tw-shadow-2xl">
+                            <div class="tw-flex tw-flex-col tw-grid md:tw-grid-cols-9 tw-self-center">
+                                <img class="tw-col-span-2 tw-w-[80px] tw-h-[80px] tw-rounded tw-my-auto" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Capa_03.webp?v=1664414685">
+                                <div class="tw-hidden md:tw-block tw-col-start-3 tw-col-span-7 tw-self-center tw-flex tw-flex-col">
+                                    <h2 class="tw-font-semibold tw-text-xl">Adaptive Advance</h2>
+                                    <p class="tw-text-sm">Capa de alta densidad memory foam de {{ capa-tres-cm }} que brinda soporte y firmeza alta para mantener tu columna vertebral alineada y sin presión, haciéndolo uno de los mejores {{ tipeMattres }} del mercado.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+           
+
+
+        </div>                
+    </div>
+
+    <div class="tw-block md:tw-hidden tw-overflow-x-scroll tw-flex">
+        <button onclick="layerOne()" class="tw-flex-none tw-py-6 tw-px-3 first:tw-pl-6 last:tw-pr-6 tw-bg-[#D3B897] tw-rounded tw-p-5 tw-w-[300px] tw-mx-3">
+          <h2 class="tw-font-semibold tw-text-lg">1. {{ MattressName }} </h2>
+          <p class="tw-text-xs">Capa de espuma viscoelástica de {{ capa-uno-dos-cm }} ayuda a mejorar la ergonomía y se adapta a través del calor corporal, encontrándose debajo del pillow top para hacerlo un colchón aún más cómodo.</p>
+        </button>
+
+        <button onclick="layerTwo()" class="tw-flex-none tw-py-6 tw-px-3 first:tw-pl-6 last:tw-pr-6 tw-bg-[#D3B897] tw-rounded tw-p-5 tw-w-[300px] tw-mx-3">
+            <h2 class="tw-font-semibold tw-text-lg">2. Smart-B Latex</h2>
+            <p class="tw-text-xs">Capa de espuma de látex de {{ capa-uno-dos-cm }} de grosor con alta tecnología que ofrece máximo confort y evita la propagación de movimiento, como ocurre con las camas con muelles.</p>
+        </button>
+
+        <button onclick="layerTree()" class="tw-flex-none tw-py-6 tw-px-3 first:tw-pl-6 last:tw-pr-6 tw-bg-[#D3B897] tw-rounded tw-p-5 tw-w-[300px] tw-mx-3">
+            <h2 class="tw-font-semibold tw-text-lg">3. Adaptive Advance</h2>
+            <p class="tw-text-xs">Capa de alta densidad memory foam de {{ capa-tres-cm }} que brinda soporte y firmeza alta para mantener tu columna vertebral alineada y sin presión.</p>
+        </button>
+    </div>
+
+        
+        
+
+</div> 
+
+
+<script>
+    function layerOne() {
+        document.getElementById("mattress-one").style.display="flex";
+        document.getElementById("mattress-two").style.display="none";
+        document.getElementById("mattress-tree").style.display="none";
+      }
+
+      function layerTwo() {
+        document.getElementById("mattress-one").style.display="none";
+        document.getElementById("mattress-two").style.display="flex";
+        document.getElementById("mattress-tree").style.display="none";
+      }
+
+      function layerTree() {
+        document.getElementById("mattress-one").style.display="none";
+        document.getElementById("mattress-two").style.display="none";
+        document.getElementById("mattress-tree").style.display="flex";
+      }
+</script>     

@@ -1,0 +1,110 @@
+<div class="active transition-opacity-zindex-03 tw-block tw-relative tw-mt-7 lg:tw-mt-8 tw-w-full tw-mx-auto">
+    <div class="tw-flex tw-flex-row-reverse tw-justify-center">
+      <div class="position-relative tw-flex-1 tw-max-w-[605px]">
+        <div
+          class="flickity-mobile-ann slider-for slider_flickity carousel carousel-main tw-border tw-border-solid tw-rounded-[4px] tw-border-color-7 tw-w-12/12 tw-mx-auto tw-bg-white"
+          index="0"
+        >
+          {% for media in product.media %}
+            {% if media.media_type == 'video' %}
+              <div class="carousel-cell tw-w-full">
+                {{
+                  media
+                  | video_tag:
+                    image_size: '1000x',
+                    autoplay: false,
+                    loop: false,
+                    muted: true,
+                    controls: true,
+                    class: 'tw-w-full'
+                }}
+              </div>
+            {% else %}
+              <div class="carousel-cell tw-w-full">
+                <div class="component-gallery-images__element tw-w-full tw-h-full tw-rounded-[4px]">
+                  {% if forloop.index0 <= 10 %}
+                    <picture class="tw-block tw-w-full md:tw-h-auto">
+                      <source srcset="{{ media | image_url: width: '1100x' }}" media="(min-width: 1200px)">
+                      <source srcset="{{ media | image_url: width: '1200x' }}" media="(min-width: 992px)">
+                      <source srcset="{{ media | image_url: width: '992x' }}" media="(min-width: 768px)">
+                      <source srcset="{{ media | image_url: width: '768x' }}" media="(min-width: 576px)">
+                      <source srcset="{{ media | image_url: width: '576x' }}" media="(min-width: 360px)">
+                      <source srcset="{{ media | image_url: width: '360x' }}" media="(min-width: 320px)">
+                      <img
+                        loading="eager"
+                        height="700"
+                        width="800"
+                        class="d-block tw-w-full tw-h-full md:tw-h-auto tw-object-cover tw-rounded-[4px]"
+                        src="{{ media | image_url: width: 10 }}"
+                        title="{{ product.title }}"
+                        alt="{{ product.title }} - Imagen {{ forloop.index }}"
+                      >
+                    </picture>
+                  {% else %}
+                    <picture class="tw-block">
+                      <source data-srcset="{{ media | img_url: '1100x' }}" media="(min-width: 1200px)">
+                      <source data-srcset="{{ media | img_url: '1200x' }}" media="(min-width: 992px)">
+                      <source data-srcset="{{ media | img_url: '992x' }}" media="(min-width: 768px)">
+                      <source data-srcset="{{ media | img_url: '768x' }}" media="(min-width: 576px)">
+                      <source data-srcset="{{ media | img_url: '576x' }}" media="(min-width: 360px)">
+                      <source data-srcset="{{ media | img_url: '360x' }}" media="(min-width: 320px)">
+                      {% comment %}
+                        <img
+                        class="tw-block tw-w-full tw-object-cover tw-h-full tw-rounded-[4px]"
+                        width="800"
+                        height="700"
+                        loading="lazy"
+                        alt="{{ product.title }} - Imagen {{ forloop.index }}">
+                      {% endcomment %}
+                      <img
+                        class="tw-block tw-w-full tw-object-cover tw-h-full tw-rounded-[4px]"
+                        width="800"
+                        height="700"
+                        title="{{ product.title }}"
+                        alt="{{ product.title }} - Imagen {{ forloop.index }}"
+                      >
+                    </picture>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+  
+      <div
+        class="slider-nav carousel-nav slider_flickity component-gallery-buttons tw-w-full tw-max-w-[100px] tw-m-0 tw-overflow-y-scroll tw-hidden lg:tw-block tw-max-h-[580px]"
+        index="0"
+      >
+        {% for media in product.media %}
+          <div class="component-gallery-button__wrapper tw-w-[80px] tw-h-[80px] tw-mr-[20px] tw-border-[2px] tw-border-solid tw-border-transparent hover:tw-border-color-8 tw-rounded-[4px] tw-transition-all slider-thumbails-color carousel-cell {% if forloop.first == true %} is-nav-selected {% endif %}">
+            <div class="tw-w-full tw-h-full">
+              <img
+                loading="eager"
+                height="80"
+                width="80"
+                class="tw-w-full tw-h-full tw-object-cover tw-cursor-pointer"
+                src="{{ media | image_url: width: 100 }}"
+                title="{{ product.title }}"
+                alt="{{ product.title }} - Imagen selector {{ forloop.index }}"
+              >
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  
+  <script type="module" src="{{ 'smart-product-header-gallery-dist.js' | asset_url }}" defer></script>
+  <script type="module" src="{{ 'smart-product-header-gallery-color.min.js' | asset_url }}" defer></script>
+  
+  <style>
+    .is-nav-selected {
+      border: 2px solid #000 !important;
+    }
+    @media only screen and (max-width: 9999px) and (min-width: 769px) {
+      .flickity-mobile-ann .flickity-viewport {
+        height: 750px !important;
+      }
+    }
+  </style>

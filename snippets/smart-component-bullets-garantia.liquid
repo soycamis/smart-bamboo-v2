@@ -1,0 +1,27 @@
+
+{% if product.metafields.custom.bullets_garantia != blank %}
+    <div class="tw-flex tw-flex-col tw-grid tw-grid-cols-12 tw-gap-y-[1px] lg:tw-gap-y-[3px] tw-my-3">
+    {% if product.metafields.custom.bullets_garantia.value.size > 0 %}
+        {% if product.metafields.custom.bullets_garantia.value.version == 1 %}
+            {% for data in product.metafields.custom.bullets_garantia.value.data %}
+            {% if data.garantia %}
+                {% for body in data.garantia.body %}
+                    {% assign isFirst = forloop.index %}
+                    {% for subbody in body %}
+                        {% for info in subbody %}
+                            <div class="tw-col-span-1 tw-flex tw-flex-row tw-justify-center tw-items-start">
+                                <img class=" tw-max-w-[20px]" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Check_buybox_v2.webp?v=1683959462" alt="check bullet point">
+                            </div>
+                            <p class="tw-col-span-11 tw-font-poppins tw-text-sm md:tw-text-[14px] tw-font-normal tw-leading-normal"> {{ info.text }}</p>
+                        {% endfor%}
+                    {% endfor%}
+                {% endfor%}
+            {% endif %}
+            {% endfor%}
+        {% endif%}
+    {% endif%}
+    </div>
+
+    
+    {% else %}
+  {% endif %}

@@ -1,0 +1,19 @@
+
+{% assign tagName = blog_tag %}
+{% assign blog_handles = "descanso,noticias,naturaleza,guias," | split: "," %}
+{% for handle in blog_handles %}
+    {% for article in blogs[handle].articles %}
+        {% if article.tags contains tagName %}                   
+            <li class="tw-mb-10 tw-ml-4 ">
+                <div class="tw-absolute tw-w-3 tw-h-3 tw-bg-gray-700 tw-rounded-full tw-mt-1.5 tw--left-1.5 tw-border tw-border-gray-900"></div>
+                <p class="tw-font-poppins tw-mb-1 tw-text-sm tw-font-normal tw-leading-none tw-text-gray-400">{{ article.published_at | time_tag: format: 'long' }}</p>
+                <h3 class="tw-font-poppins tw-text-lg tw-font-semibold tw-text-[#292929]">{{ article.title }}</h3>
+                <p class="tw-font-poppins tw-mb-4 tw-text-sm tw-font-normal tw-text-gray-500 ">{{ article.content | strip_html | truncate: 150 }}</p>
+                    <a href="{{ article.url }}" class="tw-inline-flex tw-items-center tw-px-4 tw-py-2 tw-text-sm tw-font-medium tw-text-gray-900 tw-bg-white tw-border tw-border-2 tw-border-solid tw-border-gray-200 tw-rounded-lg hover:tw-bg-[#292929] hover:tw-text-white">
+                        Leer más <svg class="tw-w-3 tw-h-3 tw-ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </a>
+            </li>
+        {% else %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}

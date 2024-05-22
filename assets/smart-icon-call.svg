@@ -1,0 +1,9 @@
+<svg name="smart-icon-call" xmlns="http://www.w3.org/2000/svg" width="95" height="95" viewbox="0 0 95 95">
+  <g id="icono" transform="translate(-205.793 -2084.793)">
+    <g id="Elipse_37" data-name="Elipse 37" transform="translate(205.793 2084.793)" fill="#fff" stroke="#434f5a" stroke-width="2.5">
+      <circle cx="47.5" cy="47.5" r="47.5" stroke="none"></circle>
+      <circle cx="47.5" cy="47.5" r="46.25" fill="none"></circle>
+    </g>
+    <path id="Trazado_4" data-name="Trazado 4" d="M839.719,1250.581a25.1,25.1,0,0,0-14.193-6.085,28.577,28.577,0,0,0-4.769,5.156c-2.63-1.038-5.594-4.064-8.245-7.288s-5.047-6.717-5.559-9.5a28.53,28.53,0,0,0,5.98-3.685,25.1,25.1,0,0,0-3.23-15.1c-2.735-.6-9.269-.809-13.884,1.139-1.638,5.782-1.253,17.912,10.271,32.426,12.014,14.109,23.843,16.829,29.831,16.339C838.723,1259.833,839.784,1253.382,839.719,1250.581Z" transform="translate(-563.724 893.193)" fill="none" stroke="#434f5a" stroke-miterlimit="10" stroke-width="2.5"></path>
+  </g>
+</svg>

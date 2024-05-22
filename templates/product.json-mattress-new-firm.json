@@ -1,0 +1,339 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "caption": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Materials",
+            "icon": "leather",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible-row-1": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Shipping & Returns",
+            "icon": "truck",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible-row-2": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Dimensions",
+            "icon": "ruler",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible-row-3": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Care Instructions",
+            "icon": "heart",
+            "content": "",
+            "page": ""
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "caption",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "collapsible-row-0",
+        "collapsible-row-1",
+        "collapsible-row-2",
+        "collapsible-row-3",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "large",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "product-video": {
+      "type": "smart-meta-video-metafield",
+      "settings": {
+        "section_title": "Nunca Habías Dormido Tan Bien",
+        "section_subtitle": "Presentamos nuestro nuevo e innovador colchón Firm",
+        "section_paragraph": "Nuestro innovador colchón viscoelástico Smart Firm está conformado por diversas capas de materiales innovadores que, a diferencia de otras opciones, resultan ser más amigables con el cuerpo al dormir sin perder dureza."
+      }
+    },
+    "product-zigzag": {
+      "type": "meta-zigzag-content-new-matress-firm",
+      "settings": {
+      }
+    },
+    "product-benefits": {
+      "type": "smart-mobile-benefits",
+      "settings": {
+      }
+    },
+    "product-faq": {
+      "type": "meta-faq-section-schema",
+      "blocks": {
+        "7d8f4ebd-abd0-4eb9-b912-e54cd0d9ef32": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Qué es un colchón firme?",
+            "accordianInfo": "<p>Cuando se habla de un <strong>colchón firme<\/strong>, quiere decir que su firmeza es superior a otros colchones, eliminando así los diferentes puntos de presión en el cuerpo, como en el cuello, espalda, y hombros.<\/p>"
+          }
+        },
+        "f7dc62cf-3c8d-49d5-b090-0bbe3b68c205": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Qué es mejor, un colchón firme o extra firme?",
+            "accordianInfo": "<p>Es importante mencionar que un colchón extra firme, a diferencia de aquellos con firmeza media, puede ser más rígido de lo que se espera, provocando cierta incomodidad a la hora de dormir o generando incluso dolores musculares.<\/p><p><\/p><p>Por lo tanto, se recomienda elegir un colchón que cuente con la firmeza necesaria, pero que al mismo tiempo otorgue suavidad y confort, un claro ejemplo son nuestros colchones firmes Smart Firm, que se adaptan a tus necesidades a la hora de dormir.<\/p>"
+          }
+        },
+        "811f4d53-d60f-4217-8b7b-a71ff56523c1": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Qué garantía obtengo al adquirir un Colchón Smart Firm?",
+            "accordianInfo": "<p>En Smart Bamboo respaldamos nuestros colchones al 100 %, ya que desde el momento de su compra cuentan con 365 noches de prueba, además de obtener una garantía de 12 años por defectos de fábrica.<\/p>"
+          }
+        },
+        "553da140-1ad4-4e7a-bea5-236685c70770": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Por qué Smart Bamboo no es como otros colchones?",
+            "accordianInfo": "<p>Los colchones de Smart Bamboo se diferencian de otros colchones en muchos aspectos, incluyendo su soporte, durabilidad, hipoalergénicos, tecnología de ventilación y resistencia a ácaros y bacterias. Estos aspectos hacen de los colchones duros una excelente opción para aquellos que buscan un producto de alta calidad para tener el mejor descanso.<\/p><p>Contamos con 3 diferentes modelos ideales para cada integrante de la familia, adaptándose a tus espacios disponibles y con la opción de seleccionar el tamaño ideal: individual , matrimonial, Queen Size y King Size.<\/p>"
+          }
+        },
+        "0516a040-7a76-415a-92af-18f8a453fe78": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿En qué consiste la prueba de sueño sin riesgo de 365 noches?",
+            "accordianInfo": "<p>Uno de los beneficios que obtendrás al adquirir un colchón Smart Bamboo es el periodo de prueba de 365 noches que comienza desde que efectúas tu compra, comprobando la comodidad y confort de nuestros colchones firmes desde el primer momento.<\/p>"
+          }
+        },
+        "8ea6468d-25b9-4b16-a5f1-e8a3d202ea3a": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cuentan con meses sin intereses?",
+            "accordianInfo": "<p>Con la intención de que logres adquirir el descanso que mereces, ofrecemos la opción de financiar tu compra a 3, 6, 9, 12 ,18 y 24 meses sin intereses, pagando con cualquier tarjeta de crédito, aplica T&C*<\/p>"
+          }
+        },
+        "e438187b-b2c3-4d57-a5ec-b83c3442a98f": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cuánto tiempo tardaré en adaptarme a mi nuevo colchón Smart Bamboo?",
+            "accordianInfo": "<p>El cuerpo tarda aproximadamente un mes en acostumbrarse a un colchón nuevo, si es la primera vez que duermes en uno de nuestros colchones, considera este periodo de ajuste de 30 a 60 días.<\/p><p><\/p><p>Te aseguramos que dentro de poco tiempo obtendrás los beneficios de una buena noche de sueño haciendo esta transición.<\/p>"
+          }
+        },
+        "ef43d54d-d1b5-48b2-9c73-a15f888c1900": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cuánto tiempo tardará en tomar forma?",
+            "accordianInfo": "<p>Una vez que lo saques de su caja, tomará su forma original en cinco horas; si bien es seguro dormir en tu nuevo colchón Smart la primera noche, ten en cuenta que tomará su altura máxima en un periodo de 24 horas.<\/p>"
+          }
+        },
+        "b8eb6fc1-f892-4ef0-9dbd-803b1a7deb02": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Qué tipo de base recomiendan para mi nuevo colchón?",
+            "accordianInfo": "<p>Tu <strong>colchón firme<\/strong> funcionará muy bien en cualquier base plana y resistente, en base eléctrica o incluso en el piso; sin embargo, para mejores resultados, te recomendamos que sea sobre una superficie limpia y plana.<\/p>"
+          }
+        },
+        "d6b94938-cf56-4ed9-92ce-eeda731b7c96": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cuál es la diferencia entre los tres modelos SMART?",
+            "accordianInfo": "<p>Como beneficio a nuestros clientes contamos con 3 modelos diferentes de colchones y a pesar de que nuestro primer material es el memory foam, cada uno de ellos tiene sus ventajas y beneficios que los hace únicos.<\/p><p><\/p><p>Comenzamos con nuestro modelo de colchón blando Smart Balance, se diferencia por ser un colchón suave, flexible y brindar un descanso con una sensación de abrazo durante toda la noche, brinda un nivel de 6.5 de firmeza y es ideal para dormir de lado.<\/p><p><\/p><p>Asimismo, nuestro colchón Smart Firme garantiza un mayor soporte de espalda y columna, brinda un nivel de 8.5 de firmeza, siendo una excelente alternativa para problemas articulares y sobrepeso. Ideal para dormir boca arriba.<\/p><p><\/p><p>Nuestro último y reciente modelo Smart Hydrid, gracias a la combinación de materiales con la intención de proporcionar soporte y confort con la nueva tecnología que este incluye, brinda un nivel de 7 de firmeza e ideal para personas adultas, ya que ayuda a levantarse de la cama con mejor soporte.<\/p><p><\/p><p>Estos colchones híbridos cuentan con muelles ensacados de acero de alto calibre envueltos individualmente, brindando un soporte preciso y una firmeza superior a la media.<\/p>"
+          }
+        },
+        "37c25d0e-0915-41f9-bb9f-6e1ead65b1bf": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Qué hago si se moja mi Colchón Smart Firm?",
+            "accordianInfo": "<p>1. En caso de que se derrame un líquido sobre el colchón, retira toda la cubierta inmediatamente, puede lavarse a máquina.<\/p><p>2. Usa una toalla seca para absorber el líquido del colchón y permite que el área se seque al aire antes de cubrirla nuevamente.<\/p><p>3. Limpia las manchas con detergente suave a mano, no remojes ni laves a máquina la espuma con memoria.<\/p><p>4. Enjuaga con agua tibia y seca a temperatura ambiente.<\/p>"
+          }
+        },
+        "2101a559-8e83-462e-8c3b-50d6758be76f": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿En cuánto tiempo llegará mi colchón?",
+            "accordianInfo": "<p>Tendrás tu <strong>colchón firme<\/strong> de forma rápida y hasta la puerta de tu hogar, pues contamos con envío gratis a toda la República Mexicana por Estafeta, con un tiempo de entrega de entre 24 a 48 horas en días hábiles y en pedidos realizados desde la Ciudad de México, Guadalajara, Toluca, Monterrey, Puebla, Querétaro y Metepec.<\/p><p>Para el resto de la República, dependiendo del estado y la zona, la entrega demora entre 3 a 7 días hábiles, no obstante, Baja California, Cancún, Tijuana y Tlaxcala son considerados puntos de difícil acceso, por lo que las entregas pueden tardar más de lo habitual.<\/p>"
+          }
+        },
+        "4c5968f3-8a24-4acb-b9a0-a08638041430": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cómo puedo hacer una devolución?",
+            "accordianInfo": "<p>Es poco frecuente, pero en caso de que el producto no cumpla tus expectativas, comunícate con nuestro servicio al cliente y con gusto te atenderemos.<\/p>"
+          }
+        },
+        "c8906a9a-8bd4-4a42-90ae-60e243c0921f": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cada cuánto tiempo recomiendan cambiar de colchón?",
+            "accordianInfo": "<p>Si bien nuestros colchones firmes tienen una larga vida útil, se recomienda cambiar de colchón cada 7 a 10 años.<\/p>"
+          }
+        },
+        "5d213acb-ba4b-4a8d-945c-1d69f8001141": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Manejan diferentes estilos y tamaños para los colchones firmes?",
+            "accordianInfo": "<p>Desde colchones individuales hasta king size, los colchones firmes de Smart Bamboo cuentan con diferentes tamaños y pesos. ¡Conócelos!<\/p>"
+          }
+        },
+        "93a53bfa-19b7-48dd-8b61-ce3461643374": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cómo son los materiales de fabricación de los colchones firmes?",
+            "accordianInfo": "<p>Los materiales de nuestro colchón firme se destacan por ofrecer una alta firmeza, convirtiéndolos en los mejores colchones del mercado, en comparación con otros colchones viscoelásticos.<\/p>"
+          }
+        },
+        "3648ad9f-e998-4e0e-a859-0d8046b4de25": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Qué pasa si ensucio de forma superficial mi colchón firm?",
+            "accordianInfo": "<p>Los colchones firmes Smart Firm están cubiertos por una suave funda, que es fresca e hipoalergénica. Cuentan con una cremallera para retirarla y lavarla con facilidad.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "7d8f4ebd-abd0-4eb9-b912-e54cd0d9ef32",
+        "f7dc62cf-3c8d-49d5-b090-0bbe3b68c205",
+        "811f4d53-d60f-4217-8b7b-a71ff56523c1",
+        "553da140-1ad4-4e7a-bea5-236685c70770",
+        "0516a040-7a76-415a-92af-18f8a453fe78",
+        "8ea6468d-25b9-4b16-a5f1-e8a3d202ea3a",
+        "e438187b-b2c3-4d57-a5ec-b83c3442a98f",
+        "ef43d54d-d1b5-48b2-9c73-a15f888c1900",
+        "b8eb6fc1-f892-4ef0-9dbd-803b1a7deb02",
+        "d6b94938-cf56-4ed9-92ce-eeda731b7c96",
+        "37c25d0e-0915-41f9-bb9f-6e1ead65b1bf",
+        "2101a559-8e83-462e-8c3b-50d6758be76f",
+        "4c5968f3-8a24-4acb-b9a0-a08638041430",
+        "c8906a9a-8bd4-4a42-90ae-60e243c0921f",
+        "5d213acb-ba4b-4a8d-945c-1d69f8001141",
+        "93a53bfa-19b7-48dd-8b61-ce3461643374",
+        "3648ad9f-e998-4e0e-a859-0d8046b4de25"
+      ],
+      "settings": {
+        "faq_title": "Preguntas Frecuentes"
+      }
+    },
+    "product-reviews": {
+      "type": "product-reviews",
+      "settings": {
+      }
+    },
+    "product-recommended": {
+      "type": "smart-product-grid-title-collection",
+      "blocks": {
+        "1cce5ccb-4c98-407b-b591-5b7aa6e8f131": {
+          "type": "product",
+          "settings": {
+            "collection_product": "almohada-blend"
+          }
+        },
+        "8c133375-b9d3-43fc-84dd-f48c703881d7": {
+          "type": "product",
+          "settings": {
+            "collection_product": "almohada-cervical-gel"
+          }
+        },
+        "a3db839b-a5dd-450e-aa15-56bc23929b84": {
+          "type": "product",
+          "settings": {
+            "collection_product": "colcha-reversible-pinsonic"
+          }
+        }
+      },
+      "block_order": [
+        "1cce5ccb-4c98-407b-b591-5b7aa6e8f131",
+        "8c133375-b9d3-43fc-84dd-f48c703881d7",
+        "a3db839b-a5dd-450e-aa15-56bc23929b84"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "collection_title": "Productos Recomendados"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-video",
+    "product-zigzag",
+    "product-benefits",
+    "product-faq",
+    "product-reviews",
+    "product-recommended"
+  ]
+}

@@ -1,0 +1,65 @@
+
+<style>
+    .etiqueta-gratis {
+      position: relative;
+      top: -5px;
+    }
+</style>
+
+<input-gift class="position-relative" style="display: none;">
+
+<div class="tw-flex tw-flex-col tw-gap-y-3 tw-bg-[#f7f7f7] tw-rounded" gift_subtitle>
+
+</div>
+
+
+  {% comment %} <div class="subcomponent-gift__border br-4 position-absolute"></div> {% endcomment %}
+  <div class="subcomponent-gift__body d-flex align-items-center position-relative tw-hidden">
+    <div gift_img class="subcomponent-gift__img position-relative tw-hidden">
+      {% for data in product.metafields.general.gift.value.data %}
+        <img trigger="{{data.trigger}}" loading="lazy" width="auto" height="auto" class="lozad transition-opacity-zindex-03 {% if forloop.first == true %}active{% endif %}" src="{{ data.image.name | file_img_url: 'master' }}">
+      {% endfor %}
+    </div>
+    
+    
+
+    <div class="subcomponent-gift__info d-flex justify-content-between tw-hidden">
+      <div class="subcomponent-gift__name">
+        <p class="fs-13-18 fw-semibold"><b class="c1-c" gift_title>Producto de regalo</b></p>
+        <p class="fs-13-16 fw-regular" gift_subtitle>Tamaño</p>
+      </div>
+      <div class="subcomponent-gift__prices text-end">
+        <p class="fs-13-16 fw-regular text-decoration-line-through" gift_compare_price>Precio</p>
+        <p class="fs-13-18 fw-semibold c1-c" gift_price>Precio final</p>
+      </div>
+    </div> 
+    
+  </div>
+  <script type="application/json" gift_handler>
+    {{ product.metafields.general.gift.value | json}}
+  </script>
+  <script type="application/json" gift_product>
+    {% assign gift_product = all_products[product.metafields.general.gift.value.product_gift_handle] %}
+    {
+      "id": {{ gift_product.id }},
+      "title": "{{ gift_product.title }}",
+      "variants": [
+        {% for variant in gift_product.variants %}
+          {
+            "id": "{{ variant.id }}",
+            "title": "{{ gift_product.title }}",
+            "variant_title": "{{ variant.title }}",
+            "available": {{ variant.available }},
+            "price": {{ variant.price }},
+            "compare_at_price": {{ variant.compare_at_price }}
+          }
+          {% if forloop.last == false %},{% endif %}
+        {% endfor %}
+      ]
+    }
+  </script>
+</input-gift>
+
+<script type="module" src="{{ 'smart-main-input-gift.js' | asset_url }}" defer="defer"></script>
+
+{% comment %} <script>console.log({{ product | json }});</script> {% endcomment %}

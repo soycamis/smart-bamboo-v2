@@ -1,0 +1,16 @@
+<section class="tw-w-full tw-bg-[#f7f7f7]">
+    <div class="tw-max-w-[1300px] tw-mx-auto">
+      <div id="reviewsBot" class="general-reviews__container padding-section-top responsive-padding tw-pt-0 lg:tw-pt-10">
+        <div class="Product">
+          <div 
+            class="yotpo yotpo-main-widget" 
+            data-product-id="{{ product.id }}" 
+            data-name="{{ product.title | escape }}" 
+            data-url="{{ shop.url }}{{ product.url }}" 
+            data-image-url="{{ product.featured_image | img_url: "large" |replace: '?', '%3F' | replace: '&','%26' }}" 
+            data-description="{{ product.description | escape }}"
+          ></div>
+        </div>
+      </div> 
+    </div> 
+  </section>

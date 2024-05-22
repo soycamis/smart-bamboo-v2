@@ -1,0 +1,63 @@
+
+{% capture MostSeller %}
+ {% render 'smart-snippet-most-seller' %} 
+{% endcapture %}
+
+{% capture NewProducts %}
+{% render 'smart-snippet-new-products' %}  
+{% endcapture %}
+
+{% capture Blogs %}
+{% render 'smart-snippet-recommended-product-by-blogs' %} 
+{% endcapture %}
+
+
+<section id="index-section-nine" class="tw-my-0 md:tw-my-5 tw-px-5 md:tw-px-10 tw-py-0 md:tw-py-4 lg:tw-py-8 tw-flex tw-justify-center tw-items-center">
+    <div class="tw-max-w-[1300px] tw-w-full tw-flex tw-flex-col tw-justify-center tw-items-center tw-py-10 md:tw-py-0">
+        <h3 class="tw-w-full tw-text-center tw-text-2xl lg:tw-text-3xl tw-font-semibold tw-font-lora tw-text-[#434f5a] tw-mb-5">
+            Otros clientes también se llevaron
+        </h3>
+
+        <div class="tw-w-full xl:tw-w-1/3 tw-flex tw-flex-col tw-grid tw-grid-cols-3 tw-bg-[#f7f7f7] lg:tw-bg-white tw-divide-y-[0px] tw-divide-x-[2px] tw-divide-gray-300 tw-divide-solid tw-border tw-border-solid lg:tw-border-none tw-border-gray-300 tw-rounded-xl">
+            <button onclick="renderMostSeller()" class="tw-font-poppins tw-font-normal tw-text-xs lg:tw-text-base focus:tw-text-medium tw-text-center tw-text-gray-500 focus:tw-text-white focus:xl:tw-text-[#292929] tw-py-3 tw-px-2 focus:tw-rounded-l-xl focus:tw-bg-[#434f5a] focus:lg:tw-bg-white focus:tw-border focus:tw-border-solid focus:tw-border-[#434f5a] focus:xl:tw-border-white">
+                <span class="tw-hidden lg:tw-block">Lo Más Vendido</span>
+                <span class="tw-block lg:tw-hidden">+ Vendido</span>
+            </button>
+            <button onclick="renderNewProducts()" class="tw-font-poppins tw-font-normal tw-text-xs lg:tw-text-base focus:tw-text-medium tw-text-center tw-text-gray-500 focus:tw-text-white focus:xl:tw-text-[#292929] tw-py-3 tw-px-2 focus:tw-bg-[#434f5a] focus:lg:tw-bg-white focus:tw-border focus:tw-border-solid focus:tw-border-[#434f5a] focus:xl:tw-border-white">
+                Lo Nuevo
+            </button>
+            
+            <button onclick="renderProductBlog()" class="tw-font-poppins tw-font-normal tw-text-xs lg:tw-text-base focus:tw-text-medium tw-text-center tw-text-gray-500 focus:tw-text-white focus:xl:tw-text-[#292929] tw-py-3 tw-px-2 focus:tw-rounded-r-xl focus:tw-bg-[#434f5a] focus:lg:tw-bg-white focus:tw-border focus:tw-border-solid focus:tw-border-[#434f5a] focus:xl:tw-border-white">
+                Recomendación
+            </button>
+        </div>
+    
+        <div id="renderSnippetRecommendationsContent" class="tw-w-full tw-py-2 tw-mt-4 lg:tw-mt-6 tw-bg-white tw-shadow-lg lg:tw-shadow-none tw-rounded-xl">
+            <div id="MostSellerContent">{{ MostSeller }}</div>
+            <div style="display:none;" id="NewProductsContent">{{ NewProducts }}</div>
+            <div style="display:none;" id="ProductBlogsContent">{{ Blogs }}</div>
+        </div>
+
+    </div>
+</section>
+
+
+<script>
+    function renderNewProducts() {
+        document.getElementById('MostSellerContent').style.display = 'none';
+        document.getElementById('ProductBlogsContent').style.display = 'none'; 
+        document.getElementById('NewProductsContent').style.display = 'block';
+    }
+  
+    function renderProductBlog() {
+        document.getElementById('NewProductsContent').style.display = 'none';
+        document.getElementById('MostSellerContent').style.display = 'none';
+        document.getElementById('ProductBlogsContent').style.display = 'block';
+    }
+  
+    function renderMostSeller() {
+        document.getElementById('NewProductsContent').style.display = 'none';
+        document.getElementById('ProductBlogsContent').style.display = 'none';
+        document.getElementById('MostSellerContent').style.display = 'block';
+    }
+</script>

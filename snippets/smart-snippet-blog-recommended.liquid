@@ -1,0 +1,26 @@
+
+<div class="card-agregados tw-h-fit tw-bg-white">
+    <div class="tw-px-8 tw-p-3 md:tw-p-8 tw-flex tw-flex-col tw-grid tw-grid-cols-1 tw-content-between tw-justify-center tw-h-4/6 sm:tw-h-2/4 lg:tw-h-3/4">
+      <div class="tw-flex tw-flex-col tw-grid lg:tw-grid-cols-2">
+        <img class="tw-w-full" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Smart-Bamboo-Blog-Portada-min.webp?v=1660782377">
+        
+        <div class="tw-w-full tw-px-5">
+          <h3 class="tw-font-semibold tw-mb-4">Articulos que te pueden interesar:</h3>
+              {% assign blog_handles = "descanso" | split: "," %}
+                {% for handle in blog_handles %}    
+                  {% for article in blogs[handle].articles limit: 5 %}
+                    <a href="{{ article.url }}" aria-label="Read more: {{ article.title }}">
+                      <h2 class="tw-text-center md:tw-text-left tw-text-base tw-font-normal tw-mb-2">{{- article.title | link_to: article.url }} <span class="tw-text-slate-600 tw-text-sm">{{ article.published_at | time_tag: format: 'month_day_year' }}</span> </h2>
+                    </a>
+                  {% endfor %}
+                {% endfor %}
+
+          <a href="/pages/categorias-blogs">
+            <button class="tw-bg-transparent hover:tw-bg-[#434F5A] tw-font-poppins tw-font-semibold tw-text-base tw-text-[#434F5A] hover:tw-text-white tw-border-[1px] tw-border-[#434F5A] tw-border-solid tw-rounded-md tw-p-2 tw-full tw-mx-auto md:tw-mx-0 tw-block tw-px-14 tw-mt-5">
+              Ver más artículos
+            </button>
+          </a>
+        </div>     
+      </div>
+    </div>
+  </div>

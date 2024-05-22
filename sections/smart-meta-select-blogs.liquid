@@ -1,0 +1,78 @@
+
+
+{% capture blogMasLeido %}
+ {% render 'smart-snippet-blog-mas-leido' %} 
+{% endcapture %}
+
+{% capture blogLoNuevo %}
+{% render 'smart-snippet-blog-new' %}  
+{% endcapture %}
+
+{% capture blogRecommended %}
+{% render 'smart-snippet-blog-recommended' %} 
+{% endcapture %}
+
+
+<section class="tw-bg-white tw-flex tw-w-full tw-justify-center tw-items-center tw-py-10">
+    <div class="tw-max-w-[1000px] tw-flex tw-flex-col md:tw-flex-row md:tw-grid tw-grid-cols-1 md:tw-gap-4">
+      <div class="tw-flex tw-justify-center tw-items-center tw-block tw-mx-2 md:tw-mx-0  tw-mb-5 md:tw-mb-5">
+       
+        <div class="tw-w-full tw-flex tw-flex-col tw-justify-center tw-items-center tw-px-3 md:tw-px-8">
+          <h2 class="tw-text-[#4F4A41] tw-font-semibold tw-text-2xl md:tw-text-4xl tw-text-center tw-mt-8 md:tw-mt-6 tw-mb-8 md:tw-mb-0">
+             Cuidar de tu descanso<br class="tw-block md:tw-hidden"> es cuidar de ti
+          </h2>
+          <p class="tw-hidden md:tw-block tw-p-4 tw-text-center tw-text-base md:tw-text-lg">
+             Descubre la selección especial para nuestros lectores
+          </p>
+
+          <div class="tw-w-full lg:tw-w-1/2 tw-flex tw-flex-col tw-grid tw-grid-cols-3 tw-bg-white tw-divide-y-[0px] tw-divide-x-[2px] tw-divide-gray-300 tw-divide-solid tw-border tw-border-solid lg:tw-border-none tw-border-gray-300 tw-rounded-xl">
+            <button onclick="renderBlogMasLeido()" class="tw-font-poppins tw-font-normal tw-text-base lg:tw-text-base focus:tw-text-medium tw-text-center tw-text-gray-500 focus:tw-text-white focus:xl:tw-text-[#292929] tw-py-3 tw-px-2 focus:tw-rounded-l-xl focus:tw-bg-[#434f5a] focus:lg:tw-bg-white focus:tw-border focus:tw-border-solid focus:tw-border-[#434f5a] focus:xl:tw-border-white">
+                Lo más leído
+            </button>
+            <button onclick="renderBlogLoNuevo()" class="tw-font-poppins tw-font-normal tw-text-base lg:tw-text-base focus:tw-text-medium tw-text-center tw-text-gray-500 focus:tw-text-white focus:xl:tw-text-[#292929] tw-py-3 tw-px-2 focus:tw-bg-[#434f5a] focus:lg:tw-bg-white focus:tw-border focus:tw-border-solid focus:tw-border-[#434f5a] focus:xl:tw-border-white">
+                Lo nuevo
+            </button>
+            
+            <button onclick="renderBlogRecommended()" class="tw-font-poppins tw-font-normal tw-text-base lg:tw-text-base focus:tw-text-medium tw-text-center tw-text-gray-500 focus:tw-text-white focus:xl:tw-text-[#292929] tw-py-3 tw-px-2 focus:tw-rounded-r-xl focus:tw-bg-[#434f5a] focus:lg:tw-bg-white focus:tw-border focus:tw-border-solid focus:tw-border-[#434f5a] focus:xl:tw-border-white">
+                Recomendado
+            </button>
+
+          </div>
+    
+          <div class="tw-w-full tw-py-2 tw-mt-4 lg:tw-mt-6 tw-bg-white tw-rounded-xl">
+            <div id="blogDefaultContent">{{ blogMasLeido }}</div>
+            <div style="display:none;" id="blogMasLeidoContent">{{ blogMasLeido }}</div>
+            <div style="display:none;" id="blogLoNuevoContent">{{ blogLoNuevo }}</div>
+            <div style="display:none;" id="blogRecommendedContent">{{ blogRecommended }}</div>
+          </div>
+
+          
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<script>
+  function renderBlogMasLeido() {
+    document.getElementById('blogDefaultContent').style.display = 'none';
+    document.getElementById('blogLoNuevoContent').style.display = 'none'; 
+    document.getElementById('blogRecommendedContent').style.display = 'none'; 
+    document.getElementById('blogMasLeidoContent').style.display = 'block';
+  }
+
+  function renderBlogLoNuevo() {
+    document.getElementById('blogDefaultContent').style.display = 'none';
+    document.getElementById('blogMasLeidoContent').style.display = 'none'; 
+    document.getElementById('blogRecommendedContent').style.display = 'none'; 
+    document.getElementById('blogLoNuevoContent').style.display = 'block';
+  }
+
+  function renderBlogRecommended() {
+    document.getElementById('blogDefaultContent').style.display = 'none';
+    document.getElementById('blogMasLeidoContent').style.display = 'none'; 
+    document.getElementById('blogLoNuevoContent').style.display = 'none'; 
+    document.getElementById('blogRecommendedContent').style.display = 'block';
+  }
+</script>

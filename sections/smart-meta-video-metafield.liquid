@@ -1,0 +1,56 @@
+
+{% if product.metafields.custom.video_desktop != blank %}
+    <section>
+        <div class="tw-hidden md:tw-flex tw-justify-center">
+            <div class="tw-w-full tw-max-w-[1200px] tw-block tw-my-8">
+                <div class="tw-h-[1px] tw-bg-gray-300 tw-mx-5 lg:tw-mx-0"></div>
+                    <div class="tw-w-5/6 md:tw-w-2/3 tw-mx-auto tw-block tw-pb-2 md:tw-pb-10 tw-pt-6">
+                        <h2 class="tw-text-center tw-text-2xl md:tw-text-3xl tw-font-semibold"> 
+                            {{ section.settings.section_title }}<br>{{ section.settings.section_subtitle }}
+                        </h2>
+                        {% if section.settings.section_paragraph != blank %}
+                            <p class="tw-font-poppins tw-text-center tw-text-base md:tw-text-lg tw-font-normal tw-mt-5">
+                                {{ section.settings.section_paragraph }}
+                            </p>
+                        {% else %}
+                        {% endif %}
+                    </div> 
+                    <div class="tw-w-full tw-block tw-flex tw-justify-center">
+                        <video 
+                        loading="lazy"
+                        width="auto" 
+                        height="auto" 
+                        poster="{{ product.metafields.custom.video_poster }}" 
+                        class="tw-block tw-w-[90%] lg:tw-w-full" 
+                        playsinline controls>
+                        <source src="{{ product.metafields.custom.video_desktop }}">
+                        </video> 
+                    </div>
+                </div>  
+        </div>
+    </section>
+    {% else %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product Meta Video",
+  "settings": [
+    {
+        "type": "text",
+        "id": "section_title",
+        "label": "Title"
+      },
+      {
+          "type": "text",
+          "id": "section_subtitle",
+          "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "section_paragraph",
+        "label": "Paragraph"
+    }
+  ]
+}
+{% endschema %}

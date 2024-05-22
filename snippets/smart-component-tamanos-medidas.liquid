@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="{{ 'smart-component-tech.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'smart-component-tech.css' | asset_url | stylesheet_tag }}</noscript>
+
+
+{% if product.metafields.custom.medidas.value.size > 0 %}
+  {% if product.metafields.custom.medidas.value.version == 1 %}
+    {% for data in product.metafields.custom.medidas.value.data %}
+    {% if data.table %}
+      <div class=" {% if mobile != true %}responsive-padding{% endif %}">
+        <div class="component-table__container">
+          <table class="component-table__table tw-text-start tw-mx-0">
+            <thead class="tw-border-b tw-border-solid tw-border-[1px] tw-border-b-[#d8d8d8] tw-border-t-transparent tw-border-x-transparent">
+              <tr>
+                {% for head in data.table.head %}
+                  <th>
+                    <p class="tw-font-poppins tw-text-[9px] lg:tw-text-[10.5px] tw-font-normal">{{ head.text }}</p>
+                  </th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for body in data.table.body %}
+                <tr>
+                  {% assign isFirst = forloop.index %}
+                  {% for subbody in body %}
+                    <td class="tw-border-b tw-border-solid tw-border-[1px] tw-border-[#d8d8d8]">
+                      {% for info in subbody %}
+                        <p class="tw-font-poppins tw-text-[9px] lg:tw-text-[10.5px] tw-font-normal tw-px-3 tw-leading-normal {% if isFirst %} tw-font-normal{% assign isFirst = false %} {% endif %}">{{ info.text }}</p>
+                      {% endfor %}
+                    </td>
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+  {% endif %}
+{% endif %}

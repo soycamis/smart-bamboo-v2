@@ -1,0 +1,154 @@
+{% capture list %}
+  {% assign isFirst = true %}
+  {% for media in product.media %}
+    {% if media.media_type == 'image' %}
+      {% assign isCounted = false %}
+        {%- for variant in product.variants -%}
+          {% if media == variant.image.src %}
+            {% if isCounted == false %}
+              {% if isFirst != true %}
+                ^
+              {% endif %}
+              {% assign isCounted = true %}
+              {% assign isFirst = false %}
+              {% break %}
+            {% endif %} 
+          {% endif %}
+        {%- endfor -%}
+      {{ forloop.index0 }}|
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+
+<gallery-color class="tw-block tw-relative tw-mt-7 lg:tw-mt-8">
+  {% assign p_list = list | split: '^' %}
+  {% for p_item in p_list %}
+    {% assign elementIndex = forloop.index0 %}
+    {% assign m_list = p_item | split: '|' %}
+    <div
+      element
+      color="{{ product.options_by_name['Color'].values[forloop.index0]}}"
+      class="tw-absolute tw-left-0 tw-top-0 tw-w-full h-full tw-opacity-0 -tw-z-10 tw-transition-all {% if forloop.first == true %} slider-color--active {% endif %} tw-px-0"
+      {% if forloop.first == false %}
+        style="position: absolute;"
+      {% endif %}
+    >
+      <div class="tw-flex tw-flex-col md:tw-flex-row-reverse tw-justify-center">
+        <div data-slides class="tw-relative tw-flex-1 tw-max-w-[605px]">
+          <div
+            class="flickity-mobile-ann slider-for slider_flickity carousel carousel-main tw-rounded-[4px] tw-border tw-border-solid tw-border-color-7 tw-bg-white"
+            index="{{ forloop.index0 }}"
+          >
+            {% for video in product.media %}
+              {% if video.media_type == 'video' %}
+                <div data-slide-video class="carousel-cell tw-w-full">
+                  {{
+                    video
+                    | video_tag:
+                      image_size: '1000x',
+                      autoplay: false,
+                      loop: false,
+                      muted: true,
+                      controls: true,
+                      class: 'tw-w-full'
+                  }}
+                </div>
+              {% endif %}
+            {% endfor %}
+
+            {% for index in m_list %}
+              {% if index != blank %}
+                {% assign index1 = index | strip %}
+                {% assign indexnum = index1 | abs %}
+                {% assign image = product.media[indexnum] %}
+                <div class="carousel-cell tw-w-full">
+                  <div class="component-gallery-images__element tw-w-full tw-h-full tw-rounded-[4px]">
+                    <picture class="tw-block tw-w-full md:tw-h-auto">
+                      <source srcset="{{ image | image_url: width: '1100x' }}" media="(min-width: 1200px)">
+                      <source srcset="{{ image | image_url: width: '1200x' }}" media="(min-width: 992px)">
+                      <source srcset="{{ image | image_url: width: '992x' }}" media="(min-width: 768px)">
+                      <source srcset="{{ image | image_url: width: '768x' }}" media="(min-width: 576px)">
+                      <source srcset="{{ image | image_url: width: '576x' }}" media="(min-width: 360px)">
+                      <source srcset="{{ image | image_url: width: '360x' }}" media="(min-width: 320px)">
+                      <img
+                        loading="eager"
+                        src="{{ image | image_url: width: '10x' }}"
+                        class="tw-block tw-w-full tw-object-cover tw-h-full md:tw-h-auto tw-rounded-[4px]"
+                        width="800"
+                        height="700"
+                        title="{{ product.title }}"
+                        alt="{{ product.title }} - Imagen {{ forloop.index }}"
+                      >
+                    </picture>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+        <div
+          data-thumbs
+          class="slider-nav carousel-nav slider_flickity component-gallery-buttons tw-w-full md:tw-max-w-[100px] tw-m-0 tw-overflow-y-scroll tw-flex md:tw-block tw-max-h-[580px] tw-mt-3 md:tw-mt-0"
+          index="{{ forloop.index0 }}"
+        >
+          {% for video in product.media %}
+            {% if video.media_type == 'video' %}
+              <div class="tw-w-[80px] tw-h-[80px] tw-mr-[20px] tw-border-[2px] tw-border-solid tw-border-transparent hover:tw-border-color-8 tw-rounded-[4px] tw-transition-all slider-thumbails-color carousel-cell ">
+                <div class="tw-w-full tw-h-full">
+                  {{
+                    video
+                    | image_url: width: 100
+                    | image_tag: class: 'tw-w-[80px] tw-h-[80px] tw-min-w-[80px] object-cover tw-rounded-[4px]'
+                  }}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for index in m_list %}
+            {% if index != blank %}
+              {% assign index1 = index | strip %}
+              {% assign indexnum = index1 | abs %}
+              {% assign image = product.media[indexnum] %}
+              <div class="tw-w-[80px] tw-h-[80px] tw-mr-[20px] tw-border-[2px] tw-border-solid tw-border-transparent hover:tw-border-color-8 tw-rounded-[4px] tw-transition-all slider-thumbails-color carousel-cell ">
+                <div class="tw-w-full tw-h-full">
+                  {% comment %}
+                    <img
+                    class="w-100 h-100 object-cover tw-rounded-[4px]" {% if elementIndex == 0 %}src="{{ product.media[indexnum] | img_url: '100x' }}"{% else %}data-src="{{ product.media[indexnum] | img_url: '100x' }}"{% endif %}
+                    width="100" height="100"
+                    loading="lazy"
+                    alt="{{ product.title }} - Imagen selector {{ forloop.index }}">
+                  {% endcomment %}
+                  <img
+                    loading="lazy"
+                    class="tw-w-[80px] tw-h-[80px] tw-min-w-[80px] object-cover tw-rounded-[4px]"
+                    {% if elementIndex == 0 %}
+                      src="{{ product.media[indexnum] | image_url: width: '100x' }}"
+                    {% else %}
+                      data-src="{{ product.media[indexnum] | image_url: width: '100x' }}"
+                    {% endif %}
+                    width="100"
+                    height="100"
+                    title="{{ product.title }}"
+                    alt="{{ product.title }} - Imagen selector {{ forloop.index }}"
+                  >
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</gallery-color>
+
+<script type="module" src="{{ 'smart-product-header-gallery-dist.js' | asset_url }}" defer></script>
+<script type="module" src="{{ 'smart-product-header-gallery-color.js' | asset_url }}" defer></script>
+
+<style>
+  @media only screen and (max-width: 9999px) and (min-width: 769px) {
+    .flickity-mobile-ann .flickity-viewport {
+      height: 750px !important;
+    }
+  }
+</style>

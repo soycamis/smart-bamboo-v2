@@ -1,0 +1,12 @@
+<div class="tw-full lg:tw-col-span-5 lg:tw-relative lg:tw-overflow-auto tw-h-full lg:tw-max-h-[800px] tw">
+    <div class="tw-px-6 lg:tw-px-0">
+      {% case product.handle %}
+        {% when 'colchon-smart-firm', 'colchon-smart-balance', 'colchon-smart-hybrid', 'base-electrica', 'sillon-imperium-core', 'imperium-voyage', 'imperium-discovery'  %}
+            {% render 'smart-meta-bundle-magic' %}
+            {% render 'smart-meta-bundle-magic-summary' -%}
+        {% else %}
+            {% render 'smart-meta-bundle-magic-all-products' %}
+            {% render 'smart-meta-bundle-magic-summary-all-products' -%}
+      {% endcase %} 
+    </div>
+</div>

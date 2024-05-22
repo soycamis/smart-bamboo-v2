@@ -1,25 +1,38 @@
 
- {% capture VideoOne %}
- {% comment %} {% render 'smart-snippet-video-one' %}  {% endcomment %}
- {% assign urlPortada = "https://cdn.shopify.com/s/files/1/0248/4705/6932/files/SmartBamboo-Preview-Video-min.webp?v=1659899197"  %}
- {% assign urlVideo =  "https://cdn.shopify.com/videos/c/o/v/12a506280c8041c4a76c47e4989febff.mp4" %}
- {% render 'smart-snippet-video-for-home', posterVideo: urlPortada, videoVideo: urlVideo %} 
- {% endcapture %}
+{% capture VideoOne %}
+  {% comment %} {% render 'smart-snippet-video-one' %}  {% endcomment %}
+  {% assign urlPortadaOne = "https://cdn.shopify.com/s/files/1/0248/4705/6932/files/SmartBamboo-Preview-Video-min.webp?v=1659899197"  %}
+  {% assign urlVideoOne =  "https://cdn.shopify.com/videos/c/o/v/12a506280c8041c4a76c47e4989febff.mp4" %}
+  {% render 'smart-snippet-video-for-home', posterVideo: urlPortadaOne, videoVideo: urlVideoOne %} 
+{% endcapture %}
+
 
 {% capture VideoTwo %}
- {% render 'smart-snippet-video-two' %} 
+{% comment %} {% render 'smart-snippet-video-two' %}  {% endcomment %}
+  {% assign urlPortadaTwo = "https://cdn.shopify.com/s/files/1/0248/4705/6932/files/SmartBamboo-Preview-Video-min.webp?v=1659899197"  %}
+  {% assign urlVideoTwo =  "https://cdn.shopify.com/videos/c/o/v/12a506280c8041c4a76c47e4989febff.mp4" %}
+  {% render 'smart-snippet-video-for-home', posterVideo: urlPortadaTwo, videoVideo: urlVideoTwo %} 
 {% endcapture %}
 
 {% capture VideoThree %}
- {% render 'smart-snippet-video-three' %} 
+  {% comment %} {% render 'smart-snippet-video-three' %}  {% endcomment %}
+  {% assign urlPortadaThree = "https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Portada-NanoCool-Home_1.webp?v=1676391074"  %}
+  {% assign urlVideoThree =  "https://cdn.shopify.com/videos/c/o/v/8cb22a6477f7444b8d673bfc6ee95916.mp4" %}
+  {% render 'smart-snippet-video-for-home', posterVideo: urlPortadaThree, videoVideo: urlVideoThree %} 
 {% endcapture %}
 
 {% capture VideoFour %}
- {% render 'smart-snippet-video-four' %} 
+  {% comment %} {% render 'smart-snippet-video-four' %}  {% endcomment %}
+  {% assign urlPortadaFour = "https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Portada-Pijama-Home_1.webp?v=1676391079"  %}
+  {% assign urlVideoFour =  "https://cdn.shopify.com/videos/c/o/v/0d3b9979b0b44aaba755ed66283f7ccd.mp4" %}
+  {% render 'smart-snippet-video-for-home', posterVideo: urlPortadaFour, videoVideo: urlVideoFour %} 
 {% endcapture %}
 
 {% capture VideoFive %}
- {% render 'smart-snippet-video-five' %} 
+  {% comment %} {% render 'smart-snippet-video-five' %}  {% endcomment %}
+  {% assign urlPortadaFive = "https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Portada-Bliss.webp?v=1676391082"  %}
+  {% assign urlVideoFive =  "https://cdn.shopify.com/videos/c/o/v/db924920029e49cb8574a2bb6770b23e.mp4" %}
+  {% render 'smart-snippet-video-for-home', posterVideo: urlPortadaFive, videoVideo: urlVideoFive %}  
 {% endcapture %}
 
 
@@ -52,7 +65,6 @@
         <div style="display:none;" id="NewVideoContentThree">{{ VideoThree }}</div>
         <div style="display:none;" id="NewVideoContentFour">{{ VideoFour }}</div>
         <div style="display:none;" id="NewVideoContentFive">{{ VideoFive }}</div>
-        <div style="display:none;" id="NewVideoContentStart">{{ VideoStart }}</div>
       </div>
 
       {% comment %} vídeos secundarios {% endcomment %}
@@ -60,7 +72,6 @@
 
         <div class="tw-grid tw-grid-cols-4 xl:tw-grid-cols-1 tw-gap-3 tw-py-2 xl:tw-px-6 tw-overflow-x-visible xl:tw-overflow-y-visible">
           
-
           {% comment %} Video 3 {% endcomment %}
           <button onclick="renderVideoThree()" class="tw-w-full tw-rounded-lg tw-snap-start tw-h-[100px] tw-bg-[url('https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Portada-NanoCool-Home_1.webp?v=1676391074')] tw-bg-no-repeat tw-bg-center tw-bg-cover">
           </button>
@@ -77,13 +88,48 @@
           <button onclick="renderVideoTwo()" class="tw-w-full tw-rounded-lg tw-snap-start tw-h-[100px] tw-bg-[url('https://cdn.shopify.com/s/files/1/0248/4705/6932/files/SmartBamboo-Preview-Video-min.webp?v=1659899197')] tw-bg-no-repeat tw-bg-center tw-bg-cover">
           </button>
 
-          {% comment %} Video inicial {% endcomment %}
-          {% comment %} <button onclick="renderVideoStart()" class="tw-w-full tw-rounded-lg tw-snap-start tw-h-[100px] tw-bg-[url('https://cdn.shopify.com/s/files/1/0248/4705/6932/files/master-marzo_final-04-mobile.webp?v=1677614057')] md:tw-bg-[url('https://cdn.shopify.com/s/files/1/0248/4705/6932/files/portada-acumula-gana.webp?v=1678509674')] tw-bg-no-repeat tw-bg-center tw-bg-cover">
-          </button> {% endcomment %}
-
         </div> 
       </div>
     </div>
   
   </div>
 </section>
+
+
+<script>
+  function defaultContentVideoHome() {
+    document.getElementById('defaultContentVideoHome').style.display = 'block';
+  }
+  
+  function renderVideoTwo() {
+    document.getElementById('defaultContentVideoHome').style.display = 'none';
+    document.getElementById('NewVideoContentThree').style.display = 'none';
+    document.getElementById('NewVideoContentFour').style.display = 'none';
+    document.getElementById('NewVideoContentFive').style.display = 'none';
+    document.getElementById('NewVideoContentTwo').style.display = 'block';
+  }
+  
+  function renderVideoThree() {
+    document.getElementById('defaultContentVideoHome').style.display = 'none';
+    document.getElementById('NewVideoContentTwo').style.display = 'none';
+    document.getElementById('NewVideoContentFour').style.display = 'none';
+    document.getElementById('NewVideoContentFive').style.display = 'none';
+    document.getElementById('NewVideoContentThree').style.display = 'block';
+  }
+  
+  function renderVideoFour() {
+    document.getElementById('defaultContentVideoHome').style.display = 'none';
+    document.getElementById('NewVideoContentTwo').style.display = 'none';
+    document.getElementById('NewVideoContentThree').style.display = 'none';
+    document.getElementById('NewVideoContentFive').style.display = 'none';
+    document.getElementById('NewVideoContentFour').style.display = 'block';
+  }
+  
+  function renderVideoFive() {
+    document.getElementById('defaultContentVideoHome').style.display = 'none';
+    document.getElementById('NewVideoContentTwo').style.display = 'none';
+    document.getElementById('NewVideoContentThree').style.display = 'none';
+    document.getElementById('NewVideoContentFour').style.display = 'none';
+    document.getElementById('NewVideoContentFive').style.display = 'block';
+  }
+</script>

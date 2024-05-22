@@ -1,0 +1,14 @@
+{% assign fabricProduct = fabric %}
+
+{% for collection in product.collections %}
+    {% if collection.handle == fabricProduct %}
+      <p class="tw-text-[#666666] tw-text-[12px]">Color: <span class="tw-font-bold">{{ product.title | remove: 'Duvet' | remove: ' Bamboo' | remove: 'Blend' | remove: 'Pijama' | remove: 'Larga' | remove: 'Corta' | remove: 'Colcha' | remove: 'Stripes' | remove: 'Bliss' | remove: '100%' | remove: 'bambú' | remove: 'Supreme' | remove: 'Juego' | remove: 'de' | remove: 'Sábanas' | remove: 'Cama' }}</span></p>
+      <div class="tw-flex tw-flex-row tw-grid tw-grid-cols-8 lg:tw-grid-cols-7 tw-gap-3 lg:tw-gap-4">
+        {% for product in collections[collection.handle].products %}
+          <a href="{{ product.url }}">
+            <img class="tw-w-[30px] lg:tw-w-[50px] tw-max-w-[30px] lg:tw-max-w-[50px] tw-h-[30px] lg:tw-h-[50px] tw-max-h-[30px] lg:tw-max-h-[50px]  tw-rounded-full" src="{{ product.images.last | image_url: width: 50 }}">
+          </a> 
+        {% endfor %}
+      </div> 
+    {% endif %}
+{% endfor %} 

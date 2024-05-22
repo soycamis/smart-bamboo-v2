@@ -1,0 +1,49 @@
+<section class="tw-w-full tw-flex tw-justify-center tw-items-center tw-content-center tw-py-8 xl:tw-py-14">
+    <div class="tw-w-full tw-max-w-[1100px] tw-flex tw-flex-col tw-px-8 xl:tw-px-0"> 
+      <p class="tw-font-poppins tw-font-semibold tw-text-lg lg:tw-text-xl tw-text-[#957161] tw-text-center tw-mt-16 tw-mb-5">
+        {{ section.settings.section_title }}
+        {% comment %} Colección de almohadas Smart Bamboo {% endcomment %}
+      </p>
+      <h1 class="tw-font-poppins tw-font-semibold tw-text-2xl lg:tw-text-4xl tw-text-[#434f5a] tw-text-center tw-pt-4">
+        {{ section.settings.section_subtitle }}
+        {% comment %} Descubre nuestra línea de almohadas diseñadas con la más alta tecnología e inspiradas en el confort. {% endcomment %}
+      </h1>
+      <h2 class="tw-font-poppins tw-font-normal tw-text-base lg:tw-text-lg tw-text-[#434f5a] tw-text-justify tw-pt-4">
+        {{ section.settings.section_paragraph_one }}
+        {% comment %} Creemos en la importancia del descanso como parte de un estilo de vida saludable. Por ello, creamos almohadas que se ajustan al descanso que necesites, optimizando tu bienestar y confort. {% endcomment %}
+      </h2>
+      <h2 class="tw-font-poppins tw-font-normal tw-text-base lg:tw-text-lg tw-text-[#434f5a] tw-text-justify tw-pt-4">
+        {{ section.settings.section_paragraph_two }}
+        {% comment %} Creemos en la importancia del descanso como parte de un estilo de vida saludable. Por ello, creamos almohadas que se ajustan al descanso que necesites, optimizando tu bienestar y confort. {% endcomment %}
+      </h2>
+    </div>
+  </section>
+  
+  
+  {% schema %}
+  {
+  "name": "Collection Title",
+  "settings": [
+    {
+        "type": "text",
+        "id": "section_title",
+        "label": "Escribir Titulo"
+    },
+    {
+          "type": "text",
+          "id": "section_subtitle",
+          "label": "Escribit Subtitulo"
+    },
+    {
+        "type": "text",
+        "id": "section_paragraph_one",
+        "label": "Escribir Parrafo 1"
+    },
+      {
+        "type": "text",
+        "id": "section_paragraph_two",
+        "label": "Escribir Parrafo 2"
+    }
+  ]
+  }
+  {% endschema %}

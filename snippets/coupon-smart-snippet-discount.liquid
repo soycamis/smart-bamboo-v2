@@ -1,0 +1,20 @@
+<div class="tw-px-5 lg:tw-px-0">
+    <p class="tw-block lg:tw-hidden tw-text-sm tw-text-center">Copia y pega el código en el CHECKOUT</p>
+    <div class="tw-border-solid tw-border-2 tw-border-[#292929] tw-border-dotted tw-p-1">
+        <div class="tw-flex tw-grid tw-grid-cols-2 tw-items-center tw-justify-center tw-bg-slate-100">
+          <div class="tw-w-full tw-bg-[#292929] tw-py-2 tw-text-white tw-text-center tw-rounded-lg tw-font-semibold tw-uppercase">
+            CUPÓN -{{ product.metafields.custom.coupon_percent }}% OFF 
+          </div>
+          <div class="tw-flex tw-justify-center tw-text-base lg::tw-text-xl">
+            Código: <span class="tw-font-bold tw-text-base lg::tw-text-xl tw-mx-2 lg:tw-mx-3 tw-text[#292929]"> {{ product.metafields.custom.coupon }} </span> 
+          </div>
+        </div>
+    </div>
+    {% if product.handle == 'base-electrica' or product.handle == 'colchon-smart-firm' or product.handle == 'colchon-smart-hybrid' or product.handle == 'colchon-smart-balance' %}  
+    <p class="tw-text-sm tw-text-center">
+      Obtén un <b>{{ product.metafields.custom.coupon_percent }}% de Descuento</b> al comprar cualquier <br> Colchón Smart y una Smart Base en tu misma orden.
+    {% else %}
+    <p class="tw-text-sm tw-text-center">Ahorra un {{ product.metafields.custom.coupon_percent }}% al llevarte <br class="tw-block lg:tw-hidden"> tu segunda <b>{{ product.title }}</b>.</p>
+    {% endif%}
+    
+</div>

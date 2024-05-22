@@ -1,0 +1,272 @@
+{
+  "sections": {
+    "banner": {
+      "type": "collection-header-towel",
+      "settings": {
+        "section_title_one": "BASE ELÉCTRICA AJUSTABLE",
+        "section_title_two": "PARA CAMA",
+        "section_paragraph": "La base ajustable no se compara con nada en lo que hayas dormido antes. Cuenta con cuatro posiciones que proporcionan la máxima comodidad y el mejor soporte, brindando un óptimo cuidado personal al dormir.",
+        "img_desktop": "shopify:\/\/shop_images\/bases-colchones.png"
+      }
+    },
+    "collection-titles": {
+      "type": "smart-titles-collection",
+      "disabled": true,
+      "settings": {
+        "section_title": "Collección Base Eléctrica Smart Bamboo",
+        "section_subtitle": "Bases ajustables de alta calidad para cama Individual, Matrimonial, Queen, King size y Split King, adaptables a cualquier espacio y con una larga vida útil."
+      }
+    },
+    "product-grid-bases-electricas": {
+      "type": "smart-product-grid-title-collection",
+      "blocks": {
+        "abaebf55-c360-453b-8dc6-27727f7cb418": {
+          "type": "product",
+          "settings": {
+            "collection_product": "base-electrica"
+          }
+        }
+      },
+      "block_order": [
+        "abaebf55-c360-453b-8dc6-27727f7cb418"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "collection_title": "Descubre por qué aman nuestra Smart Base haciendo clic en la siguiente página:"
+      }
+    },
+    "descripcion-smartbase": {
+      "type": "smart-meta-collection-contenido-smartbase",
+      "settings": {
+        "section_title": "Smart Base personalizable: <br>Mejora tu sueño con posiciones de inclinación ajustables y funciones avanzadas de masaje",
+        "section_paragraph": "Mejora la calidad de tu descanso con nuestra Smart Base ajustable, experimenta una mejora en la calidad del sueño al personalizar las posiciones de inclinación. Disfruta de una circulación mejorada, alivia la presión en las articulaciones y experimenta la sensación de inclinación. Además, complementa tu descanso con funciones avanzadas de masaje. <br><br>Nuestras Bases para cama de 4 posiciones están diseñadas con tecnología de vanguardia para brindarte una total relajación. Con opciones de inclinación en 4 posiciones, 3 modos de masaje, iluminación LED y 2 puertos de carga USB, obtendrás una experiencia personalizada. Alivia el estrés acumulado durante el día y los dolores articulares, mientras mejoras la circulación, reduces la presión en la columna y promueves la desinflamación gastrointestinal. Todo esto con la máxima comodidad.",
+        "id-name": "crema",
+        "img_picker": "shopify:\/\/shop_images\/base_ajustable_smart_bamboo.jpg",
+        "alt": "Smart Base Smart Bamboo",
+        "custom_color_first": ""
+      }
+    },
+    "descripcion-smartbase-dos": {
+      "type": "smart-meta-collection-contenido-smartbase",
+      "settings": {
+        "section_title": "",
+        "section_paragraph": "Nuestra Smart Base es completamente personalizable, ya que te permite programar tus posiciones favoritas. Además, puedes controlarla fácilmente a través del control remoto o desde tu celular mediante nuestra aplicación. Incluso puedes usarla sin estar conectada a la corriente, gracias a su capacidad de funcionar con batería. Disfruta de un descanso óptimo y despierta sintiéndote renovado <br><br>¡No esperes más, adquiérela ahora y descubre por qué tantas personas ya están disfrutando de un descanso excepcional!",
+        "id-name": "crema",
+        "img_picker": "",
+        "alt": "Smart Base Smart Bamboo",
+        "custom_color_first": ""
+      }
+    },
+    "faqs": {
+      "type": "meta-faq-section-schema",
+      "blocks": {
+        "d7ec4d5b-7e5d-4ceb-ba1d-ec03b8e6688d": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿La Smart Base se eleva de ambos extremos?",
+            "accordianInfo": "<p>Sí, nuestra Smart Base es una base para cama electrónica que le permite elevar la cabeza y los pies al mismo tiempo, o uno por uno. Puede elegir la configuración de lounge, tv para ver la televisión, o la configuración de gravedad cero para una pose restauradora. Y todo eso mientras disfrutas de un ajuste de masaje para una comodidad personalizada.<\/p>"
+          }
+        },
+        "f2e9b37a-dd91-4a62-b4cf-0600bb830b08": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cuenta con garantía mi Smart base?",
+            "accordianInfo": "<p>La Smart Base está garantizada contra defectos de fabricación o materiales por un período de dos años a partir de su compra, en caso de que nuestras bases para cama ajustable tengan alguna falla, ofrecemos seguimiento para solucionar el problema, y recuerda es necesario contar con tu ticket de compra o numero de orden para hacer valida tu garantìa <\/p>"
+          }
+        },
+        "04ce9db1-3848-4841-8d68-9216ab7121da": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Qué incluye la garantía de la Smart Base?",
+            "accordianInfo": "<p>Los componentes eléctricos de nuestras bases para cama, así como sus motores de accionamiento y motores de masaje, están incluidos en nuestra garantía, asegurando así su durabilidad y su resistencia. <\/p><p><\/p><p><\/p><p>No dude en contactarnos si tiene algún problema a contacto@smartbamboo.mx, estaremos felices de ayudarlo con respecto a este y otros de nuestros productos relacionados con su descanso.<\/p>"
+          }
+        },
+        "c2e2f5dc-ce60-4da9-80e0-8b599b939e2c": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cuentan con meses sin intereses?",
+            "accordianInfo": "<p>Si, manejamos pago con todas las tarjetas de crédito Visa, Mastercard y American Express, contando con las mejores promociones y ofertas cada cierto tiempo en nuestra página web para que adquieras tu producto favorito con una de las mejores marcas del descanso, como lo es Smart Bamboo.<\/p><p><\/p><p><\/p><p>Con la intención de que logres adquirir los mejores productos y el descanso que mereces, ofrecemos la opción de financiar tú compra a 3, 6, 9,12 y 18 meses sin intereses, pagando con cualquier tarjeta de crédito participante tu nueva base de cama matrimonial, individual, o de cualquier ancho que desees.<\/p>"
+          }
+        },
+        "177af98f-fe52-4b7f-a813-edeef01e5acc": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Por qué elegir la base eléctrica Smart Base y no otras?",
+            "accordianInfo": "<p>Nuestra base ecléctica Smart Base es la compañera perfecta para tu colchón. Te permite elevar la cabeza y los pies, mientras disfrutas de un masaje o de la función efecto “gravedad cero”. Puedes ajustarla en diferentes tipos de ángulos y posiciones que te ayudarán a descansar como nunca.<\/p>"
+          }
+        },
+        "2ebfe379-d7b9-4ab5-be8d-c6cb8b9244e3": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cuáles son los beneficios que obtendré con Smart Base?",
+            "accordianInfo": "<p>Además de un descanso inigualable, Smart Base es ideal para quienes buscan una posición más ergonómica al dormir, solo basta con apretar un botón para ajustarla a tu postura favorita. ¡Despídete del exceso de almohadas!<\/p><p><\/p><p><\/p><p>Los masajes alivian la inflamación de las articulaciones, lo que ayuda a reducir el dolor en personas que lo padecen. Se trata de una de las mejores bases para cama del mercado, permitiendo diferentes estilos de postura para dormir cómodamente; asimismo, tiene un color que le da un toque estético único, siendo un mobiliario que no afecta la decoración de tus interiores.<\/p>"
+          }
+        },
+        "99a63381-82d3-4338-9f5d-a0d6dfbf4e12": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Qué tipo de colchón se puede usar con la Smart Base?",
+            "accordianInfo": "<p>En realidad, cualquier tipo de colchón, ya sean camas matrimoniales o queen size, o de materiales como vinipiel, pero recomendamos que sea uno Smart Bamboo para potenciar el nivel de confort.<\/p><p><\/p><p><\/p><p>Además, al ser de espuma de memoria, son más flexibles que otros colchones y tienen más movilidad.<\/p>"
+          }
+        },
+        "9fa98bf4-574d-4211-90bb-b1d92030aeec": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Incluye control remoto?",
+            "accordianInfo": "<p>Claro, es muy importante dar a conocer que incluye un control remoto con el cual accederemos a las funciones de masaje o podremos mover la cabecera o los pies, según la flecha que se presione, asimismo, cuentan con una aplicación digital, para que se maniobra desde el celular.<\/p>"
+          }
+        },
+        "595c2dc2-8138-49a1-ae1d-b11cfc68ea85": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cuenta con luz por debajo?",
+            "accordianInfo": "<p>Así es, de igual forma cuenta con luz LED que se encuentra debajo de la base, intencionalmente la luz es tenue con el propósito de cuando te levantes de la cama, puedas prender esa luz y no tropieces con tu cama.<\/p>"
+          }
+        },
+        "23f34d95-91d2-4086-a36e-14554d37cb66": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cuántas posiciones tiene integradas?",
+            "accordianInfo": "<p>Podrás disfrutar de 4 posiciones que brindan máxima comodidad: <br\/><br\/>Plana, que es la posición tradicional<br\/><br\/>Posicion para T.V.<br\/><br\/>Lounge <br\/><br\/>Gravedad cero<\/p>"
+          }
+        },
+        "3c100098-5522-4fe5-9c54-40d93b342e48": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿En qué consiste la función “Gravedad cero”?",
+            "accordianInfo": "<p>Transforma  tu experiencia de sueño en un momento de confort absoluto con la posición Gravedad Cero, que consiste en replicar esa sensación  de ingravidez que experimentan los astronautas antes de despegar.<br\/><br\/>Esta posición, en la que se levantan la cabeza y los pies, mejora la respiración, ayudando a disminuir los ronquidos mientras duermes.<\/p>"
+          }
+        },
+        "3e2f89c6-9c5f-4691-a047-2e480d8aa6a9": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Puedo personalizar mis posturas y funciones de masaje favoritas?",
+            "accordianInfo": "<p>¡Claro que sí! Ayúdate de tu control remoto inalámbrico y establece las funciones predeterminadas de masaje en tus favoritos para una amplia variedad de posibilidades a la hora de dormir. Máximo confort al alcance de tu mano.<\/p>"
+          }
+        },
+        "888974db-0061-4ca9-aa72-e8cefde0e105": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "Nunca he tenido una base eléctrica, ¿qué tan difícil es instalarla?",
+            "accordianInfo": "<p>No te preocupes por la instalación, es facilísimo en tan solo unos minutos quedará lista tu Smart Base para que disfrutes de todos sus beneficios.<\/p>"
+          }
+        },
+        "d4a421f9-3f17-467f-bebe-a4d733e0f15c": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Con qué tipo de colchón me recomiendan usarla?",
+            "accordianInfo": "<p>Para mejores resultados, te recomendamos complementar con alguno de nuestros colchones SMART, Smart Firm, Smart Balance o Smart Hybrid, pero si no, no te preocupes puedes usarla con cualquier colchón los resultados serán igual de favorables.<\/p><p>Las medidas disponibles de nuestra Smart Base son las siguientes<\/p><ul><li>Bases para cama individual - 203 cm x 100 cm x 30 cm<\/li><li>Bases para cama matrimonial - 137 cm x 190 cm x 30 cm<\/li><li>Bases para cama Queen Size - 152 cm x 203 cm x 30 cm<\/li><li>Bases para cama King Sizes - 193 cm x 203 cm x 30 cm<\/li><\/ul>"
+          }
+        },
+        "4453cdeb-76de-494a-bca7-e417de1ca3f7": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Es recomendable para personas con poca movilidad?",
+            "accordianInfo": "<p>Nuestra base ajustable eléctrica es ideal para las personas que no pueden o deben hacer esfuerzo al levantarse de la cama. Cuenta con una función de asistencia para levantarse sin esfuerzo. <br\/><br\/>Ajusta la altura de las patas a un tamaño ideal, ya sea alto, medio o bajo.<\/p>"
+          }
+        },
+        "d66eff77-a650-41a6-aa18-f27da58efaf3": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Qué hago si me faltan piezas?",
+            "accordianInfo": "<p>Nuestro servicio a cliente está disponible los 7 días de la semana y con gusto te atenderemos. Te recomendamos revisar bien el contenido de los empaques antes de desecharlos para que te asegures de que ninguna pieza se vaya a la basura.<\/p>"
+          }
+        },
+        "defa7582-60fc-45c2-9f8b-3a41a364b677": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Qué otras cualidades tiene la base ajustable?",
+            "accordianInfo": "<p>Debajo de la cama encontrarás 2 puertos USB de fácil acceso para que conectes tus dispositivos. Asimismo, tiene una luz LED integrada que te ayudará a ver durante la noche; es muy discreta, así que no te preocupes por despertar a tu pareja sin previo aviso.<\/p>"
+          }
+        },
+        "72664546-3634-40be-92be-b71778edc3c2": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Qué pasa si se va la luz?",
+            "accordianInfo": "<p>Smart Base cuenta con una función de apagado de emergencia. En tu manual encontrarás el paso a paso de cómo realizar el sencillo procedimiento.<\/p>"
+          }
+        },
+        "d1712e28-c161-466e-8725-23cdc9c830f9": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿A dónde envían y cuál es el costo?",
+            "accordianInfo": "<p>Enviamos a toda la República Mexicana por paquetería Tresguerras o paquetexpress. El envío es GRATUITO para todos los pedidos.<\/p>"
+          }
+        },
+        "fa20069b-2aa6-43ea-9938-3051cecbefed": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿En cuánto tiempo llegará mi Smart Base?",
+            "accordianInfo": "<p>Queremos que disfrutes de tu nueva base lo más rápido posible. Una vez que tu compra sea procesada, se estima que el tiempo de entrega para que llegue a tu hogar es en un lapso de 3 a 5 días hábiles.<\/p><p><\/p><p>Nuestro servicio a cliente está disponible para cualquier duda que tengas.<\/p>"
+          }
+        },
+        "0b2173c1-3ed6-4f2c-a832-f2ba97e48c8c": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿De qué materiales está hecha la Smart Base?",
+            "accordianInfo": "<p>Si bien las bases para cama normalmente son de madera y vienen acompañadas de burós o cajones adicionales, la Smart Base está elaborada con una mezcla de materiales resistentes, pues esta cuenta con componentes electrónicos cuyo almacenamiento no podría realizarse en una estructura de madera.<\/p>"
+          }
+        },
+        "8907a8b2-8694-4f90-9856-b3193d8c8aca": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cuáles son los colores de nuestra base para cama eléctrica?",
+            "accordianInfo": "<p>Sabemos que el color es fundamental para una buena estética en el hogar, por eso Smart Base incluye una tonalidad de colores que van del blanco al gris, encajando a la perfección en la mayoría de combinaciones de color.<\/p><p><\/p><p>Incluso, puede adaptarse a las tonalidades de otros espacios en el hogar, como el comedor, que incorpora muchos acentos oscuros por la madera en sus estructuras, cuidando así el aspecto estético.<\/p>"
+          }
+        },
+        "5a12f7dd-f5cb-480e-8632-05ad150a6c94": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Existen bases para cama eléctricas de otros materiales?",
+            "accordianInfo": "<p>Existen bases para cama eléctricas fabricadas con diversos materiales, incluyendo la madera de pino, y si bien la madera es un material comúnmente utilizado, también puedes encontrar bases fabricadas con metal, acero, hierro y otros materiales duraderos y resistentes; si buscas alternativas a la madera, Smart Base es la opción perfecta para ti.<\/p>"
+          }
+        },
+        "ae3ff1f6-9c2d-4abb-aae6-56b74c604a66": {
+          "type": "faqSection",
+          "settings": {
+            "accordianTitle": "¿Cuál es el proceso de compra en la tienda en línea de Smart Bamboo?",
+            "accordianInfo": "<p>Inicia sesión o crea tu cuenta de Smart Bamboo, añade tus productos favoritos al carrito de compras y llena los datos solicitados para confirmar tu forma de pago y la dirección de envío.<\/p><p><\/p><p>Una vez realizada la compra, puedes dar seguimiento a tu pedido en la opción “Mis pedidos” en tu cuenta.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "d7ec4d5b-7e5d-4ceb-ba1d-ec03b8e6688d",
+        "f2e9b37a-dd91-4a62-b4cf-0600bb830b08",
+        "04ce9db1-3848-4841-8d68-9216ab7121da",
+        "c2e2f5dc-ce60-4da9-80e0-8b599b939e2c",
+        "177af98f-fe52-4b7f-a813-edeef01e5acc",
+        "2ebfe379-d7b9-4ab5-be8d-c6cb8b9244e3",
+        "99a63381-82d3-4338-9f5d-a0d6dfbf4e12",
+        "9fa98bf4-574d-4211-90bb-b1d92030aeec",
+        "595c2dc2-8138-49a1-ae1d-b11cfc68ea85",
+        "23f34d95-91d2-4086-a36e-14554d37cb66",
+        "3c100098-5522-4fe5-9c54-40d93b342e48",
+        "3e2f89c6-9c5f-4691-a047-2e480d8aa6a9",
+        "888974db-0061-4ca9-aa72-e8cefde0e105",
+        "d4a421f9-3f17-467f-bebe-a4d733e0f15c",
+        "4453cdeb-76de-494a-bca7-e417de1ca3f7",
+        "d66eff77-a650-41a6-aa18-f27da58efaf3",
+        "defa7582-60fc-45c2-9f8b-3a41a364b677",
+        "72664546-3634-40be-92be-b71778edc3c2",
+        "d1712e28-c161-466e-8725-23cdc9c830f9",
+        "fa20069b-2aa6-43ea-9938-3051cecbefed",
+        "0b2173c1-3ed6-4f2c-a832-f2ba97e48c8c",
+        "8907a8b2-8694-4f90-9856-b3193d8c8aca",
+        "5a12f7dd-f5cb-480e-8632-05ad150a6c94",
+        "ae3ff1f6-9c2d-4abb-aae6-56b74c604a66"
+      ],
+      "settings": {
+        "faq_title": "Preguntas Frecuentes"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid-bases-electricas",
+    "collection-titles",
+    "descripcion-smartbase",
+    "descripcion-smartbase-dos",
+    "faqs"
+  ]
+}

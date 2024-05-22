@@ -1,0 +1,146 @@
+<link rel="stylesheet" href="{{ 'smart-subcomponent-form.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'smart-subcomponent-form.css' | asset_url | stylesheet_tag }}</noscript>
+
+<main-form class="d-block" product_available="{{product.selected_or_first_available_variant.id}}">
+  {%- form 'product', product, class: 'subcomponent-form__form' -%}
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+    <div>
+      <label class="d-block margin-bottom-05 c3-c body-text fs-12-12 lh-normal">Arma tu Paquete</label>
+      <input-pack class="subcomponent-pack__container br-4 position-relative">
+        {% assign packages_number = '1,2,4' | split: ',' %}
+        {% for index in packages_number %}
+          {% capture image_name %}
+            {{product.handle}}-{{index}}.png
+          {% endcapture %}
+          <div element value="{{ index }}" class="subcomponent-pack__element c8-bk br-4 {% if forloop.first %}active{% endif %}">
+            {% if index == '2' %}
+              <div class="subcomponent-pack__notice position-absolute c4-bk text-center br-4">
+                <p class="body-text fs-8-12 fw-medium c8-c">Más vendido</p>
+              </div>
+            {% endif %}
+            <div class="text-center">
+              {% if forloop.first == true %}
+                <p class="c1-c body-text fw-semibold lh-normal fs-10-14">Set {{ index }} almohada</p>
+              {% else %}
+                <p class="c1-c body-text fw-semibold lh-normal fs-10-14">Set {{ index }} almohadas</p>
+              {% endif %}
+              <div class="margin-top-05">
+                <picture>
+                  <img src="{{ image_name | asset_url }}">
+                </picture>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </input-pack>
+    </div>
+    {% if product.has_only_default_variant != true %}
+      {%- for option in product.options_with_values -%}
+        <div>
+          <label class="d-block margin-bottom-05 c3-c body-text fs-12-12 lh-normal" for="{{ option.name }}"> {{ option.name | replace: 'Size', 'Tamaño' }}</label>
+          <div class="position-relative">
+            <select variant name="{{ option.name }}" class="general-input text-start border c14-b big c1-c body-text fs-14-14 lh-normal w-100 fw-semibold">
+              {%- for value in option.values -%}
+                {% if value == "Default Title" %}
+                  <option value="{{ product.title | escape }}">{{ product.title }}</option>
+                {% else %}
+                  <option value="{{ value | escape }}">{{ value | escape }}</option>
+                {% endif %}
+              {%- endfor -%}
+            </select>
+          </div>
+        </div>
+      {%- endfor -%}
+    {% endif %}
+    <div>
+      <div class="subcomponent-form__container tw-flex tw-flex-col md:tw-flex-row tw-gap-[15px]">
+        <div class="main-quantity-product__wrapper tw-max-w-full">
+          <main-quantity-pack main-quantity main class="main-quantity-product__container position-relative" data-ref="{{ product.id }}">
+            <button type="button" class="main-quantity-product__button left c1-c body-text fs-14-14 lh-normal fw-semibold position-absolute" decrement>-</button>
+            <input name="quantity" class="general-input big text-center border c14-b c1-c body-text fs-14-14 lh-normal w-100 fw-semibold" placeholder="1" min="1" type="number" value="1" required input>
+            <button type="button" class="main-quantity-product__button right c1-c body-text fs-14-14 lh-normal fw-semibold position-absolute" increment>+</button>
+          </main-quantity-pack>
+        </div>
+        
+        <input add_button type="submit" id="ButtonAddToCart" class="button-cart transition-all-03 general-button big c8-c body-text lh-normal fw-semibold remove-box  tw-border tw-border-black tw-border-solid tw-text-black disabled:tw-text-white disabled:tw-bg-slate-800 tw-m-0" value="Agregar a carrito">
+
+        <script type="text/javascript">
+          document.getElementById("ButtonAddToCart").onclick = function(){
+              ttq.track('AddToCart',{  
+              content_id: 'ButtonAddToCart',
+              sku_id: '{{ product.selected_or_first_available_variant.sku }}',
+              content_name: '{{ product.title }}',
+              price: '{{ product.price | money_without_currency }}',
+              currency: 'MXN',
+              link: '{{ product.url }}',
+              brand: 'Smart Bamboo',
+              title: '{{ page_title }}',
+              content_category: '{{ product.type }}',
+              availability: '{{ product.available }}',
+              description: '{{ page_description }}',
+              image_link: '{{ product.images }}',})
+            }
+          </script>
+        
+        <input add_button type="submit" id="clickButton" class="button-checkout transition-all-03 general-button big c8-c body-text lh-normal fw-semibold remove-box" value="Pagar ahora">
+
+        <script type="text/javascript">
+          document.getElementById("clickButton").onclick = function(){
+              ttq.track('ClickButton')
+            }
+        </script>
+      </div>
+    </div>
+    <script type="application/json" variants>
+      [
+        {% for variant in product.variants %}
+          {
+            "id": {{variant.id}},
+            "title": "{{variant.title}}",
+            "available": {{variant.available}},
+            "price": {{variant.price}},
+            "compare_at_price": {{variant.compare_at_price}},
+            "inventory_policy": "{{variant.inventory_policy}}",
+            "inventory_quantity": {{variant.inventory_quantity}},
+            "options": {{variant.options | json}}
+          }
+          {% if forloop.last == false %},{% endif %}
+        {% endfor %}
+      ]
+    </script>
+
+
+    <div class="tw-flex tw-justify-center tw-items-center">
+      {% comment %} <div class="tw-text-xs tw-font-semibold tw-flex tw-justify-center tw-items-center">Hasta 24 MSI* </div>
+      <img class="tw-w-auto tw-h-[30px]" alt="Pay Pal" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/smart-icon-paypal.png?v=1660017572">
+      <img class="tw-w-auto tw-h-[30px]" alt="Visa" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/smart-icon-visa.png?v=1660017571">
+      <img class="tw-w-auto tw-h-[30px]" alt="Master Card" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/smart-icon-master.png?v=1660017572">
+      <img class="tw-w-auto tw-h-[30px]" alt="American Express" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/smart-icon-american.png?v=1660017572">
+      <img class="tw-w-[50px] md:tw-w-[90px] tw-pl-2 md:tw-pl-6" alt="Bamboo Pay" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/bamboo-pay-127.webp?v=1669430458"> {% endcomment %}
+      {% comment %} <img class="tw-block lg:tw-hidden tw-max-w-[330px]" alt="Compra Segura" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/cintillo-pagos-Mobile-dos.webp?v=1683323671">
+      <img class="tw-hidden lg:tw-block tw-max-w-[350px]" alt="Compra Segura" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/cintillo-pagos-Desktop-dos.webp?v=1683323671"> {% endcomment %}
+    </div>
+  
+
+    <div class="tw-flex tw-justify-center tw-self-center tw-w-4/6 tw-gap-x-2">
+      <div class="tw-flex tw-justify-center">
+        <img height="auto" width="auto" loading="lazy" class="tw-h-[28px] tw-w-[28px]" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/ico-compra-segura.webp?v=1663708247">
+      </div>
+      <p class="tw-text-sm tw-font-semibold tw-flex tw-justify-center tw-self-center tw-text-center">
+        Pago Seguro y Garantizado
+      </p>
+    </div>
+
+    {% comment %} <div class="tw-flex tw-justify-center tw-self-center tw-w-4/6 tw-gap-x-2">
+      <div class="tw-flex tw-justify-center">
+        <img class="tw-h-[28px] tw-mx-auto" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/ico-compra-segura.webp?v=1663708247">
+      </div>
+      <p class="tw-text-sm tw-font-semibold tw-flex tw-justify-center tw-self-center tw-text-center">Pago Seguro y Garantizado</p>
+    </div> {% endcomment %}
+
+  {%- endform -%}
+</main-form>
+
+
+<script type="module" src="{{ 'smart-main-form.js' | asset_url }}" defer="defer"></script>
+<script type="module" src="{{ 'smart-main-input-pack-dist.js' | asset_url }}" defer="defer"></script>

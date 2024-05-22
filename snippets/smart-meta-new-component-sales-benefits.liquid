@@ -1,0 +1,100 @@
+{% comment %} Variables  {% endcomment %}
+{% assign ico_image = "https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Check_buybox.webp?v=1683825953" %}
+
+{% if product.tags contains "benefit-30" %} {% comment %} 180 de prueba {% endcomment %}
+{% assign ico_text_uno = "<b>180 noches</b> de prueba " %}
+{% elsif product.tags contains "benefit-120" %} {% comment %} 365 de prueba {% endcomment %}
+{% assign ico_text_uno = "<b>365 noches</b> de prueba " %}
+{% elsif product.tags contains "benefit-tech" %}
+{% assign ico_text_uno = "<b>Servicio Técnico</b> de instalación" %}
+{% elsif product.tags contains "benefit-ret" %}
+{% assign ico_text_uno = "Devoluciones <b>sin costo (?)</b>" %}
+{% else %}
+{% assign ico_text_uno = "<b>3, 6, 12, 18 y 24 </b>MSI" %}
+{% endif %}  
+
+{% capture bloque_uno %} 
+<div class="tw-flex tw-flex-row tw-w-full tw-justify-start tw-items-center">
+  <img class="tw-w-[20px] md:tw-w-[25px] tw-mx-auto tw-py-2 md:tw-py-4" src="{{ ico_image }}" alt="{{ ico_text_uno }}" title="{{ ico_text_uno }}">
+  <h2 class="tw-block tw-text-left tw-font-light tw-w-full tw-text-sm md:tw-text-base tw-pl-2">
+    {{ ico_text_uno }}
+  </h2>
+</div>
+{% endcapture %}
+
+{% if product.tags contains "no-pickup" %}
+{% assign ico_text_dos = "<b>Garantía</b> en tu compra" %}
+{% elsif product.tags contains "hipoalergenico" %}
+{% assign ico_text_dos = "<b>Hipoalergénico</b> para tu descanso" %}
+{% elsif product.tags contains "ultraresistente" %}
+{% assign ico_text_dos = "<b>Ultra resistentes</b> y duraderas" %}
+{% else %}
+{% assign ico_text_dos = "<b>Recoge</b> en tienda" %}
+{% endif %}
+
+{% capture bloque_dos %} 
+<div class="tw-flex tw-flex-row tw-w-full tw-justify-start tw-items-center">
+  <img class="tw-w-[20px] md:tw-w-[25px] tw-mx-auto" src="{{ ico_image }}" alt="{{ ico_text_dos }}" title="{{ ico_text_dos }}">
+  <h2 class="tw-block tw-text-left tw-font-light tw-w-full tw-text-sm md:tw-text-base tw-pl-2">
+    {{ ico_text_dos }}
+  </h2>
+</div>
+{% endcapture %}
+
+
+{% assign ico_text_tres = "<b>Envío gratis</b> en todo México" %}
+{% capture bloque_tres %} 
+<div class="tw-flex tw-flex-row tw-w-full tw-justify-start tw-items-center tw-pt-2 md:tw-pt-4">
+  <img class="tw-w-[20px] md:tw-w-[25px] tw-mx-auto" src="{{ ico_image }}" alt="{{ ico_text_tres }}" title="{{ ico_text_tres }}">
+  <h2 class="tw-block tw-text-left tw-font-light tw-w-full tw-text-sm md:tw-text-base tw-pl-2">
+    {{ ico_text_tres }}
+  </h2>
+</div>
+{% endcapture %}
+
+{% if product.tags contains "mat-blend" %}
+    {% assign ico_text_cuatro = "<b>50%</b> bambú y <b>50%</b> microfibra con alto GSM " %}
+  {% elsif product.tags contains "mat-bamboo" %}
+    {% assign ico_text_cuatro = "<b>100%</b> Bamboo " %}
+  {% elsif product.tags contains "mat-fibra" %}
+    {% assign ico_text_cuatro = "<b>100%</b> fibra " %}
+  {% elsif product.tags contains "mat-reciclado" %}
+    {% assign ico_text_cuatro = "Materiales <b>100%</b> reciclados de poliéster" %}
+    {% assign ico_text_cuatro_adicional = "Resistente a la acumulación de estática, no se pega el cabello humano y de mascotas." %}
+{% else %}
+{% endif %}
+
+{% capture bloque_cuatro %} 
+  {% if product.tags contains "mat-blend" or product.tags contains "mat-bamboo" or product.tags contains "mat-fibra" or product.tags contains "mat-reciclado" %}
+    <div class="tw-flex tw-flex-row tw-w-full tw-justify-start tw-items-center">
+      <img class="tw-w-[20px] md:tw-w-[25px] tw-mx-auto" src="{{ ico_image }}" alt="{{ ico_text_tres }}" title="{{ ico_text_tres }}">
+      <h2 class="tw-block tw-text-left tw-font-light tw-w-full tw-text-sm md:tw-text-base tw-pl-2">
+        {{ ico_text_cuatro }}
+      </h2>
+    </div>
+    {% elsif product.tags contains "mat-reciclado" %}
+    <div class="tw-flex tw-flex-row tw-w-full tw-justify-start tw-items-center">
+      <img class="tw-w-[20px] md:tw-w-[25px] tw-mx-auto" src="{{ ico_image }}" alt="{{ ico_text_tres }}" title="{{ ico_text_tres }}">
+      <h2 class="tw-block tw-text-left tw-font-light tw-w-full tw-text-sm md:tw-text-base tw-pl-2">
+        {{ ico_text_cuatro_adicional }}
+      </h2>
+    </div>
+    {% else %}
+  {% endif%}
+
+{% endcapture %}
+{% comment %} End Variables  {% endcomment %}
+
+<div class="tw-flex tw-items-center tw-justify-center tw-p-5">
+<div class="tw-w-full tw-flex tw-flex-col tw-grid tw-grid-cols-1 tw-gap-x-2">
+
+{{ bloque_cuatro }}
+
+{{ bloque_uno }}
+
+{{ bloque_dos }}
+
+{{ bloque_tres }}
+
+</div>
+</div>

@@ -1,0 +1,29 @@
+<div class="tw-mt-3 tw-flex tw-items-center lg:tw-items-start tw-justify-center lg:tw-justify-start lg:tw-ml-6">
+    <div class="tw-flex tw-text-xs lg:tw-text-sm tw-font-semibold">
+
+        <p class="tw-uppercase tw-font-lora tw-px-1"> 
+        {% if product.tags contains "benefit-30" %}
+            180 Noches de Prueba |
+        {% elsif product.tags contains "benefit-120" %}
+            365 Noches de Prueba |
+        {% else %}
+            Hasta 24 MSI |
+        {% endif%}
+        </p>
+        
+        <p class="tw-uppercase tw-font-lora tw-px-1"> Envío Gratis | </p>
+
+        <p class="tw-uppercase tw-font-lora tw-px-1">
+            {% if product.tags contains "warranty-2" %}
+            2 Años de Garantía
+            {% elsif product.tags contains "warranty-5" %}
+            5 Años de Garantía
+            {% elsif product.tags contains "warranty-12" %}
+            12 Años de Garantía
+            {% else %}
+            Compra Segura
+            {% endif%}
+
+        </p>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+{% assign img_picker = section.settings.img_picker | image_url %}
+{% assign alt = section.settings.banner_title %}
+{% assign color = section.settings.id-name %}
+
+<style>
+    .bg-custom_color_first-{{ color }} { background-color: {{ section.settings.custom_color_first }};}
+</style>
+
+<section class="tw-w-full tw-flex tw-flex-col tw-justify-center tw-items-center bg-custom_color_first-{{ color }}">
+    <div class="tw-w-full tw-max-w-[800px] tw-px-10 md:tw-px-0 tw-my-10">
+        <h2 class="tw-font-semibold tw-text-3xl tw-text-[#434F5A] tw-my-10 md:tw-my-5 tw-text-center">
+            {{ section.settings.section_title }}
+        </h2>
+        <p class="tw-text-[#434F5A] tw-mt-5 md:tw-mt-0 tw-text-center tw-text-justify">
+            {{ section.settings.section_paragraph }}
+        </p>
+        <img loading="lazy" class="tw-w-full tw-mt-10" alt="{{ alt }}" src="{{ img_picker }}">
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contenido Smart Base",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Escribir Título"
+    },
+    {
+      "type": "text",
+      "id": "section_paragraph",
+      "label": "Escribir Contenido Parrafo"
+    },
+    {
+      "type": "text",
+      "id": "id-name",
+      "label": "Escribir Nombre Color"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_picker",
+      "label": "Seleccionar imagen"
+    },
+    {
+        "type": "text",
+        "id": "alt",
+        "label": "Alt Description"
+    },
+    {
+      "type": "text",
+      "id": "custom_color_first",
+      "label": "Hexadecimal del Color"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,6 @@
+<link rel="stylesheet" href="{{ 'smart-component-gallery.css' | asset_url }}">
+{% if product.tags contains "color_form" %}
+  {% render 'smart-subcomponent-gallery-color' %}
+{% else %}
+  {% render 'smart-subcomponent-gallery-normal' %}
+{% endif %}

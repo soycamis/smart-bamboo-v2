@@ -1,0 +1,108 @@
+<link rel="stylesheet" href="{{ 'smart-subcomponent-form.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'smart-subcomponent-form.css' | asset_url | stylesheet_tag }}</noscript>
+
+<main-form class="d-block" product_available="{{ product.selected_or_first_available_variant.id }}">
+  {%- form 'product', product, class: 'subcomponent-form__form' -%}
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+    {%- assign product_items = product.metafields.custom.set_products | split: ',' -%}
+
+    <h4 class="c6-c body-text tw-font-semibold tw-text-lg">Personaliza tu {{ product.title }}</h4>
+    <div class="tw-max-w-full">
+      {% for product_handle in product_items %}
+        {% render 'products-set-supreme', handle: product_handle %}
+      {% endfor %}
+    </div>
+
+    <div>
+      <div class="subcomponent-form__container tw-flex tw-flex-col md:tw-flex-row tw-gap-[15px]">
+        <input
+          add_button
+          type="submit"
+          id="ButtonAddToCart"
+          class="button-cart transition-all-03 general-button big c8-c body-text lh-normal fw-semibold remove-box tw-bg-amarillo  tw-border tw-border-amarillo tw-border-solid tw-text-white disabled:tw-text-white disabled:tw-bg-slate-800 tw-m-0"
+          value="Agregar a carrito"
+        >
+
+        <script type="text/javascript">
+          document.getElementById('ButtonAddToCart').onclick = function () {
+            ttq.track('AddToCart', {
+              content_id: 'ButtonAddToCart',
+              sku_id: '{{ product.selected_or_first_available_variant.sku }}',
+              content_name: '{{ product.title }}',
+              price: '{{ product.price | money_without_currency }}',
+              currency: 'MXN',
+              link: '{{ product.url }}',
+              brand: 'Smart Bamboo',
+              title: '{{ page_title }}',
+              content_category: '{{ product.type }}',
+              availability: '{{ product.available }}',
+              description: '{{ page_description }}',
+              image_link: '{{ product.images }}',
+            });
+          };
+        </script>
+
+        <script type="text/javascript">
+          document.getElementById("ButtonAddToCart").addEventListener("click", () => {
+            dataLayer.push({ 'ecommerce': null });
+            dataLayer.push({
+              'event': 'add_to_cart',
+              'ecommerce': {
+                  'items': [{
+                  'item_id': '{{ product.id }}',
+                  'item_name': '{{ product.title | remove: "'" | remove: '"' }}',
+                  'item_brand': '{{ product.vendor | remove: "'" | remove: '"' }}',
+                  'item_category': '{{ product.collections[0].title | remove: "'" | remove: '"' }}',
+                  'item_variant': '{{ product.selected_variant.sku }}',
+                  'currency': '{{ shop.currency }}',
+                  'price': '{{ product.price  | times: 0.01}}'
+                  }]
+                }
+            });
+          });
+        </script>
+      </div>
+    </div>
+
+
+    <div class="tw-flex tw-justify-center tw-items-center">
+      {% comment %} <div class="tw-text-xs tw-font-semibold tw-flex tw-justify-center tw-items-center">Hasta 24 MSI* </div>
+      <img class="tw-w-auto tw-h-[30px]" alt="Pay Pal" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/smart-icon-paypal.png?v=1660017572">
+      <img class="tw-w-auto tw-h-[30px]" alt="Visa" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/smart-icon-visa.png?v=1660017571">
+      <img class="tw-w-auto tw-h-[30px]" alt="Master Card" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/smart-icon-master.png?v=1660017572">
+      <img class="tw-w-auto tw-h-[30px]" alt="American Express" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/smart-icon-american.png?v=1660017572">
+      <img class="tw-w-[50px] md:tw-w-[90px] tw-pl-2 md:tw-pl-6" alt="Bamboo Pay" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/bamboo-pay-127.webp?v=1669430458"> {% endcomment %}
+      {% comment %} <img class="tw-block lg:tw-hidden tw-max-w-[330px]" alt="Compra Segura" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/cintillo-pagos-Mobile-dos.webp?v=1683323671">
+      <img class="tw-hidden lg:tw-block tw-max-w-[350px]" alt="Compra Segura" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/cintillo-pagos-Desktop-dos.webp?v=1683323671"> {% endcomment %}
+    </div>
+  
+
+    <div class="tw-flex tw-justify-center tw-self-center tw-w-4/6 tw-gap-x-2">
+      <div class="tw-flex tw-justify-center">
+        <img height="auto" width="auto" loading="lazy" class="tw-h-[28px] tw-w-[28px]" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/ico-compra-segura.webp?v=1663708247">
+      </div>
+      <p class="tw-text-sm tw-font-semibold tw-flex tw-justify-center tw-self-center tw-text-center">
+        Pago Seguro y Garantizado
+      </p>
+    </div>
+
+    {% comment %} <div class="tw-flex tw-justify-center tw-self-center tw-w-4/6 tw-gap-x-2">
+      <div class="tw-flex tw-justify-center">
+        <img
+          height="auto"
+          width="auto"
+          loading="lazy"
+          class="tw-h-[28px] tw-mx-auto"
+          src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/ico-compra-segura.webp?v=1663708247"
+        >
+      </div>
+      <p class="tw-text-sm tw-font-semibold tw-flex tw-justify-center tw-self-center tw-text-center">
+        Pago Seguro y Garantizado
+      </p>
+    </div> {% endcomment %}
+
+
+
+  {%- endform -%}
+</main-form>

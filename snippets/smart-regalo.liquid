@@ -1,0 +1,24 @@
+{% if product.tags contains 'regalo-protector' or  product.tags contains 'regalo-10-off' or product.handle == 'colchoneta-smart-bamboo' %}
+    <div class=" tw-flex tw-items-center tw-justify-center tw-my-3">
+        <div class="tw-flex tw-flex-cols tw-grid tw-grid-cols-3 tw-max-w-full tw-bg-[#f3f3f3] tw-rounded-lg tw-px-5">
+            <div class="tw-flex tw-items-center tw-justify-center">
+                {% if product.tags contains 'regalo-protector' %}
+                    <img class="tw-w-full tw-max-w-[100px]" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Protector-colchon_1.webp?v=1669145494">
+                    {% elsif product.tags contains 'regalo-10-off' %}
+                    <img class="tw-w-full tw-max-w-[75px] tw-block tw-mx-center" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/cupon_1.png?v=1695411828">
+                    {% elsif product.handle == 'colchoneta-smart-bamboo' %}
+                    <img class="tw-w-full tw-max-w-[100px]" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Almohada-Blend-2-regalo.webp?v=1686287118">
+                {% endif %}
+            </div>
+            <div class="tw-col-span-2 tw-p-2 tw-flex tw-items-center tw-justify-center">
+                {% if product.tags contains 'regalo-protector' %}
+                    <p class="tw-text-[12px]">Recibe de regalo un Protector de Colchón del mismo tamaño del colchón.</p>
+                    {% elsif product.tags contains 'regalo-10-off' %}
+                    <p class="tw-text-[12px]">En la compra de 2 almohadas cervicales recibe un 10% OFF adicional usando cupón: <b>cervical10</b></p>
+                    {% elsif product.handle == 'colchoneta-smart-bamboo' %}
+                    <p class="tw-text-[12px]">En la compra de una colchoneta se dará de regalo una Almohada Blend.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}

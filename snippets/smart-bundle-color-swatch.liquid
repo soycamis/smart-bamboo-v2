@@ -1,0 +1,44 @@
+
+{% for tag in product.tags %}  
+      {% assign sheetsBamboo = 'juegos-de-sabana-100-bamboo' %}
+      {% assign sheetsBlend = 'juegos-de-sabana-blend' %}
+      {% assign ropaCamaBamboo = 'juegos-de-cama-100-bamboo' %}
+      {% assign ropaCamaBlend = 'juegos-de-cama-blend' %}
+      {% assign colchasStripes = 'colchas-stripes' %}
+      {% assign colchasBliss = 'colchas-bliss' %}
+      {% assign colchasReversibles = 'colchas-reversibles' %}
+      {% assign duvetsBamboo = 'duvets-bamboo' %}
+      {% assign duvetsSupreme = 'duvets-supreme' %}
+      {% assign duvetsBlend = 'duvets-blend' %}
+      {% assign pijamaCorta = 'pijamas-cortas' %}
+      {% assign pijamasLarga = 'pijamas-largas' %}
+      {% assign lookBamboo = 'shop-the-look-bamboo' %}
+      
+      {% if tag == 'bundle-form-sheets-bamboo' %}
+        {% render 'smart-subcomponent-form-swatchbycollection-selector', fabric: sheetsBamboo %}
+      {% elsif tag == 'bundle-form-sheets-blend' %}        
+        {% render 'smart-subcomponent-form-swatchbycollection-selector', fabric: sheetsBlend %}
+      {% elsif tag == 'bundle-shop-the-look-bamboo' %}        
+        {% render 'smart-subcomponent-form-swatchbycollection-selector', fabric: lookBamboo %}
+      {% elsif tag == 'bundle-bamboo' %}        
+        {% render 'smart-subcomponent-form-swatchbycollection-selector', fabric: ropaCamaBamboo %}
+      {% elsif tag == 'bundle-blend' %}        
+        {% render 'smart-subcomponent-form-swatchbycollection-selector', fabric: ropaCamaBlend %}
+      {% elsif tag == 'bundle-quilt-stripes' %}
+        {% render 'smart-subcomponent-form-swatchbycollection-selector', fabric: colchasStripes %}
+      {% elsif tag == 'bundle-quilt-bliss' %}
+        {% render 'smart-subcomponent-form-swatchbycollection-selector', fabric: colchasBliss %}
+      {% elsif tag == 'bundle-quilt-reversible' %}
+        {% render 'smart-subcomponent-form-swatchbycollection-selector', fabric: colchasReversibles %}
+      {% elsif tag == 'bundle-duvet-bamboo' %}
+        {% render 'smart-subcomponent-form-swatchbycollection-selector', fabric: duvetsBamboo %}
+      {% elsif tag == 'bundle-duvet-supreme' %}
+        {% render 'smart-subcomponent-form-swatchbycollection-selector', fabric: duvetsSupreme %}
+      {% elsif tag == 'bundle-duvet-blend' %}
+        {% render 'smart-subcomponent-form-swatchbycollection-selector', fabric: duvetsBlend %}
+      {% elsif tag == 'bundle-pijama-corta' %}
+        {% render 'smart-subcomponent-form-swatchbycollection-selector', fabric: pijamaCorta %}
+      {% elsif tag == 'bundle-pijama-larga' %}
+        {% render 'smart-subcomponent-form-swatchbycollection-selector', fabric: pijamasLarga %}
+      {% endif %}
+    {% endfor %}
