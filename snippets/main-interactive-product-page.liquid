@@ -1,0 +1,227 @@
+<div class="tw-w-full tw-flex tw-items-center tw-justify-center tw-pt-4">
+    <div class="tw-max-w-[1600px] tw-w-full tw-flex">
+      <div class="lg:tw-col-span-5 tw-w-full tw-p-4 md:tw-px-0">
+        <div class="tw-border tw-border-solid tw-border-b-[1px] tw-border-b-gray-200 tw-border-t-transparent tw-border-x-transparent">
+          <nav class="tw-flex tw-space-x-2">
+            <button onclick="renderBenefitsDescription()" style="font-weight: 600; color: #292929; border-bottom: 2px solid #292929;" id="tab-descrip" class="tw-text-sm md:tw-text-[14px] tw-py-0.5 md:tw-py-2 tw-px-2 md:tw-px-4 tw-inline-flex tw-items-center tw-gap-2 tw-whitespace-nowrap hover:tw-text-gray-700">
+              <div class="tw-flex tw-flex-col tw-justify-center tw-items-center">
+                <img class="tw-mb-2" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Info.png?v=1696358941" alt="bullet descripción">
+                Descripción
+              </div>
+            </button>
+            <button onclick="renderBenefitsBenefits()" style="font-weight: 400; color: #6b7280; border-bottom: none;" id="tab-benefit" class="tw-text-sm md:tw-text-[14px] tw-py-0.5 md:tw-py-2 tw-px-2 md:tw-px-4 tw-inline-flex tw-items-center tw-gap-2 tw-whitespace-nowrap hover:tw-text-gray-700">
+              <div class="tw-flex tw-flex-col tw-justify-center tw-items-center">
+                <img class="tw-mb-2" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Ruler.png?v=1696358941" alt="bullet medidas">
+                Medidas
+              </div>
+            </button>
+            <button onclick="renderBenefitsTecnica()" style="font-weight: 400; color: #6b7280; border-bottom: none;" id="tab-tecnica" class="tw-text-sm md:tw-text-[14px] tw-py-0.5 md:tw-py-2 tw-px-2 md:tw-px-4 tw-inline-flex tw-items-center tw-gap-2 tw-whitespace-nowrap hover:tw-text-gray-700">
+              <div class="tw-flex tw-flex-col tw-justify-center tw-items-center">
+                <img class="tw-mb-2" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/ShieldCheck.png?v=1696358941" alt="bullet garantia">
+                Garantía
+              </div>
+            </button>
+            <button onclick="renderBenefitsEnvio()" style="font-weight: 400; color: #6b7280; border-bottom: none;" id="tab-envio" class="tw-text-sm md:tw-text-[14px] tw-py-0.5 md:tw-py-2 tw-px-2 md:tw-px-4 tw-inline-flex tw-items-center tw-gap-2 tw-whitespace-nowrap hover:tw-text-gray-700">
+              <div class="tw-flex tw-flex-col tw-justify-center tw-items-center">
+                <img class="tw-mb-2" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Truck.png?v=1696358941" alt="bullet envío">
+                Envío
+              </div>
+            </button>
+          </nav>
+        </div>
+  
+        <div>
+          <div style="display:block;" id="benefits-description" class="tw-pt-3">
+            {% if product.metafields.header.summary != blank %}
+              {% assign summary = product.metafields.header.summary %}
+            {% elsif product.metafields.home.summary != blank %}
+              {% assign summary = product.metafields.home.summary %}
+            {% elsif product.description != blank %}
+              {% assign summary = product.description %}
+            {% endif %}
+            
+            {% comment %} One liner {% endcomment %}
+            {% comment %} {% if product.metafields.my_fields.descriptiononeliner != blank %}
+              <h2 class="tw-font-semibold tw-text-dorado tw-pb-2">
+                {{ product.metafields.my_fields.descriptiononeliner }}
+              </h2>
+              {% else %}
+            {% endif %} {% endcomment %}
+          
+            <div class="tw-font-poppins tw-text-sm md:tw-text-[14px] tw-font-normal tw-px-3 tw-leading-normal">
+              {{ summary }}
+              {% comment %} {%- render 'smart-meta-new-component-sales-benefits' -%} {% endcomment %}
+
+              {%- render 'smart-meta-component-bullets' -%}
+            </div>
+          </div>
+  
+  
+          <div style="display:none;" id="benefits-benefits">
+            <div class="tw-h-full">
+              {% comment %} <div>Aquí van tamaños y medidas</div> {% endcomment %}
+              {%- render 'smart-component-tamanos-medidas', mobile: true -%}
+              
+            </div>
+          </div>
+  
+  
+          <div style="display:none;" id="benefits-tecnica">
+            {% comment %} {%- render 'smart-component-tech', mobile: true -%} {% endcomment %}
+            {% if product.metafields.custom.devoluciones_satisfaccion != blank  %}
+            {%- render 'smart-component-satisfaccion', mobile: true -%}
+              {% else %}
+            {%- render 'smart-component-bullets-garantia', mobile: true -%}
+            {% endif %}
+          </div>
+
+
+          <div style="display:none;" id="benefits-envio">
+            {%- render 'smart-meta-component-envio' -%}
+          </div>
+  
+  
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  </div>
+
+
+  <script>
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+      window.addEventListener('load', function() {
+
+        var lastSize = getSelectedSize('selectedSize') //Obtenemos la cookie almacenada
+        var form = document.querySelector('.subcomponent-form__form')
+        var options = [];
+        //console.log("cookie guardada:" + lastSize)
+        
+        if(lastSize != '') {
+              document.getElementById('selectSize').value = lastSize
+              document.getElementById('selectSize').dispatchEvent(new Event('change'))  
+        }
+
+
+        document.querySelector("select[name='Size']").addEventListener('change', function() { //Cuando eligen otra opción se cambia el valor de la cookie
+          size = this.value;
+          setSelectedSize(size);
+        });
+
+    });
+    });
+    
+    function setSelectedSize(size){ //Crear/actualizar la cookie
+      document.cookie = 'selectedSize=' + size
+    }
+
+    function getSelectedSize(cname){ //Obtener la cookie
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+    }
+
+    function renderBenefitsDescription() {
+      document.getElementById('benefits-description').style.display = 'block'; 
+      document.getElementById('tab-descrip').style.fontWeight = '600'; 
+      document.getElementById('tab-descrip').style.color = '#292929';
+      document.getElementById('tab-descrip').style.borderBottom = '2px solid #292929'; 
+      document.getElementById('tab-benefit').style.fontWeight = '400'; 
+      document.getElementById('tab-benefit').style.color = '#6b7280';
+      document.getElementById('tab-benefit').style.borderBottom = 'none'; 
+      document.getElementById('tab-tecnica').style.fontWeight = '400';
+      document.getElementById('tab-tecnica').style.color = '#6b7280';
+      document.getElementById('tab-tecnica').style.borderBottom = 'none';
+      document.getElementById('tab-envio').style.fontWeight = '400'; 
+      document.getElementById('tab-envio').style.color = '#6b7280';
+      document.getElementById('tab-envio').style.borderBottom = 'none'; 
+
+      let ocultos = document.querySelectorAll('#benefits-benefits, #benefits-tecnica, #benefits-envio');
+      for (oculto of ocultos) {
+        oculto.style.display = 'none';
+      }
+    }
+  
+    function renderBenefitsBenefits() {
+      document.getElementById('benefits-benefits').style.display = 'block'; 
+      document.getElementById('tab-descrip').style.fontWeight = '400'; 
+      document.getElementById('tab-descrip').style.color = '#6b7280';
+      document.getElementById('tab-descrip').style.borderBottom = 'none';
+      document.getElementById('tab-benefit').style.fontWeight = '600';
+      document.getElementById('tab-benefit').style.borderBottom = '2px solid #292929'; 
+      document.getElementById('tab-benefit').style.color = '#292929';
+      document.getElementById('tab-tecnica').style.fontWeight = '400'; 
+      document.getElementById('tab-tecnica').style.borderBottom = 'none';
+      document.getElementById('tab-descrip').style.fontWeight = '400'; 
+      document.getElementById('tab-descrip').style.color = '#6b7280';
+      document.getElementById('tab-descrip').style.borderBottom = 'none'; 
+      document.getElementById('tab-envio').style.fontWeight = '400'; 
+      document.getElementById('tab-envio').style.color = '#6b7280';
+      document.getElementById('tab-envio').style.borderBottom = 'none'; 
+
+  
+      let ocultos = document.querySelectorAll('#benefits-description, #benefits-tecnica, #benefits-envio');
+      for (oculto of ocultos) {
+        oculto.style.display = 'none';
+      }
+    }
+  
+    function renderBenefitsTecnica() {
+      document.getElementById('benefits-tecnica').style.display = 'block';
+      document.getElementById('tab-descrip').style.fontWeight = '400'; 
+      document.getElementById('tab-descrip').style.color = '#6b7280';
+      document.getElementById('tab-descrip').style.borderBottom = 'none';  
+      document.getElementById('tab-benefit').style.fontWeight = '400'; 
+      document.getElementById('tab-benefit').style.color = '#6b7280';
+      document.getElementById('tab-benefit').style.borderBottom = 'none';  
+      document.getElementById('tab-tecnica').style.fontWeight = '600';
+      document.getElementById('tab-tecnica').style.color = '#292929';
+      document.getElementById('tab-tecnica').style.borderBottom = '2px solid #292929';  
+      document.getElementById('tab-envio').style.fontWeight = '400'; 
+      document.getElementById('tab-envio').style.color = '#6b7280';
+      document.getElementById('tab-envio').style.borderBottom = 'none'; 
+  
+      let ocultos = document.querySelectorAll('#benefits-description, #benefits-benefits, #benefits-envio');
+      for (oculto of ocultos) {
+        oculto.style.display = 'none';
+      }
+    }
+
+    function renderBenefitsEnvio() {
+      document.getElementById('benefits-envio').style.display = 'block';
+      document.getElementById('tab-descrip').style.fontWeight = '400'; 
+      document.getElementById('tab-descrip').style.color = '#6b7280';
+      document.getElementById('tab-descrip').style.borderBottom = 'none';  
+      document.getElementById('tab-benefit').style.fontWeight = '400'; 
+      document.getElementById('tab-benefit').style.color = '#6b7280';
+      document.getElementById('tab-benefit').style.borderBottom = 'none';  
+      document.getElementById('tab-tecnica').style.fontWeight = '400'; 
+      document.getElementById('tab-tecnica').style.color = '#6b7280';
+      document.getElementById('tab-tecnica').style.borderBottom = 'none'; 
+      document.getElementById('tab-envio').style.fontWeight = '600'; 
+      document.getElementById('tab-envio').style.color = '#292929';
+      document.getElementById('tab-envio').style.borderBottom = '2px solid #292929'; 
+  
+      let ocultos = document.querySelectorAll('#benefits-description, #benefits-benefits, #benefits-tecnica');
+      for (oculto of ocultos) {
+        oculto.style.display = 'none';
+      }
+    }
+
+  </script>

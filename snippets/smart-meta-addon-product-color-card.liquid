@@ -1,0 +1,286 @@
+{% assign product = SelectedProduct %}
+{% assign idProduct = product.title | remove: " " | remove: "&" | replace: 'á', 'a' | replace: 'é', 'e' | replace: 'í', 'i' | replace: 'ó', 'o' | replace: 'ú', 'u' | replace: 'ñ', 'n' | remove: "100%" %}
+
+<div class="unselectedProductAddOn tw-my-2 tw-border-solid tw-border-[1px] tw-border-[#f3f3f3] tw-rounded-lg hover:tw-shadow-lg tw-my-2 tw-flex tw-flex-col tw-grid tw-grid-cols-12 tw-items-start tw-justify-center tw-py-2 tw-px-4 ">
+    <div class="tw-col-span-1 unselectedAllInputs">
+        <input
+          type="checkbox"
+          style="-webkit-appearance:checkbox"
+          value="{{ idProduct }}"
+          class="unselectedBundleInputs tw-cursor-pointer tw-h-5 tw-w-5 tw-rounded-lg manualBinding"
+          data-av-value="true"
+          data-av-inputtype="check"
+          data-av-value2="false" id="check{{ product.id }}">
+            <script>
+                document.getElementById('check{{ product.id }}').addEventListener('change', function() {
+                    // Check if the checkbox was unchecked before clicking
+                    if (!this.checked) {
+                        // Execute your JavaScript code here
+                        deleteObjCartByProductID({{ product.id }})
+                        // Add your code here to run when the checkbox was unchecked before clicking
+                    }
+                });
+            </script>
+      </div>
+      <div class="tw-col-span-2">
+        <p class="tw-px-1 tagImagePrice">
+            <img class="tw-max-w-[45px] lg:tw-max-w-[65px]" src="http:{{ product.featured_image | image_url: width: 65 }}">
+        </p>
+      </div>
+
+      <div class="tw-col-span-9 tw-flex tw-flex-col">
+        <div class="tw-flex tw-grid tw-grid-cols-4 lg:tw-grid-cols-3">
+            <div class="tw-col-span-2 tw-font-lora tw-text-[#434f5a] tw-font-bold tw-text-[14px] lg:tw-text-[17px] tw-tracking-tight"> 
+                {{ product.title | remove: "(OS)" }} 
+                
+            </div>
+            <div class="tw-col-span-2 lg:tw-col-span-1 tw-flex tw-flex-col tw-justify-start tw-text-right">
+                {% if product.compare_at_price != product.price %}
+                    <p class="tw-text-xs">
+                        Desde: 
+                        <span class="tagProductPriceBefore tw-text-xs tw-line-through tw-text-right">
+                            {{ product.compare_at_price | money_with_currency | remove: " MXN" }}
+                        </span>
+                    </p>    
+                {% endif %}
+                <span class="tagProductPrice tw-text-xs tw-text-black tw-font-medium tw-text-right">
+                     {{ product.price | money_with_currency | remove: " MXN" }}
+                </span>
+            </div>
+        </div>
+
+        <div class="UnselectedSizeLabel tw-hidden">
+            {%- for option in product.options_with_values -%}
+                {% if option.name == 'Size' %}
+                    <label class="tw-text-xs lg:tw-text-xs tw-font-normal tw-text-[#666666]">Selecciona tu tamaño: 
+                    </label>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="unselectedSizesButtonColor tw-hidden tw-flex tw-grid tw-grid-cols-3 tw-my-3 tw-gap-x-3">
+            {% for size in product.options_by_name.Size.values %} 
+                <button class="tagButtonSize tagEachSize{{ size | replace: 'Matrimonial / Queen', 'MatQueen' | replace: 'Matrimonial/Queen', 'MatQueen' }} tw-flex tw-flex-col hover:tw-bg-[#434F5A] hover:tw-text-white focus:tw-text-white tw-font-semibold tw-rounded-lg tw-border-solid tw-border-[1px] tw-border-[#A5A5A5] hover:tw-border-[#434F5A] focus:tw-border-[#292929] tw-justify-center tw-items-center tw-px-2 tw-py-2 tw-font-poppins tw-text-xs lg:tw-text-base tw-font-normal setCookie">
+                    {{ size | replace: 'Matrimonial / Queen', 'Matr./Queen' | replace: 'Matrimonial/Queen', 'Matr./Queen' }}
+                </button>
+            {% endfor %}
+        </div>
+
+        <div class="unselectedColorLabel tw-hidden">
+            {%- for option in product.options_with_values -%}
+                {% if option.name == 'Color' %}
+                    <label class="visibleTextLabel tw-hidden tw-text-xs tw-font-normal tw-text-[#666666]">Selecciona tu color: 
+                        <span class="tagSelectedProductColor tw-font-semibold"> </span>
+                    </label>
+                {% else %}
+                
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+
+        <div class="UnselectedColorSwatch tw-flex tw-grid tw-grid-cols-6 lg:tw-grid-cols-9 tw-gap-x-4 lg:tw-gap-x-2 tw-gap-y-2">
+            {% for variant in product.variants %}
+                <button 
+                    {% if product.options.size > 1 %}
+                        data-variant="{{ variant.id }}"
+                        data-nombre="{{ product.title }}"
+                        data-tamano="{{ variant.option1 }}"
+                        data-precio="{{ variant.compare_at_price | money_without_currency | remove: ',' }}"
+                        data-preciodescuento="{{ variant.price | money_without_currency | remove: ',' }}"
+                        data-productid="{{ product.id }}"
+                        productColor="{{ variant.option1 }}"
+                        productSize="{{ variant.option2 }}"
+                    {% elsif product.options.size == 1 %}
+                        data-variant="{{ variant.id }}"
+                        data-nombre="{{ product.title }}"
+                        data-tamano="{{ variant.option1 }}"
+                        data-precio="{{ variant.compare_at_price | money_without_currency | remove: ',' }}"
+                        data-preciodescuento="{{ variant.price | money_without_currency | remove: ',' }}"
+                        data-productid="{{ product.id }}"
+                        productColor="Blanco"
+                        productSize="{{ variant.option1 }}"
+                    {% endif %}
+                    productPrice="{{ variant.price | money_with_currency | remove: " MXN" }}"
+                    productCompareAtPrice="{{ variant.compare_at_price | money_with_currency | remove: " MXN" }}"
+                    productImage="http:{{ variant.featured_image.src | img_url }}"
+                    style="background-image: url('http:{{ variant.featured_image.src | image_url: width: 1000  }}');"
+                    class="magiccart tagColorSwatch {% if product.options.size > 1 %}tagSize{{ variant.option2 | replace: 'Matrimonial / Queen', 'MatQueen' | replace: 'Matrimonial/Queen', 'MatQueen' }} {% elsif product.options.size == 1 %} tagSize{{ variant.option1 | replace: 'Matrimonial / Queen', 'MatQueen' | replace: 'Matrimonial/Queen', 'MatQueen' }} {%  endif %} tw-hidden tw-bg-[length:600%] tw-bg-center tw-rounded-full tw-h-[30px] tw-w-[30px] tw-border-solid tw-border-[1.5px] tw-border-[#292929]">
+                </button>  
+            {% endfor %}
+        </div>
+        
+      </div>
+
+    
+</div>
+
+<script>
+    // Estado de los Botones
+    (() => {
+        // Seleccionar todos los elementos con la clase .unselectedSizesButtonColor
+        document.querySelectorAll(".unselectedSizesButtonColor").forEach(parent => {
+            // Obtener todos los hijos con la clase .tagButtonSize del elemento padre
+            const children = Array.from(parent.querySelectorAll(".tagButtonSize"));
+            // Agregar eventos de clic a los hijos del padre
+            children.forEach(element => {
+                element.addEventListener("click", () => {
+                    console.log("Clic en grupo de elementos");
+                    // Remover clases de todos los hijos del padre
+                    children.forEach(e => {
+                        e.classList.remove("tw-bg-[#292929]", "tw-text-white", "selected");
+                        e.classList.add("tw-text-[#292929]");
+                    });
+                    // Agregar clases al elemento clicado
+                    element.classList.add("tw-bg-[#292929]", "tw-text-white", "selected");
+                });
+            });
+        });
+    })();
+
+    //Estado Colores SELECTED 
+    (() => {
+        // Seleccionar todos los elementos con la clase .UnselectedColorSwatch
+        document.querySelectorAll(".UnselectedColorSwatch").forEach(parent => {
+            // Obtener todos los hijos con la clase .tagColorSwatch del elemento padre
+            const children = Array.from(parent.querySelectorAll(".tagColorSwatch"));
+    
+            // Agregar eventos de clic a los hijos del padre
+            children.forEach(element => {
+                element.addEventListener("click", () => {
+                    console.log("Clic en grupo de elementos");
+    
+                    // Remover clases de todos los hijos del padre
+                    children.forEach(e => {
+                        e.classList.remove("tw-border-[#292929]");
+                        e.classList.add("tw-border-[#cecece]");
+                        e.innerHTML = "";
+                    });
+    
+                    // Agregar clases al elemento clicado
+                    element.classList.remove("tw-border-[#cecece]");
+                    element.classList.add("tw-border-[#292929]", "tw-text-black");
+                    element.innerHTML = "✓";
+
+                    const parent = element.closest(".unselectedProductAddOn");
+                    const precioProducto = element.getAttribute("productPrice");
+                    const precioBeforeProducto = element.getAttribute("productCompareAtPrice");
+                    const imagenProducto = element.getAttribute("productimage");
+                    const colorProducto = element.getAttribute("productcolor");
+                    console.log("Parent element:", parent);
+                    if (parent && ( precioProducto != precioBeforeProducto)  && imagenProducto && colorProducto) {
+                        const productPriceElement = parent.querySelector(".tagProductPrice");
+                        const productPriceBeforeElement = parent.querySelector(".tagProductPriceBefore");
+                        const productImageElement = parent.querySelector(".tagImagePrice");
+                        const productColorElement = parent.querySelector(".tagSelectedProductColor");
+                        if (productPriceElement) {
+                            productPriceElement.textContent = precioProducto;
+                            productPriceBeforeElement.textContent = precioBeforeProducto;
+                            productImageElement.innerHTML  = `<img class="tw-max-w-[45px] lg:tw-max-w-[65px]" src="${imagenProducto}">`;
+                            productColorElement.textContent = colorProducto 
+                        } else {
+                            //console.error("No se encontró el elemento .tagProductPrice");
+                        }
+                    } else if (parent && ( precioProducto == precioBeforeProducto)  && imagenProducto && colorProducto) {
+                        const productPriceElement = parent.querySelector(".tagProductPrice");
+                        const productImageElement = parent.querySelector(".tagImagePrice");
+                        const productColorElement = parent.querySelector(".tagSelectedProductColor");
+                        if (productPriceElement) {
+                            productPriceElement.textContent = precioProducto;
+                            productImageElement.innerHTML  = `<img class="tw-max-w-[45px] lg:tw-max-w-[65px]" src="${imagenProducto}">`;
+                            productColorElement.textContent = colorProducto 
+                        } else {
+                            //console.error("No se encontró el elemento .tagProductPrice");
+                        }
+                    }
+                    else {
+                        //console.error("No se encontró el contenedor .unselectedProductAddOn o el atributo productPrice");
+                    }
+                });
+            });
+        });
+    })();
+
+    //Ocultar y mostrar variantes
+    (() => {
+        document.querySelectorAll(".unselectedSizesButtonColor").forEach(parent => {
+            const children = Array.from(parent.querySelectorAll(".tagEachSizeIndividual, .tagEachSizeMatrimonial, .tagEachSizeQueen, .tagEachSizeMatQueen, .tagEachSizeKing"));
+            children.forEach(element => {
+                element.addEventListener("click", () => {
+                    if (element.classList.contains("tagEachSizeIndividual")) {
+                        const parent = element.closest(".unselectedProductAddOn");
+                        if (parent) {
+                            parent.querySelectorAll(".tagSizeIndividual").forEach(i => i.classList.remove("tw-hidden"));
+                            parent.querySelectorAll(".unselectedColorLabel").forEach(i => i.classList.remove("tw-hidden"));
+                            parent.querySelectorAll(".tagSizeMatrimonial, .tagSizeQueen, .tagSizeKing, .tagSizeMatQueen").forEach(i => i.classList.add("tw-hidden"));
+                        }
+                    } else if (element.classList.contains("tagEachSizeMatrimonial")) {
+                        if (parent) {
+                            parent.querySelectorAll(".tagSizeMatrimonial").forEach(m => m.classList.remove("tw-hidden"));
+                            parent.querySelectorAll(".unselectedColorLabel").forEach(m => m.classList.remove("tw-hidden"));
+                            parent.querySelectorAll(".tagSizeIndividual .tagSizeQueen, .tagSizeKing, .tagSizeMatQueen").forEach(m => m.classList.add("tw-hidden"));
+                        }
+                    } else if (element.classList.contains("tagEachSizeQueen")) {
+                        const parent = element.closest(".unselectedProductAddOn");
+                        if (parent) {
+                            parent.querySelectorAll(".tagSizeQueen").forEach(q => q.classList.remove("tw-hidden"));
+                            parent.querySelectorAll(".unselectedColorLabel").forEach(q => q.classList.remove("tw-hidden"));
+                            parent.querySelectorAll(".tagSizeIndividual, .tagSizeMatrimonial, .tagSizeKing").forEach(q => q.classList.add("tw-hidden"));   
+                        }                        
+                    } else if (element.classList.contains("tagEachSizeMatQueen")) {
+                        const parent = element.closest(".unselectedProductAddOn");
+                        if (parent) {
+                            parent.querySelectorAll(".tagSizeMatQueen").forEach(mq => mq.classList.remove("tw-hidden"));
+                            parent.querySelectorAll(".unselectedColorLabel").forEach(mq => mq.classList.remove("tw-hidden"));
+                            parent.querySelectorAll(".tagSizeIndividual, .tagSizeKing").forEach(mq => mq.classList.add("tw-hidden"));
+                        }
+                    } else if (element.classList.contains("tagEachSizeKing")) {
+                         const parent = element.closest(".unselectedProductAddOn");
+                        if (parent) {
+                            parent.querySelectorAll(".tagSizeKing").forEach(k => k.classList.remove("tw-hidden"));
+                            parent.querySelectorAll(".unselectedColorLabel").forEach(k => k.classList.remove("tw-hidden"));
+                            parent.querySelectorAll(".tagSizeIndividual .tagSizeMatrimonial, .tagSizeQueen, .tagSizeMatQueen").forEach(k => k.classList.add("tw-hidden"));
+                        }
+                    }
+                });
+            });
+        });
+    })();
+
+    //inputs
+    (() => {
+        // Desactivar todos los onclicks de los inputs antes de agregar nuevos eventos
+        document.querySelectorAll(".unselectedBundleInputs").forEach(input => {
+            input.onclick = null;
+        });
+    
+        // Agregar evento de clic a cada input individual
+        document.querySelectorAll(".unselectedBundleInputs").forEach(input => {
+            input.addEventListener("click", () => {
+                // Obtener el padre más cercano con la clase .unselectedProductAddOn
+                const parent = input.closest(".unselectedProductAddOn");
+                if (parent) {
+                    // Iterar sobre los inputs en el mismo padre
+                    parent.querySelectorAll(".unselectedBundleInputs").forEach(innerInput => {
+                        var checkBox = innerInput
+                        if (checkBox.checked == true){
+                            parent.querySelectorAll(".UnselectedSizeLabel, .visibleTextLabel, .unselectedSizesButtonColor, .UnselectedColorSwatch").forEach(label => {
+                                label.classList.remove("tw-hidden");
+                            });
+                            {% comment %} console.log("HOLA"); {% endcomment %}
+                        }  else {
+                            parent.querySelectorAll(".UnselectedSizeLabel, .visibleTextLabel, .unselectedSizesButtonColor, .UnselectedColorSwatch").forEach(label => {
+                                label.classList.add("tw-hidden");
+                            });
+                            {% comment %} console.log("ADIOS"); {% endcomment %}
+                        }
+                        //console.log("Valor del input:", innerInput.value);
+                        // Agrega aquí tu lógica personalizada para el input seleccionado
+                    });
+                }
+            });
+        });
+    })();
+    
+    
+</script>

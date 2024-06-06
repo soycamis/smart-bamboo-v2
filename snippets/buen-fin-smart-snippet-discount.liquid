@@ -1,0 +1,84 @@
+{% assign initialPrice = product.compare_at_price | money %}
+{% assign finalPrice = product.price | money %}
+{% assign resta = product.compare_at_price | minus: product.price | money %}
+
+{% if product.handle == 'colchon-smart-firm' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: 'Hasta 20% OFF + 15% OFF' -%} 
+{% elsif product.handle == 'colchon-smart-hybrid' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '15% OFF' -%}
+{% elsif product.handle == 'colchon-smart-balance' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '30% OFF + 15% OFF' -%}
+{% elsif product.handle == 'base-electrica' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: 'Hasta 35% OFF + CASHBACK' -%}
+
+{% elsif product.handle == 'almohada-blend' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '25% OFF + 25% OFF' -%} 
+{% elsif product.handle == 'almohada-cervical-lavanda' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '20% OFF + 25% OFF ' -%}
+{% elsif product.handle == 'almohada-cervical-gel' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '20% OFF + 25% OFF ' -%}
+{% elsif product.handle == 'almohada-moon-blend' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '10% OFF' -%}
+{% elsif product.handle == 'almohada-body' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '5% OFF + 25% OFF ' -%}
+{% elsif product.handle == 'almohada-cush' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '25% OFF ' -%}
+
+{% elsif product.handle contains 'juego-de-sabanas-100-bamboo' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '20% OFF' -%}
+{% elsif product.handle contains 'juego-de-sabanas-blend' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '30% OFF + 15% OFF' -%}
+{% elsif product.handle contains 'juego-de-cama-bamboo' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: 'Precio Especial' -%}
+{% elsif product.handle contains 'juego-de-cama-blend' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: 'Precio Especial' -%}
+
+{% elsif product.handle == 'funda-para-almohada-de-seda-mulberry' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '5% OFF + 15% OFF ' -%}
+
+{% elsif product.handle contains 'colcha-reversible-' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '30% OFF + 20% OFF ' -%}
+{% elsif product.handle contains 'colcha-stripes' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '30% OFF + 40% OFF' -%}
+{% elsif product.handle contains 'colcha-bliss' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '30% OFF + 20% OFF' -%}
+{% elsif product.handle == 'edredon-alternativo' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '40% OFF ' -%}
+{% elsif product.handle == 'edredon-de-seda-mulberry' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '20% OFF' -%}
+{% elsif product.handle contains 'duvet-100-bambu-' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '20% OFF + 25% OFF' -%}
+{% elsif product.handle contains 'duvet-bamboo-blend' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '28% OFF' -%}
+{% elsif product.handle == 'duvet-jacquard' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '35% OFF' -%}
+{% elsif product.handle contains 'duvet-supreme' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '25% OFF + 25% OFF' -%}
+
+{% elsif product.handle == 'set-de-toallas-bamboo-blend' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '20% OFF' -%}
+{% elsif product.handle == 'toallas-de-algodon' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '15% OFF + 20% OFF' -%}
+{% elsif product.handle == 'bata-cozy' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '20% OFF' -%}
+{% elsif product.handle == 'bata-deluxe-bamboo' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '25% OFF' -%}
+{% elsif product.handle == 'bata-waffle-de-algodon' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '40% OFF + 30% OFF' -%}
+{% elsif product.handle == 'colchoneta-smart-bamboo' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '20% OFF + 15% OFF' -%}
+{% elsif product.handle contains 'pijama-corta' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '30% OFF + 10% OFF' -%}
+{% elsif product.handle contains 'pijama-larga' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '30% OFF + 10% OFF' -%}
+{% elsif product.handle == 'protector-de-colchon' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '40% OFF' -%}
+{% elsif product.handle == 'sillon-imperium-core' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '15% OFF + 5% OFF' -%}
+{% elsif product.handle == 'imperium-voyage' %}
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '10% OFF + 5% OFF' -%}
+{% elsif product.handle == 'imperium-discovery' %}'
+    {%- render 'discount-hotsale-snippet', discount-hotsale: '10% OFF' -%}
+
+{% else %}
+{% endif %}

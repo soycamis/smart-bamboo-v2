@@ -1,0 +1,110 @@
+<div class="tw-px-0 md:tw-px-6 tw-max-w-[750px] md:tw-max-w-[300px] lg:tw-max-w-[320px] xl:tw-max-w-[370px]">
+    <div class="tw-hidden lg:tw-block"> 
+        <h1 class="tw-font-lora tw-text-[#434f5a] tw-text-[23px] tw-font-bold tw-tracking-tight tw-mt-5" title>{{ product.title | remove: 'Copy of'}}</h1> 
+        
+        <div class="component-descrip-stars__container">
+            <div class="yotpo bottomLine"
+                data-appkey="NdPY4Ev7Qr4BsFowXrmmV6GnmtOsFjqOBvypZdXI"
+                data-domain="{{ shop.permanent_domain | escape }}"
+                data-product-id="{{ product.id }}"
+                data-product-models="{{ product.id }}"
+                data-name="{{ product.title | escape }}"
+                data-url="{{ shop.url }}{{ product.url }}"
+                data-image-url="{{ product.featured_image | img_url: 'large' | replace: '?', '%3F' | replace: '&','%26' }}"
+                data-description={{ product.description | escape }}
+                data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}"> 
+            </div>
+        </div>
+    </div>    
+
+{% comment %} DESCUENTO BUEN FIN {% endcomment %}
+{% if product.handle contains 'colchon-smart-balance' or product.handle contains 'colchon-smart-firm' or product.handle contains 'colchon-smart-hybrid' %}
+    <div class="tw-py-4">
+        {%- render 'buen-fin-smart-snippet-discount' -%}
+    </div>
+    {% else %}
+    {%- render 'buen-fin-smart-snippet-discount' -%}
+{% endif %}
+
+{% comment %} PRECIO DEL PRODUCTO {% endcomment %}
+<p class="tw-pl-1 lg:tw-pl-0 tw-mt-2 lg:tw-mt-0">
+    <span class="tw-font-light tw-text-xl md:tw-text-normal tw-text-gray-500 tw-line-through tw-mr-1 lg:tw-mr-4 cartprecio1" compare="">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+    <span class="tw-font-semibold tw-text-2xl tw-text-black cartpreciodescuento1" price="" >{{ product.price | money_without_trailing_zeros }}</span>
+</p>
+
+{% if product.tags contains 'tolstoy' %}
+    <div class="tw-mt-3 tw-flex tw-flex-col tw-items-center lg:tw-items-start tw-justify-center lg:tw-justify-start lg:tw-ml-6 tw-px-4 md:tw-px-0">
+      {%- render 'tolstoy' -%}
+    </div>
+{% endif %}
+
+{% comment %} REGALO {% endcomment %}
+{%- render 'smart-regalo' -%}
+
+<div class="tw-flex tw-justify-start tw-items-center tw-mt-1 tw-px-6">
+    <h2 class="tw-text-xs tw-font-normal tw-mr-[15px] tw-text-[#434e5a]">
+      10% de descuento adicional pagando con mercado pago
+    </h2>
+    {% comment %} <img
+      class="tw-max-w-[50px]"
+      alt="BambooPay by Atrato"
+      src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/bamboo-pay-127.webp?v=1669430458"> {% endcomment %}
+      <img
+        class="tw-max-w-[50px]"
+        alt="Mercado Pago"
+        src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/mercado-pago1.webp?v=1715728257">
+  </div>
+
+<h3 class="tw-mt-2">Tamaño:</h3>
+{% assign idProduct = product.title | remove:" " | remove:"&" | replace:'á', 'a' | replace:'é', 'e' | replace:'í', 'i' | replace:'ó', 'o' | replace:'ú', 'u' | replace:'ñ', 'n' | remove:"100%" | remove: "Copyof" %}
+<div class="unselectedSellboxColchonSmart tw-flex tw-flex-row tw-grid tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-x-3 lg:tw-gap-x-6 tw-gap-y-3 lg:tw-gap-y-5 tw-mt-2 tw-list-none">
+    {% if product.has_only_default_variant == false %}
+        {% for variant in product.variants %}
+            <div class="tw-flex tw-flex-col">
+                <button onclick="productSizesVariantButton('{{ variant.id }}', '{{ product.title }}', '{{ variant.title }}', '{{ variant.compare_at_price | money_without_trailing_zeros | remove: '$ ' }}', '{{ variant.price | money_without_trailing_zeros | remove: '$ '}}')" 
+                    id="{{ idProduct }}{{ size | remove: " " | remove: "/" | remove: "Copyof" }}"
+                    class="tagColchonSmartButtonSizes tw-flex tw-flex-col hover:tw-bg-[#434F5A] focus:tw-bg-[#292929] tw-text-[#292929] hover:tw-text-white focus:tw-text-white tw-font-semibold tw-rounded-lg tw-border-solid tw-border-[1px] tw-border-[#A5A5A5] hover:tw-border-[#434F5A] focus:tw-border-[#292929] tw-flex tw-justify-center tw-items-center tw-px-2 tw-py-2 tw-font-poppins tw-text-base lg:tw-text-base tw-font-normal setCookie" data-cookie-name="{{ idProduct }}" ProductId="{{ product.id }}" VariantId="{{ variant.id }}"
+                > 
+                    {{ variant.title }}
+                </button> 
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+{% comment %} PROMOCION BUNDLE UNA VEZ QUE SE SELECCIONA TALLA {% endcomment %}
+<div id="activeBundleMagic" class="tw-hidden">
+    <div class="tw-bg-[#c01d2b] tw-flex tw-flex-row tw-grid tw-grid-cols-10 tw-items-center tw-justify-center tw-rounded-[5px] tw-p-4 tw-mt-3 lg:tw-mt-3 tw-mb-3">
+        {% comment %} <p class="tw-text-[14px] lg:tw-text-[13px] tw-font-medium tw-text-[#292929]">Agrega una <span class="tw-font-semibold"> Smart Base</span> con un <span class="tw-font-bold">10%</span> OFF adicional</p> {% endcomment %}
+        <div class="tw-flex tw-col-span-2 tw-flex tw-justify-center tw-items-center">
+            <img class="tw-max-w-[50px] xl:tw-max-w-[70px]" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/logo-hot-sale-2023.svg?v=1684425683">
+        </div>
+        <div class="tw-flex tw-col-span-8 tw-flex-col">
+            <p class="tw-text-[12px] xl:tw-text-[14px] tw-font-normal tw-text-white tw-text-center">Agrega una Smart Base y obtén <br class="tw-block md:tw-hidden"><span class="tw-font-semibold">Cashback + Regalo</span></p>
+            <p class="tw-text-[10px] xl:tw-text-[12px] tw-font-light tw-text-white tw-text-center">Colcha Reversible o Colcha Stripes o Duvet Supreme. Aplican T&P</p>
+        </div>
+        
+    </div>
+
+    {% assign productList = product.metafields.custom.smart_bundle_bamboo.value %}
+    <div>
+        {% for product in productList %}
+            {% comment %} SELECCION DE COLOR {% endcomment %}  
+            {% if product.type == "Adjustable Base" or product.type == "Waranty Adjustable Base" %}
+                {% render 'smart-meta-addon-product-with-warranty-card', SelectedProduct: product %}
+            {% elsif product.type == "Bedsheets" or product.type == "sleep pajamas" or product.type == "towels" %}
+                
+            {% elsif product.type == "Pillows" %}
+                
+            {% elsif product.type == "Bedsheets Bamboo" or product.type == "Duvet" or product.type == "Bed Cover" or product.type == "Comforters" %}
+                {% render 'smart-meta-addon-product-color-card', SelectedProduct: product %}
+            {% elsif product.type == "mattress accessories" %}
+                 
+            {% endif %}
+
+        {% endfor %}
+    </div>
+</div>
+
+{% comment %} <script src="{{ '../assets/script-dopple-basicos.js' | asset_url }}" defer="defer"></script> {% endcomment %}
+<script src="{{ '../assets/script-bundle-magic.js' | asset_url }}" defer="defer"></script>

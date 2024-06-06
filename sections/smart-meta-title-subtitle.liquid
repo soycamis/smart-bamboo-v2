@@ -1,0 +1,57 @@
+{% assign img_picker = section.settings.img_picker | image_url %}
+{% assign alt = section.settings.alt %}
+
+    <section class="tw-flex tw-justify-center">
+        <div class="tw-flex tw-justify-center tw-w-full tw-max-w-[1300px] tw-px-5 tw-py-5 md:tw-py-10 ">
+            <div class="tw-w-full md:tw-w-2/3">
+                <h2 class="tw-font-lora tw-text-center tw-text-2xl md:tw-text-3xl tw-font-semibold tw-pb-4"> 
+                    {{ section.settings.section_title }}
+                </h2> 
+                <div class="tw-block md:tw-hidden tw-w-full">
+                    <img class="tw-w-full" alt="{{ alt }}" src="{{ img_picker }}"> 
+                </div>   
+                {% comment %} {% if section.settings.section_subtitle == blank %}
+                    <p></p>
+                {% else%}    
+                <p class="tw-text-center tw-text-sm md:tw-text-[14px] tw-font-normal tw-leading-normal tw-mt-5">
+                    {{ section.settings.section_subtitle }}
+                </p>
+                {%endif%} {% endcomment %}
+            </div> 
+        </div>  
+    </section>
+    
+{% schema %}
+{
+  "name": "Product Title - subtitle",
+  "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_picker",
+        "label": "Selecciona imagen"
+      },
+      {
+        "type": "text",
+        "id": "alt",
+        "label": "Alt"
+      }
+  ]
+}
+{% endschema %}
+
+{% comment %} {
+        "type": "text",
+        "id": "section_title",
+        "label": "Title"
+      },
+      {
+          "type": "text",
+          "id": "section_subtitle",
+          "label": "Subtitle"
+      }, 
+{% endcomment %}

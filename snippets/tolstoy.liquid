@@ -1,0 +1,15 @@
+<style>
+    .tolstoy-stories-title {display: none !important;}
+</style>
+    
+    <div class="tw-font-lora tw-text-[#434f5a] tw-text-xl lg:tw-text-2xl tw-font-bold tw-tracking-tight">
+        Descubre lo que dicen nuestros seguidores
+    </div>
+    
+    <tolstoy-stories
+        data-tags="{% for tag in product.tags -%}{{ tag }},{%- endfor %}"
+        class="tolstoy-stories"
+        data-publish-id="uwqk6d5alhxhm" 
+        data-product-id="{{ product.id }}">
+    </tolstoy-stories>
+    

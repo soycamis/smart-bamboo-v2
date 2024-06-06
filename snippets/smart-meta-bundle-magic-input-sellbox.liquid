@@ -1,0 +1,82 @@
+{% comment %} BUNDLE MAGIC {% endcomment %}
+{% assign product = ProductName %}
+{% assign idProduct = product.title | remove: " " | remove: "&" | replace: 'á', 'a' | replace: 'ó', 'o' | remove: "100%" %}
+
+{% if product.type == "Adjustable Base" %}
+  <div id="{{ idProduct | append: 'MiniSellBox' }}" class="unselectedSizes{{ idProduct }} tw-hidden tw-pb-4 tw-mt-0 tw-mb-2">
+    <label class="tw-text-base tw-font-normal tw-text-[#666666]">Elige tu talla:</label>
+    <div class="tw-flex tw-flex-row tw-grid tw-grid-cols-3 tw-gap-3 lg:tw-gap-4 tw-mt-2 tw-list-none">
+      {% for variant in product.variants %}
+        <div class="tw-flex tw-flex-col {% if variant.title == 'Split King' %} tw-col-span-2 {% else %} tw-col-span-1 {% endif %}">
+          <button
+            onclick="{{ idProduct | append: 'VariantMiniSellBox' }}{{ variant.title | remove: " " }}('{{ variant.id }}', '{{ product.title }}', '{{ variant.title }}', '{{ variant.compare_at_price | money_without_trailing_zeros | remove: '$ ' }}', '{{ variant.price | money_without_trailing_zeros | remove: '$ ' }}')"
+            id="{{ idProduct }}"
+            class="tag{{ idProduct }}ButtonSizes tw-flex tw-flex-col hover:tw-bg-[#434F5A] focus:tw-bg-[#292929] tw-text-[#292929] hover:tw-text-white focus:tw-text-white tw-font-semibold tw-rounded-lg tw-border-solid tw-border-[1px] tw-border-[#A5A5A5] hover:tw-border-[#434F5A] focus:tw-border-[#292929] tw-flex tw-justify-center tw-items-center tw-px-2 tw-py-1.5 tw-font-poppins tw-text-base lg:tw-text-base tw-font-normal setCookie reset{{ product.id }}"
+            data-cookie-name="{{ idProduct }}"
+            ProductId="{{ product.id }}"
+            VariantId="{{ variant.id }}">
+            {% if variant.title == 'Default Title' %}
+              Standar
+            {% else %}
+              {% if variant.title == 'Individual' %}
+                {{ variant.title | remove: 'ndividual' }}
+              {% elsif variant.title == 'Matrimonial' %}
+                {{ variant.title | remove: 'atrimonial' }}
+              {% elsif variant.title == 'Queen' %}
+                {{ variant.title | remove: 'ueen' }}
+              {% elsif variant.title == 'King' %}
+                {{ variant.title | remove: 'ing' }}
+              {% elsif variant.title == 'Split King' %}
+                Split King
+              {% else %}
+                {{ variant.title }}
+              {% endif %}
+            {% endif %}
+          </button>
+        </div>
+      {% endfor %}
+      <p id="alertBuySmartBaseSplitKing" class="tw-hidden tw-col-span-3 lg:tw-col-span-5 tw-text-base">Para la base Split King se deberan adquirir 2 colchones individuales</p>
+    </div>
+  </div>
+
+{% elsif product.type == "Waranty Adjustable Base" %}
+  <div id="{{ idProduct | remove: " " | remove: "&" | replace: 'á', 'a' | replace: 'é', 'e' | replace: 'í', 'i' | replace: 'ó', 'o' | replace: 'ú', 'u' | remove: "100%" }}MiniSellBox" class="unselectedSizes{{ idProduct }} tw-hidden tw-mb-4">
+    <div>
+      <div class="tw-flex tw-flex-row tw-grid tw-grid-cols-3 tw-gap-x-2 tw-list-none">
+        {% for size in product.options_by_name.Size.values %}
+          <p id="Parrafo{{ product.title | remove: " " | remove: "&" | replace: 'á', 'a' | replace: 'é', 'e' | replace: 'í', 'i' | replace: 'ó', 'o' | replace: 'ú', 'u' | remove: "100%" }}{{ size | remove: " " }}" class="tw-col-span-3 tw-text-base">
+            Disfruta de hasta 3 años más de cobertura con nuestra garantía extendida para tu {{ product.title }} {{ size }}
+          </p>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="tw-my-4">
+      {%- for option in product.options_with_values -%}
+        {% if option.name == 'Warranty' %}
+          <label class="tw-text-base tw-font-normal tw-text-[#666666]">Selecciona tu {{- option.name | replace: 'Warranty', ' Garantía' -}}:
+          </label>
+        {% endif %}
+      {% endfor %}
+
+      <div class="selectorWarantySizes tw-flex tw-flex-row tw-grid tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-3 lg:tw-gap-4 tw-mt-2 tw-list-none">
+        {% for variant in product.variants %}
+          {% assign size = variant.title | remove: " " | remove: "/" | remove: "Nivel" | remove: "Plus" | remove: "Silver" | remove: "Golden" %}
+          {% assign variantName = variant.title | remove: " " | remove: "/" %}
+          {% assign titleButton = variant.title | remove: "/" | remove: "Individual" | remove: "Queen" | remove: "Matrimonial" | remove: "King" | remove: "Split" %}
+          <div class="tw-flex tw-flex-col gridWarranty{{ size | remove: "/" }}">
+            <button
+              onclick="GarantiaSmartBase('{{ variant.id }}', '{{ product.title }}', '{{ variant.title }}', '{{ variant.compare_at_price | money_without_trailing_zeros | remove: '$ ' }}', '{{ variant.price | money_without_trailing_zeros | remove: '$ ' }}')"
+              id="GarantiaSmartBase{{ variant.title | remove: " " | remove: "/" }}"
+              class="tag{{ variantName }}ButtonSizes tagSmartBase{{ size }} tagGarantiaButtonSizes tw-hidden tw-flex tw-flex-col hover:tw-bg-[#434F5A] focus:tw-bg-[#292929] tw-text-[#292929] hover:tw-text-white focus:tw-text-white tw-font-medium tw-rounded-lg tw-border-solid tw-border-[1px] tw-border-[#A5A5A5] hover:tw-border-[#434F5A] focus:tw-border-[#292929] tw-flex tw-justify-center tw-items-center tw-px-2 tw-py-1.5 tw-font-poppins tw-text-base setCookie reset{{ product.id }}"
+              data-cookie-name="GarantiaSmartBase"
+              ProductId="{{ product.id }}"
+              VariantId="{{ variant.id }}">
+              {{ titleButton }}
+            </button>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}

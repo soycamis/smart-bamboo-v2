@@ -1,0 +1,137 @@
+
+{% assign img_picker = section.settings.img_picker | image_url %}
+{% assign alt = section.settings.alt %}
+{% assign img_picker_icons = section.settings.img_picker_icons | image_url %}
+{% assign alt_img_picker_icons = section.settings.alt_img_picker_icons %}
+
+<style>
+  .bg-custom_color {
+    background-color: {{ section.settings.custom_color }};
+  }
+</style>
+
+<section class="tw-max-w-[1200px] tw-mx-auto tw-px-0 tw-py-5 tw-mb-10">
+  <div>
+    <h2 class="tw-font-lora tw-text-[#434F5A] tw-tracking-tight tw-text-center tw-text-2xl md:tw-text-3xl tw-font-semibold tw-w-3/4 tw-mx-auto tw-mb-4 md:tw-mb-8">
+      {{ section.settings.section_title_invert }}
+    </h2>
+  </div>
+
+
+
+
+
+  <div class="tw-flex tw-flex-col tw-grid tw-grid-cols-2 bg-custom_color">
+   
+    <div class="tw-w-full tw-self-center tw-py-5 md:tw-py-0 tw-px-5 md:tw-px-14">
+
+
+
+      <h2 class="tw-font-lora tw-text-[#434F5A] tw-tracking-tight tw-text-center tw-text-[11px] md:tw-text-[22px] tw-leading-snug tw-font-semibold tw-w-3/4 tw-mx-auto tw-mb-4 md:tw-mb-8">
+        {{ section.settings.section_title }}
+      </h2>
+
+      <div class="tw-w-full tw-flex tw-items-center tw-justify-center">
+        {% if section.settings.img_picker_icons == blank %}
+          {% comment %} {% endcomment %}
+        {% else %}
+          <img class="tw-w-full tw-max-w-[200px] md:tw-max-w-[250px] lg:tw-max-w-[300px]" alt="{{ alt }}" src="{{ img_picker_icons }}">
+        {% endif %}
+      </div>
+
+        <p class="tw-text-[9px] md:tw-text-[15px] tw-leading-none tw-mt-3 tw-font-normal tw-text-center md:tw-text-center tw-text-[#434F5A] tw-leading-normal">
+            {{ section.settings.section_paragraph }}
+        <p>
+ 
+        <h2 class="tw-font-lora tw-text-[#434F5A] tw-tracking-tight tw-text-center tw-text-[11px] md:tw-text-[14px] tw-leading-none tw-font-semibold tw-w-3/4 tw-mx-auto tw-mb-4 md:tw-mb-8 tw-mt-10">
+            {{ section.settings.section_title_dos }}
+        </h2>
+
+        <p class="tw-text-[9px] md:tw-text-[14px] tw-leading-none tw-mt-3 tw-font-normal tw-text-center md:tw-text-center tw-text-[#434F5A] tw-leading-normal">
+            {{ section.settings.section_paragraph_dos }}
+        </p> 
+
+        <h2 class="tw-font-lora tw-text-[#434F5A] tw-tracking-tight tw-text-center tw-text-[11px] md:tw-text-[14px] tw-leading-none tw-font-semibold tw-w-3/4 tw-mx-auto tw-mb-4 md:tw-mb-8 tw-mt-10">
+          {{ section.settings.section_title_tres }}
+        </h2>
+
+        <p class="tw-text-[9px] md:tw-text-[14px] tw-leading-none tw-mt-3 tw-font-normal tw-text-center md:tw-text-center tw-text-[#434F5A] tw-leading-normal">
+            {{ section.settings.section_paragraph_tres }}
+        </p> 
+
+        
+     
+    </div>
+    <div class="tw-block tw-w-full tw-px-5 lg:tw-px-0">
+      <img class="tw-w-full" alt="{{ alt }}" src="{{ img_picker }}">
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Grid Horizontal",
+  "settings": [
+    {
+        "type": "text",
+        "id": "section_title_invert",
+        "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title UNO"
+    },
+    {
+        "type": "text",
+        "id": "section_paragraph",
+        "label": "Parrafo UNO"
+    },
+    {
+        "type": "text",
+        "id": "section_title_dos",
+        "label": "Title DOS"
+      },
+      {
+        "type": "text",
+        "id": "section_paragraph_dos",
+        "label": "Parrafo DOS"
+    },
+    {
+      "type": "text",
+      "id": "section_title_tres",
+      "label": "Title TRES"
+    },
+    {
+      "type": "text",
+      "id": "section_paragraph_tres",
+      "label": "Parrafo TRES"
+    },
+    {
+      "type": "text",
+      "id": "custom_color",
+      "label": "Hexadecimal del Color"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_picker",
+      "label": "Selecciona imagen"
+    },
+    {
+      "type": "text",
+      "id": "alt",
+      "label": "Alt"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_picker_icons",
+      "label": "Selecciona imagen"
+    },
+    {
+      "type": "text",
+      "id": "alt_img_picker_icons",
+      "label": "Alt"
+    }
+  ]
+}
+{% endschema %}

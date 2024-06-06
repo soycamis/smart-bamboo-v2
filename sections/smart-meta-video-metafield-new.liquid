@@ -1,0 +1,87 @@
+
+{% capture video_demo %}
+    <video 
+        loading="lazy"
+        width="auto" 
+        height="auto" 
+        poster="{{ product.metafields.custom.video_demo_venta_portada }}" 
+        class="lozad tw-block tw-w-[90%] lg:tw-w-[70%]" 
+        playsinline controls>
+    <source data-src="{{ product.metafields.custom.video_demo_venta }}">
+    </video> 
+{% endcapture %}
+
+{% capture titulo %}
+    <h2 class="tw-font-lora tw-text-center tw-text-2xl md:tw-text-5xl tw-font-semibold"> 
+        {{ section.settings.section_title }}<br>{{ section.settings.section_subtitle }}
+    </h2>
+{% endcapture %}
+
+{% capture parrafo %}
+    <p class="tw-text-center tw-text-base tw-font-medium tw-mt-5"> 
+        {{ section.settings.section_parrafo }}
+    </p>
+{% endcapture %}
+
+
+
+
+{% if product.metafields.custom.video_demo_venta != blank %}
+    <section>
+        <div class="tw-flex tw-justify-center tw-items-center">
+            <div class="tw-w-full tw-max-w-[1200px] tw-my-8 tw-flex tw-flex-col tw-grid tw-grid-cols-1 lg:tw-grid-cols-2">
+
+                <div class="tw-flex tw-flex-col tw-items-center tw-justify-center">
+                    <div class="tw-block lg:tw-hidden tw-py-10">{{ titulo }}</div>
+                    <div class="tw-flex tw-items-center tw-justify-center">{{ video_demo }}</div>
+                </div>
+                <div class="tw-flex tw-flex-col tw-items-center tw-justify-center">
+                    <div class="tw-hidden lg:tw-block">{{ titulo }}</div>
+                    <div>{{ parrafo }}</div>
+                </div>    
+            </div>  
+        </div>   
+    </section>
+
+
+
+    {% comment %} <section>
+
+        <div class="tw-block tw-flex tw-justify-center">
+            <div class="tw-w-full tw-max-w-[1200px] tw-block tw-my-8">
+                <div class="tw-h-[1px] tw-bg-gray-300 tw-mx-5 lg:tw-mx-0"></div>
+                <div class="tw-w-5/6 md:tw-w-2/3 tw-mx-auto tw-block tw-pb-2 md:tw-pb-10 tw-pt-6">
+                    {{ titulo }}
+                </div> 
+                <div class="tw-w-full tw-block tw-flex tw-justify-center">
+                    {{ video_demo }}
+                </div>
+                </div>  
+        </div>
+        
+    </section> {% endcomment %}
+    {% else %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product Meta Video",
+  "settings": [
+    {
+        "type": "text",
+        "id": "section_title",
+        "label": "Title"
+      },
+      {
+          "type": "text",
+          "id": "section_subtitle",
+          "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "section_parrafo",
+        "label": "Parrafo"
+    }
+  ]
+}
+{% endschema %}

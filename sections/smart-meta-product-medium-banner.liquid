@@ -1,0 +1,34 @@
+<section class="tw-w-full tw-flex tw-justify-center tw-items-center tw-px-0 tw-mt-10">
+    <div class="tw-w-full tw-max-w-[650px] tw-flex tw-justify-center tw-items-center">
+      <img class="tw-block md:tw-hidden tw-w-full" alt="{{ section.settings.alt_mobile }}" src="{{ section.settings.img_mobile | image_url }}">
+      <img class="tw-hidden md:tw-block tw-w-full" alt="{{ section.settings.alt_desktop }}" src="{{ section.settings.img_desktop | image_url }}">
+    </div>
+  </section>
+  
+  {% schema %}
+  {
+  "name": "Product Image Banner",
+  "settings": [
+    {
+        "type": "image_picker",
+        "id": "img_desktop",
+        "label": "backgound"
+      },
+      {
+        "type": "text",
+        "id": "alt_desktop",
+        "label": "Alt Desktop"
+    },
+    {
+        "type": "image_picker",
+        "id": "img_mobile",
+        "label": "backgound"
+      },
+    {
+        "type": "text",
+        "id": "alt_mobile",
+        "label": "Alt Mobile"
+    }
+  ]
+  }
+  {% endschema %}
