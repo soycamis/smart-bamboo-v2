@@ -1,0 +1,25 @@
+
+{% comment %} CANONICAL URL INDEX, PRODUCT PAGE, ARTICLES & BLOGS {% endcomment %}
+{% if template == 'index' or template.name == 'product' or template.name == 'article' or template.name == 'blog' or template.name == 'page' %}
+    <link rel="canonical" href="{{ canonical_url }}">
+{% else %}
+{% endif %}
+
+{% comment %} Collecciones {% endcomment %}
+{% assign handle = collection.handle %}
+{% assign almohadasCollection = "/collections/almohadas"%}
+{% assign basesCollection = "/collections/bases-electricas"%}
+{% assign colchonesSmartCollection = "/collections/colchones-smart" %}
+{% assign colchasEdredonesCollection = "/collections/edredones" %}
+{% case handle %}
+    {% when 'almohadas-populares', 'almohadas-especiales', 'almohadas-de-bamboo', 'fundas-de-almohada-100-bamboo', 'almohadas-para-dormir' %}
+    <link rel="canonical" href="{{ shop.url }}{{ almohadasCollection }}">
+    {% when 'bases-mas', 'garantia-extendida-base-electrica', 'base-electrica' %}
+    <link rel="canonical" href="{{ shop.url }}{{ basesCollection }}">   
+    {% when 'bases-y-colchones', 'basicos' %}
+        <link rel="canonical" href="{{ shop.url }}{{ colchonesSmartCollection }}">   
+        {% when 'colchas-edredones', 'decorativo' %} 
+            <link rel="canonical" href="{{ shop.url }}{{ colchasEdredonesCollection }}">       
+  {% else %}
+ 
+{% endcase %}
