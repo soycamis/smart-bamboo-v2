@@ -1,2 +1,0 @@
-class NavElement extends HTMLElement{constructor(){super()}connectedCallback(){window.addEventListener("load",(()=>{this.addListeners()}))}addListeners=()=>{this.addEventListener("mouseenter",(e=>{this.parentElement&&this.parentElement.querySelector(".general-subnav-menu__body").classList.add("active_aux")})),this.addEventListener("mouseleave",(e=>{this.parentElement&&this.parentElement.querySelector(".general-subnav-menu__body").classList.remove("active_aux")}))}}customElements.define("nav-element",NavElement);
-//# sourceMappingURL=smart-nav-element-dist.js.map
