@@ -1,0 +1,74 @@
+<section class="tw-w-full">
+    <div class="tw-flex tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-grid-rows-2 lg:tw-grid-rows-1 tw-bg-[#f3f3f3]">
+  
+      <div class="tw-row-start-2 lg:tw-row-start-1 tw-w-full tw-min-h-[400px] md:tw-min-h-[500px]">
+        <div class="tw-h-full tw-flex tw-justify-start tw-items-start">
+          {% assign urlPortadaOne = ""  %}
+          {% assign urlVideoOne =  "https://cdn.shopify.com/videos/c/o/v/7520eb5b42864740af6d40470b65a474.mp4" %}
+          {% render 'smart-snippet-hero-video-home', posterVideo: urlPortadaOne, videoVideo: urlVideoOne %} 
+        </div>
+      </div>
+  
+      <div class="tw-flex tw-items-center tw-justify-center tw-py-8 lg:tw-py-0">
+        <div class="tw-flex tw-flex-col tw-grid tw-grid-cols-6 tw-items-center tw-justify-center">
+  
+          <div class="tw-col-span-4 tw-col-start-2 md:tw-col-span-6 md:tw-col-start-1">
+            <div class="tw-flex tw-flex-col tw-justify-center tw-items-center">
+              {% comment %} <img
+                class="tw-max-w-[280px] lg:tw-max-w-[400px]"
+                src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/text-hero-febrero.webp?v=1707760183"
+                alt="Crea tu cama a tu estilo"> {% endcomment %}
+  
+                <img
+                  class="tw-max-w-[280px] lg:tw-max-w-[400px]"
+                  src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/txt-hero-home.png?v=1715722254"
+                  alt="Crea tu cama a tu estilo">
+  
+            </div>
+          </div>
+  
+          {% if template.name == 'index' %}
+            <div class="tw-col-span-4 tw-col-start-2 tw-flex tw-items-center tw-justify-center tw-mt-4">
+              <a href="/pages/promociones">
+                <button class="tw-block tw-font-poppins tw-text-sm sm:tw-text-base md:tw-text-lg lg:tw-text-lg 2xl:tw-text-xl tw-font-medium tw-text-white hover:tw-text-[#c01d2b] tw-my-3 md:tw-my-4 tw-bg-[#c01d2b] hover:tw-bg-transparent tw-px-10 tw-py-2 md:tw-py-4 tw-rounded-lg tw-w-full tw-border-[1px] lg:tw-border-[2px] tw-border-solid tw-border-[#c01d2b] hover:tw-border-[#c01d2b] tw-max-w-[400px]">
+                   Promociones
+                </button>
+              </a>
+            </div>
+        {% else %}
+          {% endif %}
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+  {% comment %} <section onload="mainWillMount()" id="index-section-one" class="tw-hidden tw-blur-sm tw-w-full">
+      <div class="tw-flex tw-flex-col tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-h-fit tw-bg-[#f4f4f4]">
+          <div class="tw-bg-cover tw-bg-top tw-h-[400px] md:tw-h-[600px] lg:tw-h-[600px] xl:tw-h-[600px] 2xl:tw-h-[800px] tw-bg-center tw-bg-[url('https://cdn.shopify.com/s/files/1/0248/4705/6932/files/heroSeptiembre2023.webp?v=1694054819')]">
+          </div>
+          <div class="tw-flex tw-items-center tw-justify-center tw-py-8 lg:tw-py-0">
+              <div class="tw-flex tw-flex-col tw-grid tw-grid-cols-6 tw-items-center tw-justify-center">
+                  <p class="tw-col-span-6 lg:tw-col-span-6 tw-font-lora tw-text-2xl md:tw-text-4xl lg:tw-text-3xl 2xl:tw-text-5xl tw-text-center tw-font-normal tw-text-[#292929] tw-uppercase md:tw-px-10">
+                      El Descanso Perfecto <br class="tw-block">tiene recompensas
+                  </p>
+                  <p class="tw-col-span-6 tw-text-base lg:tw-text-xl 2xl:tw-text-2xl tw-text-center tw-text-[#292929] tw-font-normal tw-px-3 tw-py-2 tw-mt-3 xl:tw-mt-5">
+                      Consiéntete con un Colchón Smart,<br class="tw-hidden lg:tw-block"> Smart Base o Sillón Imperium<br class="tw-hidden lg:tw-block"> y recibe hasta <b>$3,500 en CASHBACK*</b>
+                  </p>
+                  <img class="tw-col-span-4 tw-col-start-2 tw-w-[80%] tw-max-w-[400px] tw-block tw-mx-auto" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/MASTER_DIA_DEL_PADRE-09.webp?v=1686271366">
+                  
+                  <div class="tw-col-span-4 tw-col-start-2 tw-flex tw-items-center tw-justify-center tw-mt-4">
+                      {%- render 'smart-meta-button-component', url: "/pages/promociones", copy: "Compra ahora" -%}
+                  </div>
+  
+                  <p class="tw-col-span-6 tw-text-[9px] xl:tw-text-[10px] tw-text-center tw-text-[#666666] tw-font-normal">
+                      *Aplica T&C en <a href="/pages/terminos-y-condiciones"><button class="tw-text-[#666666] hover:tw-underline">smartbamboo.mx</button></a>
+                  </p>
+                  
+  
+              </div>
+           
+          </div>
+          
+      </div>
+  </section>{% endcomment %}

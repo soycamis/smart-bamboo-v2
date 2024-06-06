@@ -1,0 +1,81 @@
+{% assign titleProduct = nameProduct %}
+
+{% if titleProduct == 'colchon-smart-firm' %}
+    Hasta 20% OFF + 15% OFF 
+{% elsif titleProduct == 'colchon-smart-hybrid' %}
+    15% OFF
+{% elsif titleProduct == 'colchon-smart-balance' %}
+    30% OFF + 15% OFF
+{% elsif titleProduct == 'base-electrica' %}
+    Hata 35% OFF + 10% OFF + CASHBACK
+
+{% elsif titleProduct == 'almohada-blend' %}
+    25% OFF + 25% OFF 
+{% elsif titleProduct == 'almohada-cervical-lavanda' %}
+    20% OFF + 25% OFF 
+{% elsif titleProduct == 'almohada-cervical-gel' %}
+    20% OFF + 25% OFF 
+{% elsif titleProduct == 'almohada-moon-blend' %}
+    10% OFF
+{% elsif titleProduct == 'almohada-body' %}
+    5% OFF + 25% OFF 
+{% elsif titleProduct == 'almohada-cush' %}
+    25% OFF 
+
+{% elsif titleProduct contains 'juego-de-sabanas-100-bamboo' %}
+    20% OFF 
+{% elsif titleProduct contains 'juego-de-sabanas-blend' %}
+    30% OFF + 15% OFF 
+{% elsif titleProduct contains 'juego-de-cama-bamboo' %}
+    Precio Especial
+{% elsif titleProduct contains 'juego-de-cama-blend' %}
+    Precio Especial
+
+{% elsif titleProduct == 'funda-para-almohada-de-seda-mulberry' %}
+    5% OFF + 15% OFF 
+
+{% elsif titleProduct contains 'colcha-reversible-' %}
+    30% OFF + 20% OFF 
+{% elsif titleProduct contains 'colcha-stripes' %}
+    30% OFF + 40% OFF
+{% elsif titleProduct contains 'colcha-bliss' %}
+    30% OFF + 20% OFF 
+{% elsif titleProduct == 'edredon-alternativo' %}
+    40% OFF 
+{% elsif titleProduct == 'edredon-de-seda-mulberry' %}
+    20% OFF
+{% elsif titleProduct contains 'duvet-100-bambu-' %}
+    20% OFF + 25% OFF 
+{% elsif titleProduct contains 'duvet-bamboo-blend' %}
+    28% OFF
+{% elsif titleProduct == 'duvet-jacquard' %}
+    35% OFF
+{% elsif titleProduct contains 'duvet-supreme' %}
+    25% OFF + 25% OFF
+
+{% elsif titleProduct == 'set-de-toallas-bamboo-blend' %}
+    20% OFF
+{% elsif titleProduct == 'toallas-de-algodon' %}
+    15% OFF + 20% OFF
+{% elsif titleProduct == 'bata-cozy' %}
+    20% OFF
+{% elsif titleProduct == 'bata-deluxe-bamboo' %}
+    25% OFF
+{% elsif titleProduct == 'bata-waffle-de-algodon' %}
+    40% OFF + 30% OFF
+{% elsif titleProduct contains 'pijama-corta' %}
+    30% OFF + 10% OFF
+{% elsif titleProduct contains 'pijama-larga' %}
+    30% OFF + 10% OFF
+{% elsif titleProduct == 'protector-de-colchon' %}
+    40% OFF
+{% elsif titleProduct == 'sillon-imperium-core' %}
+    15% OFF + 5% OFF
+{% elsif titleProduct == 'imperium-voyage' %}
+    10% OFF + 5% OFF
+{% elsif titleProduct == 'imperium-discovery' %}
+    10% OFF
+
+{% else %}
+    PRECIO ESPECIAL
+{% endif %}

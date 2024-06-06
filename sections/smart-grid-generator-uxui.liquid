@@ -1,0 +1,468 @@
+
+{% comment %} Título {% endcomment %}
+<div class="tw-w-full tw-mt-6">
+    <div class="tw-w-full tw-font-lora tw-font-bold tw-text-[30px] lg:tw-text-[35px] tw-text-center tw-text-[#292929]">
+        Ofertas especiales
+    </div>
+    <p class="tw-w-full tw-font-poppins tw-font-normal tw-text-[16px] tw-text-center tw-text-[#292929]">
+        Aprovecha y ahorra con nuestras ofertas y promociones especiales.
+    </p>
+</div>
+
+{% comment %} Botones del slider {% endcomment %}
+<div class="tw-w-full tw-flex tw-flex-row tw-justify-center tw-items-center tw-justify-center tw-my-8 tw-gap-x-2 lg:tw-gap-x-4">
+    <div class="hover:tw-shadow-lg tw-rounded-full tw-w-[30px] tw-h-[30px] tw-flex tw-items-center tw-justify-center tw-border-solid tw-border-[1px] tw-border-[#C9D5C5]" id="tagsslider_prevButton">
+        <img class="tw-w-[20px] tw-h-[20px]" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/flechas-izquierda.webp?v=1698256135" alt="left">
+    </div>
+    <div class="tw-relative tw-overflow-auto">
+            <scroll-container class="tw-overflow-x-auto tw-max-w-[287px] sm:tw-max-w-[433px] lg:tw-max-w-[1000px] tw-flex tw-flex-row unselectedTags" id="tagsslider">
+                {% render 'smart-meta-button-offers', className: 'mas-vendido', buttonOffer: 'Más vendidos', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_MasVendido.webp?v=1698158897' %}
+                {% render 'smart-meta-button-offers', className: 'bamboo', buttonOffer: 'Bambú', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_Bamboo.webp?v=1698158897' %}
+                {% render 'smart-meta-button-offers', className: 'microfibra', buttonOffer: 'Microfibra', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_Microfiber.webp?v=1698158897' %}
+                {% render 'smart-meta-button-offers', className: 'memoryfoam', buttonOffer: 'Memory Foam', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_MemoryFoam.webp?v=1698158896' %}
+                {% render 'smart-meta-button-offers', className: 'algodon', buttonOffer: 'Algodón', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_Algodon.webp?v=1698158897' %}
+                {% render 'smart-meta-button-offers', className: 'seda', buttonOffer: 'Seda', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_Seda.webp?v=1698158896' %}
+                {% render 'smart-meta-button-offers', className: 'hipoalergenico', buttonOffer: 'Hipoalergenico', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Hipoalergenico.webp?v=1698852206' %}
+                {% render 'smart-meta-button-offers', className: 'antimicrobiano', buttonOffer: 'Antimicrobiano', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_Antimicrobiano.webp?v=1698158897' %}
+                {% render 'smart-meta-button-offers', className: 'extra-suave', buttonOffer: 'Extra suave', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_UltraSuavidad.webp?v=1698158897' %}
+                {% render 'smart-meta-button-offers', className: 'pre-lavado', buttonOffer: 'Pre lavado', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_Prelavado.webp?v=1698158897' %}
+                {% render 'smart-meta-button-offers', className: 'transpirable', buttonOffer: 'Transpirable', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_Tanspirable.webp?v=1698158897' %}
+                {% render 'smart-meta-button-offers', className: 'personalizado', buttonOffer: 'Personalizado', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_Personalizado.webp?v=1698158897' %}
+                {% render 'smart-meta-button-offers', className: 'masaje', buttonOffer: 'Masaje', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_Masaje.webp?v=1698158897' %}
+                {% render 'smart-meta-button-offers', className: 'spa', buttonOffer: 'Spa', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_Spa.webp?v=1698158897' %}
+                {% render 'smart-meta-button-offers', className: 'luxury-choice', buttonOffer: 'Luxury', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_LuxuryChoice.webp?v=1698158897' %}
+                {% render 'smart-meta-button-offers', className: 'cashback', buttonOffer: 'Cashback', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_Cashback.webp?v=1698158897' %}
+                {% render 'smart-meta-button-offers', className: 'certificado', buttonOffer: 'Certificado', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_Certificacion.webp?v=1698158897' %}
+                {% render 'smart-meta-button-offers', className: 'ecofriendly', buttonOffer: 'Ecofriendly', icon: 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/tag_Ecofriendly.webp?v=1698158897' %}
+            </scroll-container>
+    </div>
+    <div class="hover:tw-shadow-lg tw-rounded-full tw-w-[30px] tw-h-[30px] tw-flex tw-items-center tw-justify-center tw-border-solid tw-border-[1px] tw-border-[#C9D5C5]" id="tagsslider_moreButton">
+        <img class="tw-w-[20px] tw-h-[20px]" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/flechas-a-la-derecha.webp?v=1698256134" alt="right">
+    </div>
+</div>
+
+{% comment %} Card Generator {% endcomment %}
+<div class="lg:tw-max-w-[1400px] tw-mx-auto tw-mt-2">
+    <div class="tw-flex tw-flex-row tw-justify-center">
+        <div class="tw-relative tw-overflow-auto">
+            <div class="tw-max-w-[350px] lg:tw-max-w-[1100px] tw-mx-auto tw-min-w-0">
+
+                <div class="tw-w-full tw-font-lora tw-font-bold tw-text-[30px] lg:tw-text-[35px] tw-text-center tw-text-[#292929] titleByTag">
+                    Los más vendidos
+                </div>
+
+                <div class="tw-h-full tw-flex tw-flex-row tw-justify-center tw-items-center">
+
+                    <div class="tw-hidden lg:tw-block">
+                        <div class="hover:tw-shadow-lg tw-rounded-full tw-min-w-[35px] tw-min-h-[35px] tw-flex tw-items-center tw-justify-center tw-border-solid tw-border-[1px] tw-border-[#81937b] tw-mr-8 tw-cursor-pointer" id="losMasVendidosSlider_prevButton">
+                            <img class="tw-w-[20px] tw-h-[20px]" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/flechas-izquierda.webp?v=1698256135" alt="left">
+                        </div>
+                    </div>
+
+                    <scroll-container id="losMasVendidosSlider" class="tw-snap-x tw-snap-mandatory tw-overflow-x-scroll tw-flex tw-gap-x-5 lg:tw-gap-x-[25px] tw-px-1 tw-py-2">
+
+                        {% assign collectionAll = collections['promociones-by-tag'].products %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: "mas-vendido", hidden: 'tw-block', title:'Los más vendidos' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'memoryfoam', hidden: 'tw-hidden' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'certificado', hidden: 'tw-hidden' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'antimicrobiano', hidden: 'tw-hidden' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'hipoalergenico', hidden: 'tw-hidden' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'bamboo', hidden: 'tw-hidden' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'microfibra', hidden: 'tw-hidden' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'seda', hidden: 'tw-hidden' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'extra-suave', hidden: 'tw-hidden' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'pre-lavado', hidden: 'tw-hidden' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'transpirable', hidden: 'tw-hidden' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'algodon', hidden: 'tw-hidden' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'personalizado', hidden: 'tw-hidden' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'masaje', hidden: 'tw-hidden' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'spa', hidden: 'tw-hidden' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'ecofriendly', hidden: 'tw-hidden' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'luxury-choice', hidden: 'tw-hidden' %}
+                        {% render 'smart-meta-card-by-tag', collection: collectionAll, tagType: 'cashback', hidden: 'tw-hidden' %}
+                    </scroll-container>
+
+                    <div class="tw-hidden lg:tw-block">
+                        <div class="hover:tw-shadow-lg tw-rounded-full tw-min-w-[35px] tw-min-h-[35px] tw-flex tw-items-center tw-justify-center tw-border-solid tw-border-[1px] tw-border-[#81937b] tw-ml-8 tw-cursor-pointer" id="losMasVendidosSlider_moreButton">
+                            <img class="tw-w-[20px] tw-h-[20px]" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/flechas-a-la-derecha.webp?v=1698256134" alt="right">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="tw-block">
+                <div class="tw-w-full tw-flex tw-justify-center tw-items-center tw-mb-16" id="losMasVendidosSlider_thumbContainer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    {% comment %} Mas vendidos {% endcomment %}
+    const allTags = document.querySelectorAll('.masvendidoTag, .memoryfoamTag, .certificadoTag, .antimicrobianoTag, .hipoalergenicoTag, .bambooTag, .microfibraTag, .sedaTag, .extrasuaveTag, .prelavadoTag, .transpirableTag, .algodonTag, .personalizadoTag, .masajeTag, .spaTag, .ecofriendlyTag, .luxurychoiceTag, .cashbackTag')
+    const masvendidoSelected = document.querySelector('.masvendidoSelected')
+
+    masvendidoSelected.addEventListener("click", activateMasVendido);
+    function activateMasVendido() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.remove('tw-block')
+        otherTag.classList.add('tw-hidden')
+        
+        }
+
+        let tags = document.querySelectorAll('.masvendidoTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+        }
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Los más vendidos"
+        createSlide("losMasVendidosSlider", "masvendidoTag", "auto", "yes")
+    }
+
+    {% comment %} Memory Foam {% endcomment %}
+    const memoryfoamSelected = document.querySelector('.memoryfoamSelected')
+    memoryfoamSelected.addEventListener("click", activateMemoryFoam);
+    function activateMemoryFoam() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.remove('tw-block')
+        otherTag.classList.add('tw-hidden')
+        
+        }
+
+        let tags = document.querySelectorAll('.memoryfoamTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+      }
+      document.querySelector('.titleByTag').innerHTML = ""
+      document.querySelector('.titleByTag').innerHTML = "Memory Foam"
+      createSlide("losMasVendidosSlider", "memoryfoamTag", "auto", "yes")
+    }
+
+    {% comment %} certificados {% endcomment %}
+    const certificadoSelected = document.querySelector('.certificadoSelected')
+    certificadoSelected.addEventListener("click", activateCertificado);
+    function activateCertificado() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.add('tw-hidden')
+        }
+
+        let tags = document.querySelectorAll('.certificadoTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+        }
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Certificados"
+        createSlide("losMasVendidosSlider", "certificadoTag", "auto", "yes")
+    }
+
+    {% comment %} Antimicrobiano {% endcomment %}
+    const antimicrobianoSelected = document.querySelector('.antimicrobianoSelected')
+    antimicrobianoSelected.addEventListener("click", activateAntimicrobiano);
+    function activateAntimicrobiano() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.add('tw-hidden')
+        }
+
+        let tags = document.querySelectorAll('.antimicrobianoTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+        }
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Antimicrobianos"
+        createSlide("losMasVendidosSlider", "antimicrobianoTag", "auto", "yes")
+    }
+
+    {% comment %} hipoalergenico {% endcomment %}
+    const hipoalergenicoSelected = document.querySelector('.hipoalergenicoSelected')
+    hipoalergenicoSelected.addEventListener("click", activateHipoalergenico);
+    function activateHipoalergenico() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+            otherTag.classList.add('tw-hidden')
+        }
+
+            let tags = document.querySelectorAll('.hipoalergenicoTag');
+            for (tag of tags) {
+            tag.classList.remove('tw-hidden')
+        } 
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Hipoalergénicos"
+        createSlide("losMasVendidosSlider", "hipoalergenicoTag", "auto", "yes")
+    }
+
+    {% comment %} Bamboo {% endcomment %}
+    const bambooSelected = document.querySelector('.bambooSelected')
+    bambooSelected.addEventListener("click", activateBamboo);
+    function activateBamboo() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.add('tw-hidden')
+        }
+
+        let tags = document.querySelectorAll('.bambooTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+        }
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Bambú"
+        createSlide("losMasVendidosSlider", "bambooTag", "auto", "yes")
+    }
+
+    {% comment %} Microfibra {% endcomment %}
+    const microfibraSelected = document.querySelector('.microfibraSelected')
+    microfibraSelected.addEventListener("click", activateMicrofibra);
+    function activateMicrofibra() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.add('tw-hidden')
+        }
+
+        let tags = document.querySelectorAll('.microfibraTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+        }
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Microfibra"
+        createSlide("losMasVendidosSlider", "microfibraTag", "auto", "yes")
+    }
+
+
+    {% comment %} .sedaTag {% endcomment %}
+    const sedaSelected = document.querySelector('.sedaSelected')
+    sedaSelected.addEventListener("click", activateSeda);
+    function activateSeda() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.add('tw-hidden')
+        }
+
+        let tags = document.querySelectorAll('.sedaTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+        }
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Seda"
+        createSlide("losMasVendidosSlider", "sedaTag", "auto", "yes")
+    }
+
+    {% comment %} .extrasuaveTag {% endcomment %}
+    const extrasuaveSelected = document.querySelector('.extrasuaveSelected')
+    extrasuaveSelected.addEventListener("click", activateExtrasuave);
+    function activateExtrasuave() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.add('tw-hidden')
+        }
+
+        let tags = document.querySelectorAll('.extrasuaveTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+        }
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Extra Suave"
+        createSlide("losMasVendidosSlider", "extrasuaveTag", "auto", "yes")
+    }
+
+    {% comment %} .prelavadoTag {% endcomment %}
+    const prelavadoSelected = document.querySelector('.prelavadoSelected')
+    prelavadoSelected.addEventListener("click", activatePrelavado);
+    function activatePrelavado() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.add('tw-hidden')
+        }
+
+        let tags = document.querySelectorAll('.prelavadoTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+        }
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Pre lavado"
+        createSlide("losMasVendidosSlider", "prelavadoTag", "auto", "yes")
+    }
+
+    {% comment %} .transpirableTag {% endcomment %}
+    const transpirableSelected = document.querySelector('.transpirableSelected')
+    transpirableSelected.addEventListener("click", activateTranspirable);
+    function activateTranspirable() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.add('tw-hidden')
+        }
+
+        let tags = document.querySelectorAll('.transpirableTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+        }
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Transpirables"
+        createSlide("losMasVendidosSlider", "transpirableTag", "auto", "yes")
+    }
+
+    {% comment %} .algodonTag {% endcomment %}
+    const algodonSelected = document.querySelector('.algodonSelected')
+    algodonSelected.addEventListener("click", activateAlgodon);
+    function activateAlgodon() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.add('tw-hidden')
+        }
+
+        let tags = document.querySelectorAll('.algodonTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+        }
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Algodón"
+        createSlide("losMasVendidosSlider", "algodonTag", "auto", "yes")
+    }
+
+    {% comment %} .personalizadoTag {% endcomment %}
+    const personalizadoSelected = document.querySelector('.personalizadoSelected')
+    personalizadoSelected.addEventListener("click", activatePersonalizado);
+    function activatePersonalizado() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.add('tw-hidden')
+        }
+
+        let tags = document.querySelectorAll('.personalizadoTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+        }
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Personalizados"
+        createSlide("losMasVendidosSlider", "personalizadoTag", "auto", "yes")
+    }
+
+    {% comment %} .masajeTag {% endcomment %}
+    const masajeSelected = document.querySelector('.masajeSelected')
+    masajeSelected.addEventListener("click", activateMasaje);
+    function activateMasaje() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.add('tw-hidden')
+        }
+
+        let tags = document.querySelectorAll('.masajeTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+        }
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Masaje"
+        createSlide("losMasVendidosSlider", "masajeTag", "auto", "yes")
+    }
+
+    {% comment %} .spaTag {% endcomment %}
+    const spaSelected = document.querySelector('.spaSelected')
+    spaSelected.addEventListener("click", activateSpa);
+    function activateSpa() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.add('tw-hidden')
+        }
+
+        let tags = document.querySelectorAll('.spaTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+        }
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Spa"
+        createSlide("losMasVendidosSlider", "spaTag", "auto", "yes")
+    }
+
+    {% comment %} .ecofriendlyTag {% endcomment %}
+    const ecofriendlySelected = document.querySelector('.ecofriendlySelected')
+    ecofriendlySelected.addEventListener("click", activateEcofriendly);
+    function activateEcofriendly() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.add('tw-hidden')
+        }
+
+        let tags = document.querySelectorAll('.ecofriendlyTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+        }
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Ecofriendly"
+        createSlide("losMasVendidosSlider", "ecofriendlyTag", "auto", "yes")
+    }
+
+    {% comment %} .luxurychoiceTag {% endcomment %}
+    const luxurychoiceSelected = document.querySelector('.luxurychoiceSelected')
+    luxurychoiceSelected.addEventListener("click", activateLuxurychoice);
+    function activateLuxurychoice() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.add('tw-hidden')
+        }
+
+        let tags = document.querySelectorAll('.luxurychoiceTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+        }
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Luxury"
+        createSlide("losMasVendidosSlider", "luxurychoiceTag", "auto", "yes")
+    }
+
+    {% comment %} .cashbackTag {% endcomment %}
+    const cashbackSelected = document.querySelector('.cashbackSelected')
+    cashbackSelected.addEventListener("click", activateCashback);
+    function activateCashback() {
+        let otherTags = allTags;
+        for (otherTag of otherTags ) {
+        otherTag.classList.add('tw-hidden')
+        }
+
+        let tags = document.querySelectorAll('.cashbackTag');
+        for (tag of tags) {
+        tag.classList.remove('tw-hidden')
+        }
+        document.querySelector('.titleByTag').innerHTML = ""
+        document.querySelector('.titleByTag').innerHTML = "Cashback"
+        createSlide("losMasVendidosSlider", "cashbackTag", "auto", "yes")
+    }
+
+
+
+</script>
+<script src="{{ 'sliders.js' | asset_url }}"></script>
+<script> 
+
+createSlide("losMasVendidosSlider", "tw-snap-center.tw-block", "auto", "yes") //scrolleableWrapperID = "sbscrolleable", childElementClass = "sbslide", thumbs = "auto", prevNext = "yes", width = 320, gap = "25
+createSlide("tagsslider", "tw-items-center", "no", "yes", 160)
+
+
+
+/* let tagslist = document.getElementById("tagsslider").getElementsByClassName("tw-items-center");
+if (tagslist && tagslist.length > 0) {
+    for(h = 0; h < tagslist.length; h++){
+        tagslist[h].addEventListener("click", function(){ createSlide("losMasVendidosSlider", "tw-snap-center.tw-block", "auto", "yes") })
+    }
+}*/
+
+    // Get all elements with class 'thumbcontainer'
+    var thumbContainers = document.querySelectorAll('#losMasVendidosSlider_thumbContainer');
+    // Loop through each .thumbcontainer element
+    thumbContainers.forEach(function(container) {
+        var buttons = container.querySelectorAll('button');
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                buttons.forEach(function(btn) {
+                    btn.classList.remove('tw-bg-[#292929]');
+                });
+                this.classList.add('tw-bg-[#292929]');
+            });
+        });
+    });
+
+</script>

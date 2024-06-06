@@ -1,0 +1,715 @@
+{
+    "sections": {
+      "hero": {
+        "type": "countdown-hot-sale",
+        "settings": {
+        }
+      },
+      "generator": {
+        "type": "smart-grid-generator-uxui",
+        "settings": {
+        }
+      },
+      "banner-mercado-pago": {
+        "type": "smart-meta-banner-mercado-pago",
+        "settings": {
+        }
+      },
+      "1716239157a1d5f318": {
+        "type": "apps",
+        "blocks": {
+          "tolstoy_shoppable_video_ugc_carousel_block_tkqQ9R": {
+            "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+            "settings": {
+              "publishId": "dkgb0ts32ol0t"
+            }
+          }
+        },
+        "block_order": [
+          "tolstoy_shoppable_video_ugc_carousel_block_tkqQ9R"
+        ],
+        "settings": {
+          "include_margins": true
+        }
+      },
+      "product-grid-sabanas": {
+        "type": "smart-product-grid-carrousel-colors-uxui",
+        "blocks": {
+          "product_FiBTTT": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-sabanas-100-bamboo-avena"
+            }
+          },
+          "product_MtVVw8": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-sabanas-blend-avellana"
+            }
+          },
+          "product_eBVRtk": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-sabanas-100-bamboo-olivo"
+            }
+          },
+          "product_kC4mA3": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-cama-blend-lila"
+            }
+          },
+          "product_drgBBm": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-sabanas-100-bamboo-coral"
+            }
+          },
+          "product_fcUf37": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-sabanas-blend-azul-cielo"
+            }
+          },
+          "product_qUfzJP": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-sabanas-blend-niebla"
+            }
+          },
+          "product_RKKEii": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-sabanas-blend-oxford"
+            }
+          }
+        },
+        "block_order": [
+          "product_FiBTTT",
+          "product_MtVVw8",
+          "product_eBVRtk",
+          "product_kC4mA3",
+          "product_drgBBm",
+          "product_fcUf37",
+          "product_qUfzJP",
+          "product_RKKEii"
+        ],
+        "settings": {
+          "button_text": "",
+          "button_link": "",
+          "collection_title": "Sábanas"
+        }
+      },
+      "product-grid-colchas-edredones": {
+        "type": "smart-product-grid-carrousel-colors-uxui",
+        "blocks": {
+          "product_ike6jA": {
+            "type": "product",
+            "settings": {
+              "collection_product": "colcha-bliss-oro-y-blanco"
+            }
+          },
+          "product_mFgfQr": {
+            "type": "product",
+            "settings": {
+              "collection_product": "colcha-stripes-azul-y-blanco"
+            }
+          },
+          "product_aDqA6q": {
+            "type": "product",
+            "settings": {
+              "collection_product": "edredon-alternativo"
+            }
+          },
+          "product_C6KWhC": {
+            "type": "product",
+            "settings": {
+              "collection_product": "colcha-bliss-gris"
+            }
+          },
+          "product_tgWwrC": {
+            "type": "product",
+            "settings": {
+              "collection_product": "colcha-stripes-beige-y-blanco"
+            }
+          },
+          "product_TUMUwr": {
+            "type": "product",
+            "settings": {
+              "collection_product": "colcha-bliss-gris-y-blanco"
+            }
+          },
+          "product_eKxFXG": {
+            "type": "product",
+            "settings": {
+              "collection_product": "colcha-stripes-gris-y-blanco"
+            }
+          },
+          "product_kPtqpC": {
+            "type": "product",
+            "settings": {
+              "collection_product": "colcha-bliss-blanco"
+            }
+          },
+          "product_Gy68P4": {
+            "type": "product",
+            "settings": {
+              "collection_product": "colcha-bliss-negro"
+            }
+          },
+          "product_Xmrnty": {
+            "type": "product",
+            "settings": {
+              "collection_product": "edredon-de-seda-mulberry"
+            }
+          }
+        },
+        "block_order": [
+          "product_ike6jA",
+          "product_mFgfQr",
+          "product_aDqA6q",
+          "product_C6KWhC",
+          "product_tgWwrC",
+          "product_TUMUwr",
+          "product_eKxFXG",
+          "product_kPtqpC",
+          "product_Gy68P4",
+          "product_Xmrnty"
+        ],
+        "settings": {
+          "button_text": "",
+          "button_link": "",
+          "collection_title": "Colchas & Edredones"
+        }
+      },
+      "product-grid-ropa-de-cama": {
+        "type": "smart-product-grid-carrousel-colors-uxui",
+        "blocks": {
+          "product_mn8YBj": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-cama-bamboo-caramel"
+            }
+          },
+          "product_M8D3Aa": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-cama-bamboo-matcha"
+            }
+          },
+          "product_BUy3qa": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-cama-bamboo-sunset"
+            }
+          },
+          "product_83xm3Y": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-cama-bamboo-sunflower"
+            }
+          },
+          "product_qGgnwx": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-cama-bamboo-blossom"
+            }
+          },
+          "product_KTKHCr": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-cama-bamboo-autum"
+            }
+          },
+          "product_DyqHpy": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-cama-bamboo-sunrise"
+            }
+          },
+          "product_UkL9c6": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-cama-almond-coffee"
+            }
+          },
+          "product_bQbiiT": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-cama-bamboo-clear-night"
+            }
+          },
+          "product_X4xCBb": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-cama-bamboo-nimbus"
+            }
+          },
+          "product_3Qiq43": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-cama-blend-avellana"
+            }
+          },
+          "product_7iwrfq": {
+            "type": "product",
+            "settings": {
+              "collection_product": "juego-de-cama-bamboo-olivo"
+            }
+          }
+        },
+        "block_order": [
+          "product_mn8YBj",
+          "product_M8D3Aa",
+          "product_BUy3qa",
+          "product_83xm3Y",
+          "product_qGgnwx",
+          "product_KTKHCr",
+          "product_DyqHpy",
+          "product_UkL9c6",
+          "product_bQbiiT",
+          "product_X4xCBb",
+          "product_3Qiq43",
+          "product_7iwrfq"
+        ],
+        "settings": {
+          "button_text": "",
+          "button_link": "",
+          "collection_title": "Ropa de cama"
+        }
+      },
+      "paypal-banner": {
+        "type": "smart-meta-product-banner-uxui",
+        "settings": {
+          "img_desktop": "shopify:\/\/shop_images\/cintillo-paypal-desktop.webp",
+          "alt_desktop": "Pay Pal Smart Bamboo",
+          "img_mobile": "shopify:\/\/shop_images\/cintillo-paypal-mobile.webp",
+          "alt_mobile": "Pay Pal Smart Bamboo"
+        }
+      },
+      "atrato-banner": {
+        "type": "smart-meta-product-banner-uxui",
+        "disabled": true,
+        "settings": {
+          "img_desktop": "shopify:\/\/shop_images\/Atrato_-_desktop.webp",
+          "alt_desktop": "Pay Pal Hot Sale",
+          "img_mobile": "shopify:\/\/shop_images\/Atrato_-_mobile.webp",
+          "alt_mobile": "Pay Pal Hot Sale"
+        }
+      },
+      "product-grid-almohadas": {
+        "type": "smart-product-grid-carrousel-colors-uxui",
+        "blocks": {
+          "product_eDfmnk": {
+            "type": "product",
+            "settings": {
+              "collection_product": "almohada-blend"
+            }
+          },
+          "product_h7eRiC": {
+            "type": "product",
+            "settings": {
+              "collection_product": "almohada-cervical-gel"
+            }
+          },
+          "product_FNarnE": {
+            "type": "product",
+            "settings": {
+              "collection_product": "almohada-cervical-lavanda"
+            }
+          },
+          "product_yL4Nd3": {
+            "type": "product",
+            "settings": {
+              "collection_product": "almohada-moon-blend"
+            }
+          }
+        },
+        "block_order": [
+          "product_eDfmnk",
+          "product_h7eRiC",
+          "product_FNarnE",
+          "product_yL4Nd3"
+        ],
+        "settings": {
+          "button_text": "",
+          "button_link": "",
+          "collection_title": "Almohadas"
+        }
+      },
+      "product-grid-lo-nuevo": {
+        "type": "smart-product-grid-carrousel-colors-uxui",
+        "blocks": {
+          "product_K3B3EG": {
+            "type": "product",
+            "settings": {
+              "collection_product": "pijama-larga-azul"
+            }
+          },
+          "product_zEwpXh": {
+            "type": "product",
+            "settings": {
+              "collection_product": "pijama-corta-gris"
+            }
+          },
+          "product_YdM4y6": {
+            "type": "product",
+            "settings": {
+              "collection_product": "pijama-larga-negro"
+            }
+          },
+          "product_B3GGMw": {
+            "type": "product",
+            "settings": {
+              "collection_product": "pijama-corta-blanco"
+            }
+          },
+          "product_ET4YHi": {
+            "type": "product",
+            "settings": {
+              "collection_product": "pijama-larga-gris"
+            }
+          },
+          "product_49MYmX": {
+            "type": "product",
+            "settings": {
+              "collection_product": "pijama-corta-negro"
+            }
+          },
+          "product_UGTTDe": {
+            "type": "product",
+            "settings": {
+              "collection_product": "pijama-larga-blanco"
+            }
+          },
+          "product_fMhgpQ": {
+            "type": "product",
+            "settings": {
+              "collection_product": "pijama-corta-azul"
+            }
+          },
+          "product_VzHBjb": {
+            "type": "product",
+            "settings": {
+              "collection_product": "almohada-moon-blend"
+            }
+          },
+          "product_dRjdHB": {
+            "type": "product",
+            "settings": {
+              "collection_product": "bata-cozy"
+            }
+          },
+          "product_gikkAF": {
+            "type": "product",
+            "settings": {
+              "collection_product": "toallas-de-algodon"
+            }
+          }
+        },
+        "block_order": [
+          "product_K3B3EG",
+          "product_zEwpXh",
+          "product_YdM4y6",
+          "product_B3GGMw",
+          "product_ET4YHi",
+          "product_49MYmX",
+          "product_UGTTDe",
+          "product_fMhgpQ",
+          "product_VzHBjb",
+          "product_dRjdHB",
+          "product_gikkAF"
+        ],
+        "settings": {
+          "button_text": "",
+          "button_link": "",
+          "collection_title": "Lo nuevo"
+        }
+      },
+      "product-grid-colchones": {
+        "type": "smart-product-grid-offers-uxui",
+        "blocks": {
+          "product_fc94RD": {
+            "type": "product",
+            "settings": {
+              "collection_product": "colchon-smart-firm"
+            }
+          },
+          "product_rqctUB": {
+            "type": "product",
+            "settings": {
+              "collection_product": "colchon-smart-balance"
+            }
+          },
+          "product_B9Q6cP": {
+            "type": "product",
+            "settings": {
+              "collection_product": "colchon-smart-hybrid"
+            }
+          }
+        },
+        "block_order": [
+          "product_fc94RD",
+          "product_rqctUB",
+          "product_B9Q6cP"
+        ],
+        "settings": {
+          "button_text": "",
+          "button_link": "",
+          "collection_title": "Colchones Smart"
+        }
+      },
+      "blog-grid-hotsale": {
+        "type": "home-meta-smart-blog-hot-sale",
+        "settings": {
+        }
+      },
+      "blog-grid": {
+        "type": "smart-meta-select-blogs-uxui",
+        "disabled": true,
+        "settings": {
+        }
+      },
+      "help": {
+        "type": "smart-meta-product-page-help-uxui",
+        "settings": {
+        }
+      },
+      "faqs": {
+        "type": "faq-smart-offers-uxui",
+        "blocks": {
+          "faq_section_PYbm8w": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Cuál es la mejor almohada para un óptimo soporte del cuello y la cabeza?",
+              "accordianInfo": "<p>En Smart Bamboo, contamos con una selección de almohadas diseñadas para brindar el soporte adecuado al cuello y la cabeza. Nuestro personal capacitado puede ayudarte a encontrar las mejores almohadas para ti o puedes visitar nuestra colección de almohadas para obtener más información da un clic <a href=\"https:\/\/www.smartbamboo.mx\/collections\/almohadas\" target=\"_blank\" title=\"Almohadas\"><strong>aquí<\/strong><\/a><\/p>"
+            }
+          },
+          "faq_section_eWJFP6": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Cuál es la diferencia entre los tres modelos de colchones smart?",
+              "accordianInfo": "<p>Como beneficio a nuestros clientes contamos con 3 modelos diferentes de colchones y a pesar de que nuestro primer material es el memory foam, cada uno de ellos tiene sus ventajas y beneficios que los hace únicos.<\/p><p>Comenzamos con nuestro modelo de colchón blando Smart Balance, se diferencia por ser un colchón suave, flexible y brindar un descanso con una sensación de abrazo durante toda la noche, brinda un nivel de 6.5 de firmeza y es ideal para dormir de lado.<\/p><p>Asimismo, nuestro colchón Smart Firme garantiza un mayor soporte de espalda y columna, brinda un nivel de 8.5 de firmeza, siendo una excelente alternativa para problemas articulares y sobrepeso. Ideal para dormir boca arriba.<\/p><p>Nuestro último y reciente modelo Smart Hydrid, gracias a la combinación de materiales con la intención de proporcionar soporte y confort con la nueva tecnología que este incluye, brinda un nivel de 7 de firmeza e ideal para personas adultas, ya que ayuda a levantarse de la cama con mejor soporte.<\/p><p>Estos colchones híbridos cuentan con muelles ensacados de acero de alto calibre envueltos individualmente, brindando un soporte preciso y una firmeza superior a la media.<\/p><p>Conoce más información <a href=\"https:\/\/www.smartbamboo.mx\/collections\/colchones-smart\" target=\"_blank\" title=\"Colchones Smart\"><strong>aquí<\/strong><\/a><\/p>"
+            }
+          },
+          "faq_section_LUGhtf": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Por qué Smart Bamboo es considerada una de las mejores marcas en México para venta de colchones, juego de sábanas, almohadas, edredones, colchas, sillones de masajes y bases de cama?",
+              "accordianInfo": "<p>Smart Bamboo es considerada una de las mejores marcas en México en el mercado de descanso por varias razones. En primer lugar, nos enorgullece ofrecer productos de alta calidad fabricados con materiales premium y tecnología avanzada.<\/p><p><\/p><p>Nuestros colchones, juegos de sábanas (contienen una sábana de cajón, una sábana encimera y fundas de almohada), almohadas, edredones, colchas, sillones de masajes y bases de cama están diseñados para proporcionar el máximo confort y apoyo para un descanso reparador.<\/p><p><br\/><\/p><p>Además, nos destacamos por nuestra amplia variedad de productos, brindando opciones para todos los gustos y necesidades. Ya sea que busques un colchón viscoelástico, un juego de sábanas suaves al tacto, una almohada ergonómica o un sillón de masajes para relajarte, en Smart Bamboo encontrarás una selección cuidadosamente elegida de los mejores productos.<\/p><p><br\/><\/p><p>Nos distinguimos por nuestras restricciones de calidad, asegurando que cada producto cumpla con los estándares más exigentes. Nos preocupamos por tu satisfacción y bienestar, por lo que nos esforzamos en ofrecerte productos duraderos, resistentes y libres de ácaros, brindándote un entorno de descanso saludable.<\/p><p><br\/><\/p><p>Por último, nuestras tiendas oficiales y nuestro servicio al cliente de primer nivel nos permiten brindarte una experiencia de compra excepcional. Estamos comprometidos con tu satisfacción y ofrecemos asesoramiento personalizado, entregas rápidas y un proceso de compra sin complicaciones.<\/p><p><br\/><\/p><p>En resumen, Smart Bamboo destaca como una de las mejores marcas en México gracias a la combinación de calidad, variedad, atención al cliente y compromiso con tu descanso.<\/p>"
+            }
+          },
+          "faq_section_p3nNbU": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Cuáles son las promociones de colchones disponibles en este momento?",
+              "accordianInfo": "<p>En Smart Bamboo, ofrecemos promociones especiales en colchones de alta calidad. Te invitamos a visitar nuestra colección de colchones para conocer las ofertas actuales da clic <a href=\"https:\/\/www.smartbamboo.mx\/collections\/colchones-smart\" target=\"_blank\" title=\"Colchones Smart\"><strong>aquí<\/strong><\/a><\/p>"
+            }
+          },
+          "faq_section_cbnR4w": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Cómo puedo obtener información sobre las características y el nivel de firmeza de los colchones?",
+              "accordianInfo": "<p>En nuestra página web y en nuestras tiendas físicas (contamos con más de 100 sucursales en toda la República Mexicana), encontrarás información detallada sobre cada colchón, incluyendo su nivel de firmeza, tecnología utilizada y otros aspectos relevantes para que puedas elegir el colchón que mejor se adapte a tus necesidades de descanso. <a href=\"https:\/\/www.smartbamboo.mx\/collections\/colchones-smart\" target=\"_blank\" title=\"Colchones Smart\"><strong>Leer más<\/strong><\/a><\/p>"
+            }
+          },
+          "faq_section_tmc7PR": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Qué opciones de pago ofrecen para la compra de colchones, juego de sábanas, colchas, edredones, duvets, almohadas, set de toallas, entre otros?",
+              "accordianInfo": "<p>Para facilitar tu compra, ofrecemos diversas opciones de pago. Con la intención de que logres adquirir el máximo confort que mereces, ofrecemos la opción de financiar tu compra a 3, 6, 9, 12 y 18 meses sin intereses, pagando con cualquier tarjeta de crédito, aplica T&C*.<\/p>"
+            }
+          },
+          "faq_section_rtc3bR": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Qué características tienen los colchones viscoelásticos de Smart Bamboo?",
+              "accordianInfo": "<p>Los colchones viscoelásticos de Smart Bamboo están fabricados con espuma viscoelástico de alta calidad, que se adapta a la forma del cuerpo para brindar un excelente soporte y comodidad a tu espalda durante el descanso. No pierdas más tiempo y añade a tu carrito el colchón que tanto deseas para cambiar 100% tu cama.<\/p>"
+            }
+          },
+          "faq_section_c4ctAh": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Cuál es la cantidad de hilos (thread count) para el juego de sábanas 100% bamboo?",
+              "accordianInfo": "<p>Nuestros juego de sábanas 100% Bamboo tienen un thread count de 300 hilos, lo que significa que están confeccionadas con una alta densidad de hilos cuidadosamente tejidos en cada pulgada cuadrada de tela, brindando una sensación de suavidad, confort y durabilidad excepcionales que te encantará.<\/p><p>Compra tu juego de sábanas favorito, disponibles en una amplia variedad de colores, y convierte tu hogar en un espacio cálido y acogedor. <a href=\"https:\/\/www.smartbamboo.mx\/products\/juego-de-sabanas-100-bamboo\" target=\"_blank\" title=\"Juego de Sábanas 100% Bamboo\"><strong>Más información<\/strong><\/a><\/p>"
+            }
+          },
+          "faq_section_xQwtHU": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Cuál es la garantía ofrecida en los colchones de Smart Bamboo?",
+              "accordianInfo": "<p>Todos nuestros colchones vienen con una garantía 12 años. Esta garantía cubre defectos de fabricación y materiales, en cualquiera de nuestros colchones, colchón firm, colchón balance o colchón hybrid, brindándote tranquilidad y respaldo. Dale a tu cuerpo el soporte que necesita y obtén un sueño inigualable en todas tus noches.<\/p>"
+            }
+          },
+          "faq_section_yW7Ya3": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Los productos tienen costo de envío o hay un mínimo de compra?",
+              "accordianInfo": "<p>El envío es totalmente gratis, a cualquier estado de la república que cubra nuestras paqueterías, y no hay monto mínimo, desde una pieza el envío es gratis. Aprovecha hoy nuestros mejores precios y descuentos en la venta de artículos en promociones.<\/p>"
+            }
+          },
+          "faq_section_xQVMnp": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Cuál es la garantía ofrecida en las almohadas de Smart Bamboo?",
+              "accordianInfo": "<p>Nuestras almohadas vienen con una garantía 5 años contra defectos de fabricación. Busca tu almohada ideal, tenemos variedad de opciones, desde las almohadas cervicales, gel y lavanda, hasta almohada body ideal para un perfecto descanso o la almohada cush para mejorar tu postura o la almohada blend perfecta para personalizarla a tu altura. Todas son óptimas para el soporte que tu cuello y cabeza necesitan. Nuestros productos han sido sometidos a rigurosas pruebas y cuentan con la aprobación de expertos en descanso.<\/p>"
+            }
+          },
+          "faq_section_xJmcNd": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Qué significa \"180 noches de prueba\" en el juego de sábanas?",
+              "accordianInfo": "<p>Estamos tan seguros de que nuestro juego de sábanas de alta calidad superarán tus expectativas es por eso que te brindamos la oportunidad de tener la experiencia de probarlas durante 180 noches en la comodidad de tu hogar.<\/p><p>Si en cualquier momento durante este período sientes que las sábanas no cumplen con tus estándares de confort, simplemente genera la devolución cumpliendo con las condiciones generales (visita nuestros TyC*) y te regresamos tu dinero. Estamos comprometidos con tu satisfacción y queremos que duermas plácidamente en nuestra sábana.<\/p><p>¡Atrévete a probarlas y experimenta los cambios hoy mismo!<\/p>"
+            }
+          },
+          "faq_section_7Axfif": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Cuál es la forma de cuidado de mi sábana?",
+              "accordianInfo": "<p>1. No mezcles tu sábana de bambú con otras tonalidades.<\/p><p>2. La sábana debe lavarse a mano o a máquina en ciclo delicado, con agua fría o tibia (hasta 40°C) y jabón de pH neutro y sin suavizante, esto evitará que la tela se encoja.<\/p><p>3. Enjuaga tu sábana con excesiva cantidad de agua y no uses cloro ni blanqueadores.<\/p><p>4. No es recomendable el uso de suavizante para secadora, ya que las fibras de bambú pueden mancharse.<\/p><p>5. No es recomendable planchar tu sábana, pero si deseas eliminar las arrugas, que sea a una baja temperatura.<\/p><p>6. Seca tu sábana al aire libre hasta que estén completamente seca, procura colocarla bajo la sombra o medio sol.<\/p><p>¡No esperes más y experimenta su tacto suave hoy mismo! Adquiere tu juego de sábanas de alta calidad y descubre por qué son las favoritas de nuestros clientes<\/p><p>Visita la colección de sábanas, clic <a href=\"https:\/\/www.smartbamboo.mx\/collections\/sabanas\" target=\"_blank\" title=\"Sábanas\"><strong>aquí<\/strong><\/a><\/p>"
+            }
+          },
+          "faq_section_cBiUMx": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿El proceso de compra en línea es seguro?",
+              "accordianInfo": "<p>Claro que sí, podrás estar seguro que tus datos se mantienen privados y los productos de tu elección tienen una entrega en la puerta de tu casa.<\/p><p>Los colchones son entregados en una caja con un diseño único, visita constantemente nuestra página de promociones para conocer las mejores ofertas disponibles para ti o puedes visitar tu sucursal más cercana dónde en una sesión un experto de ventas te mostrará tus productos favoritos.<\/p>"
+            }
+          },
+          "faq_section_ryxfTd": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Cuánto tiempo tardará en tomar forma mi nuevo colchón smart?",
+              "accordianInfo": "<p>Una vez que saques el colchón de su caja, tomará su forma original en cinco horas; si bien es seguro dormir en tu nuevo colchón Smart la primera noche, ten en cuenta que tomará su altura máxima en un periodo de 24 horas.<\/p>"
+            }
+          },
+          "faq_section_Mpn9nq": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Qué tipo de base recomiendan para mi nuevo colchón?",
+              "accordianInfo": "<p>Tu colchón smart funcionará muy bien en cualquier base plana y resistente, en base eléctrica o incluso en el piso; sin embargo, para mejores resultados, te recomendamos que sea sobre una superficie limpia y plana.<\/p><p>Leer más acerca de smart base dando clic <a href=\"https:\/\/www.smartbamboo.mx\/products\/base-electrica\" target=\"_blank\" title=\"Smart Base\"><strong>aquí<\/strong><\/a><\/p>"
+            }
+          },
+          "faq_section_YJqrNN": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Qué hago para mejorar la limpieza de mi colchón Smart?",
+              "accordianInfo": "<p>En caso de que se derrame un líquido sobre el colchón, retire toda la funda inmediatamente, puede lavarse a máquina. Use una toalla seca para absorber el líquido del colchón y permita que el área se seque al aire antes de cubrirla nuevamente.<\/p><p><\/p><p>Limpie las manchas con detergente suave a mano, no remoje ni lave a máquina la espuma con memoria. Enjuague con agua tibia y seque a temperatura ambiente.<\/p>"
+            }
+          },
+          "faq_section_pPiF4q": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Cuánto dura mi almohada Smart Bamboo?",
+              "accordianInfo": "<p>Nuestras almohadas están diseñadas para tener una durabilidad de muchos años y conservar su forma original; sin embargo, es recomendable cambiar tu almohada cada 5 años para que tengas el soporte que necesitas de acuerdo a tu estilo al dormir.<\/p><p>Esto a diferencia de lo que se debe hacer con un colchón, que se recomienda cambiarlo cada 7 a 10 años para evitar dolores por el desgaste de sus materiales tanto en su interior como en su exterior.<\/p><p>Ver colección de las mejores almohadas <a href=\"https:\/\/www.smartbamboo.mx\/collections\/almohadas\" target=\"_blank\" title=\"Almohadas\"><strong>aquí<\/strong><\/a><\/p><p><\/p>"
+            }
+          },
+          "faq_section_4JhfEt": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿De qué es el relleno de mi almohada Smart Bamboo?",
+              "accordianInfo": "<p>Todas las almohadas están rellenas de espuma de memoria o memory foam de alta calidad. Nuestras almohadas “personalizables” están rellenas de espuma viscoelástica de memoria certificada, blanca y limpia; ya sea en trozos o en placas, ideales para darles el grosero personalizado. <\/p><p>En Smart Bamboo, nuestro compromiso es con tu descanso y con tu salud, la fabricación de nuestras almohadas es para brindarte productos seguros para ti y tu familia.<\/p>"
+            }
+          },
+          "faq_section_L4bhbG": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿De qué está hecha la funda de mi almohada?",
+              "accordianInfo": "<p>La funda de mi almohada está elaborada de fibras de hilos de bambú y Olefin, que a diferencia de aquellas elaboradas con plumas o poliéster, es un material que ayuda a mantener la superficie de la almohada constantemente fría.<\/p><p>Atrévete a cambiar para siempre las almohadas tradicionales rellenas con plumas o poliéster, y conoce los beneficios de las mejores almohadas Smart Bamboo, enfócate en tu cuidado personal para tu descanso.Visita constantemente la página en línea para conocer las promociones almohadas.<\/p>"
+            }
+          },
+          "faq_section_kcDGE4": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Cúal es la particularidad de la Almohada Body?",
+              "accordianInfo": "<p>Cuenta con un diseño alargado que te permite usarla en todo tu cuerpo, es ideal para aquellas personas que les gusta dormir abrazando la almohada.<\/p><p>Esta almohada es una doble, ya que su longitud permite que sea ideal para diferentes usos, desde compartir almohada con tu persona favorita hasta usarla como almohada abrazable o para acomodar la pancita de una embarazada, en sí tiene muchas utilidades.<\/p><p>Recuerda que es una almohada abrazable, durante las noches ayuda a conciliar el sueño, ya que genera la sensación de seguridad, mejorando el placer de tumbarse sobre pecho y abdomen.<\/p><p>La almohada perfecta para apoyar y relajar la columna, reforzar las rodillas y apoyar el pecho, relajando la respiración y reduciendo los molestos ronquidos<\/p><p>Adecuada para que el cuerpo alcance la ergonomía ideal en las tres posiciones de descanso; bocarriba, bocabajo y en posición fetal. ¡Compra tu almohada body para un descanso inigualable!<\/p><p>Quiero comprar mi almohada body ahora, clic <a href=\"https:\/\/www.smartbamboo.mx\/products\/almohada-body\" target=\"_blank\" title=\"Almohada Body\"><strong>aquí<\/strong><\/a><\/p>"
+            }
+          },
+          "faq_section_JYNDnf": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Qué significa CertiPUR-US® en la etiqueta?",
+              "accordianInfo": "<p>Al comprar una almohada que contiene espuma certificada por CertiPUR-US®, puede descansar fácilmente, sabiendo que la espuma en su almohada cumple con los mejores estándares de emisiones, durabilidad y contenido de CertiPUR-US®. Esto se debe a que ha sido sometido a rigurosas pruebas y análisis por parte de laboratorios independientes acreditados.<\/p>"
+            }
+          },
+          "faq_section_UM3w3D": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Qué es OEKO TEX®?",
+              "accordianInfo": "<p>Pruebas OEKO-TEX® para sustancias nocivas para textiles y materiales. STANDARD 100 de OEKO-TEX® es una de las etiquetas más conocidas del mundo para textiles probados para sustancias nocivas. Puedes estar seguro de que cada componente e hilos de nuestros tejidos ha sido probado para detectar sustancias nocivas y es inofensivo en términos ecológicos humanos.<\/p>"
+            }
+          },
+          "faq_section_B3nFyf": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿En qué época del año suelen lanzar promociones especiales en juegos de sábanas y productos para el invierno?",
+              "accordianInfo": "<p>En Smart Bamboo, estamos atentos a tus deseos de disfrutar de un descanso acogedor durante el invierno. Anunciamos nuestras promociones especiales de juegos de sábanas, productos para el invierno y promociones de colchones con previo aviso, brindándote la oportunidad de renovar tu ropa de cama con diseños exclusivos y de lujo. Visita constantemente nuestra página en línea.<\/p>"
+            }
+          },
+          "faq_section_LcJfri": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿Cuál es la ventaja de la almohada de memory foam de Smart Bamboo en comparación con la almohada tradicional?",
+              "accordianInfo": "<p>Nuestras almohadas de memory foam de Smart Bamboo ofrecen una experiencia de sueño superior gracias a su tecnología de alta calidad. Estas almohadas se adaptan de manera única a la forma de tu cabeza y cuello, brindando un soporte personalizado.<\/p><p>Además, el memory foam utilizado por Smart Bamboo está diseñado para regular la temperatura, manteniéndote fresco durante la noche.<\/p>"
+            }
+          },
+          "faq_section_UGQNTa": {
+            "type": "faqSection",
+            "settings": {
+              "accordianTitle": "¿En qué me beneficia el corte de hombro en la almohada cervical lavanda o en mi almohada cervical gel?",
+              "accordianInfo": "<p>Creamos nuestra almohada Cervical Lavanda con un diseño especial en su contorno, pensado en las personas que suelen dormir de lado. Este corte, tiene una altura ideal para reducir la presión en el cuello, espalda y hombros y permite una postura cómoda al dormir de lado, evitando que te gires durante la noche.<\/p><p>Lo mejor de todo: ¡No más brazos dormidos! Si no deseas usar el corte, simplemente gira tu almohada y disfrútala como cualquier otra almohada.<\/p><p>Quiero leer más de las almohadas ortopedicas cervicales, clic <a href=\"https:\/\/www.smartbamboo.mx\/collections\/almohadas-populares\" target=\"_blank\" title=\"Las Más Populares\"><strong>aquí<\/strong><\/a><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "faq_section_PYbm8w",
+          "faq_section_eWJFP6",
+          "faq_section_LUGhtf",
+          "faq_section_p3nNbU",
+          "faq_section_cbnR4w",
+          "faq_section_tmc7PR",
+          "faq_section_rtc3bR",
+          "faq_section_c4ctAh",
+          "faq_section_xQwtHU",
+          "faq_section_yW7Ya3",
+          "faq_section_xQVMnp",
+          "faq_section_xJmcNd",
+          "faq_section_7Axfif",
+          "faq_section_cBiUMx",
+          "faq_section_ryxfTd",
+          "faq_section_Mpn9nq",
+          "faq_section_YJqrNN",
+          "faq_section_pPiF4q",
+          "faq_section_4JhfEt",
+          "faq_section_L4bhbG",
+          "faq_section_kcDGE4",
+          "faq_section_JYNDnf",
+          "faq_section_UM3w3D",
+          "faq_section_B3nFyf",
+          "faq_section_LcJfri",
+          "faq_section_UGQNTa"
+        ],
+        "settings": {
+          "faq_title": "Preguntas Frecuentes"
+        }
+      }
+    },
+    "order": [
+      "hero",
+      "generator",
+      "banner-mercado-pago",
+      "1716239157a1d5f318",
+      "product-grid-sabanas",
+      "product-grid-colchas-edredones",
+      "product-grid-ropa-de-cama",
+      "paypal-banner",
+      "atrato-banner",
+      "product-grid-almohadas",
+      "product-grid-lo-nuevo",
+      "product-grid-colchones",
+      "blog-grid-hotsale",
+      "blog-grid",
+      "help",
+      "faqs"
+    ]
+  }

@@ -1,0 +1,59 @@
+
+{% assign mattressSelector = ProductName %}
+{% for product in collections['bases-y-colchones'].products %}
+  {% if product.title == mattressSelector %}
+
+    <div class="tw-min-w-[300px] {% if product.title == 'Colchón Smart Hybrid' %} tw-bg-[#e7e7e740] {% endif %}">
+      <table style="width: 100%;height: 580px;">
+        <tbody>
+          <tr style="height: 10%" class="tw-flex-col">
+            <td>
+              <p class="tw-text-[11px] tw-text-center tw-font-semibold tw-text-[#292929] tw-uppercase tw-font-lora tw-font-bold tw-h-[14px]">{{ MasVendido }}</p>
+              <p class="tw-text-[16px] tw-text-center tw-font-semibold tw-text-[#292929] tw-uppercase">{{ product.title | remove: "Colchón" }}</p>
+              <p class="tw-text-[14px] tw-text-center tw-font-medium tw-text-[#292929] tw-uppercase">Colchón</p>
+            </td>
+          </tr>
+          <tr style="height: 28%" class="tw-max-h-[235px]">
+            <td class="tw-flex tw-flex-col tw-items-center tw-justify-center">
+              <img class="tw-w-full tw-max-w-[230px]" src="{{ ImageProduct }}">
+              <p class="tw-text-[20px] tw-font-semibold tw-mt-2"><span class="tw-text-gray-800 tw-text-[15px] tw-font-medium">Desde:</span> {{ product.price | money }}</p>
+              <p class="tw-text-[15px] tw-font-semibold tw-text-gray-600 tw-line-through">{{ product.compare_at_price_min | money }}</p>
+            </td>
+          </tr>
+          <tr style="height: 4%" class="tw-bg-gray-100">
+            <td class="tw-font-poppins tw-text-[15px] tw-text-center tw-font-normal tw-text-[#292929]">
+              {{ Firmeza }}
+            </td>
+          </tr>
+          <tr style="height: 4%">
+            <td class="tw-font-poppins tw-text-[15px] tw-text-center tw-font-normal tw-text-[#292929] tw-tracking-wide">
+              {{ Altura }}
+            </td>
+          </tr>
+          <tr style="height: 4%" class="tw-bg-gray-100">
+            <td class="tw-font-poppins tw-text-[15px] tw-text-center tw-font-normal tw-text-[#292929]">
+              {{ CapaUno }}
+            </td>
+          </tr>
+          <tr style="height: 10%">
+            <td class="tw-font-poppins tw-text-[14px] tw-text-center tw-font-normal tw-text-[#292929]">
+              {{ CapaDos }}
+            </td>
+          </tr>
+          <tr style="height: 10%" class="tw-bg-gray-100">
+            <td class="tw-font-poppins tw-text-[14px] tw-text-center tw-font-normal tw-text-[#292929]">
+              {{ CapaTres }}
+            </td>
+          </tr>
+          <tr style="height: 10%">
+            <td class="tw-text-[15px] tw-text-center tw-font-medium tw-text-[#292929]">
+              <a class="tw-text-white hover:tw-text-[#c01d2b] tw-bg-[#c01d2b] hover:tw-bg-transparent tw-font-poppins tw-py-3 tw-px-5 tw-rounded-lg tw-border-[1px] lg:tw-border-[2px] tw-border-solid tw-border-[#c01d2b] hover:tw-border-[#c01d2b]" href="/products/{{ product.handle }}">Comprar</a>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  {% endif %}
+{% endfor %}

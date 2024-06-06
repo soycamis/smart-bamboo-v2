@@ -1,0 +1,354 @@
+{% assign virtualID = section.settings.collection_title | remove: 'á' | remove: 'é' | remove: 'í' | remove: 'ó' | remove: 'ú' | remove: '&' | remove: ' ' %}
+<section class="tw-w-full tw-px-5">
+    <div class="xl:tw-max-w-[1000px] tw-mx-auto">
+        <h2 class="tw-col-span-2 md:tw-col-span-2 lg:tw-col-span-2 xl:tw-col-span-3 tw-font-lora tw-font-bold tw-text-[30px] lg:tw-text-[35px] tw-text-center tw-text-[#292929] tw-px-4 md:tw-px-0 tw-mx-auto tw-py-4 md:tw-py-10 md:tw-pb-6">
+            {{ section.settings.collection_title }}
+        </h2>
+        
+        <div class="tw-flex tw-flex-row">
+          <div class="tw-mb-8 md:tw-mb-16 tw-overflow-x-scroll tw-flex">
+            <scroll-container class="tw-overflow-x-auto tw-flex tw-flex-row tw-snap-mandatory tw-snap-x tw-gap-8 xl:tw-gap-16" data-collection="true" id="{{ virtualID }}">          
+              {% for block in section.blocks %}    
+                    <a href="{{ block.settings.collection_product.url }}">
+                        <div class="tw-col-span-1 tw-snap-center tw-h-fit tw-min-w-[280px] xl:tw-min-w-[300px] tw-flex tw-flex-col tw-my-3 md:tw-my-8 tw-py-0 md:tw-py-0 tw-bg-white tw-rounded-xl">
+                            <div class="tw-border-0 tw-block tw-relative tw-h-full tw-w-full">
+                                
+                                    <img 
+                                        height="auto" 
+                                        width="auto"  
+                                        class="tw-block tw-w-full tw-h-full tw-mx-auto tw-rounded-t-xl hover:tw-shadow hover:tw-drop-shadow-xl hover:tw-shadow-slate-200"
+                                        src="{{ block.settings.collection_product.featured_image.src | image_url: width: '500' }}" 
+                                        onmouseover="this.src='{{ block.settings.collection_product.images[1] | image_url: width: '500' }}'"
+                                        onmouseout="this.src='{{ block.settings.collection_product.featured_image.src | image_url: width: '500' }}'"
+                                        alt="{{ block.settings.collection_product.featured_image.alt }}"
+                                        title="{{ block.settings.collection_product.featured_image.alt }}"
+                                    >
+                                
+
+                                    {% comment %} BARRA CON DESCUENTOS {% endcomment %}
+                                    {% assign titleProduct = block.settings.collection_product.handle %}
+                                    <div class="tw-w-full tw-font-poppins tw-text-[10px] md:tw-text-base tw-font-semibold tw-text-white tw-text-center tw-tracking-tight tw-bg-[#C01D2B] tw-p-2">                                        
+                                        {%- render 'buen-fin-smart-snippet-discount-card', nameProduct: titleProduct -%}
+                                    </div> 
+                               
+                    
+                                {% if block.settings.collection_product.compare_at_price > block.settings.collection_product.price %}
+                                    {% comment %} INICIO PIN DE DESCUENTOS ROUNDED {% endcomment %}
+                                    <div class="tw-absolute tw-top-[5px] tw-left-[0px] tw-w-[115px] md:tw-w-[160px]">
+                                        {% comment %} Imagen pin de descuento {% endcomment %}
+                                        {% comment %} <div class="tw-absolute tw-top-[1px] sm:tw-top-[4px] tw-right-[41px] md:tw-right-[65px] lg:tw-right-[54px]">
+                                            <p class="tw-text-white tw-text-[20px] md:tw-text-[32px] tw-font-semibold tw-font-poppins tw-leading-none tw-bg-[#c01d2b] tw-rounded tw-px-1 tw-py-1">
+                                                {% assign discount = block.settings.collection_product.price | times: 100.00 | divided_by: block.settings.collection_product.compare_at_price | round %}
+                                                {{ 100 | minus: discount }}<span class="tw-text-white tw-text-[14px] md:tw-text-16px] xl:tw-text-[19px] tw-font-semibold tw-tw-leading-none">%OFF</span>
+                                            </p>
+                                        </div> {% endcomment %}
+                                    </div>
+                                    {% comment %} FIN PIN DE DESCUENTOS ROUNDED {% endcomment %}
+                                {% endif %}
+
+                                {% comment %} Noches de prueba {% endcomment %}
+                                <div class="tw-w-full tw-absolute tw-top-[4px] lg:tw-top-[7px] tw-right-[2px] lg:tw-right-[5px] tw-flex tw-items-end tw-justify-center tw-flex-cols tw-grid tw-grid-cols-12">
+                                    <div class="tw-col-span-8"></div>      
+                                    {% if block.settings.collection_product.tags contains 'benefit-30' %}
+                                        <img class="tw-col-span-4 tw-w-full" height="auto" width="auto" loading="lazy" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Asset-180-noches-de-prueba.webp?v=1684955638">
+                                    {% elsif block.settings.collection_product.tags contains 'benefit-120' %}
+                                        <img class="tw-col-span-4 tw-w-full" height="auto" width="auto" loading="lazy" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Asset-365-noches-de-prueba.webp?v=1684955638">
+                                    {% else %}
+                                    <div class="tw-col-span-4 tw-w-full"></div>
+                                    {% endif %}
+                                </div> 
+
+                                {% comment %} + Vendido {% endcomment %}
+                                {% comment %} <div class="tw-w-full tw-absolute tw-top-[10px] xl:tw-top-[12px] tw-right-[17px] xl:tw-right-[18px] tw-flex tw-items-end tw-justify-center tw-flex-cols tw-grid tw-grid-cols-12">
+                                    <div class=""></div>      
+                                    {% if block.settings.collection_product.tags contains 'benefit-30' %}
+                                        <div class="tw-col-span-4 tw-text-center tw-font-poppins tw-text-[14px] tw-bg-[#C9D5C5] tw-text-[#415934] tw-font-semibold tw-rounded-[5px]">
+                                            Lo + vendido
+                                        </div>
+                                    {% elsif block.settings.collection_product.tags contains 'benefit-120' %}
+                                        <div></div>
+                                    {% else %}
+                                    <div class="tw-col-span-4 tw-w-full"></div>
+                                    {% endif %}
+                                </div> {% endcomment %}
+
+                                {% comment %} Regalos {% endcomment %}
+                                {% comment %} <div class="tw-w-full tw-absolute tw-bottom-[32px] md:tw-bottom-[37px] tw-left-0 tw-flex tw-items-end tw-justify-center tw-flex-cols tw-grid tw-grid-cols-12">
+                                    {% if block.settings.collection_product.handle == 'colchon-smart-firm' or block.settings.collection_product.handle == 'colchon-smart-hybrid' %}
+                                        <img class="tw-col-span-10 tw-col-start-2 tw-w-full" height="auto" width="auto" loading="lazy" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/regalosParaColchones.webp?v=1686287492" alt="Productos de regalo">
+                                    {% elsif block.settings.collection_product.handle == 'colchon-smart-balance' %}
+                                        <img class="tw-col-span-10 tw-col-start-2 tw-w-full" height="auto" width="auto" loading="lazy" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/regalosConAlmohadaLavanda.webp?v=1686287492" alt="Productos de regalo">    
+                                    {% else %}
+                                        <p class="tw-col-span-12 tw-w-full"></p>
+                                    {% endif %}
+                               
+                                    <div class="tw-col-span-3 tw-w-full"></div>
+                                </div> {% endcomment %}
+
+                                {% comment %} <div class="tw-w-full tw-absolute tw-bottom-[0px] tw-flex tw-items-end tw-justify-center tw-flex-cols tw-grid tw-grid-cols-12">
+                                    {% if block.settings.collection_product.handle == 'colchon-smart-firm' or block.settings.collection_product.handle == 'colchon-smart-balance' or block.settings.collection_product.handle == 'colchon-smart-hybrid' or block.settings.collection_product.handle == 'base-electrica' %}
+                                        <img class="tw-col-span-9 tw-w-10/12" height="auto" width="auto" loading="lazy" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/regalos-03_1.webp?v=1683153199" alt="Productos de regalo">
+                                    {% else %}
+                                        <p class="tw-col-span-9 tw-w-full"></p>
+                                    {% endif %}
+                               
+                                    {% if block.settings.collection_product.tags contains 'benefit-30' %}
+                                        <img class="tw-col-span-3 tw-w-full" height="auto" width="auto" loading="lazy" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Asset-180-noches-de-prueba.webp?v=1684955638">
+                                    {% elsif block.settings.collection_product.tags contains 'benefit-120' %}
+                                        <img class="tw-col-span-3 tw-w-full" height="auto" width="auto" loading="lazy" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Asset-365-noches-de-prueba.webp?v=1684955638">
+                                    {% else %}
+                                    <div class="tw-col-span-3 tw-w-full"></div>
+                                    {% endif %}
+                                </div> {% endcomment %}
+                     
+                            </div>
+                
+                            <div class="tw-w-full tw-flex tw-flex-col tw-justify-start tw-items-start">
+                                {% comment %} ESTO ES: {{ block.settings.collection_product.tags | json }} {% endcomment %}
+                                <h3 class="tw-min-h-[64px] tw-text-[20px] tw-text-[#000000] tw-leading-tight tw-font-semibold tw-pt-4 tw-px-6">
+                                    {{ block.settings.collection_product.title }}
+                                </h3>
+
+                                <div>
+                                    <div class="component-descrip-stars__container tw-px-4">
+                                        <div class="yotpo bottomLine"
+                                            data-appkey="NdPY4Ev7Qr4BsFowXrmmV6GnmtOsFjqOBvypZdXI"
+                                            data-domain="{{ shop.permanent_domain | escape }}"
+                                            data-product-id="{{ block.settings.collection_product.id }}"
+                                            data-product-models="{{ block.settings.collection_product.id }}"
+                                            data-name="{{ block.settings.collection_product.title | escape }}"
+                                            data-url="{{ shop.url }}{{ block.settings.collection_product.url }}"
+                                            data-image-url="{{ block.settings.collection_product.featured_image | img_url: 'large' | replace: '?', '%3F' | replace: '&','%26' }}"
+                                            data-description={{ block.settings.collection_product.description | escape }}
+                                            data-bread-crumbs="{% for tag in block.settings.collection_product.tags %}{{ tag | escape }};{% endfor %}"> 
+                                        </div>
+                                    </div>
+                                </div>
+                                {% comment %} <div class="tw-min-h-[79px] tw-mt-3 tw-mb-4 tw-px-6 ">    
+                                   <p class="tw-text-left tw-font-poppins tw-text-[#5F6368] tw-text-[16px] tw-font-normal">
+                                        {{ block.settings.collection_product.metafields.my_fields.descriptiononeliner }}
+                                    </p>
+                                </div> {% endcomment %}
+
+                                 {% comment %} Price {% endcomment %}
+                                 <div class="tw-px-5 tw-pb-5">
+                                    {% if block.settings.collection_product.price_min == block.settings.collection_product.price_max %}
+                                        <p class="tw-mt-2">Desde: <span class="tw-line-through tw-text-[16px] tw-text-gray-500">{{ block.settings.collection_product.compare_at_price_max | money }}</span></p>
+                                        <p class="tw-mt-0"><span class="tw-font-semibold">{{ block.settings.collection_product.price_min | money  }}</span></p>
+                                    {% else %}
+                                        <p class="tw-mt-2">Desde: <span class="tw-line-through tw-text-[16px] tw-text-gray-500">{{ block.settings.collection_product.compare_at_price_max | money }}</span></p>
+                                        <p class="tw-mt-0"><span class="tw-font-semibold">{{ block.settings.collection_product.price_min | money  }}</span> - <span class="tw-font-semibold">{{ block.settings.collection_product.price_max | money  }}*</span></p>
+                                    {% endif %}
+                                    
+                                    
+                                </div>
+
+                                
+                                 {% comment %} <div class="tw-w-full tw-flex tw-flex-row tw-justify-end tw-items-end tw-px-6 tw-py-4">
+                                    {% if block.settings.collection_product.compare_at_price > block.settings.collection_product.price %}
+                                        <p class="tw-font-poppins tw-font-normal tw-text-[12px] lg:tw-text-[14px] tw-text-[#5F6368]  tw-font-light tw-leading-none tw-pr-2">
+                                            Desde
+                                        </p>
+                                        <p class="tw-font-semibold tw-leading-none">
+                                            <s class="tw-font-poppins tw-font-normal tw-text-[15px] tw-text-[#5F6368] tw-pr-4 js-product-{{ forloop.index0 }}-compare">{{ block.settings.collection_product.compare_at_price | money }}</s>
+                                        </p>
+                                        <p class="tw-font-poppins tw-text-[18px] lg:tw-text-[20px] tw-font-semibold tw-leading-none tw-text-[#000000]">
+                                            <span class="js-product-{{ forloop.index0 }}-price">{{ block.settings.collection_product.price | money }}</span>
+                                        </p>
+                                    {% elsif block.settings.collection_product.price == 0.00 %}
+                                        <p class="tw-w-full tw-text-[13px] md:tw-text-[11px] tw-text-left ">Configura tu set con Realidad Aumentada</p>
+                                    {% else %}
+                                            <p class="tw-font-poppins tw-font-normal tw-text-[12px] lg:tw-text-[14px] tw-text-[#5F6368]  tw-font-light tw-leading-none tw-pr-2">
+                                                Desde
+                                            </p>
+                                            <p class="tw-font-poppins">
+                                                <span class="tw-font-semibold tw-text-[20px] tw-text-[#000000]] js-product-{{ forloop.index0 }}-price">{{ block.settings.collection_product.price | money }}</span>
+                                            </p>
+                                    {% endif %}
+                                </div> {% endcomment %}
+
+                                <div class="tw-w-full tw-px-6 tw-mb-7">
+                                    <button class="tw-w-full tw-font-bold tw-bg-[#c01d2b] hover:tw-bg-transparent tw-text-[16px] tw-text-white hover:tw-text-[#c01d2b] tw-border-solid tw-border-2 tw-border-[#c01d2b] hover:tw-border-[#c01d2b] tw-cursor-pointer tw-rounded-[8px] tw-py-1.5">
+                                        Ver producto
+                                    </button>
+                                </div>
+
+                                {% comment %} Tags {% endcomment %}
+                                <div class="tw-min-h-[70px] tw-max-h-[70px] tw-flex tw-flex-wrap tw-gap-3 tw-px-6 ">
+                                    {% assign myProduct = block.settings.collection_product  %}
+                                    {%- render 'smart-meta-filter-by-tag', ProductObject: myProduct -%}
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </scroll-container>
+          </div>
+        </div>
+
+        <div class="tw-block">
+            <div class="tw-w-full tw-flex tw-justify-center tw-items-center tw-mb-16 thumbcontainer" id="{{ virtualID }}_thumbContainer">
+            </div>
+        </div>
+    
+    </div>
+ 
+  </section>
+{% comment %} 
+<section class="tw-flex tw-flex-col tw-w-full tw-h-max tw-items-center tw-justify-center tw-bg-slate-50">
+    <div class="tw-h-max tw-max-w-[1000px] tw-py-14">
+        <div class="tw-mb-8 md:tw-mb-16">
+            <div class="tw-flex tw-flex-col md:tw-flex-row md:tw-grid tw-grid-cols-2 md:tw-grid-cols-2 lg:tw-grid-cols-2 xl:tw-grid-cols-3 md:tw-gap-x-[7%]" data-collection="true">
+
+                <h2 class="tw-col-span-2 md:tw-col-span-2 lg:tw-col-span-2 xl:tw-col-span-3 tw-text-center tw-font-semibold tw-text-3xl md:tw-text-4xl tw-w-5/6 md:tw-w-3/4 tw-mx-auto tw-py-4 md:tw-py-10 md:tw-pb-6">
+                    {{ section.settings.collection_title }}
+                </h2>
+    
+                {% for block in section.blocks %}    
+                <a href="{{ block.settings.collection_product.url }}">
+                    <div class="tw-col-span-1 md:tw-col-span-1 tw-flex tw-flex-col tw-h-full tw-my-8 md:tw-my-8 tw-py-3 md:tw-py-0 tw-h-5/6 md:tw-h-max tw-px-14 md:tw-px-0">
+                        <div class="tw-border-0 tw-block tw-relative">
+                            
+                                <img 
+                                    height="auto" 
+                                    width="auto"  
+                                    class="tw-block tw-max-w-[100%] tw-mx-auto tw-rounded-xl hover:tw-shadow hover:tw-drop-shadow-xl hover:tw-shadow-slate-200 hover:tw-opacity-80"
+                                    src="{{ block.settings.collection_product.featured_image.src | image_url: width: '500' }}" 
+                                    onmouseover="this.src='{{ block.settings.collection_product.images[1] | image_url: width: '500' }}'"
+                                    onmouseout="this.src='{{ block.settings.collection_product.featured_image.src | image_url: width: '500' }}'"
+                                    alt="{{ block.settings.collection_product.featured_image.alt }}"
+                                    title="{{ block.settings.collection_product.featured_image.alt }}"
+                                >
+                
+                            {% if block.settings.collection_product.compare_at_price > block.settings.collection_product.price %}
+                                
+                            {% comment %} INICIO PIN DE DESCUENTOS ROUNDED {% endcomment %}
+                            {% comment %} <div class="tw-flex tw-justify-end tw-items-center tw-w-full tw-mx-auto tw-absolute tw-top-[15px] tw-right-[15px]">
+                                <div class="tw-bg-[#000000] tw-rounded-full tw-h-[100px] tw-w-[100px] tw-flex tw-flex-col tw-text-white tw-p-2 tw-rotate-[17deg]">
+                                <span class="tw-text-lg tw-font-normal tw-text-center">Hasta</span>
+                                {% assign discount = block.settings.collection_product.price | times: 100.00 | divided_by: block.settings.collection_product.compare_at_price | round %}
+                                <span class="tw-text-4xl tw-font-bold tw-text-center">{{ 100 | minus: discount | append: '%' }}</span>
+                                <span class="tw-text-lg tw-font-semibold tw-text-center">OFF</span>
+                                </div>
+                            </div> {% endcomment %}
+                            {% comment %} FIN PIN DE DESCUENTOS ROUNDED {% endcomment %}
+
+                                {% comment %} INICIO PIN DE DESCUENTOS ROUNDED {% endcomment %}
+                                <div class="tw-absolute tw-top-[5px] tw-left-[0px] tw-w-[115px] tw-h-[100px]">
+                                    <img class="tw-absolute" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/oferta-mamas-pleca.webp?v=1683057331">
+                                    <div class="tw-absolute tw-h-[50px] tw-top-[15px] tw-right-[44px]">
+                                        <p class="tw-text-white tw-text-[36px] tw-font-extrabold tw-font-poppins tw-leading-none tw-pl-1">
+                                            {% assign discount = block.settings.collection_product.price | times: 100.00 | divided_by: block.settings.collection_product.compare_at_price | round %}
+                                            {{ 100 | minus: discount }}
+                                        </p>
+                                    </div>
+                                </div>
+                                {% comment %} FIN PIN DE DESCUENTOS ROUNDED {% endcomment %}
+        
+                            {% endif %} 
+                
+                            {% if block.settings.collection_product.handle == 'colchon-smart-firm' or block.settings.collection_product.handle == 'colchon-smart-balance' or block.settings.collection_product.handle == 'colchon-smart-hybrid' or block.settings.collection_product.handle == 'base-electrica' %}
+                                {% comment %} REGALOS COLCHONES {% endcomment %}
+                                <div class="tw-w-6/6 tw-mx-auto tw-absolute tw-bottom-[0px] tw-flex tw-items-center tw-justify-center">
+                                <img class="tw-w-4/6 md:tw-w-4/6" height="auto" width="auto" loading="lazy" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/regalos_13_499-01.webp?v=1682456338" alt="Productos de regalo">
+                                </div>
+                            {% endif %}        
+                            
+                        </div>
+            
+                        <div class="tw-grid tw-grid-cols tw-cols-1 tw-flex tw-justify-center tw-items-center">
+            
+                            <h3 class="tw-text-[15px] md:tw-text-[15px] tw-font-normal md:tw-h-fit tw-text-left tw-pt-4 md:tw-pb-1 md:tw-mb-0 tw-px-2 md:tw-px-4">{{ block.settings.collection_product.title }}</h3>
+                                {% if block.settings.collection_product.compare_at_price > block.settings.collection_product.price %}
+                                <p class="tw-w-full tw-text-2xl md:tw-text-xl tw-font-semibold tw-leading-none tw-mt-3 md:tw-mt-0 tw-flex tw-px-2 md:tw-px-4">
+                                    <span class="tw-text-[13px] tw-font-normal">Desde</span>
+                                    <s class="tw-font-light tw-text-[14px] tw-ml-[6px] tw-text-[#B4B4B4] js-product-{{ forloop.index0 }}-compare">{{ block.settings.collection_product.compare_at_price | money }}</s>
+                                    <span class="tw-font-semibold tw-text-[16px] tw-mx-2 js-product-{{ forloop.index0 }}-price">{{ block.settings.collection_product.price | money }}</span>
+                                </p>
+                                {% else %}
+                                    <p class="tw-flex tw-justify-center tw-items-center">
+                                    <span class="tw-hidden">Desde</span>
+                                    <span class="tw-font-bold tw-text-2xl tw-text-center tw-text-[#4F4A41] js-product-{{ forloop.index0 }}-price">{{ block.settings.collection_product.price | money }}</span>
+                                    </p>
+                                {% endif %}
+                            <button class="tw-w-full tw-bg-[#292929] hover:tw-bg-transparent hover:tw-cursor-pointer tw-text-white hover:tw-text-[#292929] tw-rounded-lg tw-w-2/3 tw-py-2 tw-mx-auto tw-mt-2 tw-border-solid tw-border-2 tw-border-[#292929]">Comprar</button>
+                        
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+          
+            </div>
+        </div>  
+    </div>
+</section> {% endcomment %}
+  
+  {% schema %}
+        {
+          "name": "Grid Products",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "collection_image",
+              "label": "Image to collection"
+            },
+            {
+              "type": "header",
+              "content": "Button"
+            },
+            {
+              "type": "text",
+              "id": "button_text",
+              "label": "Button text"
+            },
+            {
+              "type": "url",
+              "id": "button_link",
+              "label": "Button link"
+            },
+            {
+              "id": "collection_title",
+              "type": "text",
+              "label": "Titulo de Coleccion",
+              "default": "Escribe titulo de coleccion"
+            }
+          ],
+          "blocks": [
+            {
+              "name": "Products",
+              "type": "product",
+              "settings": [
+                {
+                  "type": "product",
+                  "id": "collection_product",
+                  "label": "Product"
+                }
+              ]
+            }
+          ]
+        }
+        {% endschema %}
+  
+  {% comment %} <link rel="stylesheet" href="{{ 'promociones-new-year.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ 'promociones.css' | asset_url }}" media="print" onload="this.media='all'">
+  <script src="{{ 'smart-collection-dist.js' | asset_url }}" defer></script> {% endcomment %}
+  <script>
+    createSlide("{{ virtualID }}", "tw-h-fit", "auto", "no")
+
+
+    // Get all elements with class 'thumbcontainer'
+    var thumbContainers = document.querySelectorAll('#{{ virtualID }}_thumbContainer');
+    // Loop through each .thumbcontainer element
+    thumbContainers.forEach(function(container) {
+        var buttons = container.querySelectorAll('button');
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                buttons.forEach(function(btn) {
+                    btn.classList.remove('tw-bg-[#292929]');
+                });
+                this.classList.add('tw-bg-[#292929]');
+            });
+        });
+    });
+  </script>

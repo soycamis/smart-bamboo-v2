@@ -1,0 +1,146 @@
+<section class="tw-w-full">
+    <div class="tw-w-full tw-mb-10 lg:tw-mb-16">
+      <h2 class="tw-w-full tw-text-[30px] lg:tw-text-[35px] tw-font-lora tw-text-[#000000] tw-font-light tw-text-center tw-leading-none tw-pt-8 lg:tw-pt-14 tw-pb-3 tw-pb-6">
+            Encuentra <br class="tw-block md:tw-hidden">tu colchón ideal
+      </h2>
+      {% comment %} Comparador  {% endcomment %}
+      <div class="tw-p-5">
+        <div class="tw-flex tw-flex-row tw-justify-center tw-items-center">
+          <div class="tw-w-full tw-max-w-[1000px] tw-flex tw-flex-col tw-grid tw-grid-cols-12">
+            <div class="tw-col-span-2 lg:tw-col-span-1">
+              {% comment %} Primera columna {% endcomment %}
+              <table style="height: 580px;" class="tw-w-full">
+                <tbody>
+                  <tr style="height: 10%" class="tw-flex-col">
+                    <td></td>
+                  </tr>
+                  <tr style="height: 235px" class="">
+                    <td class="tw-flex tw-flex-col tw-items-center tw-justify-center tw-h-full"></td>
+                  </tr>
+                  <tr style="height: 4%" class="tw-bg-gray-100">
+                    <td class="tw-text-[13px] tw-text-right tw-font-semibold tw-text-[#292929] tw-pr-5">Firmeza</td>
+                  </tr>
+                  <tr style="height: 4%">
+                    <td class="tw-text-[13px] tw-text-right tw-font-semibold tw-text-[#292929] tw-pr-5">Altura</td>
+                  </tr>
+                  <tr style="height: 4%" class="tw-bg-gray-100">
+                    <td class="tw-text-[13px] tw-text-right tw-font-semibold tw-text-[#292929] tw-pr-5">Capas</td>
+                  </tr>
+                  <tr style="height: 10%">
+                    <td class="tw-text-[13px] tw-text-right tw-font-semibold tw-text-[#292929">
+                      <img class="tw-w-full tw-max-w-[30px] tw-mx-auto tw-block" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/asset_colchones-capa3.png?v=1675867256">
+                    </td>
+                  </tr>
+                  <tr style="height: 10%" class="tw-bg-gray-100">
+                    <td class="tw-text-[13px] tw-text-right tw-font-semibold tw-text-[#292929]">
+                      <img class="tw-w-full tw-max-w-[30px] tw-mx-auto tw-block" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/asset_colchones-cpa1.png?v=1675867202">
+                    </td>
+                  </tr>
+                  <tr style="height: 10%">
+                    <td></td>
+                  </tr>
+  
+                </tbody>
+              </table>
+  
+            </div>
+            <div class="tw-col-span-10 lg:tw-col-span-11">
+              <scroll-container class="tw-overflow-x-scroll tw-flex">
+                <div class="tw-w-full tw-flex tw-flex-row">
+                  {% assign MasVendido = '' %}
+                  {% assign ProductName = 'Colchón Smart Firm' %}
+                  {% assign ImageProduct = 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/comparador-colchon-smart-firm.webp?v=1713283293' %}
+                  {% assign Firmeza = "8.5" %}
+                  {% assign Altura = "25.40 cm." %}
+                  {% assign CapaUno = "3" %}
+                  {% assign CapaDos = "Memory foam de alta densidad" %}
+                  {% assign CapaTres = "Espuma viscoelástica" %}
+                  {% render 'smart-meta-mattress-comparison-card', MasVendido: MasVendido, ProductName: ProductName, ImageProduct: ImageProduct, Firmeza: Firmeza, Altura: Altura, CapaUno: CapaUno, CapaDos: CapaDos, CapaTres: CapaTres %}
+  
+                  {% assign MasVendido = 'Más Vendido' %}
+                  {% assign ProductName = 'Colchón Smart Hybrid' %}
+                  {% assign ImageProduct = 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/comparador-colchon-smart-hybrid.webp?v=1713283293' %}
+                  {% assign Firmeza = "7" %}
+                  {% assign Altura = "30.48 cm." %}
+                  {% assign CapaUno = "5" %}
+                  {% assign CapaDos = "Espuma viscoelástica Aloe Vera	" %}
+                  {% assign CapaTres = "Memory coils y capa lateral <br>Edge Foam Support" %}
+                  {% render 'smart-meta-mattress-comparison-card', MasVendido: MasVendido, ProductName: ProductName, ImageProduct: ImageProduct, Firmeza: Firmeza, Altura: Altura, CapaUno: CapaUno, CapaDos: CapaDos, CapaTres: CapaTres %}
+  
+                  {% assign MasVendido = '' %}
+                  {% assign ProductName = 'Colchón Smart Balance' %}
+                  {% assign ImageProduct = 'https://cdn.shopify.com/s/files/1/0248/4705/6932/files/comparador-colchon-smart-balance.webp?v=1713283293' %}
+                  {% assign Firmeza = "6.5" %}
+                  {% assign Altura = "30.48 cm." %}
+                  {% assign CapaUno = "3" %}
+                  {% assign CapaDos = "Memory foam de alta densidad" %}
+                  {% assign CapaTres = "Espuma viscoelástica" %}
+                  {% render 'smart-meta-mattress-comparison-card', MasVendido: MasVendido, ProductName: ProductName, ImageProduct: ImageProduct, Firmeza: Firmeza, Altura: Altura, CapaUno: CapaUno, CapaDos: CapaDos, CapaTres: CapaTres %}
+                </div>
+  
+  
+              </scroll-container>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      {% comment %} Fin del comparador {% endcomment %}
+
+      {% comment %} Botón: Ver más información {% endcomment %}
+      <div class="tw-w-full tw-flex tw-justify-center tw-items-center lg:tw-mt-6">
+        <div class="tw-w-full tw-max-w-[800px]">
+            <div class="tw-flex tw-flex-col tw-justify-center tw-items-center"> 
+                {% comment %} Boton Detalles {% endcomment %}
+                <button
+                    onclick="mattressCompareIndexVerMas()"
+                    id="compareMattressIndexVerMas"
+                    class="tw-w-full tw-max-w-[330px] tw-bg-transparent hover:tw-bg-black tw-rounded-lg tw-border tw-border-[2px] tw-border-solid tw-border-[#292929] tw-font-poppins tw-text-base tw-font-medium tw-text-black hover:tw-text-white tw-text-center tw-py-1.5 tw-justify-center tw-items-center">
+                        Ver más información
+                  </button>
+
+                {% comment %} Contenedor detalles {% endcomment %}
+                <div id="comparativeDetailsMattressIndex" class="tw-hidden tw-w-full tw-font-poppins tw-text-xs lg:tw-text-sm tw-font-normal tw-text-gris tw-my-3">
+                    <p class="tw-px-6 tw-text-center tw-text-sm lg:tw-text-base">La armonía perfecta entre soporte y confort. Nuestra innovadora tecnología hace que tu colchon se adapte a tu cuerpo dándole el soporte que tanto necesita.
+                    </p>
+                    <ul class="tw-px-12">
+                      <li class="tw-mt-4">Con tejido antimicrobiano de alta tecnología, llamado tratamiento SILVADURTM 930FLEX.</li>
+                      <li class="tw-mt-3">Con tecnología de enfriamiento constante, llamada NanoCool Fabric.</li>
+                      <li class="tw-mt-3">Funda desmontablede fácil acceso, cuenta con un cierre lateral, para que se pueda lavar y retirar sin complicaciones.</li>
+                      <li class="tw-mt-3">Sin transferencia de movimiento.</li>
+                      <li class="tw-mt-3">Con 365 noches de prueba.</li>
+                      <li class="tw-mt-3">Garantía de 12 años.</li>
+                      <li class="tw-mt-3">Envío gratis.</li>
+                    </ul>
+                  </div>
+  
+                  {% comment %} Boton Ver menos {% endcomment %}
+                  <div class="">
+                    <button
+                      onclick="mattressCompareIndexVerMenos()"
+                      id="compareMattressIndexVerMenos"
+                      class="tw-hidden tw-w-full tw-max-w-[400px] tw-bg-transparent hover:tw-bg-black tw-rounded-lg tw-border tw-border-[2px] tw-border-solid tw-border-black tw-font-poppins tw-text-base tw-font-medium tw-text-black hover:tw-text-white tw-text-center tw-py-1.5 tw-px-8 tw-justify-center tw-items-center tw-mb-4">
+                        Ver menos
+                    </button>
+                  </div>
+            </div>
+        </div>
+      </div>
+        
+    </div>
+  </section>
+
+
+  <script>
+    function mattressCompareIndexVerMas() {
+      document.getElementById("comparativeDetailsMattressIndex").classList.remove("tw-hidden")
+      document.getElementById("compareMattressIndexVerMenos").classList.remove("tw-hidden")
+      document.getElementById("compareMattressIndexVerMas").classList.add("tw-hidden")
+    }
+  
+    function mattressCompareIndexVerMenos() {
+        document.getElementById("comparativeDetailsMattressIndex").classList.add("tw-hidden")
+        document.getElementById("compareMattressIndexVerMenos").classList.add("tw-hidden")
+        document.getElementById("compareMattressIndexVerMas").classList.remove("tw-hidden")
+    }
+  </script>

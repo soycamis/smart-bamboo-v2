@@ -1,0 +1,314 @@
+<style>
+    scroll-container {
+        scroll-behavior: smooth;
+    }
+
+</style>
+
+<section class="tw-w-full tw-bg-[#EFEBE9] tw-pt-4">
+    <h2 class="tw-text-[30px] lg:tw-text-[35px] tw-font-lora tw-text-[#000000] tw-font-light tw-text-center tw-py-6 tw-leading-none lg:tw-py-10">Por categorías</h2>  
+
+    <div class="lg:tw-max-w-[1220px] tw-mx-auto">
+        
+        <div class="tw-flex tw-flex-row tw-justify-center tw-items-center tw-px-5 lg:tw-px-0">
+            <div class="tw-hidden lg:tw-block">
+                <div class="hover:tw-shadow-lg tw-rounded-full tw-min-w-[35px] tw-min-h-[35px] tw-flex tw-items-center tw-justify-center tw-border-solid tw-border-[1px] tw-border-[#81937b] tw-mr-8 tw-cursor-pointer" onclick="scrollPrevCat()">
+                    <img class="tw-w-[15px] tw-h-[15px]" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/flechas-izquierda.webp?v=1698256135" alt="left">
+                </div>
+            </div>
+          <scroll-container class="tw-pb-3 lg:tw-pb-0 tw-overflow-x-scroll tw-flex tw-snap-mandatory tw-snap-x" id="sbscrolleableCategory">
+            <div class="tw-w-full tw-flex tw-flex-row tw-gap-6 md:tw-gap-20 md:tw-justify-between">          
+           
+                     {% comment %} 1° {% endcomment %}
+                    <scroll-page id="cardCategoryHomeScrollOne" class="tw-min-w-[300px] md:tw-w-full tw-h-fit tw-snap-center">
+                        <a href="https://www.smartbamboo.mx/collections/bases-y-colchones" class="tw-cursor-pointer">
+                            <div class="tw-flex tw-flex-col tw-items-start tw-my-3 md:tw-my-8 tw-py-0 md:tw-py-0 tw-h-full md:tw-h-max tw-w-full">
+                                <div class="tw-border-0 tw-block tw-relative tw-h-full tw-w-full">
+                                        <img 
+                                            height="auto" 
+                                            width="auto"  
+                                            class="tw-block tw-w-[300px] tw-max-h-[375px] tw-mx-auto tw-rounded-[20px]"
+                                            src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Fotos_menu_COLCHON_1_1.webp?v=1692919304"
+                                            onmouseover="this.src='https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Smart_Bamboo_Colchon_Smart_Hybrid_04.webp?v=1685550115'"
+                                            onmouseout="this.src='https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Fotos_menu_COLCHON_1_1.webp?v=1692919304'"
+                                            alt="Colchones y Bases"
+                                        >
+                                </div>
+                                <div class="tw-w-full tw-flex tw-flex-col tw-pl-1">
+
+                                    <h3 class="tw-font-poppins tw-text-[#000000] tw-text-[20px] tw-text-[20px] tw-leading-tight tw-font-semibold tw-pt-[16px] tw-pb-2">
+                                        Bases & Colchones →
+                                    </h3>
+    
+                                    {% comment %} <p class="tw-font-poppins tw-font-[18px] tw-text-[#5F6368] tw-font-normal tw-leading-none">
+                                        desde $18,520.00
+                                    </p> {% endcomment %}
+                                </div>
+                            </div>
+                        </a>
+                    </scroll-page>
+
+                    {% comment %} 2° {% endcomment %}
+                    <scroll-page id="cardCategoryHomeScrollTwo" class="tw-min-w-[300px] md:tw-w-full tw-h-fit tw-snap-center">
+                        <a href="https://www.smartbamboo.mx/collections/sabanas" class="tw-cursor-pointer">
+                            <div class="tw-flex tw-flex-col tw-items-start tw-my-3 md:tw-my-8 tw-py-0 md:tw-py-0 tw-h-full md:tw-h-max tw-w-full">
+                                <div class="tw-border-0 tw-block tw-relative tw-h-full tw-w-full">
+                                        <img 
+                                            height="auto" 
+                                            width="auto"  
+                                            class="tw-block tw-w-[300px] tw-mx-auto tw-rounded-[20px] tw-h-full"
+                                            src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/SmartBamboo-Sabana-100-Bambu-Niebla-homepage.webp?v=1703192038"
+                                            onmouseover="this.src='https://cdn.shopify.com/s/files/1/0248/4705/6932/files/SmartBamboo-Sabana-100-Bambu-Niebla-detalle-homepage.webp?v=1703192038'"
+                                            onmouseout="this.src='https://cdn.shopify.com/s/files/1/0248/4705/6932/files/SmartBamboo-Sabana-100-Bambu-Niebla-homepage.webp?v=1703192038'"
+                                            alt="Sábanas"
+                                        >
+                                </div>
+                                <div class="tw-w-full tw-flex tw-flex-col tw-pl-1">
+
+                                    <h3 class="tw-font-poppins tw-text-[#000000] tw-text-[20px] tw-text-[20px] tw-leading-tight tw-font-semibold tw-pt-[16px] tw-pb-2">
+                                        Sábanas →
+                                    </h3>
+    
+                                    {% comment %} <p class="tw-font-poppins tw-font-[18px] tw-text-[#5F6368] tw-font-normal tw-leading-none">
+                                        desde $639.00
+                                    </p> {% endcomment %}
+                                </div>
+                            </div>
+                        </a>
+                    </scroll-page>
+
+                    {% comment %} 3° {% endcomment %}
+                    <scroll-page id="cardCategoryHomeScrollThree" class="tw-min-w-[300px] md:tw-w-full tw-h-fit tw-snap-center">
+                        <a href="https://www.smartbamboo.mx/collections/colchas-edredones" class="tw-cursor-pointer">
+                            <div class="tw-flex tw-flex-col tw-items-start tw-my-3 md:tw-my-8 tw-py-0 md:tw-py-0 tw-h-full md:tw-h-max tw-w-full">
+                                <div class="tw-border-0 tw-block tw-relative tw-h-full tw-w-full">
+                                        <img 
+                                            height="auto" 
+                                            width="auto"  
+                                            class="tw-block tw-w-[300px] tw-mx-auto tw-rounded-[20px]"
+                                            src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Colcha_stripes_beige_01_7d2d26ee-5879-4dd5-8032-f3bfc6a2e23c.webp?v=1703183325" 
+                                            onmouseover="this.src='https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Colcha_stripes_beige_02_16179d4f-8830-4689-8e33-6cd8eb35383e.webp?v=1703183325'"
+                                            onmouseout="this.src='https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Colcha_stripes_beige_01_7d2d26ee-5879-4dd5-8032-f3bfc6a2e23c.webp?v=1703183325'"
+                                            alt="Colchas & Edredones"
+                                        >
+                                </div>
+                                <div class="tw-w-full tw-flex tw-flex-col tw-pl-1">
+
+                                    <h3 class="tw-font-poppins tw-text-[#000000] tw-text-[20px] tw-text-[20px] tw-leading-tight tw-font-semibold tw-pt-[16px] tw-pb-2">
+                                        Colchas & Edredones →
+                                    </h3>
+    
+                                    {% comment %} <p class="tw-font-poppins tw-font-[18px] tw-text-[#5F6368] tw-font-normal tw-leading-none">
+                                        desde $1,468.00
+                                    </p> {% endcomment %}
+                                </div>
+                            </div>
+                        </a>
+                    </scroll-page>
+
+                    {% comment %} 4° {% endcomment %}
+                    <scroll-page id="cardCategoryHomeScrollFour" class="tw-min-w-[300px] md:tw-w-full tw-h-fit tw-snap-center">
+                        <a href="https://www.smartbamboo.mx/collections/almohadas" class="tw-cursor-pointer">
+                            <div class="tw-flex tw-flex-col tw-items-start tw-my-3 md:tw-my-8 tw-py-0 md:tw-py-0 tw-h-full md:tw-h-max tw-w-full">
+                                <div class="tw-border-0 tw-block tw-relative tw-h-full tw-w-full">
+                                        <img 
+                                            height="auto" 
+                                            width="auto"  
+                                            class="tw-block tw-w-[300px] tw-mx-auto tw-rounded-[20px]"
+                                            src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Almohada-cervical-gel-01.webp?v=1693837936" 
+                                            onmouseover="this.src='https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Almohada-cervical-gel-02.webp?v=1693837940'"
+                                            onmouseout="this.src='https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Almohada-cervical-gel-01.webp?v=1693837936'"
+                                            alt="almohadas"
+                                        >
+                                </div>
+                                <div class="tw-w-full tw-flex tw-flex-col tw-pl-1">
+
+                                    <h3 class="tw-font-poppins tw-text-[#000000] tw-text-[20px] tw-text-[20px] tw-leading-tight tw-font-semibold tw-pt-[16px] tw-pb-2">
+                                        Almohadas →
+                                    </h3>
+    
+                                    {% comment %} <p class="tw-font-poppins tw-font-[18px] tw-text-[#5F6368] tw-font-normal tw-leading-none">
+                                        desde $1,092.00
+                                    </p> {% endcomment %}
+                                </div>
+                            </div>
+                        </a>
+                    </scroll-page>
+
+                    {% comment %} 5° {% endcomment %}
+                    <scroll-page id="cardCategoryHomeScrollFive" class="tw-min-w-[300px] md:tw-w-full tw-h-fit tw-snap-center">
+                        <a href="https://www.smartbamboo.mx/collections/toallas-accesorios" class="tw-cursor-pointer">
+                            <div class="tw-flex tw-flex-col tw-items-start tw-my-3 md:tw-my-8 tw-py-0 md:tw-py-0 tw-h-full md:tw-h-max tw-w-full">
+                                <div class="tw-border-0 tw-block tw-relative tw-h-full tw-w-full">
+                                        <img 
+                                            height="auto" 
+                                            width="auto"  
+                                            class="tw-block tw-w-[300px] tw-mx-auto tw-rounded-[20px]"
+                                            src="https://cdn.shopify.com/s/files/1/0248/4705/6932/products/Batawaffle1350x1080_3.webp?v=1676595395" 
+                                            onmouseover="this.src='https://cdn.shopify.com/s/files/1/0248/4705/6932/files/Smart-Bamboo-Set-Toallas-Bambu-Cafe-01.webp?v=1686258317'"
+                                            onmouseout="this.src='https://cdn.shopify.com/s/files/1/0248/4705/6932/products/Batawaffle1350x1080_3.webp?v=1676595395'"
+                                            alt="Toallas & Accesorios"
+                                        >
+                                </div>
+                                <div class="tw-w-full tw-flex tw-flex-col tw-pl-1">
+
+                                    <h3 class="tw-font-poppins tw-text-[#000000] tw-text-[20px] tw-text-[20px] tw-leading-tight tw-font-semibold tw-pt-[16px] tw-pb-2">
+                                        Toallas & Accesorios →
+                                    </h3>
+    
+                                    {% comment %} <p class="tw-font-poppins tw-font-[18px] tw-text-[#5F6368] tw-font-normal tw-leading-none">
+                                        desde $1,944.00
+                                    </p> {% endcomment %}
+                                </div>
+                            </div>
+                        </a>
+                    </scroll-page>
+
+                    {% comment %} 6° {% endcomment %}
+                    <scroll-page id="cardCategoryHomeScrollSix" class="tw-min-w-[300px] md:tw-w-full tw-h-fit tw-snap-center">
+                        <a href="https://www.smartbamboo.mx/collections/sillones-de-masajes" class="tw-cursor-pointer">
+                            <div class="tw-flex tw-flex-col tw-items-start tw-my-3 md:tw-my-8 tw-py-0 md:tw-py-0 tw-h-full md:tw-h-max tw-w-full">
+                                <div class="tw-border-0 tw-block tw-relative tw-h-full tw-w-full">
+                                        <img 
+                                            height="auto" 
+                                            width="auto"  
+                                            class="tw-block tw-w-[300px] tw-mx-auto tw-rounded-[20px]"
+                                            src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/foto-discoveryfrente-1080x1920.webp?v=1687533052" 
+                                            onmouseover="this.src='https://cdn.shopify.com/s/files/1/0248/4705/6932/files/asset-dicovery_1080x1920_de-lado_fc72eced-5383-4511-896f-6347c0d1550e.webp?v=1698967544'"
+                                            onmouseout="this.src='https://cdn.shopify.com/s/files/1/0248/4705/6932/files/foto-discoveryfrente-1080x1920.webp?v=1687533052'"
+                                            alt="colchones"
+                                        >
+                                </div>
+                                <div class="tw-w-full tw-flex tw-flex-col tw-pl-1">
+
+                                    <h3 class="tw-font-poppins tw-text-[#000000] tw-text-[20px] tw-text-[20px] tw-leading-tight tw-font-semibold tw-pt-[16px] tw-pb-2">
+                                        Sillones de Masajes →
+                                    </h3>
+    
+                                    {% comment %} <p class="tw-font-poppins tw-font-[18px] tw-text-[#5F6368] tw-font-normal tw-leading-none">
+                                        desde $72,250.00
+                                    </p> {% endcomment %}
+                                </div>
+                            </div>
+                        </a>
+                    </scroll-page>
+
+            </div>
+          </scroll-container>
+          <div class="tw-hidden lg:tw-block">
+            <div class="hover:tw-shadow-lg tw-rounded-full tw-min-w-[35px] tw-min-h-[35px] tw-flex tw-items-center tw-justify-center tw-border-solid tw-border-[1px] tw-border-[#81937b] tw-ml-8 tw-cursor-pointer" onclick="scrollMoreCat()">
+                    <img class="tw-w-[15px] tw-h-[15px]" src="https://cdn.shopify.com/s/files/1/0248/4705/6932/files/flechas-a-la-derecha.webp?v=1698256134" alt="right">
+            </div>
+          </div>
+        </div>
+    
+    </div>
+
+    <div class="tw-flex tw-justify-center tw-items-center tw-pb-8 lg:tw-pb-14 tw-mb-6 thumbcontainer">
+        <button onclick="cardCategoryHomeScrollOne()" class="tw-rounded-full tw-min-w-[20px] tw-min-h-[20px] tw-border-solid tw-border-[2px] tw-border-[#292929] active:tw-bg-[#292929]"></button>
+        <button onclick="cardCategoryHomeScrollTwo()" class="tw-rounded-full tw-min-w-[20px] tw-min-h-[20px] tw-border-solid tw-border-[2px] tw-border-[#292929] active:tw-bg-[#292929] tw-mx-6"></button>
+        <button onclick="cardCategoryHomeScrollThree()" class="tw-rounded-full tw-min-w-[20px] tw-min-h-[20px] tw-border-solid tw-border-[2px] tw-border-[#292929] active:tw-bg-[#292929]"></button>
+        <button onclick="cardCategoryHomeScrollFour()" class="tw-rounded-full tw-min-w-[20px] tw-min-h-[20px] tw-border-solid tw-border-[2px] tw-border-[#292929] active:tw-bg-[#292929] tw-mx-6"></button>
+        <button onclick="cardCategoryHomeScrollFive()" class="tw-rounded-full tw-min-w-[20px] tw-min-h-[20px] tw-border-solid tw-border-[2px] tw-border-[#292929] active:tw-bg-[#292929] "></button>
+        <button onclick="cardCategoryHomeScrollSix()" class="tw-rounded-full tw-min-w-[20px] tw-min-h-[20px] tw-border-solid tw-border-[2px] tw-border-[#292929] active:tw-bg-[#292929] tw-ml-6"></button>
+    </div>
+ 
+  </section>
+
+  <script type="text/javascript">
+
+
+    const boxScrolleableCat = document.getElementById('sbscrolleableCategory');
+    //const boxContainer = document.getElementById('scroll-container');
+    //let amount = Math.round(boxContainer.offsetWidth / 5) //Getting size of parent container 
+    let amountCat = 320 //width of each element
+    let moreCat = 320; //Prev and More (next) buttons
+    let prevCat = 0;
+
+    function cardCategoryHomeScrollOne(){
+        boxScrolleableCat.scroll(0, 0) 
+        moreCat = amountCat;
+        prevCat = 0;
+    }
+
+    function cardCategoryHomeScrollTwo(){
+        varxCat = amountCat
+        boxScrolleableCat.scroll(varxCat, 0)
+        moreCat = amountCat * 2;
+        prevCat = amountCat;
+    }
+
+    function cardCategoryHomeScrollThree(){
+        varxCat = amountCat * 2
+        boxScrolleableCat.scroll(varxCat, 0)
+        moreCat = amountCat * 3;
+        prevCat = amountCat * 2;
+    }
+
+    function cardCategoryHomeScrollFour(){
+        varxCat = amountCat * 3
+        boxScrolleableCat.scroll(varxCat, 0)
+        moreCat = amountCat * 4;
+        prevCat = amountCat * 3;
+    }
+
+
+    function cardCategoryHomeScrollFive(){
+        varxCat = amountCat * 4
+        boxScrolleableCat.scroll(varxCat, 0)
+        moreCat = amountCat * 5;
+        prevCat = amountCat * 4;
+    }
+
+    function cardCategoryHomeScrollSix(){
+        varxCat = amountCat * 5
+        boxScrolleableCat.scroll(varxCat, 0)
+        moreCat = 0;
+        prevCat = amountCat * 5;
+    }
+
+    function scrollMoreCat(){
+        boxScrolleableCat.scroll(moreCat, 0)
+        if(moreCat < (amountCat * 5)){ //Reset buttons
+        moreCat += amountCat;
+        prevCat += amountCat;
+        }
+        else { moreCat = 0;
+            prevCat = 0;}
+    }
+
+    function scrollPrevCat(){
+        boxScrolleableCat.scroll(prevCat, 0)
+        if(prevCat == 0){  //Minimun values for buttons
+            moreCat = 320;
+            prevCat = 0; 
+            
+        }
+        else { 
+            moreCat -= amountCat;
+            prevCat -= amountCat;
+             }
+    }
+
+    // Get all elements with class 'thumbcontainer'
+    var thumbContainers = document.querySelectorAll('.thumbcontainer');
+
+    // Loop through each .thumbcontainer element
+    thumbContainers.forEach(function(container) {
+        // Get all buttons inside the current .thumbcontainer
+        var buttons = container.querySelectorAll('button');
+
+        // Attach 'click' event listener to each button inside the current .thumbcontainer
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                // Remove 'active' class from all buttons inside the current .thumbcontainer
+                buttons.forEach(function(btn) {
+                    btn.classList.remove('tw-bg-[#292929]');
+                });
+                // Add 'active' class to the clicked button
+                this.classList.add('tw-bg-[#292929]');
+            });
+        });
+    });
+    
+</script>
